@@ -83,9 +83,24 @@ function Get-MobCategories {
 	return $catMap
 }
 
+# ======================== LOADER: item_names.txt ========================
+function Get-ItemNames {
+	param([string]$Path)
+	$map = @{}
+	if (-not (Test-Path $Path)) { return $map }
+	$lines = Get-Content $Path -Encoding UTF8
+	foreach ($line in $lines) {
+		$parts = $line.Split("`t")
+		if ($parts.Count -ge 2 -and $parts[0] -match "^\d+$") {
+			$map[$parts[0].Trim()] = $parts[1].Trim()
+		}
+	}
+	return $map
+}
+
 # ======================== PARSER: special_item_group.txt ========================
 function Parse-ChestDropFile {
-	param([string]$Path)
+	param([string]$Path, [hashtable]$ItemNames = @{})
 	if (-not (Test-Path $Path)) {
 		Write-Host "UYARI: $Path bulunamadi" -ForegroundColor Yellow
 		return @()
@@ -105,24 +120,43 @@ function Parse-ChestDropFile {
 		if ($trimmed -eq "{") { $inGroup = $true; continue }
 		if ($trimmed -eq "}") {
 			$inGroup = $false
-			if ($currentGroup -and $currentGroup.ChestVnum -and $currentGroup.ChestName) { $groups += $currentGroup }
+			if ($currentGroup -and $currentGroup.ChestVnum) { $groups += $currentGroup }
 			$currentGroup = $null
 			continue
 		}
 		if ($inGroup -and $currentGroup) {
 			if ($trimmed -match "^Vnum\s+(\d+)") {
 				$currentGroup.ChestVnum = $Matches[1]
-				if ($trimmed -match "--\s*(.+)$") { $currentGroup.ChestName = $Matches[1].Trim() }
+				# Look up name from item_names.txt by vnum
+				$vstr = $Matches[1]
+				if ($ItemNames.ContainsKey($vstr)) {
+					$currentGroup.ChestName = $ItemNames[$vstr]
+				}
+				elseif ($trimmed -match "--\s*(.+)$") {
+					$currentGroup.ChestName = $Matches[1].Trim()
+				}
+				else {
+					$currentGroup.ChestName = "Sandik $vstr"
+				}
 				continue
 			}
 			if ($trimmed -match "^[Tt]ype\s+(.+)$") { $currentGroup.Type = $Matches[1].Trim(); continue }
+			# Skip exp and mob lines
+			if ($trimmed -match "^\d+\s+(exp|mob)\s+" ) { continue }
 			if ($trimmed -match "^\d+\s+(\d+)\s+([\d.]+)\s+([\d.]+)") {
 				$capVnum = $Matches[1]
 				$capCount = $Matches[2]
 				$capChance = $Matches[3]
 				$itemName = ""
-				if ($trimmed -match "--\s*(.+)$") { $itemName = $Matches[1].Trim() }
-				else { $itemName = "Item $capVnum" }
+				if ($ItemNames.ContainsKey($capVnum)) {
+					$itemName = $ItemNames[$capVnum]
+				}
+				elseif ($trimmed -match "--\s*(.+)$") {
+					$itemName = $Matches[1].Trim()
+				}
+				else {
+					$itemName = "Item $capVnum"
+				}
 				if ($itemName -match "^%\d+\s+(.+)$") { $itemName = $Matches[1].Trim() }
 				$currentGroup.Items += @{
 					Vnum = $capVnum; Count = $capCount; Chance = $capChance; Name = $itemName
@@ -243,10 +277,14 @@ $gridItemsHtml
 # ======================== MAIN ========================
 Write-Host "=== Harbi2 Drop Wiki Generator v3 ===" -ForegroundColor Cyan
 
+$itemNamesPath = Join-Path $scriptDir "item_names.txt"
+$itemNamesMap = Get-ItemNames -Path $itemNamesPath
+Write-Host "Item isimleri: $($itemNamesMap.Count) kayit" -ForegroundColor Cyan
+
 $mobGroups = Parse-MobDropFile -Path $mobDropFile
 Write-Host "Canavarlar: $($mobGroups.Count) grup" -ForegroundColor Green
 
-$chestGroups = Parse-ChestDropFile -Path $chestDropFile
+$chestGroups = Parse-ChestDropFile -Path $chestDropFile -ItemNames $itemNamesMap
 Write-Host "Sandiklar: $($chestGroups.Count) grup" -ForegroundColor Green
 
 # Build sidebar
