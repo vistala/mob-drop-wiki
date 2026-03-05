@@ -7,6 +7,8 @@ on:
       - 'mob_drop_item.txt'
       - 'special_item_group.txt'
       - 'generate_wiki.ps1'
+      - 'convert_icons.py'
+      - 'icon_source/**'
   workflow_dispatch:
 
 permissions:
@@ -19,14 +21,25 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Generate Wiki HTML
-        run: .\generate_wiki.ps1
-        shell: powershell
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
-      - name: Commit HTML and Push
+      - name: Install Pillow
+        run: pip install Pillow
+
+      - name: Convert Icons (TGA to PNG)
+        run: python convert_icons.py
+        shell: cmd
+
+      - name: Generate Wiki HTML
+        run: powershell -ExecutionPolicy Bypass -File generate_wiki.ps1
+
+      - name: Commit and Push
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add index.html
-          git commit -m "Auto-generate index.html from mob_drop_item.txt [skip ci]" || echo "No changes to commit"
+          git add icons/ index.html
+          git commit -m "Auto-generate wiki [skip ci]" || echo "No changes"
           git push
