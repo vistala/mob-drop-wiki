@@ -1,0 +1,793 @@
+Group	Metin
+{
+	Mob	8001 -- Üzüntü Metini
+	Type	drop
+	1	50300	1	50 -- Beceri Kitabı
+	2	23		1	30 -- Uzun Kılıç+3
+	3	2013	1	30 -- Uzun Yay+3
+	4	3013	1	30 -- Mızrak+3
+	5	4003	1	30 -- Amija+3
+	6	7013	1	30 -- Demir Yelpaze+3
+}
+Group	Metin
+{
+	Mob	8002 -- Dövüş Metini
+	Type	drop
+	1	50300	1	50 -- Beceri Kitabı
+	2	33		1	40 -- Hilal Kılıç+3
+	3	2023	1	40 -- Birleşik Yay+3
+	4	3023	1	40 -- Giyotin Pala+3
+	5	1013	1	40 -- Kobra Hançeri+3
+	6	7023	1	40 -- Siyah Kaplan Yelpazesi+3
+	7	5003	1	40 -- Bakır Çan+3
+}
+Group	Metin
+{
+	Mob	8003 -- Savaş Metini
+	Type	drop
+	1	50300	1	50 -- Beceri Kitabı
+	2	43		1	40 -- Bambu Kılıcı+3
+	3	2033	1	40 -- Harp Yayı+3
+	4	3033	1	40 -- Örümcek Mızrağı+3
+	5	4013	1	40 -- Dokuz Pala+3
+	6	7033	1	40 -- Turna Kanadı Yelpaze+3
+	7	5013	1	40 -- Gümüş Çan+3
+}
+Group	Metin
+{
+	Mob	8004 -- Hırs Metini
+	Type	drop
+	1	50300	1	50 -- Beceri Kitabı
+	2	53		1	40 -- Geniş kılıç+3
+	3	2043	1	40 -- Atsırtı Uzun Yay+3
+	4	3043	1	40 -- Kargı+3
+	5	1023	1	40 -- Makas Hançer+3
+	6	7043	1	40 -- Tavuskuşu Yelpaze+3
+	7	5023	1	40 -- Altın Çan+3
+}
+Group	Metin
+{
+	Mob	8005 -- Siyah Metin
+	Type	drop
+	1	50300	1	50 -- Beceri Kitabı
+	2	63		1	40 -- Gümüş kılıç+3
+	3	2043	1	40 -- Atsırtı Uzun Yay+3
+	4	3053	1	40 -- Savaş Tırpanı+3
+	5	4023	1	40 -- Kısa Bıçak+3
+	6	7053	1	40 -- Su Yelpazesi+3
+}
+Group	Metin
+{
+	Mob	8006 -- Karanlık Metin
+	Type	drop
+	1	50300	1	50 -- Beceri Kitabı
+	2	71151	1	70 -- Yeşil Efsun
+	3	71152	1	5 -- Yeşil Güç
+	4	73		1	40 -- Orkide Kılıcı+3
+	5	2063	1	40 -- Bakır İşçiliği Yay+3
+	6	3063	1	40 -- Askeri Tırmık+3
+	7	1033	1	40 -- Şanslı Bıçak+3
+	8	7063	1	40 -- Taş Yelpaze+3
+	9	5033	1	40 -- YeşimTaşı Çan+3
+}
+Group	Metin
+{
+	Mob	8007 -- Kıskançlık Metini
+	Type	drop
+	1	50300	1	50 -- Beceri Kitabı
+	2	71151	1	35 -- Yeşil Efsun
+	3	71152	1	5 -- Yeşil Güç
+	4	83		1	40 -- Sahte Kılıç+3
+	5	2073	1	40 -- Kara Yıkım Yayı+3
+	6	3073	1	40 -- Baltalı Mızrak+3
+	7	1043	1	40 -- Kedi Isırığı Bıçak+3
+	8	7073	1	40 -- Okyanus Yelpazesi+3
+	9	5043	1	40 -- Kaynak Çan+3
+}
+Group	Metin
+{
+	Mob	8008 -- Ruh Metini
+	Type	drop
+	1	50300	1	50 -- Beceri Kitabı
+	2	71151	1	50 -- Yeşil Efsun
+	3	71152	1	5 -- Yeşil Güç
+	4	71001	1	1 -- Kötü Ruh Kovma Kağıdı
+	5	93		1	5 -- Barbar Kılıcı+3
+	6	2083	1	10 -- Kırmızı Göz Yay+3
+	7	3083	1	10 -- Büyük Balta+3
+	8	1053	1	10 -- Şeytan Surat Hançer+3
+	9	7083	1	20 -- Azap Yelpazesi+3
+	10	5053	1	20 -- Kayısı Ağacı Çan+3
+	11	11243	1	100 -- Ölümcül Plaka Zırh+3
+	12	11443	1	20 -- Karınca Aslan Takımı+3
+	13	11643	1	20 -- Yin-Yang Zırh+3
+	14	11843	1	20 -- Sema Elbisesi+3
+	15	21023	1	20 -- Malahit Plaka Zırhı
+}
+Group	Metin
+{
+	Mob	8009 -- Gölge Metini
+	Type	drop
+	1	50300	1	50 -- Beceri Kitabı
+	2	71084	1	50 -- Efsun Nesnesi
+	3	71085	1	1 -- Arttırma Kağıdı
+	4	25040	1	3 -- Kutsama Kağıdı
+	5	103		1	20 -- Kanlı Kılıç+3
+	6	2093	1	30 -- Dikenli Yaprak Yayı+3
+	7	3093	1	30 -- Buzlu Uç+3
+	8	1063	1	30 -- Şeytan Yumruğu Hançeri+3
+	9	7093	1	20 -- Anka Kuşu Yelpaze+3
+	10	6023	1	20 -- Demir Pençe+3
+	11	11253	1	20 -- Ejderha Plaka Zırh+3
+	12	11453	1	20 -- Ninja Takımı+3
+	13	11653	1	40 -- Mistik Plaka Zırh+3
+	14	11853	1	40 -- Güneş Elbisesi+3
+	15	21032	1	40 -- Kasırga Plaka Zırhı+3
+}
+Group	Metin
+{
+	Mob	8010 -- Dayanıklılık Metini
+	Type	drop
+	1	50300	1	50 -- Beceri Kitabı
+	2	71084	1	50 -- Efsun Nesnesi
+	3	71085	1	1 -- Arttırma Kağıdı
+	4	25040	1	3 -- Kutsama Kağıdı
+	5	113		1	20 -- Büyük Kılıç+3
+	6	2103	1	30 -- Boğa Boynuzu Yay+3
+	7	3103	1	30 -- Oniki Ruh Kılıcı+3
+	8	1073	1	30 -- Kanlı Hançer+3
+	9	7103	1	20 -- Üçlü Yelpaze+3
+	10	5063	1	20 -- Büyülü Çan+3
+	11	11253	1	20 -- Ejderha Plaka Zırh+3
+	12	11453	1	20 -- Ninja Takımı+3
+	13	11653	1	40 -- Mistik Plaka Zırh+3
+	14	11853	1	40 -- Güneş Elbisesi+3
+	15	21033	1	40 -- Kasırga Plaka Zırhı+3
+}
+Group	Metin
+{
+	Mob	8011 -- Şeytan Metini
+	Type	drop
+	1	50300	1	50 -- Beceri Kitabı
+	2	71084	1	50 -- Efsun Nesnesi
+	3	71085	1	1 -- Arttırma Kağıdı
+	4	123		1	20 -- Uçan Büyücü Kılıcı+3
+	5	2113	1	30 -- Tek Boynuzlu Yay+3
+	6	3113	1	30 -- Kurtuluş Palası+3
+	7	1083	1	30 -- Kaburga Bıçak+3
+	8	7113	1	20 -- Kaş Yelpaze+3
+	9	5073	1	20 -- Altın Böcek Çanı+3
+	10	11253	1	20 -- Ejderha Plaka Zırh+3
+	11	11453	1	20 -- Ninja Takımı+3
+	12	11653	1	40 -- Mistik Plaka Zırh+3
+	13	11853	1	40 -- Güneş Elbisesi+3
+	14	21033	1	40 -- Kasırga Plaka Zırhı+3
+}
+#Group	Metin
+#{
+#	Mob	8012 -- Kule Metini
+#	Type	drop
+#	1	50300	1	50 -- Beceri Kitabı
+#	2	71084	1	1 -- Efsun Nesnesi
+#	3	71085	1	1 -- Arttırma Kağıdı
+#	4	70102	1	1 -- Zen Fasulyesi
+#	5	39074	1	1 -- Mavi Parça
+#	6	25040	1	3 -- Kutsama Kağıdı
+#	7	50513	1	1 -- Ruh Taşı
+#	8	71001	1	1 -- Kötü Ruh Kovma Kağıdı  # Kullanılmıyor. Tapınak Metini
+#	9	132		1	20 -- Yarımay Kılıcı
+#	10	2122	1	20 -- Dev Kanatlı Yay
+#	11	3122	1	20 -- Aslan Katleden
+#	12	1092	1	20 -- Çakram
+#	13	7122	1	20 -- Güneş Yelpazesi
+#	14	5082	1	20 -- Çelik Böcek Çanı
+#	15	6030	1	20 -- Çelik Pençe
+#}
+Group	Metin
+{
+	Mob	8013 -- Ölüm Metini
+	Type	drop
+	1	50300	1	50 -- Beceri Kitabı
+	2	71084	1	50 -- Efsun Nesnesi
+	3	71085	1	1 -- Arttırma Kağıdı
+	4	25040	1	3 -- Kutsama Kağıdı
+	5	50513	1	1 -- Ruh Taşı
+	6	123		1	20 -- Uçan Büyücü Kılıcı+3
+	7	2113	1	30 -- Tek Boynuzlu Yay+3
+	8	3113	1	30 -- Kurtuluş Palası+3
+	9	1083	1	30 -- Kaburga Bıçak+3
+	10	7113	1	20 -- Kaş Yelpaze+3
+	11	5072	1	20 -- Altın Böcek Çanı+3
+	12	11253	1	20 -- Ejderha Plaka Zırh+3
+	13	11453	1	20 -- Ninja Takımı+3
+	14	11653	1	40 -- Mistik Plaka Zırh+3
+	15	11853	1	40 -- Güneş Elbisesi+3
+	16	21033	1	40 -- Kasırga Plaka Zırhı+3
+}
+Group	Metin
+{
+	Mob	8014 -- Katil Metini
+	Type	drop
+	1	50300	1	50 -- Beceri Kitabı
+	2	71084	2	50 -- Efsun Nesnesi
+	3	71085	1	1 -- Arttırma Kağıdı
+	4	70102	1	1 -- Zen Fasulyesi
+	5	25040	1	15 -- Kutsama Kağıdı
+	6	50513	1	5 -- Ruh Taşı
+	7	71001	1	50 -- Kötü Ruh Kovma Kağıdı
+	8	30271	1	50 -- Ejderha taşı parçası+
+	9	2123	1	50 -- Dev Kanatlı Yay+3
+	10	3123	1	50 -- Aslan Katleden+3
+	11	1093	1	10 -- Çakram+3
+	12	7123	1	10 -- Güneş Yelpazesi+3
+	13	5083	1	10 -- Çelik Böcek Çanı+3
+	14	133		1	50 -- Yarımay Kılıcı+3
+	15	11253	1	100 -- Ejderha Plaka Zırh+3
+	16	11453	1	100 -- Ninja Takımı+3
+	17	11653	1	100 -- Mistik Plaka Zırh+3
+	18	11853	1	10 -- Güneş Elbisesi+3
+	19	21033	1	10 -- Kasırga Plaka Zırhı+3
+	20	6033	1	10 -- Çelik Pençe+3
+}
+Group	Metin
+{
+	Mob	8024 -- Metin Pung-Ma
+	Type	drop
+	1	71084	1	50 -- Efsun Nesnesi
+	2	71085	1	1 -- Arttırma Kağıdı
+	3	70102	1	1 -- Zen Fasulyesi
+	4	25040	1	15 -- Kutsama Kağıdı
+	5	50513	1	5 -- Ruh Taşı
+	6	160		1	5 -- Su Perisi Kılıcı+0
+	7	240		1	5 -- Şeytan Çıkarma Kılıcı+0
+	8	2130	1	5 -- Dev Kanatlı Yay+0
+	9	3140	1	5 -- Elektromanyetik Pala+0
+	10	1110	1	5 -- Şimşek Bıçağı+0
+	11	7130	1	5 -- Cennet Kuşu Yelpaze+0
+	12	5090	1	5 -- Yıldırım Kuşu Çanı+0
+	13	30271	1	50 --  Ejderha Taşı Parçası+
+}
+Group	Metin
+{
+	Mob	8025 -- Metin Ma-An
+	Type	drop
+	1	71084	1	50 -- Efsun Nesnesi
+	2	71085	1	20 -- Arttırma Kağıdı
+	3	70102	1	1 -- Zen Fasulyesi
+	4	25040	1	15 -- Kutsama Kağıdı
+	5	50513	1	5 -- Ruh Taşı
+	6	160		1	5 -- Su Perisi Kılıcı+0
+	7	240		1	5 -- Şeytan Çıkarma Kılıcı+0
+	8	2130	1	5 -- Dev Kanatlı Yay+0
+	9	3140	1	5 -- Elektromanyetik Pala+0
+	10	1110	1	5 -- Şimşek Bıçağı+0
+	11	7130	1	5 -- Cennet Kuşu Yelpaze+0
+	12	5090	1	5 -- Yıldırım Kuşu Çanı+0
+	13	30271	1	50 -- Ejderha taşı parçası+
+}
+Group	Metin
+{
+	Mob	8026 -- Metin Tu-Young
+	Type	drop
+	1	71084	2	50 -- Efsun Nesnesi
+	2	71085	1	1 -- Arttırma Kağıdı
+	3	70102	1	5 -- Zen Fasulyesi
+	4	25040	1	5 -- Kutsama Kağıdı
+	5	50513	1	5 -- Ruh Taşı
+	6	71001	1	5 -- Kötü Ruh Kovma Kağıdı
+	7	30271	2	50 -- Ejderha taşı parçası+
+	8	160		1	10 -- Su Perisi Kılıcı+0
+	9	240		1	10 -- Şeytan Çıkarma Kılıcı+0
+	10	2130	1	2 -- Dev Kanatlı Yay+0
+	11	3140	1	2 -- Elektromanyetik Pala+0
+	12	1110	1	2 -- Şimşek Bıçağı+0
+	13	7130	1	1 -- Cennet Kuşu Yelpaze+0
+	14	5090	1	1 -- Yıldırım Kuşu Çanı+0
+	15	6040	1	1 -- Griffon Pençesi+0
+	16	11280	1	20 -- Ejderha Tanrısı Zırhı+0
+	17	11480	1	20 -- Küpeçiçeği Takım+0
+	18	11680	1	20 -- Ruh Plaka Zırh+0
+	19	11880	1	20 -- Soylu Kadın Elbisesi+0
+	20	21060	1	20 -- Firelyum Plaka Zırhı+0
+}
+Group	Metin
+{
+	Mob	8027 -- Metin Jeon-Un
+	Type	drop
+	1	71084	2	50 -- Efsun Nesnesi
+	2	71085	1	1 -- Arttırma Kağıdı
+	3	70102	1	5 -- Zen Fasulyesi
+	4	25040	1	5 -- Kutsama Kağıdı
+	5	50513	1	5 -- Ruh Taşı
+	6	71001	1	5 -- Kötü Ruh Kovma Kağıdı
+	7	76034	1	5 -- Münzevi Tavsiyesi
+	8	30271	2	50 -- Ejderha taşı parçası+
+	9	140		1	10 -- Muharebe Kılıcı+0
+	10	150		1	10 -- Hortlak Dişi Kılıcı+0
+	11	2140	1	2 -- Sarı EjderhaYayı+0
+	12	3130	1	2 -- Partizan+0
+	13	1100	1	2 -- Ejderha Bıçağı+0
+	14	7140	1	1 -- Kurtuluş Yelpazesi+0
+	15	5100	1	1 -- Cennet ve Dünya Çanı+0
+	16	6050	1	1 -- Pislik Böceği Pençesi+0
+	17	11280	1	20 -- Ejderha Tanrısı Zırhı+0
+	18	11480	1	20 -- Küpeçiçeği Takım+0
+	19	11680	1	20 -- Ruh Plaka Zırh+0
+	20	11880	1	20 -- Soylu Kadın Elbisesi+0
+	21	21060	1	20 -- Firelyum Plaka Zırhı+0
+	22	14166	1	30 -- Kristal Bilezik+6
+	23	14203	1	5 -- Cennetin Gözü Bilezik+3
+	24	16166	1	5 -- Kristal Kolye+6
+	25	16203	1	1 -- Cennetin Gözü Kolye+3
+	26	17166	1	30 -- Kristal Küpe+6
+	27	17203	1	1 -- Cennetin Gözü Küpe+3
+}
+Group	Metin
+{
+	Mob	8051 -- Işıksızlık Metini
+	Type	drop
+	1	71084	2	50 -- Efsun Nesnesi
+	2	71085	1	1 -- Arttırma Kağıdı
+	3	70102	1	5 -- Zen Fasulyesi
+	4	25040	1	5 -- Kutsama Kağıdı
+	5	50513	1	5 -- Ruh Taşı
+	6	71001	1	5 -- Kötü Ruh Kovma Kağıdı
+	7	76034	1	5 -- Münzevi Tavsiyesi
+	8	30271	2	50 -- Ejderha taşı parçası+
+	9	50525	1	1 -- Ruh Taşı+
+	10	50515	1	10 -- Ders Kitabı Misilleme
+	11	50323	1	20 -- Kitap Sandığı Misilleme
+	12	144		1	5 -- Muharebe Kılıcı+4
+	13	154		1	5 -- Hortlak Dişi Kılıcı+4
+	14	5104	1	5 -- Cennet ve Dünya Çanı+4
+	15	7144	1	5 -- Kurtuluş Yelpazesi+4
+	16	11295	1	20 -- Siyah Çelik Zırh+5
+	17	21075	1	20 -- Gecegölgesi Zırhı +5
+}
+Group	Metin
+{
+	Mob	8052 -- Korluğun Metini
+	Type	drop
+	1	71084	2	50 -- Efsun Nesnesi
+	2	71085	1	1 -- Arttırma Kağıdı
+	3	70102	1	5 -- Zen Fasulyesi
+	4	25040	1	5 -- Kutsama Kağıdı
+	5	50513	1	5 -- Ruh Taşı
+	6	71001	1	5 -- Kötü Ruh Kovma Kağıdı
+	7	76034	1	5 -- Münzevi Tavsiyesi
+	8	30271	2	50 -- Ejderha taşı parçası+
+	9	50525	1	1 -- Ruh Taşı+
+	10	50515	1	10 -- Ders Kitabı Misilleme
+	11	50323	1	20 -- Kitap Sandığı Misilleme
+	12	144		1	5 -- Muharebe Kılıcı+4
+	13	154		1	5 -- Hortlak Dişi Kılıcı+4
+	14	5104	1	5 -- Cennet ve Dünya Çanı+4
+	15	7144	1	5 -- Kurtuluş Yelpazesi+4
+	16	11295	1	20 -- Siyah Çelik Zırh+5
+	17	21075	1	20 -- Gecegölgesi Zırhı +5
+}
+Group	Metin
+{
+	Mob	8053 -- Mağrurluğun Metini
+	Type	drop
+	1	71084	2	50 -- Efsun Nesnesi
+	2	71085	1	1 -- Arttırma Kağıdı
+	3	70102	1	5 -- Zen Fasulyesi
+	4	25040	1	5 -- Kutsama Kağıdı
+	5	50513	1	5 -- Ruh Taşı
+	6	71001	1	5 -- Kötü Ruh Kovma Kağıdı
+	7	76034	1	5 -- Münzevi Tavsiyesi
+	8	30271	2	50 -- Ejderha taşı parçası+
+	9	50525	1	1 -- Ruh Taşı+
+	10	50515	1	10 -- Ders Kitabı Misilleme
+	11	50323	1	20 -- Kitap Sandığı Misilleme
+	12	144		1	5 -- Muharebe Kılıcı+4
+	13	154		1	5 -- Hortlak Dişi Kılıcı+4
+	14	5104	1	5 -- Cennet ve Dünya Çanı+4
+	15	7144	1	5 -- Kurtuluş Yelpazesi+4
+	16	11295	1	20 -- Siyah Çelik Zırh+5
+	17	21075	1	20 -- Gecegölgesi Zırhı +5
+}
+Group	Metin
+{
+	Mob	8054 -- Öfkenin Metini
+	Type	drop
+	1	71084	2	50 -- Efsun Nesnesi
+	2	71085	1	1 -- Arttırma Kağıdı
+	3	70102	1	5 -- Zen Fasulyesi
+	4	25040	1	5 -- Kutsama Kağıdı
+	5	50513	1	5 -- Ruh Taşı
+	6	71001	1	5 -- Kötü Ruh Kovma Kağıdı
+	7	76034	1	5 -- Münzevi Tavsiyesi
+	8	30271	2	50 -- Ejderha taşı parçası+
+	9	50525	1	1 -- Ruh Taşı+
+	10	50515	1	10 -- Ders Kitabı Misilleme
+	11	50323	1	20 -- Kitap Sandığı Misilleme
+	12	144		1	5 -- Muharebe Kılıcı+4
+	13	154		1	5 -- Hortlak Dişi Kılıcı+4
+	14	5104	1	5 -- Cennet ve Dünya Çanı+4
+	15	7144	1	5 -- Kurtuluş Yelpazesi+4
+	16	11295	1	20 -- Siyah Çelik Zırh+5
+	17	21075	1	20 -- Gecegölgesi Zırhı +5
+}
+Group	Metin
+{
+	Mob	8055 -- Felaketin Metini
+	Type	drop
+	1	71084	2	50 -- Efsun Nesnesi
+	2	71085	1	1 -- Arttırma Kağıdı
+	3	70102	1	5 -- Zen Fasulyesi
+	4	25040	1	5 -- Kutsama Kağıdı
+	5	50513	1	5 -- Ruh Taşı
+	6	71001	1	5 -- Kötü Ruh Kovma Kağıdı
+	7	76034	1	5 -- Münzevi Tavsiyesi
+	8	30271	2	50 -- Ejderha taşı parçası+
+	9	50525	1	1 -- Ruh Taşı+
+	10	50515	1	10 -- Ders Kitabı Misilleme
+	11	50323	1	20 -- Kitap Sandığı Misilleme
+	12	144		1	5 -- Muharebe Kılıcı+4
+	13	154		1	5 -- Hortlak Dişi Kılıcı+4
+	14	5104	1	5 -- Cennet ve Dünya Çanı+4
+	15	7144	1	5 -- Kurtuluş Yelpazesi+4
+	16	11295	1	20 -- Siyah Çelik Zırh+5
+	17	21075	1	20 -- Gecegölgesi Zırhı +5
+}
+Group	Metin
+{
+	Mob	8056 -- Namertlik Metini
+	Type	drop
+	1	71084	2	50 -- Efsun Nesnesi
+	2	71085	1	1 -- Arttırma Kağıdı
+	3	70102	1	5 -- Zen Fasulyesi
+	4	25040	1	5 -- Kutsama Kağıdı
+	5	50513	1	5 -- Ruh Taşı
+	6	71001	1	5 -- Kötü Ruh Kovma Kağıdı
+	7	76034	1	5 -- Münzevi Tavsiyesi
+	8	30271	2	50 -- Ejderha taşı parçası+
+	9	50525	1	1 -- Ruh Taşı+
+	10	50515	1	10 -- Ders Kitabı Misilleme
+	11	50323	1	20 -- Kitap Sandığı Misilleme
+	12	144		1	5 -- Muharebe Kılıcı+4
+	13	154		1	5 -- Hortlak Dişi Kılıcı+4
+	14	5104	1	5 -- Cennet ve Dünya Çanı+4
+	15	7144	1	5 -- Kurtuluş Yelpazesi+4
+	16	11295	1	20 -- Siyah Çelik Zırh+5
+	17	21075	1	20 -- Gecegölgesi Zırhı +5
+}
+Group	Metin
+{
+	Mob	8061 -- Orman Metini
+	Type	drop
+	1	71084	3	50 -- Efsun Nesnesi
+	2	71085	1	1 -- Arttırma Kağıdı
+	3	70102	1	5 -- Zen Fasulyesi
+	4	25040	1	5 -- Kutsama Kağıdı
+	5	50513	1	5 -- Ruh Taşı
+	6	71001	1	5 -- Kötü Ruh Kovma Kağıdı
+	7	76034	1	5 -- Münzevi Tavsiyesi
+	8	30271	3	50 -- Ejderha taşı parçası+
+	9	50525	1	1 -- Ruh Taşı+
+	10	50515	1	10 -- Ders Kitabı Misilleme
+	11	50323	1	20 -- Kitap Sandığı Misilleme
+	12	50324	1	50 -- Kitap Sandığ Güçlendirme
+	13	174		1	7 -- Azap Kılıcı+4
+	14	254		1	2 -- Şeytani Pala+4
+	15	1124	1	1 -- Siam Bıçağı+4
+	16	2184	1	1 -- Mavi Ejderha Yayı+4
+	17	3154	1	1 -- Yarı-İnsan Kılıç+4
+	18	7154	1	1 -- Mutluluk Yelpazesi+4
+	19	11296	1	10 -- Siyah Çelik Zırh+6
+	20	21076	1	10 -- Gecegölgesi Zırhı +6
+	21	11896	1	10 -- Siyah Elbise+6
+	22	11496	1	10 -- Siyah Rüzgar Takımı+6
+	23	11696	1	10 -- Kara Büyü Zırh+6
+	24	156	1	10
+	25	2146	1	10
+}
+Group	Metin
+{
+	Mob	8062 -- Farkındalık Metini (G)
+	Type	drop
+	1	30271	6	110 -- Ejderha Taşı Parçası+
+	2	50341	1	20 -- Çırağın İlhamı
+	3	50338	1	20 -- Çırağın karizması
+	4	50569	1	20 -- Deprem (9. beceri)
+	5	50570	1	20 -- Işık Yıldızı (9. beceri)
+	6	50571	1	20 -- Saldırı Ateşi (9. beceri)
+	7	50572	1	20 -- Ateş Darbesi (9. beceri)
+	8	50573	1	20 -- Ölüm Dalgası (9. beceri)
+	9	50574	1	20 -- Meteor (9. beceri)
+	10	50575	1	20 -- Eter Kalkanı (9. beceri)
+	11	50323	1	80 -- Kitap Sandığı Misilleme
+	12	50324	1	80 -- Kitap Sandığı Güçlendirme
+	13	28046	1	20 -- Şeytanların Taşı+0
+	14	28146	1	10 -- Şeytanların Taşı+1
+	15	28246	1	5 -- Şeytanların Taşı+2
+	16	50513	1	20 -- Ruh Taşı
+	17	50525	1	20 -- Ruh Taşı+
+	18	50527	1	5 -- Yetenek İksiri
+	19	50664	1	5 -- Sis Jediti
+	20	55003	1	5 -- Genç Pet Kitabı
+	21	50043	1	10 -- Deniz Kızı Anahtarı
+	22	25040	1	10 -- Kutsama Kağıdı
+	23	50739	5	10 -- Boş Güç Özütü
+	24	50740	5	10 -- Boş Direnç Özütü
+	25	50325	1	5 -- Tamlığın kitabı
+	26	50576	1	20 -- Pençe atağı (9. beceri)
+	27	174		1	10 -- Azap Kılıcı+4
+	28	254		1	5 -- Şeytani Pala+4
+	29	1124	1	3 -- Siam Bıçağı+4
+	30	2184	1	3 -- Mavi Ejderha Yayı+4
+	31	3154	1	3 -- Yarı-İnsan Kılıç+4
+	32	7154	1	3 -- Mutluluk Yelpazesi+4
+	33	49991	1	200
+}
+Group	Metin
+{
+	Mob	8063 -- Takdir Metini
+	Type	drop
+	1	30271	8	110 -- Ejderha Taşı Parçası+
+	2	50341	1	20 -- Çırağın İlhamı
+	3	50338	1	20 -- Çırağın karizması
+	4	50569	1	20 -- Deprem (9. beceri)
+	5	50570	1	20 -- Işık Yıldızı (9. beceri)
+	6	50571	1	20 -- Saldırı Ateşi (9. beceri)
+	7	50572	1	20 -- Ateş Darbesi (9. beceri)
+	8	50573	1	20 -- Ölüm Dalgası (9. beceri)
+	9	50574	1	20 -- Meteor (9. beceri)
+	10	50575	1	20 -- Eter Kalkanı (9. beceri)
+	11	50323	1	80 -- Kitap Sandığı Misilleme
+	12	50324	1	80 -- Kitap Sandığı Güçlendirme
+	13	28046	1	30 -- Şeytanların Taşı+0
+	14	28146	1	20 -- Şeytanların Taşı+1
+	15	28246	1	10 -- Şeytanların Taşı+2
+	16	50513	1	20 -- Ruh Taşı
+	17	50525	1	20 -- Ruh Taşı+
+	18	50527	1	5 -- Yetenek İksiri
+	19	50664	1	5 -- Sis Jediti
+	20	55003	1	5 -- Genç Pet Kitabı
+	21	50043	1	10 -- Deniz Kızı Anahtarı
+	22	25040	1	10 -- Kutsama Kağıdı
+	23	50739	5	10 -- Boş Güç Özütü
+	24	50740	5	10 -- Boş Direnç Özütü
+	25	50325	1	5 -- Tamlığın kitabı
+	26	28346	1	5 -- Şeytanların taşı+3
+	27	174		1	7 -- Azap Kılıcı+4
+	28	254		1	2 -- Şeytani Pala+4
+	29	1124	1	1 -- Siam Bıçağı+4
+	30	2184	1	1 -- Mavi Ejderha Yayı+4
+	31	3154	1	1 -- Yarı-İnsan Kılıç+4
+	32	7154	1	1 -- Mutluluk Yelpazesi+4
+	33	50576	1	20 -- Pençe atağı (9. beceri)
+	34	49991	1	200
+}
+Group	Metin
+{
+	Mob	8064 -- Bilinç Metini
+	Type	drop
+	1	30271	8	110 -- Ejderha Taşı Parçası+
+	2	50341	1	20 -- Çırağın İlhamı
+	3	50338	1	20 -- Çırağın karizması
+	4	50569	1	20 -- Deprem (9. beceri)
+	5	50570	1	20 -- Işık Yıldızı (9. beceri)
+	6	50571	1	20 -- Saldırı Ateşi (9. beceri)
+	7	50572	1	20 -- Ateş Darbesi (9. beceri)
+	8	50573	1	20 -- Ölüm Dalgası (9. beceri)
+	9	50574	1	20 -- Meteor (9. beceri)
+	10	50575	1	20 -- Eter Kalkanı (9. beceri)
+	11	50323	1	80 -- Kitap Sandığı Misilleme
+	12	50324	1	80 -- Kitap Sandığı Güçlendirme
+	13	28046	1	30 -- Şeytanların Taşı+0
+	14	28146	1	20 -- Şeytanların Taşı+1
+	15	28246	1	10 -- Şeytanların Taşı+2
+	16	50513	1	20 -- Ruh Taşı
+	17	50525	1	20 -- Ruh Taşı+
+	18	50527	1	5 -- Yetenek İksiri
+	19	50664	1	5 -- Sis Jediti
+	20	55003	1	5 -- Genç Pet Kitabı
+	21	50043	1	10 -- Deniz Kızı Anahtarı
+	22	25040	1	10 -- Kutsama Kağıdı
+	23	50739	5	10 -- Boş Güç Özütü
+	24	50740	5	10 -- Boş Direnç Özütü
+	25	50325	1	5 -- Tamlığın kitabı
+	26	28346	1	5 -- Şeytanların taşı+3
+	27	174		1	7 -- Azap Kılıcı+4
+	28	254		1	2 -- Şeytani Pala+4
+	29	1124	1	1 -- Siam Bıçağı+4
+	30	2184	1	1 -- Mavi Ejderha Yayı+4
+	31	3154	1	1 -- Yarı-İnsan Kılıç+4
+	32	7154	1	1 -- Mutluluk Yelpazesi+4
+	33	50576	1	20 -- Pençe atağı (9. beceri)
+	34	49991	1	200
+}
+Group	Metin
+{
+	Mob	8065 -- Jin Metini
+	Type	drop
+	1	30271	8	110 -- Ejderha Taşı Parçası+
+	2	50341	1	20 -- Çırağın İlhamı
+	3	50338	1	20 -- Çırağın karizması
+	4	50569	1	20 -- Deprem (9. beceri)
+	5	50570	1	20 -- Işık Yıldızı (9. beceri)
+	6	50571	1	20 -- Saldırı Ateşi (9. beceri)
+	7	50572	1	20 -- Ateş Darbesi (9. beceri)
+	8	50573	1	20 -- Ölüm Dalgası (9. beceri)
+	9	50574	1	20 -- Meteor (9. beceri)
+	10	50575	1	20 -- Eter Kalkanı (9. beceri)
+	11	50323	1	80 -- Kitap Sandığı Misilleme
+	12	50324	1	80 -- Kitap Sandığı Güçlendirme
+	13	28046	1	30 -- Şeytanların Taşı+0
+	14	28146	1	20 -- Şeytanların Taşı+1
+	15	28246	1	10 -- Şeytanların Taşı+2
+	16	50513	1	20 -- Ruh Taşı
+	17	50525	1	20 -- Ruh Taşı+
+	18	50527	1	5 -- Yetenek İksiri
+	19	50664	1	5 -- Sis Jediti
+	20	55003	1	5 -- Genç Pet Kitabı
+	21	50043	1	10 -- Deniz Kızı Anahtarı
+	22	25040	1	10 -- Kutsama Kağıdı
+	23	50739	5	10 -- Boş Güç Özütü
+	24	50740	5	10 -- Boş Direnç Özütü
+	25	50325	1	5 -- Tamlığın kitabı
+	26	28346	1	5 -- Şeytanların taşı+3
+	27	174		1	7 -- Azap Kılıcı+4
+	28	254		1	2 -- Şeytani Pala+4
+	29	1124	1	1 -- Siam Bıçağı+4
+	30	2184	1	1 -- Mavi Ejderha Yayı+4
+	31	3154	1	1 -- Yarı-İnsan Kılıç+4
+	32	7154	1	1 -- Mutluluk Yelpazesi+4
+	33	50576	1	20 -- Pençe atağı (9. beceri)
+	34	49991	1	200
+}
+Group	Metin
+{
+	Mob	8067 -- Farklandırma Metini
+	Type	drop
+	1	30271	8	110 -- Ejderha Taşı Parçası+
+	2	50341	1	20 -- Çırağın İlhamı
+	3	50338	1	20 -- Çırağın karizması
+	4	50569	1	20 -- Deprem (9. beceri)
+	5	50570	1	20 -- Işık Yıldızı (9. beceri)
+	6	50571	1	20 -- Saldırı Ateşi (9. beceri)
+	7	50572	1	20 -- Ateş Darbesi (9. beceri)
+	8	50573	1	20 -- Ölüm Dalgası (9. beceri)
+	9	50574	1	20 -- Meteor (9. beceri)
+	10	50575	1	20 -- Eter Kalkanı (9. beceri)
+	11	50323	1	80 -- Kitap Sandığı Misilleme
+	12	50324	1	80 -- Kitap Sandığı Güçlendirme
+	13	28046	1	30 -- Şeytanların Taşı+0
+	14	28146	1	20 -- Şeytanların Taşı+1
+	15	28246	1	10 -- Şeytanların Taşı+2
+	16	50513	1	20 -- Ruh Taşı
+	17	50525	1	20 -- Ruh Taşı+
+	18	50527	1	5 -- Yetenek İksiri
+	19	50664	1	5 -- Sis Jediti
+	20	55003	1	5 -- Genç Pet Kitabı
+	21	50043	1	10 -- Deniz Kızı Anahtarı
+	22	25040	1	10 -- Kutsama Kağıdı
+	23	50739	5	10 -- Boş Güç Özütü
+	24	50740	5	10 -- Boş Direnç Özütü
+	25	50325	1	5 -- Tamlığın kitabı
+	26	28346	1	5 -- Şeytanların taşı+3
+	27	174		1	7 -- Azap Kılıcı+4
+	28	254		1	2 -- Şeytani Pala+4
+	29	1124	1	1 -- Siam Bıçağı+4
+	30	2184	1	1 -- Mavi Ejderha Yayı+4
+	31	3154	1	1 -- Yarı-İnsan Kılıç+4
+	32	7154	1	1 -- Mutluluk Yelpazesi+4
+	33	50576	1	20 -- Pençe atağı (9. beceri)
+	34	49991	1	500
+}
+Group	Metin
+{
+	Mob	8066 -- Shiho Metini
+	Type	drop
+	1	50255	1	200 -- Cor Draconis, İşlenmemiş
+	2	50341	1	20 -- Çırağın İlhamı
+	3	50338	1	20 -- Çırağın karizması
+	4	50569	1	20 -- Deprem (9. beceri)
+	5	50570	1	20 -- Işık Yıldızı (9. beceri)
+	6	50571	1	20 -- Saldırı Ateşi (9. beceri)
+	7	50572	1	20 -- Ateş Darbesi (9. beceri)
+	8	50573	1	20 -- Ölüm Dalgası (9. beceri)
+	9	50574	1	20 -- Meteor (9. beceri)
+	10	50575	1	20 -- Eter Kalkanı (9. beceri)
+	11	50323	1	80 -- Kitap Sandığı Misilleme
+	12	50324	1	80 -- Kitap Sandığı Güçlendirme
+	13	28046	1	30 -- Şeytanların Taşı+0
+	14	28146	1	20 -- Şeytanların Taşı+1
+	15	28246	1	10 -- Şeytanların Taşı+2
+	16	50513	1	20 -- Ruh Taşı
+	17	50525	1	20 -- Ruh Taşı+
+	18	50527	1	5 -- Yetenek İksiri
+	19	50664	1	5 -- Sis Jediti
+	20	55003	1	5 -- Genç Pet Kitabı
+	21	50043	1	10 -- Deniz Kızı Anahtarı
+	22	25040	1	10 -- Kutsama Kağıdı
+	23	50739	5	10 -- Boş Güç Özütü
+	24	50740	5	10 -- Boş Direnç Özütü
+	25	50325	1	5 -- Tamlığın kitabı
+	26	28346	1	5 -- Şeytanların taşı+3
+	27	174		1	7 -- Azap Kılıcı+4
+	28	254		1	2 -- Şeytani Pala+4
+	29	1124	1	1 -- Siam Bıçağı+4
+	30	2184	1	1 -- Mavi Ejderha Yayı+4
+	31	3154	1	1 -- Yarı-İnsan Kılıç+4
+	32	7154	1	1 -- Mutluluk Yelpazesi+4
+	33	50576	1	20 -- Pençe atağı (9. beceri)
+	34	49991	1	200
+}
+Group	Metin
+{
+	Mob	8076 -- Mekan Yılanı Metini
+	Type	drop
+	1	50255	1	200 -- Cor Draconis, İşlenmemiş
+	2	50341	1	20 -- Çırağın İlhamı
+	3	50338	1	20 -- Çırağın karizması
+	4	50569	1	20 -- Deprem (9. beceri)
+	5	50570	1	20 -- Işık Yıldızı (9. beceri)
+	6	50571	1	20 -- Saldırı Ateşi (9. beceri)
+	7	50572	1	20 -- Ateş Darbesi (9. beceri)
+	8	50573	1	20 -- Ölüm Dalgası (9. beceri)
+	9	50574	1	20 -- Meteor (9. beceri)
+	10	50575	1	20 -- Eter Kalkanı (9. beceri)
+	11	50323	1	80 -- Kitap Sandığı Misilleme
+	12	50324	1	80 -- Kitap Sandığı Güçlendirme
+	13	28046	1	30 -- Şeytanların Taşı+0
+	14	28146	1	20 -- Şeytanların Taşı+1
+	15	28246	1	10 -- Şeytanların Taşı+2
+	16	50513	1	20 -- Ruh Taşı
+	17	50525	1	20 -- Ruh Taşı+
+	18	50527	1	5 -- Yetenek İksiri
+	19	50664	1	5 -- Sis Jediti
+	20	55003	1	5 -- Genç Pet Kitabı
+	21	50043	1	10 -- Deniz Kızı Anahtarı
+	22	25040	1	10 -- Kutsama Kağıdı
+	23	50739	5	10 -- Boş Güç Özütü
+	24	50740	5	10 -- Boş Direnç Özütü
+	25	50325	1	5 -- Tamlığın kitabı
+	26	28346	1	5 -- Şeytanların taşı+3
+	27	174		1	7 -- Azap Kılıcı+4
+	28	254		1	2 -- Şeytani Pala+4
+	29	1124	1	1 -- Siam Bıçağı+4
+	30	2184	1	1 -- Mavi Ejderha Yayı+4
+	31	3154	1	1 -- Yarı-İnsan Kılıç+4
+	32	7154	1	1 -- Mutluluk Yelpazesi+4
+	33	50576	1	20 -- Pençe atağı (9. beceri)
+}
+Group	Metin
+{
+	Mob	8077 -- Gumarlı Metini
+	Type	drop
+	1	50255	2	400 -- Cor Draconis, İşlenmemiş
+	2	50569	1	20 -- Deprem (9. beceri)
+	3	50570	1	20 -- Işık Yıldızı (9. beceri)
+	4	50571	1	20 -- Saldırı Ateşi (9. beceri)
+	5	50572	1	20 -- Ateş Darbesi (9. beceri)
+	6	50573	1	20 -- Ölüm Dalgası (9. beceri)
+	7	50574	1	20 -- Meteor (9. beceri)
+	8	50575	1	20 -- Eter Kalkanı (9. beceri)
+	9	50323	1	80 -- Kitap Sandığı Misilleme
+	10	50324	1	80 -- Kitap Sandığı Güçlendirme
+	11	28046	1	30 -- Şeytanların Taşı+0
+	12	28146	1	20 -- Şeytanların Taşı+1
+	13	28246	1	10 -- Şeytanların Taşı+2
+	14	50513	1	20 -- Ruh Taşı
+	15	50525	1	20 -- Ruh Taşı+
+	16	50527	1	5 -- Yetenek İksiri
+	17	50664	1	5 -- Sis Jediti
+	18	55003	1	5 -- Genç Pet Kitabı
+	19	50043	1	10 -- Deniz Kızı Anahtarı
+	20	25040	1	10 -- Kutsama Kağıdı
+	21	50739	1	10 -- Boş Güç Özütü
+	22	50740	1	10 -- Boş Direnç Özütü
+	23	50325	1	5 -- Tamlığın kitabı
+	24	28346	1	5 -- Şeytanların taşı+3
+	25	174		1	7 -- Azap Kılıcı+4
+	26	254		1	2 -- Şeytani Pala+4
+	27	1124	1	1 -- Siam Bıçağı+4
+	28	2184	1	1 -- Mavi Ejderha Yayı+4
+	29	3154	1	1 -- Yarı-İnsan Kılıç+4
+	30	7154	1	1 -- Mutluluk Yelpazesi+4
+	31	50576	1	20 -- Pençe atağı (9. beceri)
+}
