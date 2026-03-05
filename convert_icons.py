@@ -39,20 +39,43 @@ def extract_vnums_from_file(filepath):
                 vnums.add(m.group(1))
     return vnums
 
+def find_tga_path(vnum_int, src_dir):
+    """Find the TGA file for a vnum, trying base-vnum fallbacks."""
+    # Try exact vnum first
+    candidates = [vnum_int]
+    # Try base vnum (strip upgrade level: 23 -> 20, 2013 -> 2010)
+    base10 = vnum_int - (vnum_int % 10)
+    if base10 != vnum_int:
+        candidates.append(base10)
+    # Try base vnum floored to 100 (for some special items)
+    base100 = vnum_int - (vnum_int % 100)
+    if base100 not in candidates:
+        candidates.append(base100)
+    
+    for candidate in candidates:
+        padded = str(candidate).zfill(5)
+        tga_path = src_dir / f"{padded}.tga"
+        if tga_path.exists():
+            return tga_path
+    return None
+
 def convert_tga_to_png(vnum, src_dir, out_dir):
     """Convert a TGA icon to PNG. Returns True if successful."""
-    padded = str(vnum).zfill(5)
-    tga_path = src_dir / f"{padded}.tga"
+    vnum_int = int(vnum)
     png_path = out_dir / f"{vnum}.png"
     
     if png_path.exists():
         return True  # Already converted
     
-    if not tga_path.exists():
+    tga_path = find_tga_path(vnum_int, src_dir)
+    if tga_path is None:
         return False
     
     try:
         img = Image.open(tga_path)
+        # Convert to RGBA if needed
+        if img.mode != "RGBA":
+            img = img.convert("RGBA")
         # Resize to 32x32 if needed
         if img.size != (32, 32):
             img = img.resize((32, 32), Image.LANCZOS)

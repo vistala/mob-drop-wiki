@@ -44,11 +44,14 @@ function Parse-MobDropFile {
 			}
 			if ($trimmed -match "^Type\s+(.+)$") { $currentGroup.Type = $Matches[1].Trim(); continue }
 			if ($trimmed -match "^\d+\s+(\d+)\s+(\d+)\s+(\d+)") {
+				$capVnum = $Matches[1]
+				$capCount = $Matches[2]
+				$capChance = $Matches[3]
 				$itemName = ""
 				if ($trimmed -match "--\s*(.+)$") { $itemName = $Matches[1].Trim() }
-				else { $itemName = "Item $($Matches[1])" }
+				else { $itemName = "Item $capVnum" }
 				$currentGroup.Items += @{
-					Vnum = $Matches[1]; Count = $Matches[2]; Chance = $Matches[3]; Name = $itemName
+					Vnum = $capVnum; Count = $capCount; Chance = $capChance; Name = $itemName
 				}
 			}
 		}
@@ -90,12 +93,15 @@ function Parse-ChestDropFile {
 			}
 			if ($trimmed -match "^[Tt]ype\s+(.+)$") { $currentGroup.Type = $Matches[1].Trim(); continue }
 			if ($trimmed -match "^\d+\s+(\d+)\s+(\d[\d.]*)\s+(\d+)") {
+				$capVnum = $Matches[1]
+				$capChance = $Matches[2]
+				$capCount = $Matches[3]
 				$itemName = ""
 				if ($trimmed -match "--\s*(.+)$") { $itemName = $Matches[1].Trim() }
-				else { $itemName = "Item $($Matches[1])" }
+				else { $itemName = "Item $capVnum" }
 				if ($itemName -match "^%\d+\s+(.+)$") { $itemName = $Matches[1].Trim() }
 				$currentGroup.Items += @{
-					Vnum = $Matches[1]; Count = $Matches[3]; Chance = $Matches[2]; Name = $itemName
+					Vnum = $capVnum; Count = $capCount; Chance = $capChance; Name = $itemName
 				}
 			}
 		}
@@ -118,24 +124,28 @@ function Get-ChanceBadgeClass {
 
 function Build-GridItemHtml {
 	param($Item)
-	$badgeClass = Get-ChanceBadgeClass -ChanceStr $Item.Chance
+	$iVnum = $Item.Vnum
+	$iName = $Item.Name
+	$iChance = $Item.Chance
+	$iCount = $Item.Count
+	$badgeClass = Get-ChanceBadgeClass -ChanceStr $iChance
 	$countHtml = ""
 	$countVal = 0
-	if ([int]::TryParse($Item.Count, [ref]$countVal) -and $countVal -gt 1) {
-		$countHtml = "<span class=`"grid-count`">x$($Item.Count)</span>"
+	if ([int]::TryParse($iCount, [ref]$countVal) -and $countVal -gt 1) {
+		$countHtml = "<span class=`"grid-count`">x$iCount</span>"
 	}
 	# Truncate name for display (max ~12 chars)
-	$shortName = $Item.Name
+	$shortName = $iName
 	if ($shortName.Length -gt 14) { $shortName = $shortName.Substring(0, 12) + ".." }
 
 	return @"
-                                <div class="grid-item" title="$($Item.Name) (#$($Item.Vnum))">
+                                <div class="grid-item" title="$iName (#$iVnum)">
                                     <div class="grid-icon-wrap">
-                                        <img class="grid-icon" src="icons/$($Item.Vnum).png" onerror="this.src='icons/default.png'" alt="$($Item.Name)" loading="lazy">
+                                        <img class="grid-icon" src="icons/$iVnum.png" onerror="this.src='icons/default.png'" alt="$iName" loading="lazy">
                                         $countHtml
                                     </div>
                                     <div class="grid-name">$shortName</div>
-                                    <div class="grid-chance $badgeClass">%$($Item.Chance)</div>
+                                    <div class="grid-chance $badgeClass">%$iChance</div>
                                 </div>
 "@
 }
