@@ -1,0 +1,1831 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mob Drop Wiki - Harbi2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-base: #0a0a10;
+            --bg-pane: #0e0e18;
+            --bg-card: #14142a;
+            --bg-sidebar: #0c0c1a;
+            --bg-glass: rgba(20, 20, 42, 0.9);
+
+            --text-high: #e8e8f0;
+            --text-med: #a0a0c0;
+            --text-low: #606080;
+
+            --brand-red: #d31a1a;
+            --brand-gold: #c99c30;
+            --accent-blue: #4a7cff;
+            --accent-cyan: #22d3ee;
+
+            --border-glass: rgba(255, 255, 255, 0.06);
+            --border-red: rgba(211, 26, 26, 0.3);
+
+            --font-head: 'Cinzel', serif;
+            --font-body: 'Inter', sans-serif;
+            --sidebar-width: 280px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-base);
+            color: var(--text-high);
+            min-height: 100vh;
+        }
+
+        /* ========== SIDEBAR ========== */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--bg-sidebar);
+            border-right: 1px solid var(--border-glass);
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+            overflow: hidden;
+        }
+
+        .sidebar-brand {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-glass);
+            text-align: center;
+        }
+
+        .sidebar-brand h2 {
+            font-family: var(--font-head);
+            font-size: 1rem;
+            color: var(--brand-gold);
+            letter-spacing: 2px;
+        }
+
+        .sidebar-brand p {
+            font-size: 0.7rem;
+            color: var(--text-low);
+            margin-top: 0.25rem;
+        }
+
+        .sidebar-search {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .sidebar-search input {
+            width: 100%;
+            padding: 0.6rem 1rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border-glass);
+            border-radius: 6px;
+            color: var(--text-high);
+            font-size: 0.8rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .sidebar-search input:focus {
+            border-color: var(--accent-blue);
+        }
+
+        .sidebar-search input::placeholder {
+            color: var(--text-low);
+        }
+
+        .sidebar-nav {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0.5rem 0;
+        }
+
+        .sidebar-nav::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .sidebar-nav::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .sidebar-nav::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+
+        .w-cat-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 0.65rem 1.5rem;
+            background: none;
+            border: none;
+            border-left: 3px solid transparent;
+            color: var(--text-med);
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .w-cat-btn:hover {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-high);
+        }
+
+        .w-cat-btn.active {
+            background: linear-gradient(90deg, rgba(74, 124, 255, 0.12), transparent);
+            border-left-color: var(--accent-blue);
+            color: var(--text-high);
+            font-weight: 600;
+        }
+
+        .sidebar-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--border-glass);
+            font-size: 0.65rem;
+            color: var(--text-low);
+            text-align: center;
+        }
+
+        /* ========== MAIN CONTENT ========== */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            min-height: 100vh;
+        }
+
+        .page-header {
+            padding: 3rem 3rem 2rem;
+            border-bottom: 1px solid var(--border-glass);
+            background: linear-gradient(180deg, rgba(74, 124, 255, 0.05), transparent);
+        }
+
+        .page-header .sub-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border: 1px solid var(--border-red);
+            border-radius: 50px;
+            font-size: 0.7rem;
+            color: var(--brand-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-head);
+            font-size: 1.8rem;
+            color: var(--text-high);
+            letter-spacing: 2px;
+        }
+
+        .page-header p {
+            color: var(--text-med);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .stats-bar {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--text-low);
+        }
+
+        .stat-item i {
+            color: var(--accent-blue);
+        }
+
+        .stat-item strong {
+            color: var(--text-high);
+        }
+
+        .content-area {
+            padding: 2rem 3rem 4rem;
+        }
+
+        /* ========== WIKI CARD ========== */
+        .wiki-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .wiki-card:hover {
+            border-color: rgba(74, 124, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .w-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            background: linear-gradient(135deg, rgba(74, 124, 255, 0.08), transparent);
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .w-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            background: rgba(74, 124, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            flex-shrink: 0;
+        }
+
+        .w-title {
+            font-family: var(--font-head);
+            font-size: 1rem;
+            color: var(--text-high);
+            letter-spacing: 1px;
+        }
+
+        .w-type {
+            font-size: 0.7rem;
+            color: var(--text-low);
+            margin-top: 2px;
+        }
+
+        .w-drop-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-low);
+            border-bottom: 1px solid var(--border-glass);
+            background: rgba(0,0,0,0.2);
+        }
+
+        .w-drop-list {
+            list-style: none;
+            padding: 0.5rem 0;
+            max-height: 450px;
+            overflow-y: auto;
+        }
+
+        .w-drop-list::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .w-drop-list::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+
+        .w-drop-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 1.5rem;
+            font-size: 0.82rem;
+            color: var(--text-med);
+            transition: background 0.15s;
+            border-bottom: 1px solid rgba(255,255,255,0.02);
+        }
+
+        .w-drop-list li:last-child {
+            border-bottom: none;
+        }
+
+        .w-drop-list li:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .w-drop-list li i {
+            color: var(--accent-blue);
+            font-size: 0.6rem;
+            flex-shrink: 0;
+        }
+
+        .item-name {
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .count-badge {
+            background: rgba(74, 124, 255, 0.15);
+            color: var(--accent-blue);
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
+        .chance-badge {
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 3px;
+            flex-shrink: 0;
+            min-width: 36px;
+            text-align: center;
+        }
+
+        .chance-high {
+            background: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
+        }
+
+        .chance-mid {
+            background: rgba(234, 179, 8, 0.15);
+            color: #eab308;
+        }
+
+        .chance-low {
+            background: rgba(249, 115, 22, 0.15);
+            color: #f97316;
+        }
+
+        .chance-rare {
+            background: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+        }
+
+        .vnum-tag {
+            font-size: 0.6rem;
+            color: var(--text-low);
+            opacity: 0.5;
+            flex-shrink: 0;
+        }
+
+        .w-card-footer {
+            padding: 0.6rem 1.5rem;
+            border-top: 1px solid var(--border-glass);
+            background: rgba(0,0,0,0.15);
+        }
+
+        .drop-count {
+            font-size: 0.7rem;
+            color: var(--text-low);
+        }
+
+        .drop-count i {
+            color: var(--accent-blue);
+            margin-right: 4px;
+        }
+
+        /* ========== MOBILE ========== */
+        .mobile-bar {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 56px;
+            background: var(--bg-sidebar);
+            border-bottom: 1px solid var(--border-glass);
+            z-index: 200;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+        }
+
+        .mobile-bar h3 {
+            font-family: var(--font-head);
+            font-size: 0.85rem;
+            color: var(--brand-gold);
+        }
+
+        .mobile-bar button {
+            background: none;
+            border: none;
+            color: var(--brand-gold);
+            font-size: 1.3rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .mobile-bar {
+                display: flex;
+            }
+
+            .page-header {
+                padding-top: calc(56px + 2rem);
+            }
+
+            .page-header h1 {
+                font-size: 1.3rem;
+            }
+
+            .content-area {
+                padding: 1.5rem 1rem;
+            }
+
+            .w-card-header {
+                padding: 1rem;
+            }
+
+            .w-drop-list li {
+                padding: 0.4rem 1rem;
+                font-size: 0.78rem;
+            }
+        }
+
+        /* Backdrop for mobile */
+        .sidebar-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 99;
+        }
+
+        .sidebar-backdrop.show {
+            display: block;
+        }
+
+        /* No results */
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-low);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mobile Bar -->
+    <div class="mobile-bar">
+        <h3><i class="fas fa-gem"></i> MOB DROP WİKİ</h3>
+        <button id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+
+    <!-- Sidebar Backdrop -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <h2><i class="fas fa-gem"></i> MOB DROP</h2>
+            <p>Metin Taşı Drop Rehberi</p>
+        </div>
+        <div class="sidebar-search">
+            <input type="text" id="search-input" placeholder="Mob veya eşya ara...">
+        </div>
+        <nav class="sidebar-nav" id="sidebar-nav">
+                    <button class="w-cat-btn active" data-target="mob-8001">Üzüntü Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8002">Dövüş Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8003">Savaş Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8004">Hırs Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8005">Siyah Metin</button>
+                    <button class="w-cat-btn" data-target="mob-8006">Karanlık Metin</button>
+                    <button class="w-cat-btn" data-target="mob-8007">Kıskançlık Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8008">Ruh Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8009">Gölge Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8010">Dayanıklılık Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8011">Şeytan Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8013">Ölüm Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8014">Katil Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8024">Metin Pung-Ma</button>
+                    <button class="w-cat-btn" data-target="mob-8025">Metin Ma-An</button>
+                    <button class="w-cat-btn" data-target="mob-8026">Metin Tu-Young</button>
+                    <button class="w-cat-btn" data-target="mob-8027">Metin Jeon-Un</button>
+                    <button class="w-cat-btn" data-target="mob-8051">Işıksızlık Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8052">Korluğun Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8053">Mağrurluğun Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8054">Öfkenin Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8055">Felaketin Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8056">Namertlik Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8061">Orman Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8062">Farkındalık Metini (G)</button>
+                    <button class="w-cat-btn" data-target="mob-8063">Takdir Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8064">Bilinç Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8065">Jin Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8067">Farklandırma Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8066">Shiho Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8076">Mekan Yılanı Metini</button>
+                    <button class="w-cat-btn" data-target="mob-8077">Gumarlı Metini</button>
+
+        </nav>
+        <div class="sidebar-footer">
+            <p>mob_drop_item.txt verilerinden oluşturuldu</p>
+        </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main-content">
+        <div class="page-header">
+            <span class="sub-tag">Detaylı Rehber</span>
+            <h1>MOB DROP WİKİ</h1>
+            <p>Metin taşları ve mobların düşürdüğü tüm eşyaların listesi.</p>
+            <div class="stats-bar">
+                <div class="stat-item"><i class="fas fa-layer-group"></i> Toplam: <strong>32</strong> Mob</div>
+                <div class="stat-item"><i class="fas fa-gem"></i> Kaynak: <strong>mob_drop_item.txt</strong></div>
+            </div>
+        </div>
+
+        <div class="content-area" id="content-area">
+                    <div class="wiki-card" id="mob-8001">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Üzüntü Metini</div>
+                                <div class="w-type">VNUM: 8001 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Beceri Kitabı</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#50300</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Uzun Kılıç+3</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#23</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Uzun Yay+3</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#2013</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mızrak+3</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#3013</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Amija+3</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#4003</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Demir Yelpaze+3</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#7013</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 6 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8002" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Dövüş Metini</div>
+                                <div class="w-type">VNUM: 8002 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Beceri Kitabı</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#50300</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Hilal Kılıç+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#33</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Birleşik Yay+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#2023</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Giyotin Pala+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#3023</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kobra Hançeri+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#1013</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siyah Kaplan Yelpazesi+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#7023</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Bakır Çan+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#5003</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 7 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8003" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Savaş Metini</div>
+                                <div class="w-type">VNUM: 8003 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Beceri Kitabı</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#50300</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Bambu Kılıcı+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#43</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Harp Yayı+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#2033</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Örümcek Mızrağı+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#3033</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Dokuz Pala+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#4013</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Turna Kanadı Yelpaze+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#7033</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Gümüş Çan+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#5013</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 7 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8004" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Hırs Metini</div>
+                                <div class="w-type">VNUM: 8004 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Beceri Kitabı</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#50300</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Geniş kılıç+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#53</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Atsırtı Uzun Yay+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#2043</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kargı+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#3043</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Makas Hançer+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#1023</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Tavuskuşu Yelpaze+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#7043</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Altın Çan+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#5023</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 7 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8005" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Siyah Metin</div>
+                                <div class="w-type">VNUM: 8005 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Beceri Kitabı</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#50300</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Gümüş kılıç+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#63</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Atsırtı Uzun Yay+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#2043</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Savaş Tırpanı+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#3053</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kısa Bıçak+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#4023</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Su Yelpazesi+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#7053</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 6 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8006" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Karanlık Metin</div>
+                                <div class="w-type">VNUM: 8006 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Beceri Kitabı</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#50300</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yeşil Efsun</span>  <span class="chance-badge chance-mid">%70</span> <span class="vnum-tag">#71151</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yeşil Güç</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#71152</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Orkide Kılıcı+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#73</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Bakır İşçiliği Yay+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#2063</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Askeri Tırmık+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#3063</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şanslı Bıçak+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#1033</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Taş Yelpaze+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#7063</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">YeşimTaşı Çan+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#5033</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 9 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8007" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Kıskançlık Metini</div>
+                                <div class="w-type">VNUM: 8007 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Beceri Kitabı</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#50300</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yeşil Efsun</span>  <span class="chance-badge chance-mid">%35</span> <span class="vnum-tag">#71151</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yeşil Güç</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#71152</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Sahte Kılıç+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#83</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kara Yıkım Yayı+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#2073</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Baltalı Mızrak+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#3073</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kedi Isırığı Bıçak+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#1043</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Okyanus Yelpazesi+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#7073</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kaynak Çan+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#5043</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 9 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8008" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Ruh Metini</div>
+                                <div class="w-type">VNUM: 8008 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Beceri Kitabı</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#50300</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yeşil Efsun</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71151</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yeşil Güç</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#71152</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kötü Ruh Kovma Kağıdı</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#71001</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Barbar Kılıcı+3</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#93</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kırmızı Göz Yay+3</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#2083</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Büyük Balta+3</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#3083</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytan Surat Hançer+3</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#1053</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Azap Yelpazesi+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#7083</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kayısı Ağacı Çan+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#5053</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ölümcül Plaka Zırh+3</span>  <span class="chance-badge chance-high">%100</span> <span class="vnum-tag">#11243</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Karınca Aslan Takımı+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11443</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yin-Yang Zırh+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11643</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Sema Elbisesi+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11843</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Malahit Plaka Zırhı</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#21023</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 15 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8009" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Gölge Metini</div>
+                                <div class="w-type">VNUM: 8009 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Beceri Kitabı</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#50300</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Efsun Nesnesi</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71084</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Arttırma Kağıdı</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#71085</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-rare">%3</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kanlı Kılıç+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#103</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Dikenli Yaprak Yayı+3</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#2093</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Buzlu Uç+3</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#3093</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytan Yumruğu Hançeri+3</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#1063</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Anka Kuşu Yelpaze+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#7093</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Demir Pençe+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#6023</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha Plaka Zırh+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11253</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ninja Takımı+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11453</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mistik Plaka Zırh+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#11653</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Güneş Elbisesi+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#11853</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kasırga Plaka Zırhı+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#21032</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 15 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8010" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Dayanıklılık Metini</div>
+                                <div class="w-type">VNUM: 8010 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Beceri Kitabı</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#50300</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Efsun Nesnesi</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71084</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Arttırma Kağıdı</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#71085</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-rare">%3</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Büyük Kılıç+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#113</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Boğa Boynuzu Yay+3</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#2103</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Oniki Ruh Kılıcı+3</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#3103</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kanlı Hançer+3</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#1073</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Üçlü Yelpaze+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#7103</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Büyülü Çan+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#5063</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha Plaka Zırh+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11253</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ninja Takımı+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11453</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mistik Plaka Zırh+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#11653</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Güneş Elbisesi+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#11853</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kasırga Plaka Zırhı+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#21033</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 15 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8011" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Şeytan Metini</div>
+                                <div class="w-type">VNUM: 8011 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Beceri Kitabı</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#50300</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Efsun Nesnesi</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71084</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Arttırma Kağıdı</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#71085</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Uçan Büyücü Kılıcı+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#123</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Tek Boynuzlu Yay+3</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#2113</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kurtuluş Palası+3</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#3113</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kaburga Bıçak+3</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#1083</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kaş Yelpaze+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#7113</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Altın Böcek Çanı+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#5073</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha Plaka Zırh+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11253</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ninja Takımı+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11453</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mistik Plaka Zırh+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#11653</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Güneş Elbisesi+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#11853</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kasırga Plaka Zırhı+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#21033</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 14 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8013" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Ölüm Metini</div>
+                                <div class="w-type">VNUM: 8013 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Beceri Kitabı</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#50300</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Efsun Nesnesi</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71084</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Arttırma Kağıdı</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#71085</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-rare">%3</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Uçan Büyücü Kılıcı+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#123</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Tek Boynuzlu Yay+3</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#2113</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kurtuluş Palası+3</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#3113</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kaburga Bıçak+3</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#1083</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kaş Yelpaze+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#7113</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Altın Böcek Çanı+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#5072</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha Plaka Zırh+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11253</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ninja Takımı+3</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11453</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mistik Plaka Zırh+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#11653</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Güneş Elbisesi+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#11853</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kasırga Plaka Zırhı+3</span>  <span class="chance-badge chance-mid">%40</span> <span class="vnum-tag">#21033</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 16 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8014" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Katil Metini</div>
+                                <div class="w-type">VNUM: 8014 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Beceri Kitabı</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#50300</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Efsun Nesnesi</span> <span class="count-badge">x2</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71084</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Arttırma Kağıdı</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#71085</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Zen Fasulyesi</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#70102</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-low">%15</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kötü Ruh Kovma Kağıdı</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71001</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha taşı parçası+</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#30271</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Dev Kanatlı Yay+3</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#2123</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Aslan Katleden+3</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#3123</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Çakram+3</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#1093</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Güneş Yelpazesi+3</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#7123</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Çelik Böcek Çanı+3</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#5083</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yarımay Kılıcı+3</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#133</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha Plaka Zırh+3</span>  <span class="chance-badge chance-high">%100</span> <span class="vnum-tag">#11253</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ninja Takımı+3</span>  <span class="chance-badge chance-high">%100</span> <span class="vnum-tag">#11453</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mistik Plaka Zırh+3</span>  <span class="chance-badge chance-high">%100</span> <span class="vnum-tag">#11653</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Güneş Elbisesi+3</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#11853</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kasırga Plaka Zırhı+3</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#21033</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Çelik Pençe+3</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#6033</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 20 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8024" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Metin Pung-Ma</div>
+                                <div class="w-type">VNUM: 8024 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Efsun Nesnesi</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71084</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Arttırma Kağıdı</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#71085</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Zen Fasulyesi</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#70102</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-low">%15</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Su Perisi Kılıcı+0</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#160</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytan Çıkarma Kılıcı+0</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#240</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Dev Kanatlı Yay+0</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#2130</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Elektromanyetik Pala+0</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#3140</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şimşek Bıçağı+0</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#1110</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Cennet Kuşu Yelpaze+0</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#7130</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yıldırım Kuşu Çanı+0</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#5090</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha Taşı Parçası+</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#30271</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 13 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8025" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Metin Ma-An</div>
+                                <div class="w-type">VNUM: 8025 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Efsun Nesnesi</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71084</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Arttırma Kağıdı</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#71085</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Zen Fasulyesi</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#70102</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-low">%15</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Su Perisi Kılıcı+0</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#160</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytan Çıkarma Kılıcı+0</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#240</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Dev Kanatlı Yay+0</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#2130</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Elektromanyetik Pala+0</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#3140</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şimşek Bıçağı+0</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#1110</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Cennet Kuşu Yelpaze+0</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#7130</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yıldırım Kuşu Çanı+0</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#5090</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha taşı parçası+</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#30271</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 13 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8026" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Metin Tu-Young</div>
+                                <div class="w-type">VNUM: 8026 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Efsun Nesnesi</span> <span class="count-badge">x2</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71084</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Arttırma Kağıdı</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#71085</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Zen Fasulyesi</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#70102</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kötü Ruh Kovma Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#71001</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha taşı parçası+</span> <span class="count-badge">x2</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#30271</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Su Perisi Kılıcı+0</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#160</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytan Çıkarma Kılıcı+0</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#240</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Dev Kanatlı Yay+0</span>  <span class="chance-badge chance-rare">%2</span> <span class="vnum-tag">#2130</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Elektromanyetik Pala+0</span>  <span class="chance-badge chance-rare">%2</span> <span class="vnum-tag">#3140</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şimşek Bıçağı+0</span>  <span class="chance-badge chance-rare">%2</span> <span class="vnum-tag">#1110</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Cennet Kuşu Yelpaze+0</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#7130</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yıldırım Kuşu Çanı+0</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#5090</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Griffon Pençesi+0</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#6040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha Tanrısı Zırhı+0</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11280</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Küpeçiçeği Takım+0</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11480</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Plaka Zırh+0</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11680</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Soylu Kadın Elbisesi+0</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11880</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Firelyum Plaka Zırhı+0</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#21060</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 20 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8027" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Metin Jeon-Un</div>
+                                <div class="w-type">VNUM: 8027 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Efsun Nesnesi</span> <span class="count-badge">x2</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71084</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Arttırma Kağıdı</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#71085</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Zen Fasulyesi</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#70102</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kötü Ruh Kovma Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#71001</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Münzevi Tavsiyesi</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#76034</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha taşı parçası+</span> <span class="count-badge">x2</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#30271</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Muharebe Kılıcı+0</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#140</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Hortlak Dişi Kılıcı+0</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#150</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Sarı EjderhaYayı+0</span>  <span class="chance-badge chance-rare">%2</span> <span class="vnum-tag">#2140</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Partizan+0</span>  <span class="chance-badge chance-rare">%2</span> <span class="vnum-tag">#3130</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha Bıçağı+0</span>  <span class="chance-badge chance-rare">%2</span> <span class="vnum-tag">#1100</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kurtuluş Yelpazesi+0</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#7140</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Cennet ve Dünya Çanı+0</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#5100</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Pislik Böceği Pençesi+0</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#6050</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha Tanrısı Zırhı+0</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11280</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Küpeçiçeği Takım+0</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11480</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Plaka Zırh+0</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11680</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Soylu Kadın Elbisesi+0</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11880</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Firelyum Plaka Zırhı+0</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#21060</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kristal Bilezik+6</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#14166</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Cennetin Gözü Bilezik+3</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#14203</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kristal Kolye+6</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#16166</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Cennetin Gözü Kolye+3</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#16203</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kristal Küpe+6</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#17166</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Cennetin Gözü Küpe+3</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#17203</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 27 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8051" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Işıksızlık Metini</div>
+                                <div class="w-type">VNUM: 8051 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Efsun Nesnesi</span> <span class="count-badge">x2</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71084</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Arttırma Kağıdı</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#71085</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Zen Fasulyesi</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#70102</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kötü Ruh Kovma Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#71001</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Münzevi Tavsiyesi</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#76034</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha taşı parçası+</span> <span class="count-badge">x2</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#30271</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı+</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#50525</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ders Kitabı Misilleme</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50515</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Misilleme</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50323</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Muharebe Kılıcı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#144</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Hortlak Dişi Kılıcı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Cennet ve Dünya Çanı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#5104</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kurtuluş Yelpazesi+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#7144</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siyah Çelik Zırh+5</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11295</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Gecegölgesi Zırhı +5</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#21075</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 17 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8052" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Korluğun Metini</div>
+                                <div class="w-type">VNUM: 8052 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Efsun Nesnesi</span> <span class="count-badge">x2</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71084</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Arttırma Kağıdı</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#71085</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Zen Fasulyesi</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#70102</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kötü Ruh Kovma Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#71001</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Münzevi Tavsiyesi</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#76034</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha taşı parçası+</span> <span class="count-badge">x2</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#30271</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı+</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#50525</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ders Kitabı Misilleme</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50515</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Misilleme</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50323</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Muharebe Kılıcı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#144</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Hortlak Dişi Kılıcı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Cennet ve Dünya Çanı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#5104</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kurtuluş Yelpazesi+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#7144</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siyah Çelik Zırh+5</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11295</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Gecegölgesi Zırhı +5</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#21075</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 17 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8053" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Mağrurluğun Metini</div>
+                                <div class="w-type">VNUM: 8053 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Efsun Nesnesi</span> <span class="count-badge">x2</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71084</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Arttırma Kağıdı</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#71085</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Zen Fasulyesi</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#70102</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kötü Ruh Kovma Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#71001</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Münzevi Tavsiyesi</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#76034</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha taşı parçası+</span> <span class="count-badge">x2</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#30271</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı+</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#50525</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ders Kitabı Misilleme</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50515</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Misilleme</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50323</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Muharebe Kılıcı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#144</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Hortlak Dişi Kılıcı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Cennet ve Dünya Çanı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#5104</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kurtuluş Yelpazesi+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#7144</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siyah Çelik Zırh+5</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11295</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Gecegölgesi Zırhı +5</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#21075</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 17 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8054" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Öfkenin Metini</div>
+                                <div class="w-type">VNUM: 8054 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Efsun Nesnesi</span> <span class="count-badge">x2</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71084</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Arttırma Kağıdı</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#71085</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Zen Fasulyesi</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#70102</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kötü Ruh Kovma Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#71001</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Münzevi Tavsiyesi</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#76034</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha taşı parçası+</span> <span class="count-badge">x2</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#30271</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı+</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#50525</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ders Kitabı Misilleme</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50515</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Misilleme</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50323</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Muharebe Kılıcı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#144</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Hortlak Dişi Kılıcı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Cennet ve Dünya Çanı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#5104</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kurtuluş Yelpazesi+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#7144</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siyah Çelik Zırh+5</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11295</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Gecegölgesi Zırhı +5</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#21075</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 17 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8055" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Felaketin Metini</div>
+                                <div class="w-type">VNUM: 8055 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Efsun Nesnesi</span> <span class="count-badge">x2</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71084</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Arttırma Kağıdı</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#71085</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Zen Fasulyesi</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#70102</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kötü Ruh Kovma Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#71001</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Münzevi Tavsiyesi</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#76034</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha taşı parçası+</span> <span class="count-badge">x2</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#30271</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı+</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#50525</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ders Kitabı Misilleme</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50515</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Misilleme</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50323</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Muharebe Kılıcı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#144</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Hortlak Dişi Kılıcı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Cennet ve Dünya Çanı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#5104</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kurtuluş Yelpazesi+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#7144</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siyah Çelik Zırh+5</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11295</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Gecegölgesi Zırhı +5</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#21075</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 17 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8056" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Namertlik Metini</div>
+                                <div class="w-type">VNUM: 8056 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Efsun Nesnesi</span> <span class="count-badge">x2</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71084</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Arttırma Kağıdı</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#71085</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Zen Fasulyesi</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#70102</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kötü Ruh Kovma Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#71001</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Münzevi Tavsiyesi</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#76034</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha taşı parçası+</span> <span class="count-badge">x2</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#30271</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı+</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#50525</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ders Kitabı Misilleme</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50515</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Misilleme</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50323</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Muharebe Kılıcı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#144</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Hortlak Dişi Kılıcı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Cennet ve Dünya Çanı+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#5104</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kurtuluş Yelpazesi+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#7144</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siyah Çelik Zırh+5</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#11295</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Gecegölgesi Zırhı +5</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#21075</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 17 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8061" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Orman Metini</div>
+                                <div class="w-type">VNUM: 8061 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Efsun Nesnesi</span> <span class="count-badge">x3</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#71084</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Arttırma Kağıdı</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#71085</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Zen Fasulyesi</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#70102</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kötü Ruh Kovma Kağıdı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#71001</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Münzevi Tavsiyesi</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#76034</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha taşı parçası+</span> <span class="count-badge">x3</span> <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#30271</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı+</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#50525</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ders Kitabı Misilleme</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50515</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Misilleme</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50323</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığ Güçlendirme</span>  <span class="chance-badge chance-mid">%50</span> <span class="vnum-tag">#50324</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Azap Kılıcı+4</span>  <span class="chance-badge chance-rare">%7</span> <span class="vnum-tag">#174</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytani Pala+4</span>  <span class="chance-badge chance-rare">%2</span> <span class="vnum-tag">#254</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siam Bıçağı+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#1124</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mavi Ejderha Yayı+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#2184</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yarı-İnsan Kılıç+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#3154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mutluluk Yelpazesi+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#7154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siyah Çelik Zırh+6</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#11296</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Gecegölgesi Zırhı +6</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#21076</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siyah Elbise+6</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#11896</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siyah Rüzgar Takımı+6</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#11496</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kara Büyü Zırh+6</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#11696</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Item 156</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#156</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Item 2146</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#2146</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 25 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8062" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Farkındalık Metini (G)</div>
+                                <div class="w-type">VNUM: 8062 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha Taşı Parçası+</span> <span class="count-badge">x6</span> <span class="chance-badge chance-high">%110</span> <span class="vnum-tag">#30271</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Çırağın İlhamı</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50341</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Çırağın karizması</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50338</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Deprem (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50569</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Işık Yıldızı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50570</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Saldırı Ateşi (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50571</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ateş Darbesi (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50572</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ölüm Dalgası (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50573</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Meteor (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50574</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Eter Kalkanı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50575</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Misilleme</span>  <span class="chance-badge chance-high">%80</span> <span class="vnum-tag">#50323</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Güçlendirme</span>  <span class="chance-badge chance-high">%80</span> <span class="vnum-tag">#50324</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+0</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#28046</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+1</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#28146</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+2</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#28246</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı+</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50525</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yetenek İksiri</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50527</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Sis Jediti</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50664</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Genç Pet Kitabı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#55003</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Deniz Kızı Anahtarı</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50043</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Boş Güç Özütü</span> <span class="count-badge">x5</span> <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50739</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Boş Direnç Özütü</span> <span class="count-badge">x5</span> <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50740</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Tamlığın kitabı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50325</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Pençe atağı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50576</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Azap Kılıcı+4</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#174</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytani Pala+4</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#254</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siam Bıçağı+4</span>  <span class="chance-badge chance-rare">%3</span> <span class="vnum-tag">#1124</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mavi Ejderha Yayı+4</span>  <span class="chance-badge chance-rare">%3</span> <span class="vnum-tag">#2184</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yarı-İnsan Kılıç+4</span>  <span class="chance-badge chance-rare">%3</span> <span class="vnum-tag">#3154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mutluluk Yelpazesi+4</span>  <span class="chance-badge chance-rare">%3</span> <span class="vnum-tag">#7154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Item 49991</span>  <span class="chance-badge chance-high">%200</span> <span class="vnum-tag">#49991</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 33 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8063" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Takdir Metini</div>
+                                <div class="w-type">VNUM: 8063 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha Taşı Parçası+</span> <span class="count-badge">x8</span> <span class="chance-badge chance-high">%110</span> <span class="vnum-tag">#30271</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Çırağın İlhamı</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50341</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Çırağın karizması</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50338</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Deprem (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50569</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Işık Yıldızı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50570</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Saldırı Ateşi (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50571</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ateş Darbesi (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50572</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ölüm Dalgası (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50573</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Meteor (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50574</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Eter Kalkanı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50575</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Misilleme</span>  <span class="chance-badge chance-high">%80</span> <span class="vnum-tag">#50323</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Güçlendirme</span>  <span class="chance-badge chance-high">%80</span> <span class="vnum-tag">#50324</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+0</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#28046</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+1</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#28146</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+2</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#28246</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı+</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50525</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yetenek İksiri</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50527</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Sis Jediti</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50664</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Genç Pet Kitabı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#55003</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Deniz Kızı Anahtarı</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50043</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Boş Güç Özütü</span> <span class="count-badge">x5</span> <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50739</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Boş Direnç Özütü</span> <span class="count-badge">x5</span> <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50740</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Tamlığın kitabı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50325</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların taşı+3</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#28346</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Azap Kılıcı+4</span>  <span class="chance-badge chance-rare">%7</span> <span class="vnum-tag">#174</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytani Pala+4</span>  <span class="chance-badge chance-rare">%2</span> <span class="vnum-tag">#254</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siam Bıçağı+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#1124</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mavi Ejderha Yayı+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#2184</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yarı-İnsan Kılıç+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#3154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mutluluk Yelpazesi+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#7154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Pençe atağı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50576</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Item 49991</span>  <span class="chance-badge chance-high">%200</span> <span class="vnum-tag">#49991</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 34 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8064" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Bilinç Metini</div>
+                                <div class="w-type">VNUM: 8064 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha Taşı Parçası+</span> <span class="count-badge">x8</span> <span class="chance-badge chance-high">%110</span> <span class="vnum-tag">#30271</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Çırağın İlhamı</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50341</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Çırağın karizması</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50338</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Deprem (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50569</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Işık Yıldızı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50570</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Saldırı Ateşi (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50571</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ateş Darbesi (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50572</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ölüm Dalgası (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50573</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Meteor (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50574</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Eter Kalkanı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50575</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Misilleme</span>  <span class="chance-badge chance-high">%80</span> <span class="vnum-tag">#50323</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Güçlendirme</span>  <span class="chance-badge chance-high">%80</span> <span class="vnum-tag">#50324</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+0</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#28046</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+1</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#28146</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+2</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#28246</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı+</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50525</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yetenek İksiri</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50527</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Sis Jediti</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50664</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Genç Pet Kitabı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#55003</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Deniz Kızı Anahtarı</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50043</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Boş Güç Özütü</span> <span class="count-badge">x5</span> <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50739</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Boş Direnç Özütü</span> <span class="count-badge">x5</span> <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50740</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Tamlığın kitabı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50325</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların taşı+3</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#28346</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Azap Kılıcı+4</span>  <span class="chance-badge chance-rare">%7</span> <span class="vnum-tag">#174</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytani Pala+4</span>  <span class="chance-badge chance-rare">%2</span> <span class="vnum-tag">#254</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siam Bıçağı+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#1124</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mavi Ejderha Yayı+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#2184</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yarı-İnsan Kılıç+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#3154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mutluluk Yelpazesi+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#7154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Pençe atağı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50576</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Item 49991</span>  <span class="chance-badge chance-high">%200</span> <span class="vnum-tag">#49991</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 34 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8065" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Jin Metini</div>
+                                <div class="w-type">VNUM: 8065 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha Taşı Parçası+</span> <span class="count-badge">x8</span> <span class="chance-badge chance-high">%110</span> <span class="vnum-tag">#30271</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Çırağın İlhamı</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50341</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Çırağın karizması</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50338</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Deprem (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50569</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Işık Yıldızı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50570</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Saldırı Ateşi (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50571</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ateş Darbesi (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50572</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ölüm Dalgası (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50573</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Meteor (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50574</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Eter Kalkanı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50575</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Misilleme</span>  <span class="chance-badge chance-high">%80</span> <span class="vnum-tag">#50323</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Güçlendirme</span>  <span class="chance-badge chance-high">%80</span> <span class="vnum-tag">#50324</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+0</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#28046</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+1</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#28146</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+2</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#28246</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı+</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50525</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yetenek İksiri</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50527</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Sis Jediti</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50664</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Genç Pet Kitabı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#55003</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Deniz Kızı Anahtarı</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50043</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Boş Güç Özütü</span> <span class="count-badge">x5</span> <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50739</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Boş Direnç Özütü</span> <span class="count-badge">x5</span> <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50740</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Tamlığın kitabı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50325</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların taşı+3</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#28346</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Azap Kılıcı+4</span>  <span class="chance-badge chance-rare">%7</span> <span class="vnum-tag">#174</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytani Pala+4</span>  <span class="chance-badge chance-rare">%2</span> <span class="vnum-tag">#254</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siam Bıçağı+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#1124</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mavi Ejderha Yayı+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#2184</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yarı-İnsan Kılıç+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#3154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mutluluk Yelpazesi+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#7154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Pençe atağı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50576</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Item 49991</span>  <span class="chance-badge chance-high">%200</span> <span class="vnum-tag">#49991</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 34 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8067" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Farklandırma Metini</div>
+                                <div class="w-type">VNUM: 8067 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ejderha Taşı Parçası+</span> <span class="count-badge">x8</span> <span class="chance-badge chance-high">%110</span> <span class="vnum-tag">#30271</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Çırağın İlhamı</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50341</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Çırağın karizması</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50338</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Deprem (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50569</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Işık Yıldızı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50570</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Saldırı Ateşi (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50571</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ateş Darbesi (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50572</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ölüm Dalgası (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50573</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Meteor (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50574</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Eter Kalkanı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50575</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Misilleme</span>  <span class="chance-badge chance-high">%80</span> <span class="vnum-tag">#50323</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Güçlendirme</span>  <span class="chance-badge chance-high">%80</span> <span class="vnum-tag">#50324</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+0</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#28046</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+1</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#28146</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+2</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#28246</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı+</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50525</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yetenek İksiri</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50527</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Sis Jediti</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50664</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Genç Pet Kitabı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#55003</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Deniz Kızı Anahtarı</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50043</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Boş Güç Özütü</span> <span class="count-badge">x5</span> <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50739</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Boş Direnç Özütü</span> <span class="count-badge">x5</span> <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50740</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Tamlığın kitabı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50325</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların taşı+3</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#28346</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Azap Kılıcı+4</span>  <span class="chance-badge chance-rare">%7</span> <span class="vnum-tag">#174</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytani Pala+4</span>  <span class="chance-badge chance-rare">%2</span> <span class="vnum-tag">#254</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siam Bıçağı+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#1124</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mavi Ejderha Yayı+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#2184</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yarı-İnsan Kılıç+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#3154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mutluluk Yelpazesi+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#7154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Pençe atağı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50576</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Item 49991</span>  <span class="chance-badge chance-high">%500</span> <span class="vnum-tag">#49991</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 34 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8066" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Shiho Metini</div>
+                                <div class="w-type">VNUM: 8066 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Cor Draconis, İşlenmemiş</span>  <span class="chance-badge chance-high">%200</span> <span class="vnum-tag">#50255</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Çırağın İlhamı</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50341</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Çırağın karizması</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50338</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Deprem (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50569</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Işık Yıldızı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50570</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Saldırı Ateşi (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50571</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ateş Darbesi (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50572</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ölüm Dalgası (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50573</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Meteor (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50574</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Eter Kalkanı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50575</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Misilleme</span>  <span class="chance-badge chance-high">%80</span> <span class="vnum-tag">#50323</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Güçlendirme</span>  <span class="chance-badge chance-high">%80</span> <span class="vnum-tag">#50324</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+0</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#28046</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+1</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#28146</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+2</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#28246</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı+</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50525</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yetenek İksiri</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50527</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Sis Jediti</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50664</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Genç Pet Kitabı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#55003</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Deniz Kızı Anahtarı</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50043</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Boş Güç Özütü</span> <span class="count-badge">x5</span> <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50739</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Boş Direnç Özütü</span> <span class="count-badge">x5</span> <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50740</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Tamlığın kitabı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50325</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların taşı+3</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#28346</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Azap Kılıcı+4</span>  <span class="chance-badge chance-rare">%7</span> <span class="vnum-tag">#174</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytani Pala+4</span>  <span class="chance-badge chance-rare">%2</span> <span class="vnum-tag">#254</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siam Bıçağı+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#1124</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mavi Ejderha Yayı+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#2184</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yarı-İnsan Kılıç+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#3154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mutluluk Yelpazesi+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#7154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Pençe atağı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50576</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Item 49991</span>  <span class="chance-badge chance-high">%200</span> <span class="vnum-tag">#49991</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 34 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8076" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Mekan Yılanı Metini</div>
+                                <div class="w-type">VNUM: 8076 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Cor Draconis, İşlenmemiş</span>  <span class="chance-badge chance-high">%200</span> <span class="vnum-tag">#50255</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Çırağın İlhamı</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50341</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Çırağın karizması</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50338</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Deprem (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50569</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Işık Yıldızı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50570</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Saldırı Ateşi (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50571</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ateş Darbesi (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50572</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ölüm Dalgası (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50573</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Meteor (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50574</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Eter Kalkanı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50575</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Misilleme</span>  <span class="chance-badge chance-high">%80</span> <span class="vnum-tag">#50323</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Güçlendirme</span>  <span class="chance-badge chance-high">%80</span> <span class="vnum-tag">#50324</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+0</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#28046</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+1</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#28146</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+2</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#28246</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı+</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50525</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yetenek İksiri</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50527</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Sis Jediti</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50664</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Genç Pet Kitabı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#55003</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Deniz Kızı Anahtarı</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50043</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Boş Güç Özütü</span> <span class="count-badge">x5</span> <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50739</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Boş Direnç Özütü</span> <span class="count-badge">x5</span> <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50740</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Tamlığın kitabı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50325</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların taşı+3</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#28346</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Azap Kılıcı+4</span>  <span class="chance-badge chance-rare">%7</span> <span class="vnum-tag">#174</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytani Pala+4</span>  <span class="chance-badge chance-rare">%2</span> <span class="vnum-tag">#254</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siam Bıçağı+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#1124</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mavi Ejderha Yayı+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#2184</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yarı-İnsan Kılıç+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#3154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mutluluk Yelpazesi+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#7154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Pençe atağı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50576</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 33 eşya</span>
+                        </div>
+                    </div>
+                    <div class="wiki-card" id="mob-8077" style="display:none;">
+                        <div class="w-card-header">
+                            <div class="w-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <div class="w-title">Gumarlı Metini</div>
+                                <div class="w-type">VNUM: 8077 &bull; Tip: drop</div>
+                            </div>
+                        </div>
+                        <div class="w-drop-header">
+                            <span>Eşya Adı</span>
+                            <span>Şans</span>
+                        </div>
+                        <ul class="w-drop-list">
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Cor Draconis, İşlenmemiş</span> <span class="count-badge">x2</span> <span class="chance-badge chance-high">%400</span> <span class="vnum-tag">#50255</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Deprem (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50569</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Işık Yıldızı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50570</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Saldırı Ateşi (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50571</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ateş Darbesi (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50572</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ölüm Dalgası (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50573</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Meteor (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50574</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Eter Kalkanı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50575</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Misilleme</span>  <span class="chance-badge chance-high">%80</span> <span class="vnum-tag">#50323</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kitap Sandığı Güçlendirme</span>  <span class="chance-badge chance-high">%80</span> <span class="vnum-tag">#50324</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+0</span>  <span class="chance-badge chance-mid">%30</span> <span class="vnum-tag">#28046</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+1</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#28146</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların Taşı+2</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#28246</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50513</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Ruh Taşı+</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50525</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yetenek İksiri</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50527</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Sis Jediti</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50664</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Genç Pet Kitabı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#55003</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Deniz Kızı Anahtarı</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50043</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Kutsama Kağıdı</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#25040</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Boş Güç Özütü</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50739</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Boş Direnç Özütü</span>  <span class="chance-badge chance-low">%10</span> <span class="vnum-tag">#50740</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Tamlığın kitabı</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#50325</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytanların taşı+3</span>  <span class="chance-badge chance-rare">%5</span> <span class="vnum-tag">#28346</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Azap Kılıcı+4</span>  <span class="chance-badge chance-rare">%7</span> <span class="vnum-tag">#174</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Şeytani Pala+4</span>  <span class="chance-badge chance-rare">%2</span> <span class="vnum-tag">#254</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Siam Bıçağı+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#1124</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mavi Ejderha Yayı+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#2184</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Yarı-İnsan Kılıç+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#3154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Mutluluk Yelpazesi+4</span>  <span class="chance-badge chance-rare">%1</span> <span class="vnum-tag">#7154</span></li>
+                            <li><i class="fas fa-caret-right"></i> <span class="item-name">Pençe atağı (9. beceri)</span>  <span class="chance-badge chance-low">%20</span> <span class="vnum-tag">#50576</span></li>
+                        </ul>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-layer-group"></i> 31 eşya</span>
+                        </div>
+                    </div>
+
+        </div>
+    </main>
+
+    <script>
+        // Sidebar navigation
+        const catBtns = document.querySelectorAll('.w-cat-btn');
+        const wikiCards = document.querySelectorAll('.wiki-card');
+        
+        catBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                catBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const targetId = btn.getAttribute('data-target');
+                wikiCards.forEach(card => {
+                    card.style.display = card.id === targetId ? '' : 'none';
+                });
+
+                // Close mobile sidebar
+                document.getElementById('sidebar').classList.remove('open');
+                document.getElementById('sidebar-backdrop').classList.remove('show');
+
+                // Scroll to top of content
+                document.querySelector('.content-area').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Search
+        const searchInput = document.getElementById('search-input');
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            
+            if (query === '') {
+                // Show only the active one
+                const activeBtn = document.querySelector('.w-cat-btn.active');
+                const activeTarget = activeBtn ? activeBtn.getAttribute('data-target') : '';
+                wikiCards.forEach(card => {
+                    card.style.display = card.id === activeTarget ? '' : 'none';
+                });
+                catBtns.forEach(b => b.style.display = '');
+                return;
+            }
+
+            // Show all matching cards, filter sidebar
+            let anyMatch = false;
+            wikiCards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    card.style.display = '';
+                    anyMatch = true;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            catBtns.forEach(btn => {
+                const btnText = btn.textContent.toLowerCase();
+                const targetCard = document.getElementById(btn.getAttribute('data-target'));
+                if (btnText.includes(query) || (targetCard && targetCard.style.display !== 'none')) {
+                    btn.style.display = '';
+                } else {
+                    btn.style.display = 'none';
+                }
+            });
+        });
+
+        // Mobile menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('sidebar-backdrop').classList.toggle('show');
+        });
+
+        document.getElementById('sidebar-backdrop').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.remove('open');
+            document.getElementById('sidebar-backdrop').classList.remove('show');
+        });
+    </script>
+</body>
+</html>
