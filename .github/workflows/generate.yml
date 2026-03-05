@@ -1,0 +1,32 @@
+name: Generate Mob Drop Wiki
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'mob_drop_item.txt'
+      - 'special_item_group.txt'
+      - 'generate_wiki.ps1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build_wiki:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Generate Wiki HTML
+        run: .\generate_wiki.ps1
+        shell: powershell
+
+      - name: Commit HTML and Push
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Auto-generate index.html from mob_drop_item.txt [skip ci]" || echo "No changes to commit"
+          git push
