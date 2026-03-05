@@ -47,7 +47,7 @@ function Parse-MobDropFile {
 				continue
 			}
 			if ($trimmed -match "^Type\s+(.+)$") { $currentGroup.Type = $Matches[1].Trim(); continue }
-			if ($trimmed -match "^\d+\s+(\d+)\s+(\d+)\s+(\d+)") {
+			if ($trimmed -match "^\d+\s+(\d+)\s+([\d.]+)\s+([\d.]+)") {
 				$capVnum = $Matches[1]
 				$capCount = $Matches[2]
 				$capChance = $Matches[3]
@@ -116,10 +116,10 @@ function Parse-ChestDropFile {
 				continue
 			}
 			if ($trimmed -match "^[Tt]ype\s+(.+)$") { $currentGroup.Type = $Matches[1].Trim(); continue }
-			if ($trimmed -match "^\d+\s+(\d+)\s+(\d[\d.]*)\s+(\d+)") {
+			if ($trimmed -match "^\d+\s+(\d+)\s+([\d.]+)\s+([\d.]+)") {
 				$capVnum = $Matches[1]
-				$capChance = $Matches[2]
-				$capCount = $Matches[3]
+				$capCount = $Matches[2]
+				$capChance = $Matches[3]
 				$itemName = ""
 				if ($trimmed -match "--\s*(.+)$") { $itemName = $Matches[1].Trim() }
 				else { $itemName = "Item $capVnum" }
@@ -130,14 +130,36 @@ function Parse-ChestDropFile {
 			}
 		}
 	}
+
+	# Apply custom chest chance calculation
+	# (Count * Chance) / Total_Weight * 100
+	foreach ($g in $groups) {
+		$totalWeight = 0.0
+		foreach ($item in $g.Items) {
+			$c = 1.0; $ch = 0.0
+			[double]::TryParse($item.Count, [ref]$c) | Out-Null
+			[double]::TryParse($item.Chance, [ref]$ch) | Out-Null
+			$totalWeight += ($c * $ch)
+		}
+		if ($totalWeight -gt 0) {
+			foreach ($item in $g.Items) {
+				$c = 1.0; $ch = 0.0
+				[double]::TryParse($item.Count, [ref]$c) | Out-Null
+				[double]::TryParse($item.Chance, [ref]$ch) | Out-Null
+				$realProb = (($c * $ch) / $totalWeight) * 100.0
+				$item.Chance = [math]::Round($realProb, 2).ToString("0.##")
+			}
+		}
+	}
+
 	return $groups
 }
 
 # ======================== HTML HELPERS ========================
 function Get-ChanceBadgeClass {
 	param([string]$ChanceStr)
-	$val = 0
-	if ([int]::TryParse($ChanceStr, [ref]$val)) {
+	$val = 0.0
+	if ([double]::TryParse($ChanceStr, [ref]$val)) {
 		if ($val -ge 80) { return "chance-high" }
 		elseif ($val -ge 30) { return "chance-mid" }
 		elseif ($val -ge 10) { return "chance-low" }
