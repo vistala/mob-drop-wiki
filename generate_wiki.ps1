@@ -2,13 +2,13 @@
 # mob_drop_item.txt dosyasini okur ve wiki HTML sayfasi olusturur
 
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$inputFile = "..\..\Harbi2_Files\srv1\share\locale\germany\mob_drop_item.txt"
+$inputFile = "mob_drop_item.txt"
 $inputPath = Join-Path $scriptDir $inputFile
 $outputPath = Join-Path $scriptDir "index.html"
 
 if (-not (Test-Path $inputPath)) {
-    Write-Host "HATA: mob_drop_item.txt bulunamadi: $inputPath" -ForegroundColor Red
-    exit 1
+	Write-Host "HATA: mob_drop_item.txt bulunamadi: $inputPath" -ForegroundColor Red
+	exit 1
 }
 
 Write-Host "Dosya okunuyor: $inputPath"
@@ -19,75 +19,77 @@ $currentGroup = $null
 $inGroup = $false
 
 foreach ($line in $lines) {
-    $trimmed = $line.Trim()
+	$trimmed = $line.Trim()
     
-    # Yorum satirlarini atla
-    if ($trimmed.StartsWith("#")) { continue }
-    if ($trimmed -eq "") { continue }
+	# Yorum satirlarini atla
+	if ($trimmed.StartsWith("#")) { continue }
+	if ($trimmed -eq "") { continue }
     
-    if ($trimmed -match "^Group\s+(.+)$") {
-        $currentGroup = @{
-            GroupName = $Matches[1]
-            MobVnum = ""
-            MobName = ""
-            Type = ""
-            Items = @()
-        }
-        continue
-    }
+	if ($trimmed -match "^Group\s+(.+)$") {
+		$currentGroup = @{
+			GroupName = $Matches[1]
+			MobVnum   = ""
+			MobName   = ""
+			Type      = ""
+			Items     = @()
+		}
+		continue
+	}
     
-    if ($trimmed -eq "{") {
-        $inGroup = $true
-        continue
-    }
+	if ($trimmed -eq "{") {
+		$inGroup = $true
+		continue
+	}
     
-    if ($trimmed -eq "}") {
-        $inGroup = $false
-        if ($currentGroup) {
-            $groups += $currentGroup
-            $currentGroup = $null
-        }
-        continue
-    }
+	if ($trimmed -eq "}") {
+		$inGroup = $false
+		if ($currentGroup) {
+			$groups += $currentGroup
+			$currentGroup = $null
+		}
+		continue
+	}
     
-    if ($inGroup -and $currentGroup) {
-        # Mob satiri
-        if ($trimmed -match "^Mob\s+(\d+)") {
-            $currentGroup.MobVnum = $Matches[1]
-            # -- sonrasi mob adi
-            if ($trimmed -match "--\s*(.+)$") {
-                $currentGroup.MobName = $Matches[1].Trim()
-            } else {
-                $currentGroup.MobName = "Mob $($Matches[1])"
-            }
-            continue
-        }
+	if ($inGroup -and $currentGroup) {
+		# Mob satiri
+		if ($trimmed -match "^Mob\s+(\d+)") {
+			$currentGroup.MobVnum = $Matches[1]
+			# -- sonrasi mob adi
+			if ($trimmed -match "--\s*(.+)$") {
+				$currentGroup.MobName = $Matches[1].Trim()
+			}
+			else {
+				$currentGroup.MobName = "Mob $($Matches[1])"
+			}
+			continue
+		}
         
-        # Type satiri
-        if ($trimmed -match "^Type\s+(.+)$") {
-            $currentGroup.Type = $Matches[1]
-            continue
-        }
+		# Type satiri
+		if ($trimmed -match "^Type\s+(.+)$") {
+			$currentGroup.Type = $Matches[1]
+			continue
+		}
         
-        # Item satiri: index vnum count chance -- name
-        if ($trimmed -match "^\d+\s+(\d+)\s+(\d+)\s+(\d+)") {
-            $itemVnum = $Matches[1]
-            $itemCount = $Matches[2]
-            $itemChance = $Matches[3]
-            $itemName = ""
-            if ($trimmed -match "--\s*(.+)$") {
-                $itemName = $Matches[1].Trim()
-            } else {
-                $itemName = "Item $itemVnum"
-            }
-            $currentGroup.Items += @{
-                Vnum = $itemVnum
-                Count = $itemCount
-                Chance = $itemChance
-                Name = $itemName
-            }
-        }
-    }
+		# Item satiri: index vnum count chance -- name
+		if ($trimmed -match "^\d+\s+(\d+)\s+(\d+)\s+(\d+)") {
+			$itemVnum = $Matches[1]
+			$itemCount = $Matches[2]
+			$itemChance = $Matches[3]
+			$itemName = ""
+			if ($trimmed -match "--\s*(.+)$") {
+				$itemName = $Matches[1].Trim()
+			}
+			else {
+				$itemName = "Item $itemVnum"
+			}
+			$currentGroup.Items += @{
+				Vnum   = $itemVnum
+				Count  = $itemCount
+				Chance = $itemChance
+				Name   = $itemName
+			}
+		}
+	}
 }
 
 Write-Host "$($groups.Count) grup bulundu."
@@ -98,40 +100,43 @@ $sidebarItems = ""
 $groupIndex = 0
 
 foreach ($g in $groups) {
-    $groupIndex++
-    $mobLabel = if ($g.MobName) { "$($g.MobName) ($($g.MobVnum))" } else { "Mob $($g.MobVnum)" }
-    $cardId = "mob-$($g.MobVnum)"
+	$groupIndex++
+	$mobLabel = if ($g.MobName) { "$($g.MobName) ($($g.MobVnum))" } else { "Mob $($g.MobVnum)" }
+	$cardId = "mob-$($g.MobVnum)"
     
-    # Sidebar item
-    $activeClass = if ($groupIndex -eq 1) { " active" } else { "" }
-    $sidebarItems += "                    <button class=`"w-cat-btn$activeClass`" data-target=`"$cardId`">$($g.MobName)</button>`n"
+	# Sidebar item
+	$activeClass = if ($groupIndex -eq 1) { " active" } else { "" }
+	$sidebarItems += "                    <button class=`"w-cat-btn$activeClass`" data-target=`"$cardId`">$($g.MobName)</button>`n"
     
-    # Drop list
-    $dropListHtml = ""
-    foreach ($item in $g.Items) {
-        $chanceBadge = ""
-        $chanceVal = [int]$item.Chance
-        if ($chanceVal -ge 80) {
-            $chanceBadge = "<span class=`"chance-badge chance-high`">%$($item.Chance)</span>"
-        } elseif ($chanceVal -ge 30) {
-            $chanceBadge = "<span class=`"chance-badge chance-mid`">%$($item.Chance)</span>"
-        } elseif ($chanceVal -ge 10) {
-            $chanceBadge = "<span class=`"chance-badge chance-low`">%$($item.Chance)</span>"
-        } else {
-            $chanceBadge = "<span class=`"chance-badge chance-rare`">%$($item.Chance)</span>"
-        }
+	# Drop list
+	$dropListHtml = ""
+	foreach ($item in $g.Items) {
+		$chanceBadge = ""
+		$chanceVal = [int]$item.Chance
+		if ($chanceVal -ge 80) {
+			$chanceBadge = "<span class=`"chance-badge chance-high`">%$($item.Chance)</span>"
+		}
+		elseif ($chanceVal -ge 30) {
+			$chanceBadge = "<span class=`"chance-badge chance-mid`">%$($item.Chance)</span>"
+		}
+		elseif ($chanceVal -ge 10) {
+			$chanceBadge = "<span class=`"chance-badge chance-low`">%$($item.Chance)</span>"
+		}
+		else {
+			$chanceBadge = "<span class=`"chance-badge chance-rare`">%$($item.Chance)</span>"
+		}
         
-        $countBadge = ""
-        if ([int]$item.Count -gt 1) {
-            $countBadge = "<span class=`"count-badge`">x$($item.Count)</span>"
-        }
+		$countBadge = ""
+		if ([int]$item.Count -gt 1) {
+			$countBadge = "<span class=`"count-badge`">x$($item.Count)</span>"
+		}
         
-        $dropListHtml += "                            <li><i class=`"fas fa-caret-right`"></i> <span class=`"item-name`">$($item.Name)</span> $countBadge $chanceBadge <span class=`"vnum-tag`">#$($item.Vnum)</span></li>`n"
-    }
+		$dropListHtml += "                            <li><i class=`"fas fa-caret-right`"></i> <span class=`"item-name`">$($item.Name)</span> $countBadge $chanceBadge <span class=`"vnum-tag`">#$($item.Vnum)</span></li>`n"
+	}
     
-    $displayStyle = if ($groupIndex -eq 1) { "" } else { " style=`"display:none;`"" }
+	$displayStyle = if ($groupIndex -eq 1) { "" } else { " style=`"display:none;`"" }
     
-    $htmlItems += @"
+	$htmlItems += @"
                     <div class="wiki-card" id="$cardId"$displayStyle>
                         <div class="w-card-header">
                             <div class="w-icon"><i class="fas fa-gem"></i></div>
