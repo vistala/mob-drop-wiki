@@ -25,7 +25,8 @@ function Parse-MobDropFile {
 		$trimmed = $line.Trim()
 		if ($trimmed.StartsWith("#") -or $trimmed -eq "") { continue }
 		if ($trimmed -match "^Group\s+(.+)$") {
-			$currentGroup = @{ MobVnum = ""; MobName = ""; Type = ""; Items = @() }
+			$groupName = $Matches[1].Trim()
+			$currentGroup = @{ MobVnum = ""; MobName = $groupName; Type = ""; Items = @() }
 			continue
 		}
 		if ($trimmed -eq "{") { $inGroup = $true; continue }
@@ -38,8 +39,11 @@ function Parse-MobDropFile {
 		if ($inGroup -and $currentGroup) {
 			if ($trimmed -match "^Mob\s+(\d+)") {
 				$currentGroup.MobVnum = $Matches[1]
+				# If name was not set by group, or is empty, try to get from here
 				if ($trimmed -match "--\s*(.+)$") { $currentGroup.MobName = $Matches[1].Trim() }
-				else { $currentGroup.MobName = "Mob $($Matches[1])" }
+				elseif (-not $currentGroup.MobName) { $currentGroup.MobName = "Mob $($Matches[1])" }
+				# Clean up group name e.g. "Vahşi_Yüzbaşı" -> "Vahşi Yüzbaşı"
+				$currentGroup.MobName = $currentGroup.MobName -replace "_", " "
 				continue
 			}
 			if ($trimmed -match "^Type\s+(.+)$") { $currentGroup.Type = $Matches[1].Trim(); continue }

@@ -50,12 +50,18 @@ def load_item_list_mapping(filepath):
     
     with open(filepath, "r", encoding="utf-8", errors="replace") as f:
         for line in f:
-            parts = line.strip().split("\t")
+            # Drop comments and empty lines
+            if line.strip().startswith("//") or not line.strip():
+                continue
+            
+            # Split by any whitespace
+            parts = line.strip().split()
             if len(parts) >= 3:
-                vnum_str = parts[0].strip()
-                icon_path = parts[2].strip()
-                if vnum_str.isdigit() and icon_path:
-                    # icon_path comes like "icon/item/10010.tga"
+                vnum_str = parts[0]
+                icon_path = parts[2]
+                if vnum_str.isdigit() and "icon" in icon_path.lower():
+                    # Clean up backslashes and quotes if any
+                    icon_path = icon_path.replace("\\", "/").strip('"').strip("'")
                     mapping[int(vnum_str)] = icon_path
     return mapping
 
