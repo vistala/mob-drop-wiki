@@ -39,46 +39,62 @@ def extract_vnums_from_file(filepath):
                 vnums.add(m.group(1))
     return vnums
 
-def find_tga_path(vnum_int, src_dir):
-    """Find the TGA file for a vnum, trying base-vnum fallbacks."""
-    # Try exact vnum first
-    candidates = [vnum_int]
-    # Try base vnum (strip upgrade level: 23 -> 20, 2013 -> 2010)
-    base10 = vnum_int - (vnum_int % 10)
-    if base10 != vnum_int:
-        candidates.append(base10)
-    # Try base vnum floored to 100 (for some special items)
-    base100 = vnum_int - (vnum_int % 100)
-    if base100 not in candidates:
-        candidates.append(base100)
-    
-    for candidate in candidates:
-        padded = str(candidate).zfill(5)
-        tga_path = src_dir / f"{padded}.tga"
-        if tga_path.exists():
-            return tga_path
-    return None
+ITEM_LIST_PATH = SCRIPT_DIR / "item_list.txt"
 
-def convert_tga_to_png(vnum, src_dir, out_dir):
-    """Convert a TGA icon to PNG. Returns True if successful."""
+def load_item_list_mapping(filepath):
+    """Load vnum -> icon path mapping from item_list.txt"""
+    mapping = {}
+    if not filepath.exists():
+        print(f"UYARI: {filepath.name} bulunamadi, icon mapping yapilamiyor.")
+        return mapping
+    
+    with open(filepath, "r", encoding="utf-8", errors="replace") as f:
+        for line in f:
+            parts = line.strip().split("\t")
+            if len(parts) >= 3:
+                vnum_str = parts[0].strip()
+                icon_path = parts[2].strip()
+                if vnum_str.isdigit() and icon_path:
+                    # icon_path comes like "icon/item/10010.tga"
+                    mapping[int(vnum_str)] = icon_path
+    return mapping
+
+def convert_tga_to_png(vnum, src_dir, out_dir, mapping):
+    """Convert a TGA icon to PNG using item_list mapping. Returns True if successful."""
     vnum_int = int(vnum)
     png_path = out_dir / f"{vnum}.png"
     
     if png_path.exists():
         return True  # Already converted
+        
+    icon_subpath = mapping.get(vnum_int)
+    # If not in mapping, try fallback logic to base vnum in mapping
+    if not icon_subpath:
+        base10 = vnum_int - (vnum_int % 10)
+        icon_subpath = mapping.get(base10)
     
-    tga_path = find_tga_path(vnum_int, src_dir)
-    if tga_path is None:
-        return False
+    # If still not found, try raw fallback
+    if not icon_subpath:
+        padded = str(base10).zfill(5) if 'base10' in locals() else str(vnum_int).zfill(5)
+        icon_subpath = f"icon/item/{padded}.tga"
+        
+    tga_path = src_dir / icon_subpath
+    
+    # Try one final raw fallback if the composed path doesn't exist
+    if not tga_path.exists():
+        alt_path = src_dir / "icon/item" / f"{str(vnum_int - (vnum_int%10)).zfill(5)}.tga"
+        if alt_path.exists():
+             tga_path = alt_path
+        else:
+             return False
     
     try:
         img = Image.open(tga_path)
         # Convert to RGBA if needed
         if img.mode != "RGBA":
             img = img.convert("RGBA")
-        # Resize to 32x32 if needed
-        if img.size != (32, 32):
-            img = img.resize((32, 32), Image.LANCZOS)
+        
+        # WE DO NOT RESIZE. Metin2 slot heights are 32x32, 32x64, 32x96. We keep original aspect ratio.
         img.save(png_path, "PNG")
         return True
     except Exception as e:
@@ -121,12 +137,15 @@ def main():
     missing = 0
     skipped = 0
     
+    mapping = load_item_list_mapping(ITEM_LIST_PATH)
+    print(f"item_list.txt'den {len(mapping)} icon haritasi yuklendi.")
+
     for vnum in sorted(vnums, key=int):
         png_path = ICON_OUT / f"{vnum}.png"
         if png_path.exists():
             skipped += 1
             continue
-        if convert_tga_to_png(vnum, ICON_SRC, ICON_OUT):
+        if convert_tga_to_png(vnum, ICON_SRC, ICON_OUT, mapping):
             converted += 1
         else:
             missing += 1

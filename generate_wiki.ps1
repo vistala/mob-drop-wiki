@@ -59,6 +59,26 @@ function Parse-MobDropFile {
 	return $groups
 }
 
+# ======================== PARSER: mob_proto.txt ========================
+function Get-MobCategories {
+	param([string]$Path)
+	$catMap = @{}
+	if (-not (Test-Path $Path)) { return $catMap }
+	$lines = Get-Content $Path -Encoding UTF8
+	foreach ($line in $lines) {
+		$parts = $line.Split("`t")
+		if ($parts.Count -ge 5 -and $parts[0] -match "^\d+$") {
+			$vnum = $parts[0]
+			$rank = $parts[2]
+			$type = $parts[3]
+			if ($rank -eq "BOSS") { $catMap[$vnum] = "Patronlar" }
+			elseif ($type -eq "STONE") { $catMap[$vnum] = "Metinler" }
+			else { $catMap[$vnum] = "Canavarlar" }
+		}
+	}
+	return $catMap
+}
+
 # ======================== PARSER: special_item_group.txt ========================
 function Parse-ChestDropFile {
 	param([string]$Path)
@@ -151,7 +171,7 @@ function Build-GridItemHtml {
 }
 
 function Build-CardHtml {
-	param($Entity, [string]$Category, [string]$IdPrefix, [bool]$Hidden = $true)
+	param($Entity, [string]$Category, [string]$IdPrefix, [string]$SubCategory, [bool]$Hidden = $true)
 	$entityName = if ($Category -eq "mob") { $Entity.MobName } else { $Entity.ChestName }
 	$entityVnum = if ($Category -eq "mob") { $Entity.MobVnum } else { $Entity.ChestVnum }
 	$cardId = "$IdPrefix-$entityVnum"
@@ -160,7 +180,13 @@ function Build-CardHtml {
 	$iconBg = if ($Category -eq "mob") { "rgba(99,102,241,0.15)" } else { "rgba(245,158,11,0.15)" }
 	$iconColor = if ($Category -eq "mob") { "var(--accent-blue)" } else { "var(--accent-gold)" }
 	$displayAttr = if ($Hidden) { " style=`"display:none;`"" } else { "" }
-	$catLabel = if ($Category -eq "mob") { "Canavar" } else { "Sandik" }
+	
+	$catLabel = "Sandik"
+	if ($Category -eq "mob") {
+		if ($SubCategory -eq "Patronlar") { $catLabel = "Patron" }
+		elseif ($SubCategory -eq "Metinler") { $catLabel = "Metin" }
+		else { $catLabel = "Canavar" }
+	}
 
 	$gridItemsHtml = ""
 	foreach ($item in $Entity.Items) {
@@ -199,13 +225,43 @@ $chestGroups = Parse-ChestDropFile -Path $chestDropFile
 Write-Host "Sandiklar: $($chestGroups.Count) grup" -ForegroundColor Green
 
 # Build sidebar
+$mobProtoPath = Join-Path $scriptDir "mob_proto.txt"
+$mobCategories = Get-MobCategories -Path $mobProtoPath
+
+$lists = @{
+	"Canavarlar" = @()
+	"Patronlar"  = @()
+	"Metinler"   = @()
+}
+
+foreach ($g in $mobGroups) {
+	$cat = $mobCategories[$g.MobVnum]
+	if (-not $cat) { $cat = "Canavarlar" }
+	$lists[$cat] += $g
+}
+
 $sidebarHtml = "                    <div class=`"sidebar-section`">`n"
 $sidebarHtml += "                        <div class=`"sidebar-section-title`"><i class=`"fas fa-dragon`"></i> Canavarlar <span class=`"section-count`">$($mobGroups.Count)</span></div>`n"
+
 $firstCard = $true
-foreach ($g in $mobGroups) {
-	$activeClass = if ($firstCard) { " active" } else { "" }
-	$sidebarHtml += "                        <button class=`"w-cat-btn$activeClass`" data-target=`"mob-$($g.MobVnum)`" data-category=`"mob`">$($g.MobName)</button>`n"
-	$firstCard = $false
+$icons = @{ "Canavarlar" = "fa-ghost"; "Patronlar" = "fa-crown"; "Metinler" = "fa-meteor" }
+
+foreach ($catKey in @("Patronlar", "Metinler", "Canavarlar")) {
+	$catList = $lists[$catKey]
+	if ($catList.Count -gt 0) {
+		$sidebarHtml += "                        <div class=`"tree-folder`">`n"
+		$sidebarHtml += "                            <div class=`"tree-header`" onclick=`"this.parentElement.classList.toggle('open')`">`n"
+		$sidebarHtml += "                                <i class=`"fas fa-chevron-right tree-icon`"></i> <i class=`"fas $($icons[$catKey])`" style=`"margin:0 4px; font-size:0.6rem; color:var(--text-low)`"></i> $catKey ($($catList.Count))`n"
+		$sidebarHtml += "                            </div>`n"
+		$sidebarHtml += "                            <div class=`"tree-content`">`n"
+		foreach ($g in $catList) {
+			$activeClass = if ($firstCard) { " active" } else { "" }
+			$sidebarHtml += "                                <button class=`"w-cat-btn$activeClass`" data-target=`"mob-$($g.MobVnum)`" data-category=`"mob`">$($g.MobName)</button>`n"
+			$firstCard = $false
+		}
+		$sidebarHtml += "                            </div>`n"
+		$sidebarHtml += "                        </div>`n"
+	}
 }
 $sidebarHtml += "                    </div>`n"
 $sidebarHtml += "                    <div class=`"sidebar-section`">`n"
@@ -218,12 +274,15 @@ $sidebarHtml += "                    </div>`n"
 # Build cards
 $cardsHtml = ""
 $isFirst = $true
-foreach ($g in $mobGroups) {
-	$cardsHtml += Build-CardHtml -Entity $g -Category "mob" -IdPrefix "mob" -Hidden (-not $isFirst)
-	$isFirst = $false
+
+foreach ($catKey in @("Patronlar", "Metinler", "Canavarlar")) {
+	foreach ($g in $lists[$catKey]) {
+		$cardsHtml += Build-CardHtml -Entity $g -Category "mob" -IdPrefix "mob" -SubCategory $catKey -Hidden (-not $isFirst)
+		$isFirst = $false
+	}
 }
 foreach ($g in $chestGroups) {
-	$cardsHtml += Build-CardHtml -Entity $g -Category "chest" -IdPrefix "chest" -Hidden $true
+	$cardsHtml += Build-CardHtml -Entity $g -Category "chest" -IdPrefix "chest" -SubCategory "Sandik" -Hidden $true
 }
 
 $totalMobs = $mobGroups.Count
@@ -387,6 +446,19 @@ $html = @"
             color: var(--accent-blue); font-weight: 600;
         }
         .cat-filter-btn i { margin-right: 2px; }
+
+        .tree-folder { margin-bottom: 2px; }
+        .tree-header { 
+            padding: 0.4rem 0.85rem; 
+            font-size: 0.65rem; color: var(--text-high); 
+            cursor: pointer; display: flex; align-items: center; gap: 0.4rem; 
+            border-radius: var(--radius-sm); transition: background 0.2s;
+        }
+        .tree-header:hover { background: rgba(255,255,255,0.05); }
+        .tree-icon { font-size: 0.55rem; color: var(--text-muted); transition: transform 0.2s; }
+        .tree-folder.open .tree-icon { transform: rotate(90deg); }
+        .tree-content { display: none; margin-left: 0.5rem; padding-left: 0.5rem; border-left: 1px solid var(--border); margin-top: 2px; }
+        .tree-folder.open .tree-content { display: block; }
 
         .sidebar-nav { flex: 1; overflow-y: auto; padding: 0.15rem 0; }
         .sidebar-section { margin-bottom: 0.15rem; }
@@ -556,12 +628,12 @@ $html = @"
 
         .grid-icon-wrap {
             position: relative;
-            width: 36px; height: 36px;
+            width: 36px; min-height: 36px; height: auto;
             display: flex; align-items: center; justify-content: center;
         }
 
         .grid-icon {
-            width: 32px; height: 32px;
+            width: 32px; height: auto; max-height: 96px;
             image-rendering: pixelated;
             border-radius: 3px;
         }
