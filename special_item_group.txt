@@ -1,0 +1,269 @@
+Group	스폐셜
+{
+	Vnum	10050
+	type	special
+	1	71202	100001	1	-- Nazar Tılsımı
+}
+
+Group	스폐셜4
+{
+	Vnum	10051
+	type	special
+	1	70043	100033	1	-- Hırsızın Eldivenleri
+	2	72004	100033	1	-- Hırsızın Eldivenleri
+	3	72005	100033	1	-- Hırsızın Eldivenleri
+	4	72006	100033	1	-- Hırsızın Eldivenleri
+}
+Group	스폐셜3
+{
+	Vnum	10052
+	type	special
+	1	38058	100055	1	-- Bilgelik İksiri
+	2	71181	100055	1	-- Bilgelik İksiri
+}
+Group	스폐셜3
+{
+	Vnum	10053
+	type	special
+	1	70003	100044	1	-- Lider Kitabı
+	2	71012	100044	1	-- Lider Kitabı
+	3	72043	100044	1	-- Lider Kitabı
+	4	72044	100044	1	-- Lider Kitabı
+	5	72045	100044	1	-- Lider Kitabı
+	6	72059	100044	1	-- Lider Kitabı
+	7	72060	100044	1	-- Lider Kitabı
+	8	72302	100044	1	-- Lider Kitabı
+	9	76011	100044	1	-- Lider Kitabı
+}
+Group	스폐셜5
+{
+	Vnum	10055
+	type	special
+	1	39002	100055	1	-- Tecrübe Yüzüğü
+	2	70005	100055	1	-- Tecrübe Yüzüğü
+	3	72001	100055	1	-- Tecrübe Yüzüğü
+	4	72002	100055	1	-- Tecrübe Yüzüğü
+	5	72003	100055	1	-- Tecrübe Yüzüğü
+	6	72049	100055	1	-- Tecrübe Yüzüğü
+	7	72050	100055	1	-- Tecrübe Yüzüğü
+	8	72303	100055	1	-- Tecrübe Yüzüğü
+}
+Group	Yavrucuk_Kutusu
+{
+	Vnum	38055 -- Yavrucuk Kutusu
+	1	39027	1	105.000	-- %5 Taş Sanatı Kitabı
+	2	39011	5	105.000	-- %5 Yaşam Kutsaması
+	3	70003	1	105.000	-- %5 Liderin Kitabı
+	4	71004	10	105.000	-- %5 Ejderha Madalyası
+	5	71130	3	105.000	-- %5 Geçit Bileti
+	6	71181	1	105.000	-- %5 Bilgelik İksiri
+	7	39013	5	105.000	-- %5 Ejderha Kutsaması
+	8	76017	3	105.000	-- %5 Saldırı iksiri +15
+	9	39026	3	105.000	-- %5 Hız İksiri
+	10	39024	5	105.000	-- %5 Kritik İsabet
+	11	39025	5	105.000	-- %5 Delici İsabet
+}
+Group	GM_sandigi
+{
+	Vnum	50272 -- GM Sandığı
+	Type	drop
+	1	50272	1	215.000	-- %1 Altın Patron Avcısı San.
+	2	39009	1	215.000	-- %1 Beceri Sıfırlama Kağıdı
+	3	71003	1	215.000	-- %1 Beceri Sıfırlama Kağıdı
+	4	80014	1	215.000	-- %1 EP kuponu (100)
+	5	80017	1	215.000	-- %1 EP kuponu (50)
+	6	76010	1	215.000	-- %1 Kan Taşı
+	7	30319	1	215.000	-- %1 Küçülen Kafa
+	8	76002	1	215.000	-- %1 Küçülen Kafa
+	9	38055	1	215.000	-- %1 Yavrucuk Kutusu
+	10	72737	1	215.000	-- %1 Yeşil şans kutusu
+	11	71130	1	215.000	-- %1 Geçit Bileti
+	12	71095	1	215.000	-- %1 Geçit Bileti
+	13	30190	1	215.000	-- %1 Kan Taşı
+	14	39005	1	215.000	-- %1 Büyülü Bakır
+	15	70035	1	215.000	-- %1 Büyülü Bakır
+	16	38058	1	215.000	-- %1 Bilgelik İksiri (3 sa.)
+	17	71181	1	215.000	-- %1 Bilgelik İksiri
+	18	72005	1	215.000	-- %1 Hırsızın eldivenleri
+	19	72006	1	215.000	-- %1 Hırsızın eldivenleri
+	20	72004	1	215.000	-- %1 Hırsızın eldivenleri
+	21	76025	1	215.000	-- %1 Rüzgarın Ayakkabıları
+	22	39002	1	215.000	-- %1 Tecrübe yüzüğü (1 sa.)
+	23	70005	1	215.000	-- %1 Tecrübe yüzüğü (1 sa.)
+	24	72001	1	215.000	-- %1 Tecrübe yüzüğü (10 sa.)
+	25	72003	1	215.000	-- %1 Tecrübe yüzüğü (3 sa.)
+	26	72002	1	215.000	-- %1 Tecrübe yüzüğü (30 dk.)
+	27	71180	1	215.000	-- %1 Yükseliş İksiri (3 sa.)
+	28	27212	1	215.000	-- %1 Mor İksir (B)
+	29	27210	1	215.000	-- %1 Mor İksir (K)
+	30	27211	1	215.000	-- %1 Mor İksir (O)
+	31	27105	1	215.000	-- %1 Mor İksir(B)
+	32	27103	1	215.000	-- %1 Mor İksir(K)
+	33	27104	1	215.000	-- %1 Mor İksir(O)
+	34	27209	1	215.000	-- %1 Yeşil İksir (B)
+	35	27207	1	215.000	-- %1 Yeşil İksir (K)
+	36	27208	1	215.000	-- %1 Yeşil İksir (O)
+	37	27102	1	215.000	-- %1 Yeşil İksir(B)
+	38	27100	1	215.000	-- %1 Yeşil İksir(K)
+	39	27101	1	215.000	-- %1 Yeşil İksir(O)
+	40	39029	1	215.000	-- %1 Arttırma Kağıdı
+	41	76013	1	215.000	-- %1 Arttırma Kağıdı (m)
+	42	71085	1	215.000	-- %1 Arttırma Kağıdı
+	43	71152	1	215.000	-- %1 Yeşil Güç
+	44	76024	1	215.000	-- %1 Yeşil Güç
+	45	39004	1	215.000	-- %1 Kutsama Küresi
+	46	76015	1	215.000	-- %1 Kutsama Küresi
+	47	71155	1	215.000	-- %1 Bilgelik İksiri (3 sa.)
+	48	71153	1	215.000	-- %1 Bilgelik İksiri
+	49	39025	1	215.000	-- %1 Delici İsabet
+	50	71045	1	215.000	-- %1 Delici İsabet
+	51	39018	1	215.000	-- %1 Ejderha Tanrı Saldırısı
+	52	71028	1	215.000	-- %1 Ejderha Tanrı Saldırısı
+	53	39020	1	215.000	-- %1 Ejderha Tanrı Savunması
+	54	71030	1	215.000	-- %1 Ejderha Tanrı Savunması
+	55	39017	1	215.000	-- %1 Ejderha Tanrı Yaşamı
+	56	71027	1	215.000	-- %1 Ejderha Tanrı Yaşamı
+	57	39019	1	215.000	-- %1 Ejderha Tanrı Zekası
+	58	71029	1	215.000	-- %1 Ejderha Tanrı Zekası
+	59	39024	1	215.000	-- %1 Kritik İsabet
+	60	71044	1	215.000	-- %1 Kritik İsabet
+	61	39008	1	215.000	-- %1 Kötü Ruh Kovma Kağıdı
+	62	72310	1	215.000	-- %1 Kötü Ruh Kovma Kağıdı
+	63	39030	1	215.000	-- %1 Münzevi Tavsiyesi
+	64	71094	1	215.000	-- %1 Münzevi Tavsiyesi
+	65	71156	1	215.000	-- %1 Ruh İksiri (3 sa.)
+	66	39031	1	215.000	-- %1 Soğutma İksiri
+	67	71101	1	215.000	-- %1 Soğutma İksiri
+	68	71154	1	215.000	-- %1 Yükseliş İksiri (3 sa.)
+	69	39028	1	215.000	-- %1 Efsun Nesnesi
+	70	71084	1	215.000	-- %1 Efsun Nesnesi
+	71	76014	1	215.000	-- %1 Nesneyi efsunla(m)
+	72	71151	1	215.000	-- %1 Yeşil Efsun
+	73	76023	1	215.000	-- %1 Yeşil Efsun
+	74	39027	1	215.000	-- %1 Taş Sanatı Kitabı
+	75	76028	1	215.000	-- %1 Taş Sanatı kitabı
+	76	27203	1	215.000	-- %1 Kırmızı İksir (B)
+	77	27201	1	215.000	-- %1 Kırmızı İksir (K)
+	78	27202	1	215.000	-- %1 Kırmızı İksir (O)
+	79	27003	1	215.000	-- %1 Kırmızı İksir(B)
+	80	27001	1	215.000	-- %1 Kırmızı İksir(K)
+	81	27002	1	215.000	-- %1 Kırmızı İksir(O)
+	82	27206	1	215.000	-- %1 Mavi İksir (B)
+	83	27204	1	215.000	-- %1 Mavi İksir (K)
+	84	27205	1	215.000	-- %1 Mavi İksir (O)
+	85	27006	1	215.000	-- %1 Mavi İksir(B)
+	86	27004	1	215.000	-- %1 Mavi İksir(K)
+	87	27005	1	215.000	-- %1 Mavi İksir(O)
+	88	39013	1	215.000	-- %1 Ejderha Kutsaması
+	89	71020	1	215.000	-- %1 Ejderha Kutsaması
+	90	39012	1	215.000	-- %1 Sihir Kutsaması
+	91	71019	1	215.000	-- %1 Sihir Kutsaması
+	92	39011	1	215.000	-- %1 Yaşam Kutsaması
+	93	71018	1	215.000	-- %1 Yaşam Kutsaması
+	94	39003	1	215.000	-- %1 Şeftali Çiçeği Şurubu
+	95	70020	1	215.000	-- %1 Şeftali Çiçeği Şurubu
+	96	39023	1	215.000	-- %1 Araştırmacının Özütü
+	97	76020	1	215.000	-- %1 Araştırmacının Özütü
+	98	72729	1	215.000	-- %1 Ay Özütü (B)
+	99	72727	1	215.000	-- %1 Ay Özütü (K)
+	100	76005	1	215.000	-- %1 Ay Özütü (O)
+	101	72728	1	215.000	-- %1 Ay Özütü (O)
+	102	72730	1	215.000	-- %1 Ay Özütü (Ö)
+	103	39006	1	215.000	-- %1 Cesaret Pelerini
+	104	76007	1	215.000	-- %1 Cesaret Pelerini
+	105	39015	1	215.000	-- %1 Demirci Taşı
+	106	71025	1	215.000	-- %1 Demirci Taşı
+	107	72320	1	215.000	-- %1 Envanter Genişletme
+	108	72319	1	215.000	-- %1 Envanter genişlemesi (s)
+	109	72725	1	215.000	-- %1 Güneş Özütü (B)
+	110	72723	1	215.000	-- %1 Güneş Özütü (K)
+	111	76022	1	215.000	-- %1 Güneş Özütü (O)
+	112	72724	1	215.000	-- %1 Güneş Özütü (O)
+	113	72726	1	215.000	-- %1 Güneş Özütü (Ö)
+	114	76006	1	215.000	-- %1 Metin Taşı Dedektörü
+	115	50216	1	215.000	-- %1 Punç
+	116	50183	1	215.000	-- %1 Tatlılar
+	117	70102	1	215.000	-- %1 Zen Fasulye
+	118	27987	1	215.000	-- %1 İstiridye
+	119	39001	1	215.000	-- %1 Büyülü Metal
+	120	39007	1	215.000	-- %1 Demircinin El Kitabı
+	121	70039	1	215.000	-- %1 Demircinin El Kitabı
+	122	39022	1	215.000	-- %1 Ejderha Parşömeni
+	123	76009	1	215.000	-- %1 Ejderha Parşömeni
+	124	25040	1	215.000	-- %1 Kutsama Kağıdı
+	125	76016	1	215.000	-- %1 Kutsama Parşömeni
+	126	39014	1	215.000	-- %1 Savaş Kağıdı
+	127	71021	1	215.000	-- %1 Savaş Kağıdı
+	144	27871	1	215.000	-- %1 Izg. Gökkuşağı Alabalığı
+	145	27883	1	215.000	-- %1 Izgara altın sudak
+	146	27882	1	215.000	-- %1 Izgara aynalı sazan
+	147	27865	1	215.000	-- %1 Izgara Büyük Sudak
+	148	27890	1	215.000	-- %1 Izgara Çin levreği
+	149	27877	1	215.000	-- %1 Izgara Çopra Balığı
+	150	27869	1	215.000	-- %1 Izgara Dere Alabalığı
+	151	27892	1	215.000	-- %1 Izgara gölet salyangozu
+	152	27888	1	215.000	-- %1 Izgara güneş levreği
+	153	27873	1	215.000	-- %1 Izgara Hamsi
+	154	27889	1	215.000	-- %1 Izgara havuz balığı
+	155	27881	1	215.000	-- %1 Izgara kadife balığı
+	156	27891	1	215.000	-- %1 Izgara kaya balığı
+	157	27886	1	215.000	-- %1 Izgara kral yengeci.
+	158	27885	1	215.000	-- %1 Izgara kurbağa balığı
+	159	27874	1	215.000	-- %1 Izgara Levrek
+	160	91054	1	215.000	-- %1 Izgara levrek
+	161	27878	1	215.000	-- %1 Izgara Lüfer Balığı
+	162	27872	1	215.000	-- %1 Izgara Nehir Alabalığı
+	163	27868	1	215.000	-- %1 Izgara Ot Sazanı
+	164	27880	1	215.000	-- %1 Izgara palamut balığı
+	165	27864	1	215.000	-- %1 Izgara Ringa Balığı
+	166	27866	1	215.000	-- %1 Izgara Sazan
+	167	27879	1	215.000	-- %1 Izgara sevimli balık
+	168	27867	1	215.000	-- %1 Izgara Som Balığı
+	169	27863	1	215.000	-- %1 Izgara Sudak Balığı
+	170	27875	1	215.000	-- %1 Izgara Tekir Balığı
+	171	27887	1	215.000	-- %1 Izgara Yabbie yengeci
+	172	27876	1	215.000	-- %1 Izgara Yayın Balığı
+	173	27884	1	215.000	-- %1 Izgara yılan başı balığı
+	174	27870	1	215.000	-- %1 Izgara Zargana
+	175	50513	1	215.000	-- %1 Ruh Taşı
+	176	50525	1	215.000	-- %1 Ruh Taşı+
+	177	27810	1	215.000	-- %1 Zargana
+	178	27803	1	215.000	-- %1 Sudak Balığı
+	179	27813	1	215.000	-- %1 Hamsi
+	180	27804	1	215.000	-- %1 Ringa Balığı
+	181	27823	1	215.000	-- %1 Altın Sudak Balığı
+	182	27827	1	215.000	-- %1 Yabbie yengeci
+	183	27809	1	215.000	-- %1 Dere Alabalığı
+	184	27812	1	215.000	-- %1 Nehir Alabalığı
+	185	27811	1	215.000	-- %1 Gökkuşağı Alabalığı
+	186	27816	1	215.000	-- %1 Yayın Balığı
+	187	27820	1	215.000	-- %1 Palamut Balığı
+	188	27821	1	215.000	-- %1 Kadife Balığı
+	189	27818	1	215.000	-- %1 Lüfer Balığı
+	190	27815	1	215.000	-- %1 Tekir Balığı
+	191	27805	1	215.000	-- %1 Büyük Sudak Balığı
+	192	27807	1	215.000	-- %1 Som Balığı
+	193	27822	1	215.000	-- %1 Aynalı Sazan
+	194	27819	1	215.000	-- %1 Sevimli Balık
+	195	27826	1	215.000	-- %1 Kral yengeci
+	196	27814	1	215.000	-- %1 Levrek
+	197	27817	1	215.000	-- %1 Çopra Balığı
+	198	27824	1	215.000	-- %1 Yılan başı balığı
+	199	27808	1	215.000	-- %1 Ot Sazanı
+	200	27806	1	215.000	-- %1 Sazan
+	201	50301	1	215.000	-- %1 Sun zi Savaş Sanatı
+	202	50302	1	215.000	-- %1 Wu zi Savaş Sanatı
+	203	50303	1	215.000	-- %1 WeiLiao Zi Savaş Sanatı
+	204	50304	1	215.000	-- %1 Kombo Ustalığı
+	205	50305	1	215.000	-- %1 Combo Ustasının Kaydı
+	206	50306	1	215.000	-- %1 Kombo Sanatı
+	207	50317	1	215.000	-- %1 Görev Kitabı(Test)
+	208	50318	1	215.000	-- %1 Görev Kitabı(Kolay)
+	209	50319	1	215.000	-- %1 Görev Kitabı(Normal)
+	210	50320	1	215.000	-- %1 Görev Kitabı(Zor)
+	211	50321	1	215.000	-- %1 Görev Kitabı(Uzman)
+	212	53501	1	215.000	-- %1 Ateş Ankası Kafesi
+	213	53502	1	215.000	-- %1 Ren Geyiği Yavrusu Sand.
+	214	53503	1	215.000	-- %1 Buz Ankası Kafesi
+	215	53505	1	215.000	-- %1 Yavru Azrail Sandığı
+}

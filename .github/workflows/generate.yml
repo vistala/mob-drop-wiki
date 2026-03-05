@@ -5,6 +5,7 @@ on:
       - main
     paths:
       - 'mob_drop_item.txt'
+      - 'special_item_group.txt'
       - 'generate_wiki.ps1'
   workflow_dispatch:
 
