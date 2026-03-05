@@ -132,21 +132,20 @@ function Parse-ChestDropFile {
 	}
 
 	# Apply custom chest chance calculation
-	# (Count * Chance) / Total_Weight * 100
+	# Probability = item_chance / sum_of_all_chances * 100
+	# Count does NOT affect probability, only how many you receive
 	foreach ($g in $groups) {
-		$totalWeight = 0.0
+		$totalChance = 0.0
 		foreach ($item in $g.Items) {
-			$c = 1.0; $ch = 0.0
-			[double]::TryParse($item.Count, [ref]$c) | Out-Null
+			$ch = 0.0
 			[double]::TryParse($item.Chance, [ref]$ch) | Out-Null
-			$totalWeight += ($c * $ch)
+			$totalChance += $ch
 		}
-		if ($totalWeight -gt 0) {
+		if ($totalChance -gt 0) {
 			foreach ($item in $g.Items) {
-				$c = 1.0; $ch = 0.0
-				[double]::TryParse($item.Count, [ref]$c) | Out-Null
+				$ch = 0.0
 				[double]::TryParse($item.Chance, [ref]$ch) | Out-Null
-				$realProb = (($c * $ch) / $totalWeight) * 100.0
+				$realProb = ($ch / $totalChance) * 100.0
 				$item.Chance = [math]::Round($realProb, 2).ToString("0.##")
 			}
 		}
