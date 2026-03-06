@@ -4601,7 +4601,7 @@ Group	Bahar
 	26	25040	2	70
 }
 
-Group	Kurtulus_Metini
+Group	Kurtulus_Metini1
 {
 	Vnum	70450
 	1	mob	8640	1	500
