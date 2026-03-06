@@ -88,7 +88,8 @@ function Get-ItemNames {
 	param([string]$Path)
 	$map = @{}
 	if (-not (Test-Path $Path)) { return $map }
-	$lines = Get-Content $Path -Encoding UTF8
+	# item_names.txt is Windows-1252 (CP1252), NOT UTF-8 - use Default encoding
+	$lines = Get-Content $Path -Encoding Default
 	foreach ($line in $lines) {
 		$parts = $line.Split("`t")
 		if ($parts.Count -ge 2 -and $parts[0] -match "^\d+$") {
