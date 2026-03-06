@@ -17,12 +17,12 @@ $outputPath = Join-Path $scriptDir "index.html"
 
 # ======================== PARSER: mob_drop_item.txt ========================
 function Parse-MobDropFile {
-	param([string]$Path)
+	param([string]$Path, [hashtable]$MobNames = @{}, [hashtable]$ItemNames = @{})
 	if (-not (Test-Path $Path)) {
 		Write-Host "UYARI: $Path bulunamadi" -ForegroundColor Yellow
 		return @()
 	}
-	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::GetEncoding(1254))
+	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
 	$groups = @()
 	$currentGroup = $null
 	$inGroup = $false
@@ -44,12 +44,15 @@ function Parse-MobDropFile {
 		}
 		if ($inGroup -and $currentGroup) {
 			if ($trimmed -match "^Mob\s+(\d+)") {
-				$currentGroup.MobVnum = $Matches[1]
-				# If name was not set by group, or is empty, try to get from here
-				if ($trimmed -match "--\s*(.+)$") { $currentGroup.MobName = $Matches[1].Trim() }
-				elseif (-not $currentGroup.MobName) { $currentGroup.MobName = "Mob $($Matches[1])" }
-				# Clean up group name e.g. "Vahşi_Yüzbaşı" -> "Vahşi Yüzbaşı"
-				$currentGroup.MobName = $currentGroup.MobName -replace "_", " "
+				$vnum = $Matches[1]
+				$currentGroup.MobVnum = $vnum
+				# Always resolve mob name from mob_names.txt by VNUM
+				if ($MobNames.ContainsKey($vnum)) {
+					$currentGroup.MobName = $MobNames[$vnum]
+				}
+				else {
+					$currentGroup.MobName = "Mob $vnum"
+				}
 				continue
 			}
 			if ($trimmed -match "^Type\s+(.+)$") { $currentGroup.Type = $Matches[1].Trim(); continue }
@@ -57,9 +60,13 @@ function Parse-MobDropFile {
 				$capVnum = $Matches[1]
 				$capCount = $Matches[2]
 				$capChance = $Matches[3]
-				$itemName = ""
-				if ($trimmed -match "--\s*(.+)$") { $itemName = $Matches[1].Trim() }
-				else { $itemName = "Item $capVnum" }
+				# Always resolve item name from item_names.txt by VNUM
+				if ($ItemNames.ContainsKey($capVnum)) {
+					$itemName = $ItemNames[$capVnum]
+				}
+				else {
+					$itemName = "Item $capVnum"
+				}
 				$currentGroup.Items += @{
 					Vnum = $capVnum; Count = $capCount; Chance = $capChance; Name = $itemName
 				}
@@ -74,7 +81,7 @@ function Get-MobCategories {
 	param([string]$Path)
 	$catMap = @{}
 	if (-not (Test-Path $Path)) { return $catMap }
-	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::GetEncoding(1254))
+	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
 	foreach ($line in $lines) {
 		$parts = $line.Split("`t")
 		if ($parts.Count -ge 5 -and $parts[0] -match "^\d+$") {
@@ -106,6 +113,23 @@ function Get-ItemNames {
 	return $nameMap
 }
 
+# ======================== LOADER: mob_names.txt ========================
+function Get-MobNames {
+	param([string]$Path)
+	$nameMap = @{}
+	if (-not (Test-Path $Path)) { return $nameMap }
+	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
+	$firstLine = $true
+	foreach ($line in $lines) {
+		if ($firstLine) { $firstLine = $false; continue } # skip header
+		$parts = $line.Split("`t")
+		if ($parts.Count -ge 2 -and $parts[0] -match "^\d+$") {
+			$nameMap[$parts[0].Trim()] = $parts[1].Trim()
+		}
+	}
+	return $nameMap
+}
+
 # ======================== PARSER: special_item_group.txt ========================
 function Parse-ChestDropFile {
 	param([string]$Path, [hashtable]$ItemNames = @{})
@@ -113,7 +137,7 @@ function Parse-ChestDropFile {
 		Write-Host "UYARI: $Path bulunamadi" -ForegroundColor Yellow
 		return @()
 	}
-	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::GetEncoding(1254))
+	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
 	$groups = @()
 	$currentGroup = $null
 	$inGroup = $false
@@ -145,14 +169,11 @@ function Parse-ChestDropFile {
 		}
 		if ($inGroup -and $currentGroup) {
 			if ($trimmed -match "^Vnum\s+(\d+)") {
-				$currentGroup.ChestVnum = $Matches[1]
-				# Look up name from item_names.txt by vnum
 				$vstr = $Matches[1]
+				$currentGroup.ChestVnum = $vstr
+				# Always resolve chest name from item_names.txt by VNUM
 				if ($ItemNames.ContainsKey($vstr)) {
 					$currentGroup.ChestName = $ItemNames[$vstr]
-				}
-				elseif ($trimmed -match "--\s*(.+)$") {
-					$currentGroup.ChestName = $Matches[1].Trim()
 				}
 				else {
 					$currentGroup.ChestName = "Sandik $vstr"
@@ -166,12 +187,8 @@ function Parse-ChestDropFile {
 				$capVnum = $Matches[1]
 				$capCount = $Matches[2]
 				$capChance = $Matches[3]
-				$itemName = ""
-				if ($trimmed -match "--\s*(.+)$") {
-					$itemName = $Matches[1].Trim()
-					if ($itemName -match "^%\d+\s+(.+)$") { $itemName = $Matches[1].Trim() }
-				}
-				elseif ($ItemNames.ContainsKey($capVnum)) {
+				# Always resolve item name from item_names.txt by VNUM
+				if ($ItemNames.ContainsKey($capVnum)) {
 					$itemName = $ItemNames[$capVnum]
 				}
 				else {
@@ -296,12 +313,17 @@ $gridItemsHtml
 # ======================== MAIN ========================
 Write-Host "=== Harbi2 Drop Wiki Generator v3 ===" -ForegroundColor Cyan
 
-# Load item names for name resolution (chest names + item fallback names)
+# Load item names for name resolution (chest names + item names)
 $itemNamesPath = Join-Path $scriptDir "item_names.txt"
 $itemNamesMap = Get-ItemNames -Path $itemNamesPath
 Write-Host "Item isimleri yuklendi: $($itemNamesMap.Count) kayit" -ForegroundColor DarkGray
 
-$mobGroups = Parse-MobDropFile -Path $mobDropFile
+# Load mob names for name resolution
+$mobNamesPath = Join-Path $scriptDir "mob_names.txt"
+$mobNamesMap = Get-MobNames -Path $mobNamesPath
+Write-Host "Mob isimleri yuklendi: $($mobNamesMap.Count) kayit" -ForegroundColor DarkGray
+
+$mobGroups = Parse-MobDropFile -Path $mobDropFile -MobNames $mobNamesMap -ItemNames $itemNamesMap
 Write-Host "Canavarlar: $($mobGroups.Count) grup" -ForegroundColor Green
 
 $chestGroups = Parse-ChestDropFile -Path $chestDropFile -ItemNames $itemNamesMap
