@@ -8,7 +8,7 @@ on:
       - 'special_item_group.txt'
       - 'generate_wiki.ps1'
       - 'convert_icons.py'
-      - 'icon_source/**'
+      - 'icon/**'
   workflow_dispatch:
 
 permissions:

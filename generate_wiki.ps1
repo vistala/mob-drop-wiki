@@ -146,10 +146,22 @@ function Parse-ChestDropFile {
 		if ($inGroup -and $currentGroup) {
 			if ($trimmed -match "^Vnum\s+(\d+)") {
 				$currentGroup.ChestVnum = $Matches[1]
-				if ($trimmed -match "--\s*(.+)$") { $currentGroup.ChestName = $Matches[1].Trim() }
+				# Look up name from item_names.txt by vnum
+				$vstr = $Matches[1]
+				if ($ItemNames.ContainsKey($vstr)) {
+					$currentGroup.ChestName = $ItemNames[$vstr]
+				}
+				elseif ($trimmed -match "--\s*(.+)$") {
+					$currentGroup.ChestName = $Matches[1].Trim()
+				}
+				else {
+					$currentGroup.ChestName = "Sandik $vstr"
+				}
 				continue
 			}
 			if ($trimmed -match "^[Tt]ype\s+(.+)$") { $currentGroup.Type = $Matches[1].Trim(); continue }
+			# Skip exp and mob lines
+			if ($trimmed -match "^\d+\s+(exp|mob)\s+" ) { continue }
 			if ($trimmed -match "^\d+\s+(\d+)\s+([\d.]+)\s+([\d.]+)") {
 				$capVnum = $Matches[1]
 				$capCount = $Matches[2]

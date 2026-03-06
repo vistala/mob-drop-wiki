@@ -20,7 +20,7 @@ SCRIPT_DIR = Path(__file__).parent
 if len(sys.argv) > 1:
     ICON_SRC = Path(sys.argv[1])
 else:
-    ICON_SRC = SCRIPT_DIR / "icon_source"  # Fallback
+    ICON_SRC = SCRIPT_DIR / "icon"  # Fallback
 ICON_OUT = SCRIPT_DIR / "icons"
 MOB_DROP = SCRIPT_DIR / "mob_drop_item.txt"
 CHEST_DROP = SCRIPT_DIR / "special_item_group.txt"
