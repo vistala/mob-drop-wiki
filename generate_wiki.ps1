@@ -94,7 +94,7 @@ function Get-ItemNames {
 	param([string]$Path)
 	$nameMap = @{}
 	if (-not (Test-Path $Path)) { return $nameMap }
-	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::GetEncoding(1254))
+	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
 	$firstLine = $true
 	foreach ($line in $lines) {
 		if ($firstLine) { $firstLine = $false; continue } # skip header
