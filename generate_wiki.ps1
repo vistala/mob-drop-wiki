@@ -5,8 +5,14 @@
 # =============================================================================
 
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$mobDropFile = Join-Path $scriptDir "mob_drop_item.txt"
-$chestDropFile = Join-Path $scriptDir "special_item_group.txt"
+
+# Source data: use full Harbi2_Files locale data (authoritative, always up to date)
+$sourceDir = "c:\Users\orkun\OneDrive\Documents\GitHub\Harbi2_Files\srv1\share\locale\germany"
+$mobDropFile = Join-Path $sourceDir "mob_drop_item.txt"
+$chestDropFile = Join-Path $sourceDir "special_item_group.txt"
+
+# item_names and mob_proto stay local (already maintained as full copies)
+# Output always goes to the local mob_drop_wiki folder
 $outputPath = Join-Path $scriptDir "index.html"
 
 # ======================== PARSER: mob_drop_item.txt ========================
@@ -16,7 +22,7 @@ function Parse-MobDropFile {
 		Write-Host "UYARI: $Path bulunamadi" -ForegroundColor Yellow
 		return @()
 	}
-	$lines = Get-Content $Path -Encoding UTF8
+	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::GetEncoding(1254))
 	$groups = @()
 	$currentGroup = $null
 	$inGroup = $false
@@ -68,7 +74,7 @@ function Get-MobCategories {
 	param([string]$Path)
 	$catMap = @{}
 	if (-not (Test-Path $Path)) { return $catMap }
-	$lines = Get-Content $Path -Encoding UTF8
+	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::GetEncoding(1254))
 	foreach ($line in $lines) {
 		$parts = $line.Split("`t")
 		if ($parts.Count -ge 5 -and $parts[0] -match "^\d+$") {
@@ -83,14 +89,31 @@ function Get-MobCategories {
 	return $catMap
 }
 
+# ======================== PARSER: item_names.txt ========================
+function Get-ItemNames {
+	param([string]$Path)
+	$nameMap = @{}
+	if (-not (Test-Path $Path)) { return $nameMap }
+	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::GetEncoding(1254))
+	$firstLine = $true
+	foreach ($line in $lines) {
+		if ($firstLine) { $firstLine = $false; continue } # skip header
+		$parts = $line.Split("`t")
+		if ($parts.Count -ge 2 -and $parts[0] -match "^\d+$") {
+			$nameMap[$parts[0].Trim()] = $parts[1].Trim()
+		}
+	}
+	return $nameMap
+}
+
 # ======================== PARSER: special_item_group.txt ========================
 function Parse-ChestDropFile {
-	param([string]$Path)
+	param([string]$Path, [hashtable]$ItemNames = @{})
 	if (-not (Test-Path $Path)) {
 		Write-Host "UYARI: $Path bulunamadi" -ForegroundColor Yellow
 		return @()
 	}
-	$lines = Get-Content $Path -Encoding UTF8
+	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::GetEncoding(1254))
 	$groups = @()
 	$currentGroup = $null
 	$inGroup = $false
@@ -105,7 +128,18 @@ function Parse-ChestDropFile {
 		if ($trimmed -eq "{") { $inGroup = $true; continue }
 		if ($trimmed -eq "}") {
 			$inGroup = $false
-			if ($currentGroup -and $currentGroup.ChestVnum -and $currentGroup.ChestName) { $groups += $currentGroup }
+			if ($currentGroup -and $currentGroup.ChestVnum) {
+				# Resolve chest name: priority = inline comment > item_names.txt > cleaned GroupName
+				if (-not $currentGroup.ChestName) {
+					if ($ItemNames.ContainsKey($currentGroup.ChestVnum)) {
+						$currentGroup.ChestName = $ItemNames[$currentGroup.ChestVnum]
+					}
+					else {
+						$currentGroup.ChestName = $currentGroup.GroupName -replace "_", " "
+					}
+				}
+				$groups += $currentGroup
+			}
 			$currentGroup = $null
 			continue
 		}
@@ -121,9 +155,16 @@ function Parse-ChestDropFile {
 				$capCount = $Matches[2]
 				$capChance = $Matches[3]
 				$itemName = ""
-				if ($trimmed -match "--\s*(.+)$") { $itemName = $Matches[1].Trim() }
-				else { $itemName = "Item $capVnum" }
-				if ($itemName -match "^%\d+\s+(.+)$") { $itemName = $Matches[1].Trim() }
+				if ($trimmed -match "--\s*(.+)$") {
+					$itemName = $Matches[1].Trim()
+					if ($itemName -match "^%\d+\s+(.+)$") { $itemName = $Matches[1].Trim() }
+				}
+				elseif ($ItemNames.ContainsKey($capVnum)) {
+					$itemName = $ItemNames[$capVnum]
+				}
+				else {
+					$itemName = "Item $capVnum"
+				}
 				$currentGroup.Items += @{
 					Vnum = $capVnum; Count = $capCount; Chance = $capChance; Name = $itemName
 				}
@@ -243,10 +284,15 @@ $gridItemsHtml
 # ======================== MAIN ========================
 Write-Host "=== Harbi2 Drop Wiki Generator v3 ===" -ForegroundColor Cyan
 
+# Load item names for name resolution (chest names + item fallback names)
+$itemNamesPath = Join-Path $scriptDir "item_names.txt"
+$itemNamesMap = Get-ItemNames -Path $itemNamesPath
+Write-Host "Item isimleri yuklendi: $($itemNamesMap.Count) kayit" -ForegroundColor DarkGray
+
 $mobGroups = Parse-MobDropFile -Path $mobDropFile
 Write-Host "Canavarlar: $($mobGroups.Count) grup" -ForegroundColor Green
 
-$chestGroups = Parse-ChestDropFile -Path $chestDropFile
+$chestGroups = Parse-ChestDropFile -Path $chestDropFile -ItemNames $itemNamesMap
 Write-Host "Sandiklar: $($chestGroups.Count) grup" -ForegroundColor Green
 
 # Build sidebar

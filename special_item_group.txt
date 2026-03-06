@@ -1,269 +1,4608 @@
-Group	스폐셜
+#
+# This file is part of "special_item_group.txt" and has
+# been broken down into groups that contain special
+# item attributes (rings).
+#
+# When we finish editing this file we must merge it
+# again into the file "special_item_group.txt"
+#
+# We have separated groups of items into other files
+# so the main "special_item_group.txt" does not get
+# huge and confusing to edit.
+#
+
+Group	double_item
+{
+	Vnum	10002
+	1	72004	1	1
+	2	72005	1	1
+	3	72006	1	1
+	4	72006	1	1
+	5	71016	1	1
+}
+
+Group	스S셜
 {
 	Vnum	10050
 	type	special
-	1	71202	100001	1	-- Nazar Tılsımı
+	1	71148	100002	1
+	2	71149	100002	1
+	3	71158	100002	1
+	4	71135	100003	1
+	5	71136	100004	1
+	6	71143	100005	1
+	7	71145	100006	1
+	8	71188	100007	1
+	9	71199	100008	1
+	10	71202	100009	1
+	11	72054	100010	1
+	12	76030	100011	1
+	13	76047	100011	1
+	14	50042	100002	1
 }
 
-Group	스폐셜4
+Group	스S셜
 {
 	Vnum	10051
 	type	special
-	1	70043	100033	1	-- Hırsızın Eldivenleri
-	2	72004	100033	1	-- Hırsızın Eldivenleri
-	3	72005	100033	1	-- Hırsızın Eldivenleri
-	4	72006	100033	1	-- Hırsızın Eldivenleri
+	1	39119	100014	1
 }
-Group	스폐셜3
+
+Group	스S셜
 {
 	Vnum	10052
 	type	special
-	1	38058	100055	1	-- Bilgelik İksiri
-	2	71181	100055	1	-- Bilgelik İksiri
+	1	39120	100015	1
 }
-Group	스폐셜3
+
+Group	스S셜
 {
 	Vnum	10053
 	type	special
-	1	70003	100044	1	-- Lider Kitabı
-	2	71012	100044	1	-- Lider Kitabı
-	3	72043	100044	1	-- Lider Kitabı
-	4	72044	100044	1	-- Lider Kitabı
-	5	72045	100044	1	-- Lider Kitabı
-	6	72059	100044	1	-- Lider Kitabı
-	7	72060	100044	1	-- Lider Kitabı
-	8	72302	100044	1	-- Lider Kitabı
-	9	76011	100044	1	-- Lider Kitabı
 }
-Group	스폐셜5
+
+Group	스S셜
+{
+	Vnum	10054
+	type	special
+}
+
+Group	스S셜2
 {
 	Vnum	10055
 	type	special
-	1	39002	100055	1	-- Tecrübe Yüzüğü
-	2	70005	100055	1	-- Tecrübe Yüzüğü
-	3	72001	100055	1	-- Tecrübe Yüzüğü
-	4	72002	100055	1	-- Tecrübe Yüzüğü
-	5	72003	100055	1	-- Tecrübe Yüzüğü
-	6	72049	100055	1	-- Tecrübe Yüzüğü
-	7	72050	100055	1	-- Tecrübe Yüzüğü
-	8	72303	100055	1	-- Tecrübe Yüzüğü
+	1	72062	100012	1
 }
-Group	Yavrucuk_Kutusu
+
+Group	S성
+{
+	Vnum	100000
+	type	ATTR
+	1	66	30	-- APPLY_MALL_EXPBONUS
+	2	78	20	-- APPLY_RESIST_WARRIOR
+	3	79	20	-- APPLY_RESIST_ASSASSIN
+	4	95	20	-- APPLY_RESIST_WOLFMAN
+	5	63	30	-- APPLY_ATT_BONUS_TO_MONSTER
+	6	69	10	-- APPLY_MAX_HP_PCT
+	7	70	10	-- APPLY_MAX_SP_PCT
+}
+
+Group	S성1
+{
+	Vnum	100001
+	type	ATTR
+	1	66	30	-- APPLY_MALL_EXPBONUS
+	2	80	20	-- APPLY_RESIST_SURA
+	3	81	20	-- APPLY_RESIST_SHAMAN
+	4	95	20	-- APPLY_RESIST_WOLFMAN
+	5	63	30	-- APPLY_ATT_BONUS_TO_MONSTER
+	6	69	10	-- APPLY_MAX_HP_PCT
+	7	70	10	-- APPLY_MAX_SP_PCT
+}
+
+Group	S성2
+{
+	Vnum	100002
+	type	ATTR
+	1	66	50	-- APPLY_MALL_EXPBONUS
+	2	86	30	-- APPLY_MALL_ATTBONUS
+	3	7	20	-- APPLY_ATT_SPEED
+	4	9	20	-- APPLY_CAST_SPEED
+	5	69	10	-- APPLY_MAX_HP_PCT
+	6	70	10	-- APPLY_MAX_SP_PCT
+	effect	"d:\ymir work\effect\etc\buff\buff_symbol1.mse"	
+}
+
+Group	S성3
+{
+	Vnum	100003
+	type	ATTR
+	1	66	50	-- APPLY_MALL_EXPBONUS
+	2	7	20	-- APPLY_ATT_SPEED
+	3	9	20	-- APPLY_CAST_SPEED
+	4	64	30	-- APPLY_MALL_ATTBONUS
+	5	69	10	-- APPLY_MAX_HP_PCT
+	6	70	10	-- APPLY_MAX_SP_PCT
+	7	84	5	-- APPLY_COSTUME_ATTR_BONUS
+}
+
+Group	S성4
+{
+	Vnum	100004
+	type	ATTR
+	1	66	50	-- APPLY_MALL_EXPBONUS
+	2	64	30	-- APPLY_MALL_ATTBONUS
+	3	7	20	-- APPLY_ATT_SPEED
+	4	9	20	-- APPLY_CAST_SPEED
+	5	69	10	-- APPLY_MAX_HP_PCT
+	6	70	10	-- APPLY_MAX_SP_PCT
+}
+
+Group	S성5
+{
+	Vnum	100005
+	type	ATTR
+	1	66	50	-- APPLY_MALL_EXPBONUS
+	2	7	20	-- APPLY_ATT_SPEED
+	3	9	20	-- APPLY_CAST_SPEED
+	4	63	30	-- APPLY_ATT_BONUS_TO_MONSTER
+	5	69	10	-- APPLY_MAX_HP_PCT
+	6	70	10	-- APPLY_MAX_SP_PCT
+}
+
+Group	S성6
+{
+	Vnum	100006
+	type	ATTR
+	1	66	30	-- APPLY_MALL_EXPBONUS
+	2	7	10	-- APPLY_ATT_SPEED
+	3	9	10	-- APPLY_CAST_SPEED
+	4	69	5	-- APPLY_MAX_HP_PCT
+	5	70	5	-- APPLY_MAX_SP_PCT
+	6	63	10	-- APPLY_ATT_BONUS_TO_MONSTER
+}
+
+Group	S성7
+{
+	Vnum	100007
+	type	ATTR
+	1	66	50	-- APPLY_MALL_EXPBONUS
+	2	55	30	-- APPLY_MAGIC_ATT_GRADE
+	3	7	20	-- APPLY_ATT_SPEED
+	4	9	20	-- APPLY_CAST_SPEED
+	5	69	10	-- APPLY_MAX_HP_PCT
+	6	70	10	-- APPLY_MAX_SP_PCT
+}
+
+Group	S성8
+{
+	Vnum	100008
+	type	ATTR
+	1	66	50	-- APPLY_MALL_EXPBONUS
+	2	7	20	-- APPLY_ATT_SPEED
+	3	9	20	-- APPLY_CAST_SPEED
+	4	63	20	-- APPLY_ATT_BONUS_TO_MONSTER
+	5	69	10	-- APPLY_MAX_HP_PCT
+	6	70	10	-- APPLY_MAX_SP_PCT
+}
+
+Group	S성9
+{
+	Vnum	100009
+	type	ATTR
+	1	66	50	-- APPLY_MALL_EXPBONUS
+	2	7	20	-- APPLY_ATT_SPEED
+	3	9	20	-- APPLY_CAST_SPEED
+	4	63	10	-- APPLY_ATT_BONUS_TO_MONSTER
+	5	86	30	-- APPLY_MALL_ATTBONUS
+}
+
+Group	S성10
+{
+	Vnum	100010
+	type	ATTR
+	1	86	30	-- APPLY_MALL_ATTBONUS
+	2	7	20	-- APPLY_ATT_SPEED
+	3	9	20	-- APPLY_CAST_SPEED
+	4	116	10	-- APPLY_RESIST_HUMAN
+	5	73	10	-- APPLY_SKILL_DEFEND_BONUS
+}
+
+Group	S성11
+{
+	Vnum	100011
+	type	ATTR
+	1	66	50	-- APPLY_MALL_EXPBONUS
+	2	7	20	-- APPLY_ATT_SPEED
+	3	9	20	-- APPLY_CAST_SPEED
+	4	63	10	-- APPLY_ATT_BONUS_TO_MONSTER
+	5	69	10	-- APPLY_MAX_HP_PCT
+	6	70	10	-- APPLY_MAX_SP_PCT
+}
+
+Group	S성12
+{
+	Vnum	100012
+	type	ATTR
+	1	66	200	-- APPLY_MALL_EXPBONUS
+}
+
+Group	S성13
+{
+	Vnum	100013
+	type	ATTR
+	1	66	50	-- APPLY_MALL_EXPBONUS
+	2	86	20	-- APPLY_MALL_ATTBONUS
+	3	1	1500	-- APPLY_MAX_HP_PCT
+	4	70	10	-- APPLY_MAX_SP_PCT
+}
+
+Group	S성14
+{
+	Vnum	100014
+	type	ATTR
+	1	100	10	-- APPLY_ENCHANT_ELECT
+	2	101	10	-- APPLY_ENCHANT_FIRE
+	3	102	10	-- APPLY_ENCHANT_ICE
+	4	103	10	-- APPLY_ENCHANT_WIND
+	5	104	10	-- APPLY_ENCHANT_EARTH
+	6	105	10	-- APPLY_ENCHANT_DARK
+	effect	"d:\ymir work\effect\etc\buff\buff_item18_element01.mse"
+}
+
+Group	S성15
+{
+	Vnum	100015
+	type	ATTR
+	1	36	10	-- APPLY_RESIST_ELEC
+	2	35	10	-- APPLY_RESIST_FIRE
+	3	87	10	-- APPLY_RESIST_ICE
+	4	38	10	-- APPLY_RESIST_WIND
+	5	88	10	-- APPLY_RESIST_EARTH
+	6	89	10	-- APPLY_RESIST_DARK
+	effect	"d:\ymir work\effect\etc\buff\buff_item18_element02.mse"
+}
+
+Group	S성
+{
+	Vnum	100016
+	type	ATTR
+	1	66	50	-- APPLY_MALL_EXPBONUS
+	2	63	20	-- APPLY_ATT_BONUS_TO_MONSTER
+	3	118	5	-- APPLY_SUNGMA_STR
+	4	119	5	-- APPLY_SUNGMA_HP
+	5	120	5	-- APPLY_SUNGMA_MOVE
+	6	121	5	-- APPLY_SUNGMA_IMMUNE 
+
+}
+
+Group	S성17
+{
+	Vnum	100017
+	type	ATTR
+	1	66	50	-- APPLY_MALL_EXPBONUS
+	2	86	20	-- APPLY_MALL_ATTBONUS
+	3	1	1500	-- APPLY_MAX_HP_PCT
+	4	70	10	-- APPLY_MAX_SP_PCT
+	5	63	10	-- APPLY_ATT_BONUS_TO_MONSTER
+	6	117	10	-- APPLY_ATTBONUS_STONE
+}
+
+#Group	SS반지
+#{
+#	Vnum	10031
+#	Type	Quest
+#	1	70058	1	1 -- Teleportation Ring
+#	2	76042	1	1 -- Teleportation Ring
+#}
+
+Group	TicketGroup
+{
+	Vnum	10033
+	1	71095	1	1
+	2	71174	1	1
+	3	71175	1	1
+	4	76019	1	1
+	5	31146	1	1
+	6	71130	1	1
+}
+
+
+####################################- Author *@* - ARWEN -######################################
+#################                                                             ##################
+#################                  Seviye Sandıkları Dropları                 ##################
+#################                                                             ##################
+####################################- Author *@* - ARWEN -######################################
+
+
+Group	Çırak_Sandığı
+{
+	Vnum	50187 -- Çırak Sandığı 1
+	Type	pct
+	1	71050	1	500 -- Mor İksir
+	2	27102	1	500 -- Yeşil İksir
+	3	39024	5	500 -- Kritik İsabet
+	4	39025	5	500 -- Delici İsabet
+	5	39017	5	500 -- Ejderha Tanrı Yaşamı
+	6	39018	5	500 -- Ejderha Tanrı Saldırısı
+	7	72724	1	500 -- Güneş Özütü (O)
+	8	72728	1	500 -- Ay Özütü (O)
+	9	38058	1	500 -- Bilgelik İksiri (3sa.)
+	10	50188	1	500 -- Çırak Sandığı II
+}
+
+Group	Çırak_Sandığı
+{
+	Vnum	50188 -- Çırak Sandığı 2
+	Type	pct
+	1	71034	5	500 -- Saldırı İksiri +15
+	2	39024	5	500 -- Kritik İsabet
+	3	39025	5	500 -- Delici İsabet
+	4	39017	5	500 -- Ejderha Tanrı Yaşamı
+	5	39018	5	500 -- Ejderha Tanrı Saldırısı
+	6	72724	1	500 -- Güneş Özütü (O)
+	7	72728	1	500 -- Ay Özütü (O)
+	8	71015	1	500 -- Tecrübe yüzüğü (30dk)
+	9	50189	1	500 -- Çırak Sandığı III
+}
+Group	Çırak_Sandığı
+{
+	Vnum	50189 -- Çırak Sandığı 3
+	Type	pct
+	1	71034	5	500 -- Saldırı İksiri +15
+	2	39024	10	500 -- Kritik İsabet
+	3	39025	10	500 -- Delici İsabet
+	4	39017	5	500 -- Ejderha Tanrı Yaşamı
+	5	39018	5	500 -- Ejderha Tanrı Saldırısı
+	6	72724	1	500 -- Güneş Özütü (O)
+	7	72728	1	500 -- Ay Özütü (O)
+	8	76023	10	500 -- Yeşil Efsun
+	9	76024	10	500 -- Yeşil Güç
+	10	76015	5	500 -- Kutsama Küresi
+	11	50190	1	500 -- Uzman Sandığı 1
+}
+Group	Çırak_Sandığı
+{
+	Vnum	50190 -- Uzman Sandığı 1
+	Type	pct
+	1	71034	5	500 -- Saldırı İksiri +15
+	2	39024	10	500 -- Kritik İsabet
+	3	39025	10	500 -- Delici İsabet
+	4	39017	5	500 -- Ejderha Tanrı Yaşamı
+	5	39018	5	500 -- Ejderha Tanrı Saldırısı
+	6	76016	10	500 -- Kutsama Parşömeni
+	7	76011	1	500 -- Liderin Kitabı
+	8	76023	15	500 -- Yeşil Efsun
+	9	76024	15	500 -- Yeşil Güç
+	10	50191	1	500 -- Uzman Sandığı 2
+}
+Group	Çırak_Sandığı
+{
+	Vnum	50191 -- Uzman Sandığı 2
+	Type	pct
+	1	76018	5	500 -- Saldırı İksiri +20
+	2	39024	10	500 -- Kritik İsabet
+	3	39025	10	500 -- Delici İsabet
+	4	71153	3	500 -- Bilgelik İksiri
+	5	76016	10	500 -- Kutsama Parşömeni
+	6	76011	1	500 -- Liderin Kitabı
+	7	76026	5	500 -- Seytan Çıkarma Parşömeni
+	8	76023	15	500 -- Yeşil Efsun
+	9	76024	15	500 -- Yeşil Güç
+	10	50192	1	500 -- Uzman Sandığı 3
+}
+Group	Çırak_Sandığı
+{
+	Vnum	50192 -- Uzman Sandığı 3
+	Type	pct
+	1	76018	5	500 -- Saldırı İksiri +20
+	2	39024	10	500 -- Kritik İsabet
+	3	39025	10	500 -- Delici İsabet
+	4	76016	15	500 -- Kutsama Parşömeni
+	5	76026	5	500 -- Seytan Çıkarma Parşömeni
+	6	76003	5	500 -- Soğutma İksiri
+	7	71095	5	500 -- Geçit Bileti
+	8	76038	1	500 -- Sans Madalyası
+	9	76013	5	500 -- Arttırma Kağıdı
+	10	76014	5	500 -- Efsun Nesnesi
+	11	50193	1	500 -- Usta Sandığı 1
+}
+Group	Çırak_Sandığı
+{
+	Vnum	50193 -- Usta Sandığı 1
+	Type	pct
+	1	76018	5	500 -- Saldırı İksiri +20
+	2	71015	1	500 -- Tecrübe yüzüğü (30dk)
+	3	39024	10	500 -- Kritik İsabet
+	4	39025	10	500 -- Delici İsabet
+	5	76016	15	500 -- Kutsama Parşömeni
+	6	76026	5	500 -- Seytan Çıkarma Parşömeni
+	7	71101	5	500 -- Soğutma İksiri
+	8	76009	5	500 -- Ejderha Parşomeni
+	9	76038	1	500 -- Sans Madalyası
+	10	76013	5	500 -- Arttırma Kağıdı
+	11	76014	5	500 -- Efsun Nesnesi
+	12	50194	1	500 -- Usta Sandığı 2
+}
+Group	Çırak_Sandığı
+{
+	Vnum	50194 -- Usta Sandığı 2
+	Type	pct
+	1	76018	5	500 -- Saldırı İksiri +20
+	2	76016	5	500 -- Kutsama Parşömeni
+	3	76026	10	500 -- Seytan Çıkarma Parşömeni
+	4	39030	10	500 -- Münzevi Tavsiyesi
+	5	76003	5	500 -- Soğutma İksiri
+	6	76009	5	500 -- Ejderha Parşomeni
+	7	76013	5	500 -- Arttırma Kağıdı
+	8	76014	5	500 -- Efsun Nesnesi
+	9	50195	1	500 -- Usta Sandığı 3
+}
+Group	Çırak_Sandığı
+{
+	Vnum	50195 -- Usta Sandığı 3
+	Type	pct
+	1	76018	5	500 -- Saldırı İksiri +20
+	2	39007	2	500 -- Demircinin El Kitabı
+	3	76016	15	500 -- Kutsama Parşömeni
+	4	76026	10	500 -- Seytan Çıkarma Parşömeni
+	5	39030	10	500 -- Münzevi Tavsiyesi
+	6	76003	5	500 -- Soğutma İksiri
+	7	76013	5	500 -- Arttırma Kağıdı
+	8	76014	5	500 -- Efsun Nesnesi
+	9	76039	1	500 -- Ejderha Sandığı
+	10	76020	5	500 -- Araştırmacının Özütü
+	11	50196	1	500 -- Büyük Üstat Sandığı
+}
+Group	Çırak_Sandığı
+{
+	Vnum	50196 -- Büyük Üstat Sandığı
+	Type	pct
+	1	76018	5	500 -- Saldırı İksiri +20
+	2	39007	2	500 -- Demircinin El Kitabı
+	3	76016	20	500 -- Kutsama Parşömeni
+	4	76010	5	500 -- Kan Taşı
+	5	30319	5	500 -- Küçülen Kafa
+	6	71095	10	500 -- Geçit Bileti
+	7	76013	5	500 -- Arttırma Kağıdı
+	8	76014	5	500 -- Efsun Nesnesi
+	9	76039	1	500 -- Ejderha Sandığı
+	10	76020	5	500 -- Araştırmacının Özütü
+	11	76015	5	500 -- Kutsama Küresi
+}
+
+
+####################################- Author *@* - ARWEN -######################################
+#################                                                             ##################
+#################                  Cor Sandıkları Dropları                    ##################
+#################                                                             ##################
+####################################- Author *@* - ARWEN -######################################
+
+
+Group	Cor_Sandıkları
+{
+	Vnum	76039 -- Ejderha Sandığı
+	1	51503	11	500 -- Cor Draconis (Normal)
+}
+Group	Cor_Sandıkları
+{
+	Vnum	51503 -- Cor Draconis (Normal)
+	1	110000	1	400 -- İşlenmemiş Ejd. Elması
+	2	120000	1	300 -- İşlenmemiş Ejd. Yakutu
+	3	130000	1	400 -- İşlenmemiş Ejd. Yeşimi
+	4	140000	1	400 -- İşlenmemiş Ejd. Safiri
+	5	150000	1	400 -- İşlenmemiş Ejd. Grenası
+	6	160000	1	400 -- İşlenmemiş Ejd. Oniksi
+	7	111000	1	300 -- Yontulmuş Ejderha Elması
+	8	121000	1	200 -- Yontulmuş Ejderha Yakutu
+	9	131000	1	300 -- Yontulmuş Ejderha Yeşimi
+	10	141000	1	300 -- Yontulmuş Ejderha Safiri
+	11	151000	1	300 -- Yontulmuş Ejderha Grenası
+	12	161000	1	300 -- Yontulmuş Ejderha Oniksi
+}
+
+Group	Cor_Sandıkları
+{
+	Vnum	76040 -- Cor Draconis (Normal)
+	1	110000	1	400 -- İşlenmemiş Ejd. Elması
+	2	120000	1	300 -- İşlenmemiş Ejd. Yakutu
+	3	130000	1	400 -- İşlenmemiş Ejd. Yeşimi
+	4	140000	1	400 -- İşlenmemiş Ejd. Safiri
+	5	150000	1	400 -- İşlenmemiş Ejd. Grenası
+	6	160000	1	400 -- İşlenmemiş Ejd. Oniksi
+	7	111000	1	300 -- Yontulmuş Ejderha Elması
+	8	121000	1	200 -- Yontulmuş Ejderha Yakutu
+	9	131000	1	300 -- Yontulmuş Ejderha Yeşimi
+	10	141000	1	300 -- Yontulmuş Ejderha Safiri
+	11	151000	1	300 -- Yontulmuş Ejderha Grenası
+	12	161000	1	300 -- Yontulmuş Ejderha Oniksi
+}
+
+Group	Cor_Sandıkları
+{
+	Vnum	50255 -- Cor Draconis, İşlenmemiş
+	1	110000	1	500 -- İşlenmemiş Ejd. Elması
+	2	120000	1	400 -- İşlenmemiş Ejd. Yakutu
+	3	130000	1	500 -- İşlenmemiş Ejd. Yeşimi
+	4	140000	1	500 -- İşlenmemiş Ejd. Safiri
+	5	150000	1	500 -- İşlenmemiş Ejd. Grenası
+	6	160000	1	500 -- İşlenmemiş Ejd. Oniksi
+}
+
+Group	Cor_Sandıkları
+{
+	Vnum	51504 -- Cor Draconis (soylu)
+	1	110000	1	400 -- İşlenmemiş Ejd. Elması
+	2	120000	1	400 -- İşlenmemiş Ejd. Yakutu
+	3	130000	1	400 -- İşlenmemiş Ejd. Yeşimi
+	4	140000	1	400 -- İşlenmemiş Ejd. Safiri
+	5	150000	1	400 -- İşlenmemiş Ejd. Grenası
+	6	160000	1	400 -- İşlenmemiş Ejd. Oniksi
+	7	111000	1	300 -- Yontulmuş Ejderha Elması
+	8	121000	1	300 -- Yontulmuş Ejderha Yakutu
+	9	131000	1	300 -- Yontulmuş Ejderha Yeşimi
+	10	141000	1	300 -- Yontulmuş Ejderha Safiri
+	11	151000	1	300 -- Yontulmuş Ejderha Grenası
+	12	161000	1	300 -- Yontulmuş Ejderha Oniksi
+	13	112000	1	100 -- Ender Ejderha Elması
+	14	122000	1	100 -- Ender Ejderha Yakutu
+	15	132000	1	100 -- Ender Ejderha Yeşimi
+	16	142000	1	100 -- Ender Ejderha Safiri
+	17	152000	1	100 -- Ender Ejderha Grenası
+	18	162000	1	100 -- Ender Ejderha Oniksi
+}
+
+Group	Cor_Sandıkları
+{
+	Vnum	51505 -- Cor Draconis (değerli)
+	1	110000	1	400 -- İşlenmemiş Ejd. Elması
+	2	120000	1	400 -- İşlenmemiş Ejd. Yakutu
+	3	130000	1	400 -- İşlenmemiş Ejd. Yeşimi
+	4	140000	1	400 -- İşlenmemiş Ejd. Safiri
+	5	150000	1	400 -- İşlenmemiş Ejd. Grenası
+	6	160000	1	400 -- İşlenmemiş Ejd. Oniksi
+	7	111000	1	300 -- Yontulmuş Ejderha Elması
+	8	121000	1	300 -- Yontulmuş Ejderha Yakutu
+	9	131000	1	300 -- Yontulmuş Ejderha Yeşimi
+	10	141000	1	300 -- Yontulmuş Ejderha Safiri
+	11	151000	1	300 -- Yontulmuş Ejderha Grenası
+	12	161000	1	300 -- Yontulmuş Ejderha Oniksi
+	13	112000	1	200 -- Ender Ejderha Elması
+	14	122000	1	200 -- Ender Ejderha Yakutu
+	15	132000	1	200 -- Ender Ejderha Yeşimi
+	16	142000	1	200 -- Ender Ejderha Safiri
+	17	152000	1	200 -- Ender Ejderha Grenası
+	18	162000	1	200 -- Ender Ejderha Oniksi
+	19	113000	1	100 -- Antika Ejderha Elması
+	20	123000	1	100 -- Antika Ejderha Yakutu
+	21	133000	1	100 -- Antika Ejderha Yeşimi
+	22	143000	1	100 -- Antika Ejderha Safiri
+	23	153000	1	100 -- Antika Ejderha Grenası
+	24	163000	1	100 -- Antika Ejderha Oniksi
+}
+
+Group	Cor_Sandıkları
+{
+	Vnum	51506 -- Cor Draconis (destansı)
+	1	110000	1	400 -- İşlenmemiş Ejd. Elması
+	2	120000	1	400 -- İşlenmemiş Ejd. Yakutu
+	3	130000	1	400 -- İşlenmemiş Ejd. Yeşimi
+	4	140000	1	400 -- İşlenmemiş Ejd. Safiri
+	5	150000	1	400 -- İşlenmemiş Ejd. Grenası
+	6	160000	1	400 -- İşlenmemiş Ejd. Oniksi
+	7	111000	1	300 -- Yontulmuş Ejderha Elması
+	8	121000	1	300 -- Yontulmuş Ejderha Yakutu
+	9	131000	1	300 -- Yontulmuş Ejderha Yeşimi
+	10	141000	1	300 -- Yontulmuş Ejderha Safiri
+	11	151000	1	300 -- Yontulmuş Ejderha Grenası
+	12	161000	1	300 -- Yontulmuş Ejderha Oniksi
+	13	112000	1	200 -- Ender Ejderha Elması
+	14	122000	1	200 -- Ender Ejderha Yakutu
+	15	132000	1	200 -- Ender Ejderha Yeşimi
+	16	142000	1	200 -- Ender Ejderha Safiri
+	17	152000	1	200 -- Ender Ejderha Grenası
+	18	162000	1	200 -- Ender Ejderha Oniksi
+	19	113000	1	100 -- Antika Ejderha Elması
+	20	123000	1	100 -- Antika Ejderha Yakutu
+	21	133000	1	100 -- Antika Ejderha Yeşimi
+	22	143000	1	100 -- Antika Ejderha Safiri
+	23	153000	1	100 -- Antika Ejderha Grenası
+	24	163000	1	100 -- Antika Ejderha Oniksi
+	25	114000	1	60 -- Efsanevi Ejderha Elması
+	26	124000	1	60 -- Efsanevi Ejderha Yakutu
+	27	134000	1	60 -- Efsanevi Ejderha Yeşimi
+	28	144000	1	60 -- Efsanevi Ejderha Safiri
+	29	154000	1	60 -- Efsanevi Ejderha Grenası
+	30	164000	1	60 -- Efsanevi Ejderha Oniksi
+}
+
+Group	Cor_Sandıkları
+{
+	Vnum	51507 -- Cor Draconis (yontulmuş)
+	1	111000	1	500 -- Yontulmuş Ejderha Elması
+	2	121000	1	300 -- Yontulmuş Ejderha Yakutu
+	3	131000	1	500 -- Yontulmuş Ejderha Yeşimi
+	4	141000	1	500 -- Yontulmuş Ejderha Safiri
+	5	151000	1	500 -- Yontulmuş Ejderha Grenası
+	6	161000	1	500 -- Yontulmuş Ejderha Oniksi
+}
+
+Group	Cor_Sandıkları
+{
+	Vnum	51508 -- Cor Draconis (ender)
+	1	112000	1	500 -- Ender Ejderha Elması
+	2	122000	1	300 -- Ender Ejderha Yakutu
+	3	132000	1	500 -- Ender Ejderha Yeşimi
+	4	142000	1	500 -- Ender Ejderha Safiri
+	5	152000	1	500 -- Ender Ejderha Grenası
+	6	162000	1	500 -- Ender Ejderha Oniksi
+}
+
+Group	Cor_Sandıkları
+{
+	Vnum	51509 -- Cor Draconis (antika)
+	1	113000	1	500 -- Antika Ejderha Elması
+	2	123000	1	300 -- Antika Ejderha Yakutu
+	3	133000	1	500 -- Antika Ejderha Yeşimi
+	4	143000	1	500 -- Antika Ejderha Safiri
+	5	153000	1	500 -- Antika Ejderha Grenası
+	6	163000	1	500 -- Antika Ejderha Oniksi
+}
+
+Group	Cor_Sandıkları
+{
+	Vnum	51510 -- Cor Draconis (efsanevi)
+	1	114000	1	500 -- Efsanevi Ejderha Elması
+	2	124000	1	300 -- Efsanevi Ejderha Yakutu
+	3	134000	1	500 -- Efsanevi Ejderha Yeşimi
+	4	144000	1	500 -- Efsanevi Ejderha Safiri
+	5	154000	1	500 -- Efsanevi Ejderha Grenası
+	6	164000	1	500 -- Efsanevi Ejderha Oniksi
+}
+
+
+Group	Cor_Sandıkları
+{
+	Vnum	83014 -- Cor Draconis sandığı
+	1	110000	1	400 -- İşlenmemiş Ejd. Elması
+	2	120000	1	300 -- İşlenmemiş Ejd. Yakutu
+	3	130000	1	400 -- İşlenmemiş Ejd. Yeşimi
+	4	140000	1	400 -- İşlenmemiş Ejd. Safiri
+	5	150000	1	400 -- İşlenmemiş Ejd. Grenası
+	6	160000	1	400 -- İşlenmemiş Ejd. Oniksi
+	7	111000	1	300 -- Yontulmuş Ejderha Elması
+	8	121000	1	200 -- Yontulmuş Ejderha Yakutu
+	9	131000	1	300 -- Yontulmuş Ejderha Yeşimi
+	10	141000	1	300 -- Yontulmuş Ejderha Safiri
+	11	151000	1	300 -- Yontulmuş Ejderha Grenası
+	12	161000	1	300 -- Yontulmuş Ejderha Oniksi
+	13	112000	1	100 -- Ender Ejderha Elması
+	14	122000	1	80 -- Ender Ejderha Yakutu
+	15	132000	1	100 -- Ender Ejderha Yeşimi
+	16	142000	1	100 -- Ender Ejderha Safiri
+	17	152000	1	100 -- Ender Ejderha Grenası
+	18	162000	1	100 -- Ender Ejderha Oniksi
+	19	113000	1	80 -- Antika Ejderha Elması
+	20	123000	1	60 -- Antika Ejderha Yakutu
+	21	133000	1	80 -- Antika Ejderha Yeşimi
+	22	143000	1	80 -- Antika Ejderha Safiri
+	23	153000	1	80 -- Antika Ejderha Grenası
+	24	163000	1	80 -- Antika Ejderha Oniksi
+}
+
+Group	Cor_Sandıkları
+{
+	Vnum	51511 -- Cor Diamas
+	1	110000	1	500 -- İşlenmemiş Ejd. Elması
+}
+
+Group	Cor_Sandıkları
+{
+	Vnum	51512 -- Cor Rubinum
+	1	120000	1	400 -- İşlenmemiş Ejd. Yakutu
+}
+
+Group	Cor_Sandıkları
+{
+	Vnum	51513 -- Cor Jadeit
+	1	130000	1	400 -- İşlenmemiş Ejd. Yeşimi
+}
+
+Group	Cor_Sandıkları
+{
+	Vnum	51514 -- Cor Saphirum
+	1	140000	1	400 -- İşlenmemiş Ejd. Safiri
+}
+
+Group	Cor_Sandıkları
+{
+	Vnum	51515 -- Cor Granatum
+	1	150000	1	400 -- İşlenmemiş Ejd. Grenası
+}
+
+Group	Cor_Sandıkları
+{
+	Vnum	51516 -- Cor Atrum
+	1	160000	1	400 -- İşlenmemiş Ejd. Oniksi
+}
+
+
+
+
+####################################- Author *@* - ARWEN -######################################
+#################                                                             ##################
+#################                  Patron Sandıkları Dropları                 ##################
+#################                                                             ##################
+####################################- Author *@* - ARWEN -######################################
+
+
+Group	patron_sandiklari
+{
+	Vnum	50070 -- Ork Başkanının Sandığı
+	1	80019	5	200 -- İnce Kumaş
+	2	71094	1	200 -- Münzevi Tavsiyesi
+	3	71032	1	200 -- Ejderha Parşömeni
+	4	72724	1	200 -- Güneş Özütü (O)
+	5	72728	1	200 -- Ay Özütü (O)
+	6	71095	1	200 -- Geçit Bileti
+	7	55001	1	200 -- Protein Lokması
+	8	70005	1	500 -- Tecrübe yüzüğü (1 sa.)
+	9	72006	1	500 -- Hırsızın Eldivenleri
+	10	70014	1	500 -- Kan Hapı
+	11	70003	1	200 -- Liderin Kitabı
+	12	11273	1	500 -- Altın Taş Zırh+3
+	13	11473	1	500 -- Öldürücü Rüzgar Takımı+3
+	14	11673	1	500 -- Hayalet Surat Zırh+3
+	15	11873	1	500 -- Turuncu Kedi Elbisesi+3
+	16	21053	1	500 -- Kobold Plaka Zırhı +3
+	17	17203	1	500 -- Cennetin Gözü Küpe+3
+	18	163		1	500 -- Su Perisi Kılıcı+3
+	19	1113	1	500 -- Simşek Bıüağı+3
+	20	2133	1	500 -- Kutsal Sert Yay+3
+	21	243		1	500 -- Seytan üıkarma Kılıcı+3
+	22	3133	1	500 -- Partizan+3
+	23	7133	1	500 -- Cennet Kuşu Yelpaze+3
+	24	5093	1	500 -- Yıldırım Kuşu Çanı+3
+}
+Group	patron_sandiklari
+{
+	Vnum	50072 -- Hayelet Lideri Sandığı
+	1	80019	5	200 -- İnce Kumaş
+	2	71094	1	200 -- Münzevi Tavsiyesi
+	3	71032	1	200 -- Ejderha Parşömeni
+	4	72724	1	200 -- Güneş Özütü (O)
+	5	72728	1	200 -- Ay Özütü (O)
+	6	71095	1	200 -- Geçit Bileti
+	7	55001	1	200 -- Protein Lokması
+	8	70005	1	500 -- Tecrübe yüzüğü (1 sa.)
+	9	72006	1	500 -- Hırsızın Eldivenleri
+	10	70014	1	500 -- Kan Hapı
+	11	70003	1	200 -- Liderin Kitabı
+	12	11273	1	500 -- Altın Taş Zırh+3
+	13	11473	1	500 -- Öldürücü Rüzgar Takımı+3
+	14	11673	1	500 -- Hayalet Surat Zırh+3
+	15	11873	1	500 -- Turuncu Kedi Elbisesi+3
+	16	21053	1	500 -- Kobold Plaka Zırhı +3
+	17	17203	1	500 -- Cennetin Gözü Küpe+3
+	18	163		1	500 -- Su Perisi Kılıcı+3
+	19	1113	1	500 -- Simşek Bıüağı+3
+	20	2133	1	500 -- Kutsal Sert Yay+3
+	21	243		1	500 -- Seytan üıkarma Kılıcı+3
+	22	3133	1	500 -- Partizan+3
+	23	7133	1	500 -- Cennet Kuşu Yelpaze+3
+	24	5093	1	500 -- Yıldırım Kuşu Çanı+3
+}
+Group	patron_sandiklari
+{
+	Vnum	50073 -- Kraliçe Örümcek Sandığı
+	1	80019	5	200 -- İnce Kumaş
+	2	71094	1	200 -- Münzevi Tavsiyesi
+	3	70039	1	200 -- Demircinin El Kitabı
+	4	72724	1	200 -- Güneş Özütü (O)
+	5	72728	1	200 -- Ay Özütü (O)
+	6	71095	1	200 -- Geçit Bileti
+	7	55001	1	200 -- Protein Lokması
+	8	70005	1	500 -- Tecrübe yüzüğü (1 sa.)
+	9	72006	1	500 -- Hırsızın Eldivenleri
+	10	70014	1	500 -- Kan Hapı
+	11	70003	1	200 -- Liderin Kitabı
+	12	11273	1	500 -- Altın Taş Zırh+3
+	13	11473	1	500 -- Öldürücü Rüzgar Takımı+3
+	14	11673	1	500 -- Hayalet Surat Zırh+3
+	15	11873	1	500 -- Turuncu Kedi Elbisesi+3
+	16	21053	1	500 -- Kobold Plaka Zırhı +3
+	17	17203	1	500 -- Cennetin Gözü Küpe+3
+	18	163		1	500 -- Su Perisi Kılıcı+3
+	19	1113	1	500 -- Simşek Bıüağı+3
+	20	2133	1	500 -- Kutsal Sert Yay+3
+	21	243		1	500 -- Seytan üıkarma Kılıcı+3
+	22	3133	1	500 -- Partizan+3
+	23	7133	1	500 -- Cennet Kuşu Yelpaze+3
+	24	5093	1	500 -- Yıldırım Kuşu Çanı+3
+}
+Group	patron_sandiklari
+{
+	Vnum	50074 -- Dev Örümceğin Sandığı
+	1	55001	1	100 -- Protein Lokması
+	2	11294	1	500 -- Siyah Çelik Zırh+4
+	3	11494	1	500 -- Siyah Rüzgar Takımı+4
+	4	11694	1	500 -- Kara Büyü Zırh+4
+	5	11894	1	500 -- Siyah Elbise+4
+	6	21074	1	500 -- Gecegölgesi Zırhı +4
+	7	5120	1	100 -- Orkide Çan+0
+	8	190		1	100 -- Aslan Kılıcı+0
+	9	1130	1	100 -- Seytan Kanadü üakram+0
+	10	180		1	20 -- Zehir Kılıcı+0
+	11	3160	1	20 -- Kin Kılıcı+0
+	12	6060	1	100 -- Çakır Kuşu +0
+	13	6070	1	100 -- Diken Pençe +0
+	14	2170	1	100 -- Havalı Çelik Yay+0
+	15	13166	1	100 -- Üç İmparator Kalkanı+6
+	16	13126	1	100 -- Ejderha Pulu Kalkan+6
+	17	13106	1	100 -- Aslan Ağzı Kalkan+6
+	18	13086	1	100 -- Kaplan Kalkanı+6
+	19	13066	1	50 -- Sahin Kalkanı+6
+	20	55402	1	200 -- Örümcek Yumurtası
+	21	16206	1	80 -- Cennetin Gözü Kolye+6
+	22	14206	1	80 -- Cennetin Gözü Bilezik+6
+	23	17206	1	80 -- Cennetin Gözü Küpe+6
+	24	71095	3	50 -- Geçit Bileti
+	25	71094	2	40 -- Münzevi Tavsiyesi
+	26	70039	1	80 -- Demircinin El Kitabı
+}
+Group	patron_sandiklari
+{
+	Vnum	50076 -- DevÇölkaplumbağa Sandığı
+	1	80019	5	200 -- İnce Kumaş
+	2	71094	1	200 -- Münzevi Tavsiyesi
+	3	71032	1	200 -- Ejderha Parşömeni
+	4	72724	1	200 -- Güneş Özütü (O)
+	5	72728	1	200 -- Ay Özütü (O)
+	6	71095	1	200 -- Geçit Bileti
+	7	55001	1	200 -- Protein Lokması
+	8	70005	1	500 -- Tecrübe yüzüğü (1 sa.)
+	9	72006	1	500 -- Hırsızın Eldivenleri
+	10	70014	1	500 -- Kan Hapı
+	11	70003	1	200 -- Liderin Kitabı
+	12	11273	1	500 -- Altın Taş Zırh+3
+	13	11473	1	500 -- Öldürücü Rüzgar Takımı+3
+	14	11673	1	500 -- Hayalet Surat Zırh+3
+	15	11873	1	500 -- Turuncu Kedi Elbisesi+3
+	16	21053	1	500 -- Kobold Plaka Zırhı +3
+	17	17203	1	500 -- Cennetin Gözü Küpe+3
+	18	163		1	500 -- Su Perisi Kılıcı+3
+	19	1113	1	500 -- Simşek Bıüağı+3
+	20	2133	1	500 -- Kutsal Sert Yay+3
+	21	243		1	500 -- Seytan üıkarma Kılıcı+3
+	22	3133	1	500 -- Partizan+3
+	23	7133	1	500 -- Cennet Kuşu Yelpaze+3
+	24	5093	1	500 -- Yıldırım Kuşu Çanı+3
+}
+Group	patron_sandiklari
+{
+	Vnum	50077 -- Dokuz Kuyruk Sandığı
+	1	80019	5	200 -- İnce Kumaş
+	2	71094	1	200 -- Münzevi Tavsiyesi
+	3	70039	1	200 -- Demircinin El Kitabı
+	4	72724	1	200 -- Güneş Özütü (O)
+	5	72728	1	200 -- Ay Özütü (O)
+	6	71095	1	200 -- Geçit Bileti
+	7	55001	1	200 -- Protein Lokması
+	8	70005	1	500 -- Tecrübe yüzüğü (1 sa.)
+	9	72006	1	500 -- Hırsızın Eldivenleri
+	10	70014	1	500 -- Kan Hapı
+	11	70003	1	200 -- Liderin Kitabı
+	12	11273	1	500 -- Altın Taş Zırh+3
+	13	11473	1	500 -- Öldürücü Rüzgar Takımı+3
+	14	11673	1	500 -- Hayalet Surat Zırh+3
+	15	11873	1	500 -- Turuncu Kedi Elbisesi+3
+	16	21053	1	500 -- Kobold Plaka Zırhı +3
+	17	17203	1	500 -- Cennetin Gözü Küpe+3
+	18	163		1	500 -- Su Perisi Kılıcı+3
+	19	1113	1	500 -- Simşek Bıüağı+3
+	20	2133	1	500 -- Kutsal Sert Yay+3
+	21	243		1	500 -- Seytan üıkarma Kılıcı+3
+	22	3133	1	500 -- Partizan+3
+	23	7133	1	500 -- Cennet Kuşu Yelpaze+3
+	24	5093	1	500 -- Yıldırım Kuşu Çanı+3
+}
+Group	patron_sandiklari
+{
+	Vnum	50078 -- Sarı Kaplan H. Sandığı
+	1	80019	5	200 -- İnce Kumaş
+	2	71094	1	200 -- Münzevi Tavsiyesi
+	3	70039	1	200 -- Demircinin El Kitabı
+	4	72724	1	200 -- Güneş Özütü (O)
+	5	72728	1	200 -- Ay Özütü (O)
+	6	71095	1	200 -- Geçit Bileti
+	7	55001	1	200 -- Protein Lokması
+	8	70005	1	500 -- Tecrübe yüzüğü (1 sa.)
+	9	72006	1	500 -- Hırsızın Eldivenleri
+	10	70014	1	500 -- Kan Hapı
+	11	70003	1	200 -- Liderin Kitabı
+	12	11273	1	500 -- Altın Taş Zırh+3
+	13	11473	1	500 -- Öldürücü Rüzgar Takımı+3
+	14	11673	1	500 -- Hayalet Surat Zırh+3
+	15	11873	1	500 -- Turuncu Kedi Elbisesi+3
+	16	21053	1	500 -- Kobold Plaka Zırhı +3
+	17	17203	1	500 -- Cennetin Gözü Küpe+3
+	18	163		1	500 -- Su Perisi Kılıcı+3
+	19	1113	1	500 -- Simşek Bıüağı+3
+	20	2133	1	500 -- Kutsal Sert Yay+3
+	21	243		1	500 -- Seytan üıkarma Kılıcı+3
+	22	3133	1	500 -- Partizan+3
+	23	7133	1	500 -- Cennet Kuşu Yelpaze+3
+	24	5093	1	500 -- Yıldırım Kuşu Çanı+3
+}
+Group	patron_sandiklari
+{
+	Vnum	50079 -- Ateş Kral Sandığı
+	1	80019	5	200 -- İnce Kumaş
+	2	71094	1	200 -- Münzevi Tavsiyesi
+	3	70039	1	200 -- Demircinin El Kitabı
+	4	72724	1	200 -- Güneş Özütü (O)
+	5	72728	1	200 -- Ay Özütü (O)
+	6	71095	1	200 -- Geçit Bileti
+	7	55001	1	200 -- Protein Lokması
+	8	70005	1	500 -- Tecrübe yüzüğü (1 sa.)
+	9	72006	1	500 -- Hırsızın Eldivenleri
+	10	70014	1	500 -- Kan Hapı
+	11	70003	1	200 -- Liderin Kitabı
+	12	11273	1	500 -- Altın Taş Zırh+3
+	13	11473	1	500 -- Öldürücü Rüzgar Takımı+3
+	14	11673	1	500 -- Hayalet Surat Zırh+3
+	15	11873	1	500 -- Turuncu Kedi Elbisesi+3
+	16	21053	1	500 -- Kobold Plaka Zırhı +3
+	17	17203	1	500 -- Cennetin Gözü Küpe+3
+	18	163		1	500 -- Su Perisi Kılıcı+3
+	19	1113	1	500 -- Simşek Bıüağı+3
+	20	2133	1	500 -- Kutsal Sert Yay+3
+	21	243		1	500 -- Seytan üıkarma Kılıcı+3
+	22	3133	1	500 -- Partizan+3
+	23	7133	1	500 -- Cennet Kuşu Yelpaze+3
+	24	5093	1	500 -- Yıldırım Kuşu Çanı+3
+}
+Group	patron_sandiklari
+{
+	Vnum	50081 -- Seytan Kral Sandığı
+	1	80019	5	200 -- İnce Kumaş
+	2	71094	1	200 -- Münzevi Tavsiyesi
+	3	70039	1	200 -- Demircinin El Kitabı
+	4	72724	1	200 -- Güneş Özütü (O)
+	5	72728	1	200 -- Ay Özütü (O)
+	6	71095	1	200 -- Geçit Bileti
+	7	55001	1	200 -- Protein Lokması
+	8	70005	1	500 -- Tecrübe yüzüğü (1 sa.)
+	9	72006	1	500 -- Hırsızın Eldivenleri
+	10	70014	1	500 -- Kan Hapı
+	11	70003	1	200 -- Liderin Kitabı
+	12	11273	1	500 -- Altın Taş Zırh+3
+	13	11473	1	500 -- Öldürücü Rüzgar Takımı+3
+	14	11673	1	500 -- Hayalet Surat Zırh+3
+	15	11873	1	500 -- Turuncu Kedi Elbisesi+3
+	16	21053	1	500 -- Kobold Plaka Zırhı +3
+	17	17203	1	500 -- Cennetin Gözü Küpe+3
+	18	163		1	500 -- Su Perisi Kılıcı+3
+	19	1113	1	500 -- Simşek Bıüağı+3
+	20	2133	1	500 -- Kutsal Sert Yay+3
+	21	243		1	500 -- Seytan üıkarma Kılıcı+3
+	22	3133	1	500 -- Partizan+3
+	23	7133	1	500 -- Cennet Kuşu Yelpaze+3
+	24	5093	1	500 -- Yıldırım Kuşu Çanı+3
+}
+Group	patron_sandiklari
+{
+	Vnum	50082 -- Lusifer Sandığı
+	1	55001	1	100 -- Protein Lokması
+	2	11294	1	500 -- Siyah Çelik Zırh+4
+	3	11494	1	500 -- Siyah Rüzgar Takımı+4
+	4	11694	1	500 -- Kara Büyü Zırh+4
+	5	11894	1	500 -- Siyah Elbise+4
+	6	21074	1	500 -- Gecegölgesi Zırhı +4
+	7	5120	1	200 -- Orkide Çan+0
+	8	190		1	200 -- Aslan Kılıcı+0
+	9	1130	1	200 -- Seytan Kanadü Cakram+0
+	10	180		1	50 -- Zehir Kılıcı+0
+	11	3160	1	50 -- Kin Kılıcı+0
+	12	6060	1	200 -- Çakır Kuşu +0
+	13	6070	1	200 -- Diken Pençe +0
+	14	2170	1	200 -- Havalı Çelik Yay+0
+}
+Group	patron_sandiklari
+{
+	Vnum	50186 -- Azrail Sandığı
+	1	55001	1	100 -- Protein Lokması
+	2	11294	1	500 -- Siyah Çelik Zırh+4
+	3	11494	1	500 -- Siyah Rüzgar Takımı+4
+	4	11694	1	500 -- Kara Büyü Zırh+4
+	5	11894	1	500 -- Siyah Elbise+4
+	6	21074	1	500 -- Gecegölgesi Zırhı +4
+	7	5120	1	200 -- Orkide Çan+0
+	8	190		1	200 -- Aslan Kılıcı+0
+	9	1130	1	200 -- Seytan Kanadü üakram+0
+	10	180		1	50 -- Zehir Kılıcı+0
+	11	3160	1	50 -- Kin Kılıcı+0
+	12	6060	1	200 -- Çakır Kuşu +0
+	13	6070	1	200 -- Diken Pençe +0
+	14	2170	1	200 -- Havalı Çelik Yay+0
+}
+Group	patron_sandiklari
+{
+	Vnum	54700 -- Beran Setaouin Sandığı
+	1	100700	1	50 -- Ejderha alevi (B)
+	2	72347	1	80 -- Hızlandırıcı (%30)
+	3	80019	5	200 -- İnce Kumaş
+	4	27992	1	200 -- Beyaz İnci
+	5	27993	1	200 -- Mavi İnci
+	6	27994	1	200 -- Kankırmızı İnci
+	7	70024	1	400 -- Kutsama Küresi
+	8	76010	4	200 -- Kan Taşı
+	9	50513	1	200 -- Ruh Taşı
+	10	50121	1	400 -- Demir Kutu
+	11	71085	5	400 -- Arttırma Kağıdı
+	12	71084	50	200 -- Efsun Nesnesi
+	13	50255	10	200 -- Cor Draconis, İşlenmemiş
+	14	55405	1	100 -- Mavi Ejderha Yumurtası
+}
+Group	patron_sandiklari
+{
+	Vnum	54701 -- Bagjanamu Sandığı
+	1	100700	1	50 -- Ejderha alevi (B)
+	2	72347	1	80 -- Hızlandırıcı (%30)
+	3	80019	7	200 -- İnce Kumaş
+	4	50255	15	200 -- Cor Draconis, İşlenmemiş
+	5	30611	1	100 -- Ağır Kemerler
+	6	30616	1	30 -- Titandiyoksit
+	7	30610	1	100 -- Mitril
+	8	30617	1	100 -- Akik
+	9	30614	1	400 -- siyah boya
+	10	30615	1	40 -- beyaz boya
+	11	30603	1	400 -- kırmızı boya
+	12	30602	1	40 -- mavi boya
+	13	30619	1	400 -- Altın metalik boya
+	14	30623	1	400 -- Hakikat Kitabı
+	15	30624	1	400 -- Hakikat Ruhu
+	16	30629	1	400 -- Tanrıların Özütü
+	17	30627	1	400 -- Tanrıların Meyvesi
+	18	30601	1	400 -- Zırh Planı
+	19	30605	1	400 -- Altın Plakalar
+	20	30606	1	400 -- Gümüş Plakalar
+	21	30607	1	400 -- Bakır Plakalar
+	22	30608	1	400 -- Çelik Plakalar
+	23	30609	1	400 -- Tunü Plakalar
+	24	30192	1	400 -- Süt Serbeti
+	25	70031	1	400 -- Eskrim Broşürü
+	26	55003	1	400 -- Genç Pet Kitabı
+	27	55004	1	400 -- Yabani Pet Kitabı
+	28	55005	1	400 -- Cesur Pet Kitabı
+	29	15433	1	200 -- Yalıçapkını Ayyakkabı +3
+	30	15373	1	200 -- Coşku Ayyakkabısı +3
+	31	38060	1	400 -- Duygu Çantası
+	32	50300	1	400 -- Beceri Kitabı
+	33	50323	1	400 -- Kitap Sandığı Misilleme
+	34	50324	1	400 -- Kitap Sandığı Güçlendirme
+	35	50514	1	400 -- Ders Kitabı Güçlendirme
+	36	50515	1	400 -- Ders Kitabı Misilleme
+}
+Group	patron_sandiklari
+{
+	Vnum	54702 -- Razadör'ün Sandığı
+	1	100700	1	80 -- Ejderha alevi (B)
+	2	72347	1	50 -- Hızlandırıcı (%30)
+	3	80019	7	100 -- İnce Kumaş
+	4	50255	15	100 -- Cor Draconis, İşlenmemiş
+	5	55403	1	50 -- Razadör Yumurtası
+	6	30617	1	100 -- Akik
+	7	30600	1	100 -- Kesim Örneği
+	8	30604	1	400 -- gri boya
+	9	30603	1	100 -- kırmızı boya
+	10	30614	1	100 -- siyah boya
+	11	30611	1	100 -- Ağır Kemerler
+	12	30612	1	400 -- Sağlam ipler
+	13	71095	1	400 -- Geçit Bileti
+	14	30623	1	400 -- Hakikat Kitabı
+	15	30624	1	400 -- Hakikat Ruhu
+	16	30629	1	400 -- Tanrıların Özütü
+	17	30627	1	400 -- Tanrıların Meyvesi
+	18	30625	1	400 -- Padparadscha
+	19	30524	1	400 -- Alev Taşı
+	20	18080	1	100 -- Ruh Kemeri+0
+	21	18000	1	400 -- Keten Kemer +0
+	22	18010	1	400 -- Deri Kemer +0
+	23	18020	1	400 -- Gösterişli Kemer +0
+	24	18030	1	400 -- Bilgeliğin Kemeri +0
+	25	180		1	50 -- Zehir Kılıcı+0
+	26	190		1	50 -- Aslan Kılıcı+0
+	27	3160	1	400 -- Kin Kılıcı+0
+	28	2170	1	400 -- Havalı Çelik Yay+0
+	29	5120	1	400 -- Orkide Çan+0
+	30	1130	1	400 -- Seytan Kanadı Çakram+0
+	31	6060	1	400 -- Çakır Kuşu +0
+	32	6070	1	400 -- Diken Pençe +0
+	33	76044	1	50 -- Pet Kitabı Sandığı
+	34	13140	1	100 -- Titan Kalkanı+0
+	35	72348	1	50 -- Hızlandırıcı (%50)
+	36	71025	1	30 -- Demirci Taşı
+	37	30628	1	30 -- Tanrı Cicegi
+}
+Group	patron_sandiklari
+{
+	Vnum	54703 -- Nemere Sandığı
+	1	100700	1	50 -- Ejderha alevi (B)
+	2	72347	1	80 -- Hızlandırıcı (%30)
+	3	80019	7	100 -- İnce Kumaş
+	4	50255	15	100 -- Cor Draconis, İşlenmemiş
+	5	55404	1	50 -- Nemere Yumurtası
+	6	30616	1	40 -- Titandiyoksit
+	7	30600	1	100 -- Kesim Örneği
+	8	30604	1	400 -- gri boya
+	9	30615	1	100 -- beyaz boya
+	10	30602	1	70 -- mavi boya
+	11	30611	1	100 -- Ağır Kemerler
+	12	30612	1	400 -- Sağlam ipler
+	13	71095	1	400 -- Geçit Bileti
+	14	30623	1	400 -- Hakikat Kitabı
+	15	30624	1	400 -- Hakikat Ruhu
+	16	30629	1	400 -- Tanrıların Özütü
+	17	30627	1	400 -- Tanrıların Meyvesi
+	18	30626	1	400 -- Kyanit
+	19	30525	1	400 -- Buz Alevi Taşı
+	20	18080	1	100 -- Ruh Kemeri+0
+	21	18000	1	400 -- Keten Kemer +0
+	22	18010	1	400 -- Deri Kemer +0
+	23	18020	1	400 -- Gösterişli Kemer +0
+	24	18030	1	400 -- Bilgeliğin Kemeri +0
+	25	180		1	50 -- Zehir Kılıcı+0
+	26	190		1	50 -- Aslan Kılıcı+0
+	27	3160	1	400 -- Kin Kılıcı+0
+	28	2170	1	400 -- Havalı Çelik Yay+0
+	29	5120	1	400 -- Orkide Çan+0
+	30	1130	1	400 -- Seytan Kanadü üakram+0
+	31	6060	1	400 -- Çakır Kuşu +0
+	32	6070	1	400 -- Diken Pençe +0
+	33	76044	1	50 -- Pet Kitabı Sandığı
+	34	13140	1	100 -- Titan Kalkanı+0
+}
+Group	patron_sandiklari
+{
+	Vnum	54704 -- Jotun Thrym Sandığı
+	1	100700	1	50 -- Ejderha alevi (B)
+	2	72347	1	80 -- Hızlandırıcı (%30)
+	3	80019	7	200 -- İnce Kumaş
+	4	50255	20	100 -- Cor Draconis, İşlenmemiş
+	5	30618	1	100 -- Ay Taşı
+	6	30617	1	100 -- Akik
+	7	30611	1	100 -- Ağır Kemerler
+	8	30616	1	40 -- Titandiyoksit
+	9	30610	1	100 -- Mitril
+	10	30614	1	400 -- siyah boya
+	11	30615	1	80 -- beyaz boya
+	12	30603	1	400 -- kürmüzü boya
+	13	30602	1	70 -- mavi boya
+	14	30619	1	400 -- Altın metalik boya
+	15	30623	1	400 -- Hakikat Kitabı
+	16	30624	1	400 -- Hakikat Ruhu
+	17	30629	1	400 -- Tanrıların Özütü
+	18	30627	1	400 -- Tanrıların Meyvesi
+	19	30601	1	400 -- Zırh Planü
+	20	30600	1	100 -- Kesim Örneği
+	21	30605	1	400 -- Altın Plakalar
+	22	30606	1	400 -- Gümüü Plakalar
+	23	30607	1	400 -- Bakür Plakalar
+	24	30608	1	400 -- Çelik Plakalar
+	25	30609	1	400 -- Tunü Plakalar
+	26	30192	1	400 -- Süt üerbeti
+	27	70031	1	400 -- Eskrim Broüürü
+	28	55003	1	400 -- Genü Pet Kitabı
+	29	55004	1	400 -- Yabani Pet Kitabı
+	30	55005	1	400 -- Cesur Pet Kitabı
+	31	15433	1	200 -- Yalüüapkünü Ayyakkabı +3
+	32	15373	1	200 -- Coüku Ayyakkabısı +3
+	33	38060	1	400 -- Duygu Çantası
+	34	50300	1	400 -- Beceri Kitabı
+	35	50323	1	400 -- Kitap Sandığı Misilleme
+	36	50324	1	400 -- Kitap Sandığı Güçlendirme
+	37	50514	1	400 -- Ders Kitabı Güçlendirme
+	38	50515	1	400 -- Ders Kitabı Misilleme
+	39	18080	1	100 -- Ruh Kemeri+0
+	40	18000	1	400 -- Keten Kemer +0
+	41	18010	1	400 -- Deri Kemer +0
+	42	18020	1	400 -- Gösterişli Kemer +0
+	43	18030	1	400 -- Bilgeliğin Kemeri +0
+	44	20000	1	100 -- Seytan Boynuzu Zırhı +0
+	45	20250	1	100 -- Ejder Süvari Giysisi +0
+	46	20500	1	100 -- Kemik Plaka Zırh +0
+	47	20750	1	100 -- Altın Giysi +0
+	48	21090	1	100 -- Başkomutan Zırhı +0
+	49	13140	1	100 -- Titan Kalkanı+0
+}
+Group	patron_sandiklari
+{
+	Vnum	50270 -- Kraliçe Meley'in Sandığı
+	Type	pct
+	1	100700	1	7 -- Ejderha alevi (B)
+	2	50324	1	40 -- Kitap Sandığı Güçlendirme
+	3	50323	1	40 -- Kitap Sandığı Misilleme
+	4	50514	1	60 -- Ders Kitabı Güçlendirme
+	5	50515	1	60 -- Ders Kitabı Misilleme
+	6	7370	1	60 -- Uyuyan Ejder Yelpazesi+0
+	7	5340	1	60 -- Ejderha Hayaleti Çanı +0
+	8	470		1	60 -- Ejderha Dişi Kılıcı +0
+	9	2370	1	40 -- Anka Yayı +0
+	10	21544	1	60 -- Yeşil Orman Miğferi +4
+	11	21545	1	20 -- Yeşil Orman Miğferi +5
+	12	21546	1	10 -- Yeşil Orman Miğferi +6
+	13	12684	1	60 -- Ruh Yongası Sapkası +4
+	14	12685	1	20 -- Ruh Yongası Sapkası +5
+	15	12686	1	10 -- Ruh Yongası Sapkası +6
+	16	12404	1	60 -- Örümcek Kapşon +4
+	17	12405	1	20 -- Örümcek Kapşon +5
+	18	12406	1	10 -- Örümcek Kapşon +6
+	19	15434	1	60 -- Yalıçapkını Ayyakkabı +4
+	20	15435	1	20 -- Yalıçapkını Ayyakkabı +5
+	21	15436	1	10 -- Yalıçapkını Ayyakkabı +6
+	22	15374	1	60 -- Coşku Ayyakabısı +4
+	23	15375	1	20 -- Coşku Ayyakabısı +5
+	24	15376	1	10 -- Coşku Ayyakabısı +6
+	25	27992	1	30 -- Beyaz İnci
+	26	27993	1	40 -- Mavi İnci
+	27	27994	1	50 -- Kankırmızı İnci
+	28	30550	3	70 -- Mavi Kemer
+	29	30192	3	70 -- Süt Serbeti
+	30	30620	3	40 -- Kırmızı Ejderha Boynuzu
+	31	30621	3	40 -- Kırmızı Ejderha Pulu
+	32	30622	1	20 -- Zırh Planı: Kask
+	33	70031	1	80 -- Eskrim Broşürü
+	34	55003	1	30 -- Genç Pet Kitabı
+	35	55004	1	30 -- Yabani Pet Kitabı
+	36	55005	1	30 -- Cesur Pet Kitabı
+	37	55406	1	5 -- Kızıl Ejderha Yumurtası
+	38	56011	1	3 -- Orta bağış belgesi
+	39	30194	2	60 -- Ork Topuzu
+	40	30622	5	60 -- Zırh Planı: Kask
+	41	30600	1	60 -- Kesim Örneği
+	42	30630	1	20 -- Ejderha kanatları
+}
+Group	patron_sandiklari
+{
+	Vnum	50271 -- Ejderha Bekçisi Sandığı
+	Type	pct
+	1	100700	1	7 -- Ejderha alevi (B)
+	2	50324	1	40 -- Kitap Sandığı Güçlendirme
+	3	50323	1	40 -- Kitap Sandığı Misilleme
+	4	50514	1	60 -- Ders Kitabı Güçlendirme
+	5	50515	1	60 -- Ders Kitabı Misilleme
+	6	12284	1	60 -- Usta Savaşçı Kaskı +4
+	7	12285	1	20 -- Usta Savaşçı Kaskı +5
+	8	12286	1	10 -- Usta Savaşçı Kaskı +6
+	9	12544	1	60 -- Büyülü Kask +4
+	10	12545	1	20 -- Büyülü Kask +5
+	11	12546	1	10 -- Büyülü Kask +6
+	12	460		1	60 -- Runik Kılıç +0
+	13	6090	1	60 -- Ejder Hükümdarı +0
+	14	1340	1	60 -- Beş Element Kılıcı +0
+	15	3190	1	40 -- Güneş Kılıcı +0
+	16	30193	1	40 -- Parmak Kemikleri
+	17	30080	3	70 -- Lanet Kitabı+
+	18	30035	3	70 -- Yüz Kremi
+	19	30011	3	70 -- Çile
+	20	30192	3	70 -- Süt Serbeti
+	21	30042	2	70 -- Saldırgan kaplanın dişi
+	22	30031	3	70 -- Süs Eşyası
+	23	30083	2	20 -- Bilinmeyen İlaç+
+	24	30089	3	70 -- Yeti Postu+
+	25	15374	1	60 -- Coşku Ayyakabısı +4
+	26	15375	1	20 -- Coşku Ayyakabısı +5
+	27	15376	1	10 -- Coşku Ayyakabısı +6
+	28	27992	1	30 -- Beyaz İnci
+	29	27993	1	40 -- Mavi İnci
+	30	27994	1	50 -- Kankırmızı İnci
+	31	30550	5	70 -- Mavi Kemer
+	32	30192	5	70 -- Süt Serbeti
+	33	30620	3	40 -- Kırmızı Ejderha Boynuzu
+	34	30621	3	40 -- Kırmızı Ejderha Pulu
+	35	30622	1	20 -- Zırh Planı: Kask
+	36	70031	1	80 -- Eskrim Broşürü
+	37	55003	1	30 -- Genç Pet Kitabı
+	38	55004	1	30 -- Yabani Pet Kitabı
+	39	55005	1	30 -- Cesur Pet Kitabı
+	40	56011	1	3 -- Orta bağış belgesi
+	41	30194	2	60 -- Ork Topuzu
+	42	30622	5	60 -- Zırh Planı: Kask
+	43	30600	1	60 -- Kesim Örneği
+	44	30630	1	20 -- Ejderha kanatları
+}
+Group	patron_sandiklari
+{
+	Vnum	50294 -- Kraliçe Meley'in Sandığı(Grup Meley)
+	Type	pct
+	1	50926	200	500 -- Süs Taşı
+	2	50926	200	500 -- Süs Taşı
+	3	50926	200	500 -- Süs Taşı
+	4	50926	200	500 -- Süs Taşı
+	5	50926	200	500 -- Süs Taşı
+	6	50926	100	500 -- Süs Taşı
+}
+Group	patron_sandiklari
+{
+	Vnum	54705 -- Hidra'nın Sandığı
+	1	55410	1	50 -- Nessie Yumurtası
+	2	25041	1	50 -- Büyülü Metal
+	3	72051	1	80 -- Güçlü buz cadısı parşmn.
+	4	72052	1	80 -- General Yonghan parşmn.
+	5	50926	200	100 -- Süs Taşı
+	6	71095	1	100 -- Geçit Bileti
+	7	76031	1	100 -- Protein Lokması
+	8	72058	3	100 -- Zihin Taşı Destesi
+	9	71001	5	100 -- Kötü Ruh Kovma Kağıdı
+	10	70303	1	80 -- Hidra'nın Yüzüğü
+	11	30251	5	100 -- Kem Göz Mücevheri
+	12	30252	5	100 -- Bilgelik Mücevheri
+	13	30167	5	100 -- Kır. Hayelet Ağacı Dalı
+	14	30168	5	100 -- Liderlerin Notları
+	15	71142	1	50 -- Kral Kaplanı (Beyaz)
+	16	27992	1	100 -- Beyaz İnci
+	17	27993	1	100 -- Mavi İnci
+	18	27994	1	100 -- Kankırmızı İnci
+	19	25040	1	100 -- Kutsama Kağıdı
+	20	55400	1	100 -- Rasgele sandığı
+	21	85003	1	80 -- Hakim Kuşağı (asil)
+	22	38060	1	100 -- Duygu Çantası
+	23	100700	1	50 -- Ejderha Alevi (B)
+	24	72346	1	10 -- Kutsama
+}
+Group	patron_sandiklari
+{
+	Vnum	50254 -- Karanlığın Sandığı
+	1	1106	1	500 -- Ejderha Bıçağı+6
+	2	7146	1	500 -- Kurtuluş Yelpazesi+6
+	3	156		1	500 -- Hortlak Dişi Kılıcı+6
+	4	2146	1	500 -- Sarı EjderhaYayı+6
+	5	5106	1	500 -- Cennet ve Dünya Çanı+6
+	6	3146	1	500 -- Elektromanyetik Pala+6
+	7	2180	1	500 -- Mavi Ejderha Yayı+0
+	8	7150	1	500 -- Mutluluk Yelpazesi+0
+	9	6060	1	500 -- Çakır Kuşu +0
+	10	3150	1	500 -- Yarı-İnsan Kılıç+0
+	11	1120	1	500 -- Siam Bıçağı+0
+	12	170		1	500 -- Azap Kılıcı+0
+	13	250		1	500 -- Seytani Pala+0
+	14	11296	1	100 -- Siyah Çelik Zırh+6
+	15	11696	1	100 -- Kara Büyü Zırh+6
+	16	11896	1	100 -- Siyah Elbise+6
+	17	11496	1	100 -- Siyah Rüzgar Takımı+6
+	18	17540	1	40 -- Zümrüt Küpeler +0
+	19	17560	1	80 -- Safir Küpeler +0
+	20	17520	1	80 -- Grena Küpeler +0
+	21	17500	1	40 -- Yakut Küpeler +0
+	22	17220	1	100 -- Ruh Kristali Küpeleri+0
+	23	14570	1	80 -- Turmalin Bilezik +0
+	24	14560	1	80 -- Safir Bileklik +0
+	25	14540	1	80 -- Zümrüt Bileklik +0
+	26	14520	1	80 -- Grena Bileklik +0
+	27	14500	1	80 -- Yakut Bileklik +0
+	28	14220	1	80 -- Ruh Kristali Bilekliği+0
+	29	16570	1	80 -- Turmalin Kolye +0
+	30	16560	1	80 -- Safir Kolye +0
+	31	16540	1	80 -- Zümrüt Kolye +0
+	32	16520	1	80 -- Grena Kolye +0
+	33	16500	1	80 -- Yakut Kolye +0
+	34	16220	1	100 -- Ruh Kristali Kolyesi+0
+	35	16205	1	100 -- Cennetin Gözü Kolye+5
+	36	16206	1	80 -- Cennetin Gözü Kolye+6
+	37	16207	1	30 -- Cennetin Gözü Kolye+7
+	38	14205	1	100 -- Cennetin Gözü Bilezik+5
+	39	14206	1	80 -- Cennetin Gözü Bilezik+6
+	40	14207	1	30 -- Cennetin Gözü Bilezik+7
+	41	17205	1	100 -- Cennetin Gözü Küpe+5
+	42	17206	1	80 -- Cennetin Gözü Küpe+6
+	43	17207	1	30 -- Cennetin Gözü Küpe+7
+	44	13140	1	30 -- Titan Kalkanı+0
+	45	80019	5	500 -- İnce Kumaş
+	46	71095	1	500 -- Geçit Bileti
+}
+
+
+####################################- Author *@* - ARWEN -######################################
+#################                                                             ##################
+#################                 Zodyak Sandıkları Dropları                  ##################
+#################                                                             ##################
+####################################- Author *@* - ARWEN -######################################
+
+
+Group	Zodyak_Sandıkları
+{
+	Vnum	33033 -- Altın Zodyak Sandığı
+	1	2200	1	30 -- Zodyak Yay+0
+	2	3220	1	30 -- Zodyak Orağı+0
+	3	7300	1	70 -- Zodyak yelpazesi+0
+	4	5160	1	70 -- Zodyak Çanı+0
+	5	6120	1	70 -- Zodyak Pençe+0
+	6	310		1	20 -- Zodyak Kılıç+0
+	7	300		1	50 -- Zodyak Bıçak+0
+	8	1180	1	30 -- Zodyak Hançeri+0
+	9	19290	1	90 -- Zodyak Zırhı+0
+	10	19490	1	90 -- Zodyak Kıyafeti+0
+	11	19690	1	90 -- Zodyak Plaka Zırh+0
+	12	19890	1	90 -- Zodyak kıyafeti+0
+	13	21200	1	90 -- Zodyak Başlık+0
+	14	86021	1	500 -- Chen Bandı (basit)
+	15	86041	1	500 -- Shen Bandı (basit)
+	16	86031	1	500 -- Wu Bandı (basit)
+	17	86051	1	500 -- Xu Bandı (basit)
+	18	86011	1	500 -- Yin Bandı (basit)
+	19	86001	1	500 -- Zi Bandı (basit)
+	20	71101	1	500 -- Soğutma iksiri
+	21	50255	5	500 -- Cor Draconis, İşlenmemiş
+	22	72347	1	80 -- Hızlandırıcı (%10)
+	23	72348	1	50 -- Hızlandırıcı (%20)
+	24	7300	1	70 -- Zodyak yelpazesi+0
+	25	5160	1	70 -- Zodyak Çanı+0
+	26	6120	1	70 -- Zodyak Pençe+0
+	27	19290	1	90 -- Zodyak Zırhı+0
+	28	19490	1	90 -- Zodyak Kıyafeti+0
+	29	19690	1	90 -- Zodyak Plaka Zırh+0
+	30	19890	1	90 -- Zodyak kıyafeti+0
+	31	21200	1	90 -- Zodyak Başlık+0
+}
+Group	Zodyak_Sandıkları
+{
+	Vnum	33026 -- Aureolin Hazinesi
+	1	33013	100	400 -- Jai Nişanı
+	2	33014	100	400 -- Yi Nişanı
+	3	33015	100	400 -- Bing Nişanı
+	4	33016	100	400 -- Ding Nişanı
+	5	33017	100	400 -- Mu Nişanı
+	6	33018	100	400 -- Gee Nişanı
+	7	33019	100	400 -- Geng Nişanı
+	8	33020	100	400 -- Xin Nişanı
+	9	33021	100	400 -- Ren Nişanı
+	10	33022	100	400 -- Gui Nişanı
+	11	19290	1	90 -- Zodyak Zırhı+0
+	12	19490	1	90 -- Zodyak Kıyafeti+0
+	13	19690	1	90 -- Zodyak Plaka Zırh+0
+	14	19890	1	90 -- Zodyak kıyafeti+0
+	15	21200	1	90 -- Zodyak Başlık+0
+	16	86021	1	500 -- Chen Bandı (basit)
+	17	86041	1	500 -- Shen Bandı (basit)
+	18	86031	1	500 -- Wu Bandı (basit)
+	19	86051	1	500 -- Xu Bandı (basit)
+	20	86011	1	500 -- Yin Bandı (basit)
+	21	86001	1	500 -- Zi Bandı (basit)
+	22	50255	5	500 -- Cor Draconis, İşlenmemiş
+	23	72347	1	80 -- Hızlandırıcı (%10)
+	24	72348	1	50 -- Hızlandırıcı (%20)
+}
+Group	Zodyak_Sandıkları
+{
+	Vnum	33027 -- Aventurin Hazinesi
+	1	33001	100	400 -- Zi Nişanı
+	2	33002	100	400 -- Chou Nişanı
+	3	33003	100	400 -- Yin Nişanı
+	4	33004	100	400 -- Mao Nişanı
+	5	33005	100	400 -- Chen Nişanı
+	6	33006	100	400 -- Si Nişanı
+	7	33007	100	400 -- Wu Nişanı
+	8	33008	100	400 -- Wei Nişanı
+	9	33009	100	400 -- Shen Nişanı
+	10	33010	100	400 -- Yu Nişanı
+	11	33011	100	400 -- Xu Nişanı
+	12	33012	100	400 -- Hai Nişanı
+	13	2200	1	40 -- Zodyak Yay+0
+	14	3220	1	50 -- Zodyak Orağı+0
+	15	7300	1	70 -- Zodyak yelpazesi+0
+	16	5160	1	70 -- Zodyak Çanı+0
+	17	6120	1	70 -- Zodyak Pençe+0
+	18	310		1	50 -- Zodyak Kılıç+0
+	19	300		1	50 -- Zodyak Bıçak+0
+	20	1180	1	40 -- Zodyak Hançeri+0
+	21	86021	1	500 -- Chen Bandı (basit)
+	22	86041	1	500 -- Shen Bandı (basit)
+	23	86031	1	500 -- Wu Bandı (basit)
+	24	86051	1	500 -- Xu Bandı (basit)
+	25	86011	1	500 -- Yin Bandı (basit)
+	26	86001	1	500 -- Zi Bandı (basit)
+	27	50255	5	500 -- Cor Draconis, İşlenmemiş
+	28	72347	1	80 -- Hızlandırıcı (%10)
+	29	72348	1	50 -- Hızlandırıcı (%20)
+}
+Group	Zodyak_Sandıkları
+{
+	Vnum	33028 -- Yıldız Hazinesi
+	1	10750	1	400 -- Simşek Tılsımı+0
+	2	10520	1	400 -- Rüzgar Tılsımı+0
+	3	10290	1	400 -- Karanlık Tılsım+0
+	4	10060	1	400 -- Toprak Tılsımı+0
+	5	9830	1	400 -- Buz Tılsımı+0
+	6	9600	1	400 -- Ateş Tılsımı+0
+	7	2200	1	40 -- Zodyak Yay+0
+	8	3220	1	50 -- Zodyak Orağı+0
+	9	7300	1	70 -- Zodyak yelpazesi+0
+	10	5160	1	70 -- Zodyak Çanı+0
+	11	6120	1	70 -- Zodyak Pençe+0
+	12	310		1	50 -- Zodyak Kılıç+0
+	13	300		1	50 -- Zodyak Bıçak+0
+	14	1180	1	40 -- Zodyak Hançeri+0
+	15	50255	5	500 -- Cor Draconis, İşlenmemiş
+	16	72347	1	80 -- Hızlandırıcı (%10)
+	17	72348	1	50 -- Hızlandırıcı (%20)
+}
+
+
+####################################- Author *@* - ARWEN -######################################
+#################                                                             ##################
+#################                7-8. Beceri Sandıkları Dropları              ##################
+#################                                                             ##################
+####################################- Author *@* - ARWEN -######################################
+
+
+Group	Skill_Sandıkları
+{
+	Vnum	50323 -- Kitap Sandığı Misilleme
+	1	50516	1	500 -- Kılıç Çevirme Misilleme
+	2	50517	1	500 -- Suikast Misillemesi
+	3	50518	1	500 -- Parmak Darbesi Misilleme
+	4	50519	1	500 -- Ejderha darbesi misille.
+	5	50520	1	500 -- Ruh Vuruşu Misillemesi
+	6	50521	1	500 -- Ateşli Ok Misillemesi
+	7	50522	1	500 -- Karanlık Vuruş Misilleme
+	8	50523	1	500 -- Simşek Çağırma Misilleme
+	9	50524	1	500 -- Kurt Nefesi Misillemesi
+}
+Group	Skill_Sandıkları
+{
+	Vnum	50324 -- Kitap Sandığ Güçlendirme
+	1	50560	1	500 -- Kılıç Çevirme Misilleme
+	2	50561	1	500 -- Suikast Misillemesi
+	3	50562	1	500 -- Parmak Darbesi Misilleme
+	4	50563	1	500 -- Ejderha darbesi misille.
+	5	50564	1	500 -- Ruh Vuruşu Misillemesi
+	6	50565	1	500 -- Ateşli Ok Misillemesi
+	7	50566	1	500 -- Karanlık Vuruş Misilleme
+	8	50567	1	500 -- Simşek Çağırma Misilleme
+	9	50568	1	500 -- Kurt Nefesi Misillemesi
+}
+
+
+####################################- Author *@* - ARWEN -######################################
+#################                                                             ##################
+#################                    Mob Parşomen Dropları                    ##################
+#################                                                             ##################
+####################################- Author *@* - ARWEN -######################################
+
+
+Group	Mob_Drop
+{
+	Vnum	72051 -- Güçlü buz cadısı parşmn.
+	1	mob	1192	1	500 -- Güçlü Buz Cadısı
+}
+Group	Mob_Drop
+{
+	Vnum	72052 -- General Yonghan parşmn.
+	1	mob	2492	1	500 -- General
+}
+
+Group	Mob_Drop
+{
+	Vnum	72063 -- Metin taşı (hafif)
+	1	mob	8001	1	500 -- Üzüntü Metini
+	2	mob	8002	1	500 -- Dövüş Metini
+	3	mob	8003	1	500 -- Savaş Metini
+	4	mob	8004	1	500 -- Hırs Metini
+	5	mob	8005	1	500 -- Siyah Metin
+}
+
+
+####################################- Author *@* - ARWEN -######################################
+#################                                                             ##################
+#################              Pet Binek Sistemi Sandık Dropları              ##################
+#################                                                             ##################
+####################################- Author *@* - ARWEN -######################################
+
+
+Group	Mob_Drop
+{
+	Vnum	76044 -- Pet Kitabı Sandığı
+	1	55010	1	500 -- Dayanıklılık (Savaşçı)
+	2	55011	1	500 -- Dayanıklılık (Sura)
+	3	55012	1	500 -- Dayanıklılık (Ninja)
+	4	55013	1	500 -- Dayanıklılık (Saman)
+	5	55014	1	500 -- Dayanıklılık (Lycan)
+	6	55015	1	80 -- Berserker Kitabı
+	7	55016	1	500 -- Büyü Bozma Kitabı
+	8	55017	1	500 -- Hızlandırma Kitabı
+	9	55018	1	80 -- Talim Kitabı
+	10	55019	1	500 -- Yenileme Kitabı
+	11	55020	1	500 -- Vampir Kitabı
+	12	55021	1	500 -- Hayalet Kitabı
+	13	55022	1	70 -- Engel Kitabı
+	14	55023	1	500 -- Ayna Kitabı
+	15	55024	1	500 -- Yang Düşme Kitabı
+	16	55025	1	500 -- Menzil Kitabı
+	17	55026	1	500 -- Yenilmezlik Kitabı
+	18	55027	1	500 -- İyileştirme Kitabı
+	19	55034	1	500 -- Mayalama ustası kitabı
+	20	55035	1	60 -- Canavar avcısı kitabı
+	21	55036	1	500 -- Kavrayış kitabı
+	22	55037	1	500 -- Can çekme kitabı
+	23	55038	1	500 -- Tüy gibi kitap
+}
+
+
+
+
+
+Group	Mob_Drop
+{
+	Vnum	55070 -- At beceri Sandığı
+	1	72778	1	400 -- Binicilik (Çevik toynak)
+	2	72779	1	400 -- Binicilik (EXP)
+	3	72780	1	400 -- Binicilik (Öfk. fırtına)
+	4	72781	1	400 -- Binicilik (Hafif adım)
+	5	72782	1	400 -- Binicilik (Yenilmezlik)
+	6	72783	1	400 -- Binicilik (Geri tp. yok)
+	7	72784	1	400 -- Binicilik (Tesadüfi)
+	8	72785	1	400 -- Binicilik (At becerisi)
+	9	72786	1	400 -- Binicilik (SM. i. STR)
+	10	72787	1	400 -- Binicilik (SM. i. VIT)
+	11	72788	1	400 -- Binicilik (SM. i. RES)
+	12	72789	1	400 -- Binicilik (SM. i. INT)
+	13	72790	1	100 -- Binicilik (Tamlık)
+}
+
+
+####################################- Author *@* - ARWEN -######################################
+#################                                                             ##################
+#################               ZÇ - TS Patron Sandık Dropları                ##################
+#################                                                             ##################
+####################################- Author *@* - ARWEN -######################################
+
+
+	Group	TS_Drop
+{
+	Vnum	31143 -- Uyanış Sandığı
+	1	31108	2	500 -- Küçük uyanış taşı
+	2	31122	2	500 -- Kumaş
+	3	31117	2	500 -- İnce iplik
+	4	31123	2	500 -- İnce deri
+	5	31114	2	500 -- Basit Deri
+	6	31121	2	500 -- Çelik
+	7	31125	2	500 -- Kalın ip
+	8	31149	2	500 -- Sıkı ip
+	9	27994	1	80 -- Kankırmızı İnci
+	10	27993	1	80 -- Mavi İnci
+	11	27992	1	70 -- Beyaz İnci
+	12	25040	10	400 -- Kutsama Kağıdı
+	13	50513	1	400 -- Ruh Taşı
+	14	71095	1	400 -- Geçit Bileti
+}
+Group	ZC_Drop
+{
+	Vnum	31139 -- Z.Ç Beran Setaouin sandığı
+	1	31108	5	500 -- Küçük uyanış taşı
+	2	31122	2	500 -- Kumaş
+	3	31117	2	500 -- İnce iplik
+	4	31123	2	500 -- İnce deri
+	5	31114	2	500 -- Basit Deri
+	6	31121	2	500 -- Çelik
+	7	31125	2	500 -- Kalın ip
+	8	31149	2	500 -- Sıkı ip
+	9	31136	1	50 -- Basit Kaos Taşı
+	10	31137	1	50 -- Güzel kaos taşı
+	11	31138	1	50 -- Görkemli kaos taşı
+	12	31135	1	50 -- Özel boya
+	13	31134	1	50 -- Geliştirilmiş boya
+	14	31133	1	50 -- Genel boya
+	15	31126	1	80 -- Ejderha kafatası
+	16	31127	1	80 -- Ejderha dişi
+	17	31113	2	400 -- Uyanış ruhu
+	18	27994	1	80 -- Kankırmızı İnci
+	19	27993	1	80 -- Mavi İnci
+	20	27992	1	70 -- Beyaz İnci
+	21	25040	10	400 -- Kutsama Kağıdı
+	22	50513	1	400 -- Ruh Taşı
+	23	71095	1	400 -- Geçit Bileti
+	24	50341	1	100 -- Çırağın ilhamı
+	25	50342	1	100 -- Ustanın ilhamı
+	26	50338	1	100 -- Çırağın Karizması
+	27	50339	1	100 -- Ustanın Karizması
+	28	100700	1	50 -- Ejderha Alevi (B)
+	29	31112	2	400 -- Güçlü uyanış taşı
+}
+Group	ZC_Drop
+{
+	Vnum	31141 -- Z.Ç Razadör'ün Sandığı
+	1	31108	5	500 -- Küçük uyanış taşı
+	2	31122	2	500 -- Kumaş
+	3	31117	2	500 -- İnce iplik
+	4	31123	2	500 -- İnce deri
+	5	31114	2	500 -- Basit Deri
+	6	31121	2	500 -- Çelik
+	7	31125	2	500 -- Kalın ip
+	8	31149	2	500 -- Sıkı ip
+	9	31136	1	50 -- Basit Kaos Taşı
+	10	31137	1	50 -- Güzel kaos taşı
+	11	31138	1	50 -- Görkemli kaos taşı
+	12	31135	1	50 -- Özel boya
+	13	31134	1	50 -- Geliştirilmiş boya
+	14	31133	1	50 -- Genel boya
+	15	31128	1	80 -- Razadör boynuzu
+	16	31131	2	80 -- İpek
+	17	31113	2	400 -- Uyanış ruhu
+	18	27994	1	80 -- Kankırmızı İnci
+	19	27993	1	80 -- Mavi İnci
+	20	27992	1	70 -- Beyaz İnci
+	21	25040	10	400 -- Kutsama Kağıdı
+	22	50513	1	400 -- Ruh Taşı
+	23	71095	1	400 -- Geçit Bileti
+	24	50341	1	100 -- Çırağın ilhamı
+	25	50342	1	100 -- Ustanın ilhamı
+	26	50338	1	100 -- Çırağın Karizması
+	27	50339	1	100 -- Ustanın Karizması
+	28	100700	1	70 -- Ejderha Alevi (B)
+	29	31111	1	2 -- Değerli uyanış taşı
+}
+Group	ZC_Drop
+{
+	Vnum	31142 -- Z.Ç Nemere Sandığı
+	1	31108	5	500 -- Küçük uyanış taşı
+	2	31122	2	500 -- Kumaş
+	3	31117	2	500 -- İnce iplik
+	4	31123	2	500 -- İnce deri
+	5	31114	2	500 -- Basit Deri
+	6	31121	2	500 -- Çelik
+	7	31125	2	500 -- Kalın ip
+	8	31149	2	500 -- Sıkı ip
+	9	31136	1	50 -- Basit Kaos Taşı
+	10	31137	1	50 -- Güzel kaos taşı
+	11	31138	1	50 -- Görkemli kaos taşı
+	12	31135	1	50 -- Özel boya
+	13	31134	1	50 -- Geliştirilmiş boya
+	14	31133	1	50 -- Genel boya
+	15	31129	1	80 -- Nemere boynuzu
+	16	31115	2	80 -- Örs
+	17	31113	2	400 -- Uyanış ruhu
+	18	27994	1	80 -- Kankırmızı İnci
+	19	27993	1	80 -- Mavi İnci
+	20	27992	1	70 -- Beyaz İnci
+	21	25040	10	400 -- Kutsama Kağıdı
+	22	50513	1	400 -- Ruh Taşı
+	23	71095	1	400 -- Geçit Bileti
+	24	50341	1	100 -- Çırağın ilhamı
+	25	50342	1	100 -- Ustanın ilhamı
+	26	50338	1	100 -- Çırağın Karizması
+	27	50339	1	100 -- Ustanın Karizması
+	28	100700	1	50 -- Ejderha Alevi (B)
+	29	31132	2	400 -- Parçacıklar
+	30	31110	2	400 -- Güzel uyanış taşı
+}
+Group	ZC_Drop
+{
+	Vnum	31140 -- Z.Ç Jotun Thrym Sandığı
+	1	31108	5	500 -- Küçük uyanış taşı
+	2	31122	2	500 -- Kumaş
+	3	31117	2	500 -- İnce iplik
+	4	31123	2	500 -- İnce deri
+	5	31114	2	500 -- Basit Deri
+	6	31121	2	500 -- Çelik
+	7	31125	2	500 -- Kalın ip
+	8	31149	2	500 -- Sıkı ip
+	9	31136	1	50 -- Basit Kaos Taşı
+	10	31137	1	50 -- Güzel kaos taşı
+	11	31138	1	50 -- Görkemli kaos taşı
+	12	31135	1	50 -- Özel boya
+	13	31134	1	50 -- Geliştirilmiş boya
+	14	31133	1	50 -- Genel boya
+	15	31130	1	80 -- Sivri dikenler
+	16	31115	2	80 -- Örs
+	17	31113	2	400 -- Uyanış ruhu
+	18	27994	1	80 -- Kankırmızı İnci
+	19	27993	1	80 -- Mavi İnci
+	20	27992	1	70 -- Beyaz İnci
+	21	25040	10	400 -- Kutsama Kağıdı
+	22	50513	1	400 -- Ruh Taşı
+	23	71095	1	400 -- Geçit Bileti
+	24	50341	1	100 -- Çırağın ilhamı
+	25	50342	1	100 -- Ustanın ilhamı
+	26	50338	1	100 -- Çırağın Karizması
+	27	50339	1	100 -- Ustanın Karizması
+	28	100700	1	50 -- Ejderha Alevi (B)
+	29	31132	2	400 -- Parçacıklar
+	30	31109	2	400 -- İnce uyanış taşı
+}
+
+
+####################################- Author *@* - ARWEN -######################################
+#################                                                             ##################
+#################                  Çeşitli Sandık Dropları                    ##################
+#################                                                             ##################
+####################################- Author *@* - ARWEN -######################################
+
+#Group PetBookChest
+#{
+#	Vnum	55009
+#	1	55010	1	1 -- Resistance (Warrior) Book
+#	2	55011	1	1 -- Resistance (Sura) Book
+#	3	55012	1	1 -- Resistance (Assassin) Book
+#	4	55013	1	1 -- Resistance (Shaman) Book
+#	5	55015	1	1 -- Berserker Book
+#	6	55016	1	1 -- Anti-Magic Book
+#	7	55017	1	1 -- Haste Book
+#	8	55018	1	1 -- Drill Book
+#	9	55019	1	1 -- Restoration Book
+#	10	55020	1	1 -- Vampirism Book
+#	11	55021	1	1 -- Spiritualism Book
+#	12	55022	1	1 -- Bulwark Book
+#	13	55023	1	1 -- Reflection Book
+#	14	55024	1	1 -- Yang Drop Book
+#	15	55025	1	1 -- Range Book
+#	16	55026	1	1 -- Immortal Book
+#	17	55027	1	1 -- Panacea Book
+#	18	55034	1	1 -- Master Brewer Book
+#	19	55035	1	1 -- Monster Hunter Book
+#	20	55036	1	1 -- Eagle Eyes Book
+#	21	55037	1	1 -- Life Drain Book
+#	22	55038	1	1 -- Light as a Feather Book
+#	23	55014	1	1 -- Resistance (Lycan)
+#}
+
+
+Group	Chest_Drop
+{
+	Vnum	55400 -- Rastgele Sandığı
+	1	30077	2	500 -- Ork Dişi+
+	2	30058	2	500 -- Örümcek Yumurta Kesesi
+	3	30073	2	500 -- B. Domuzkuyruğu Kurdele+
+	4	30041	2	500 -- Shiriken
+	5	30045	2	500 -- Akrep İğnesi
+	6	30088	2	500 -- Buz Parçası+
+	7	30074	2	500 -- Siyah Üniforma+
+	8	27994	1	70 -- Kankırmızı İnci
+	9	27993	1	60 -- Mavi İnci
+	10	27992	1	50 -- Beyaz İnci
+	11	30035	2	500 -- Yüz Kremi
+	12	30031	2	500 -- Süs Eşyası
+	13	30089	2	500 -- Yeti Postu+
+	14	30140	2	500 -- İplik
+	15	30080	2	500 -- Lanet Kitabı+
+	16	30083	2	100 -- Bilinmeyen İlaç+
+	17	30086	2	500 -- Seytan Hatırası+
+	18	30550	2	500 -- Mavi Kemer
+	19	30059	2	500 -- Örümcek Bacakları
+	20	30220	1	500 -- Jinunggynin Ruh Taşı
+	21	30221	1	500 -- Tapınağın Ruh Taşı
+	22	30222	1	500 -- Sagyinin Ruh Taşı
+	23	30223	1	500 -- Aurtumryunun Ruh Taşı
+	24	27799	2	500 -- Kılçık
+	25	30195	1	500 -- Kuvars Kumu
+}
+Group	Pet_Drop
+{
+	Vnum	53536 -- Bruce Sandığı
+	1	53233	1	400 -- Bruce
+}
+
+
+Group	Pet_Drop
+{
+	Vnum	53537 -- Wayne Sandığı
+	1	53234	1	400 -- Wayne
+}
+
+Group	Pet_Drop
+{
+	Vnum	53540 -- Robin Sandığı
+	1	53235	1	400 -- Robin
+}
+
+Group	Pet_Drop
+{
+	Vnum	53626 -- Robin Sandığı
+	1	53235	1	5 -- Robin
+	2	71095	2	50
+	3	76020	1	50
+	4	76010	1	50
+	5	39007	1	30
+	6	76011	1	50
+	7	51503	2	30
+	8	71101	2	30
+	9	76009	2	30
+	10	100500	1	30
+	11	100400	1	30
+	12	100300	1	30
+}
+
+
+Group	Pet_Drop
+{
+	Vnum	53593 -- Mini Yengeç Svş. kutusu
+	1	53299	1	400 -- Mini Yengeç Savaşçısı
+}
+Group	Pet_Drop
+{
+	Vnum	53564 -- Astrabell'in sihir ktsu.
+	1	53314	1	400 -- Astrabell (ganimet)
+}
+
+Group	Pet_Chest_Drop
 {
 	Vnum	38055 -- Yavrucuk Kutusu
-	1	39027	1	105.000	-- %5 Taş Sanatı Kitabı
-	2	39011	5	105.000	-- %5 Yaşam Kutsaması
-	3	70003	1	105.000	-- %5 Liderin Kitabı
-	4	71004	10	105.000	-- %5 Ejderha Madalyası
-	5	71130	3	105.000	-- %5 Geçit Bileti
-	6	71181	1	105.000	-- %5 Bilgelik İksiri
-	7	39013	5	105.000	-- %5 Ejderha Kutsaması
-	8	76017	3	105.000	-- %5 Saldırı iksiri +15
-	9	39026	3	105.000	-- %5 Hız İksiri
-	10	39024	5	105.000	-- %5 Kritik İsabet
-	11	39025	5	105.000	-- %5 Delici İsabet
+	1	25041	1	10 -- Büyülü Metal
+	2	71095	1	400 -- Geçit Bileti
+	3	72347	1	400 -- Hızlandırıcı (%30)
+	4	72348	1	200 -- Hızlandırıcı (%50)
+	5	72349	1	100 -- Hızlandırıcı (%75)
+	6	27992	1	100 -- Beyaz İnci
+	7	27993	1	200 -- Mavi İnci
+	8	27994	1	400 -- Kankırmızı İnci
+	9	71018	3	300 -- Yaşam Kutsaması
+	10	76003	2	300 -- Soğutma iksiri
+	11	25040	1	400 -- Kutsama Kağıdı
+	12	70003	1	300 -- Liderin Kitabı
+	13	71004	10	400 -- Ejderha Madalyası
 }
-Group	GM_sandigi
+
+Group	Chest_drop
 {
-	Vnum	50272 -- GM Sandığı
-	Type	drop
-	1	50272	1	215.000	-- %1 Altın Patron Avcısı San.
-	2	39009	1	215.000	-- %1 Beceri Sıfırlama Kağıdı
-	3	71003	1	215.000	-- %1 Beceri Sıfırlama Kağıdı
-	4	80014	1	215.000	-- %1 EP kuponu (100)
-	5	80017	1	215.000	-- %1 EP kuponu (50)
-	6	76010	1	215.000	-- %1 Kan Taşı
-	7	30319	1	215.000	-- %1 Küçülen Kafa
-	8	76002	1	215.000	-- %1 Küçülen Kafa
-	9	38055	1	215.000	-- %1 Yavrucuk Kutusu
-	10	72737	1	215.000	-- %1 Yeşil şans kutusu
-	11	71130	1	215.000	-- %1 Geçit Bileti
-	12	71095	1	215.000	-- %1 Geçit Bileti
-	13	30190	1	215.000	-- %1 Kan Taşı
-	14	39005	1	215.000	-- %1 Büyülü Bakır
-	15	70035	1	215.000	-- %1 Büyülü Bakır
-	16	38058	1	215.000	-- %1 Bilgelik İksiri (3 sa.)
-	17	71181	1	215.000	-- %1 Bilgelik İksiri
-	18	72005	1	215.000	-- %1 Hırsızın eldivenleri
-	19	72006	1	215.000	-- %1 Hırsızın eldivenleri
-	20	72004	1	215.000	-- %1 Hırsızın eldivenleri
-	21	76025	1	215.000	-- %1 Rüzgarın Ayakkabıları
-	22	39002	1	215.000	-- %1 Tecrübe yüzüğü (1 sa.)
-	23	70005	1	215.000	-- %1 Tecrübe yüzüğü (1 sa.)
-	24	72001	1	215.000	-- %1 Tecrübe yüzüğü (10 sa.)
-	25	72003	1	215.000	-- %1 Tecrübe yüzüğü (3 sa.)
-	26	72002	1	215.000	-- %1 Tecrübe yüzüğü (30 dk.)
-	27	71180	1	215.000	-- %1 Yükseliş İksiri (3 sa.)
-	28	27212	1	215.000	-- %1 Mor İksir (B)
-	29	27210	1	215.000	-- %1 Mor İksir (K)
-	30	27211	1	215.000	-- %1 Mor İksir (O)
-	31	27105	1	215.000	-- %1 Mor İksir(B)
-	32	27103	1	215.000	-- %1 Mor İksir(K)
-	33	27104	1	215.000	-- %1 Mor İksir(O)
-	34	27209	1	215.000	-- %1 Yeşil İksir (B)
-	35	27207	1	215.000	-- %1 Yeşil İksir (K)
-	36	27208	1	215.000	-- %1 Yeşil İksir (O)
-	37	27102	1	215.000	-- %1 Yeşil İksir(B)
-	38	27100	1	215.000	-- %1 Yeşil İksir(K)
-	39	27101	1	215.000	-- %1 Yeşil İksir(O)
-	40	39029	1	215.000	-- %1 Arttırma Kağıdı
-	41	76013	1	215.000	-- %1 Arttırma Kağıdı (m)
-	42	71085	1	215.000	-- %1 Arttırma Kağıdı
-	43	71152	1	215.000	-- %1 Yeşil Güç
-	44	76024	1	215.000	-- %1 Yeşil Güç
-	45	39004	1	215.000	-- %1 Kutsama Küresi
-	46	76015	1	215.000	-- %1 Kutsama Küresi
-	47	71155	1	215.000	-- %1 Bilgelik İksiri (3 sa.)
-	48	71153	1	215.000	-- %1 Bilgelik İksiri
-	49	39025	1	215.000	-- %1 Delici İsabet
-	50	71045	1	215.000	-- %1 Delici İsabet
-	51	39018	1	215.000	-- %1 Ejderha Tanrı Saldırısı
-	52	71028	1	215.000	-- %1 Ejderha Tanrı Saldırısı
-	53	39020	1	215.000	-- %1 Ejderha Tanrı Savunması
-	54	71030	1	215.000	-- %1 Ejderha Tanrı Savunması
-	55	39017	1	215.000	-- %1 Ejderha Tanrı Yaşamı
-	56	71027	1	215.000	-- %1 Ejderha Tanrı Yaşamı
-	57	39019	1	215.000	-- %1 Ejderha Tanrı Zekası
-	58	71029	1	215.000	-- %1 Ejderha Tanrı Zekası
-	59	39024	1	215.000	-- %1 Kritik İsabet
-	60	71044	1	215.000	-- %1 Kritik İsabet
-	61	39008	1	215.000	-- %1 Kötü Ruh Kovma Kağıdı
-	62	72310	1	215.000	-- %1 Kötü Ruh Kovma Kağıdı
-	63	39030	1	215.000	-- %1 Münzevi Tavsiyesi
-	64	71094	1	215.000	-- %1 Münzevi Tavsiyesi
-	65	71156	1	215.000	-- %1 Ruh İksiri (3 sa.)
-	66	39031	1	215.000	-- %1 Soğutma İksiri
-	67	71101	1	215.000	-- %1 Soğutma İksiri
-	68	71154	1	215.000	-- %1 Yükseliş İksiri (3 sa.)
-	69	39028	1	215.000	-- %1 Efsun Nesnesi
-	70	71084	1	215.000	-- %1 Efsun Nesnesi
-	71	76014	1	215.000	-- %1 Nesneyi efsunla(m)
-	72	71151	1	215.000	-- %1 Yeşil Efsun
-	73	76023	1	215.000	-- %1 Yeşil Efsun
-	74	39027	1	215.000	-- %1 Taş Sanatı Kitabı
-	75	76028	1	215.000	-- %1 Taş Sanatı kitabı
-	76	27203	1	215.000	-- %1 Kırmızı İksir (B)
-	77	27201	1	215.000	-- %1 Kırmızı İksir (K)
-	78	27202	1	215.000	-- %1 Kırmızı İksir (O)
-	79	27003	1	215.000	-- %1 Kırmızı İksir(B)
-	80	27001	1	215.000	-- %1 Kırmızı İksir(K)
-	81	27002	1	215.000	-- %1 Kırmızı İksir(O)
-	82	27206	1	215.000	-- %1 Mavi İksir (B)
-	83	27204	1	215.000	-- %1 Mavi İksir (K)
-	84	27205	1	215.000	-- %1 Mavi İksir (O)
-	85	27006	1	215.000	-- %1 Mavi İksir(B)
-	86	27004	1	215.000	-- %1 Mavi İksir(K)
-	87	27005	1	215.000	-- %1 Mavi İksir(O)
-	88	39013	1	215.000	-- %1 Ejderha Kutsaması
-	89	71020	1	215.000	-- %1 Ejderha Kutsaması
-	90	39012	1	215.000	-- %1 Sihir Kutsaması
-	91	71019	1	215.000	-- %1 Sihir Kutsaması
-	92	39011	1	215.000	-- %1 Yaşam Kutsaması
-	93	71018	1	215.000	-- %1 Yaşam Kutsaması
-	94	39003	1	215.000	-- %1 Şeftali Çiçeği Şurubu
-	95	70020	1	215.000	-- %1 Şeftali Çiçeği Şurubu
-	96	39023	1	215.000	-- %1 Araştırmacının Özütü
-	97	76020	1	215.000	-- %1 Araştırmacının Özütü
-	98	72729	1	215.000	-- %1 Ay Özütü (B)
-	99	72727	1	215.000	-- %1 Ay Özütü (K)
-	100	76005	1	215.000	-- %1 Ay Özütü (O)
-	101	72728	1	215.000	-- %1 Ay Özütü (O)
-	102	72730	1	215.000	-- %1 Ay Özütü (Ö)
-	103	39006	1	215.000	-- %1 Cesaret Pelerini
-	104	76007	1	215.000	-- %1 Cesaret Pelerini
-	105	39015	1	215.000	-- %1 Demirci Taşı
-	106	71025	1	215.000	-- %1 Demirci Taşı
-	107	72320	1	215.000	-- %1 Envanter Genişletme
-	108	72319	1	215.000	-- %1 Envanter genişlemesi (s)
-	109	72725	1	215.000	-- %1 Güneş Özütü (B)
-	110	72723	1	215.000	-- %1 Güneş Özütü (K)
-	111	76022	1	215.000	-- %1 Güneş Özütü (O)
-	112	72724	1	215.000	-- %1 Güneş Özütü (O)
-	113	72726	1	215.000	-- %1 Güneş Özütü (Ö)
-	114	76006	1	215.000	-- %1 Metin Taşı Dedektörü
-	115	50216	1	215.000	-- %1 Punç
-	116	50183	1	215.000	-- %1 Tatlılar
-	117	70102	1	215.000	-- %1 Zen Fasulye
-	118	27987	1	215.000	-- %1 İstiridye
-	119	39001	1	215.000	-- %1 Büyülü Metal
-	120	39007	1	215.000	-- %1 Demircinin El Kitabı
-	121	70039	1	215.000	-- %1 Demircinin El Kitabı
-	122	39022	1	215.000	-- %1 Ejderha Parşömeni
-	123	76009	1	215.000	-- %1 Ejderha Parşömeni
-	124	25040	1	215.000	-- %1 Kutsama Kağıdı
-	125	76016	1	215.000	-- %1 Kutsama Parşömeni
-	126	39014	1	215.000	-- %1 Savaş Kağıdı
-	127	71021	1	215.000	-- %1 Savaş Kağıdı
-	144	27871	1	215.000	-- %1 Izg. Gökkuşağı Alabalığı
-	145	27883	1	215.000	-- %1 Izgara altın sudak
-	146	27882	1	215.000	-- %1 Izgara aynalı sazan
-	147	27865	1	215.000	-- %1 Izgara Büyük Sudak
-	148	27890	1	215.000	-- %1 Izgara Çin levreği
-	149	27877	1	215.000	-- %1 Izgara Çopra Balığı
-	150	27869	1	215.000	-- %1 Izgara Dere Alabalığı
-	151	27892	1	215.000	-- %1 Izgara gölet salyangozu
-	152	27888	1	215.000	-- %1 Izgara güneş levreği
-	153	27873	1	215.000	-- %1 Izgara Hamsi
-	154	27889	1	215.000	-- %1 Izgara havuz balığı
-	155	27881	1	215.000	-- %1 Izgara kadife balığı
-	156	27891	1	215.000	-- %1 Izgara kaya balığı
-	157	27886	1	215.000	-- %1 Izgara kral yengeci.
-	158	27885	1	215.000	-- %1 Izgara kurbağa balığı
-	159	27874	1	215.000	-- %1 Izgara Levrek
-	160	91054	1	215.000	-- %1 Izgara levrek
-	161	27878	1	215.000	-- %1 Izgara Lüfer Balığı
-	162	27872	1	215.000	-- %1 Izgara Nehir Alabalığı
-	163	27868	1	215.000	-- %1 Izgara Ot Sazanı
-	164	27880	1	215.000	-- %1 Izgara palamut balığı
-	165	27864	1	215.000	-- %1 Izgara Ringa Balığı
-	166	27866	1	215.000	-- %1 Izgara Sazan
-	167	27879	1	215.000	-- %1 Izgara sevimli balık
-	168	27867	1	215.000	-- %1 Izgara Som Balığı
-	169	27863	1	215.000	-- %1 Izgara Sudak Balığı
-	170	27875	1	215.000	-- %1 Izgara Tekir Balığı
-	171	27887	1	215.000	-- %1 Izgara Yabbie yengeci
-	172	27876	1	215.000	-- %1 Izgara Yayın Balığı
-	173	27884	1	215.000	-- %1 Izgara yılan başı balığı
-	174	27870	1	215.000	-- %1 Izgara Zargana
-	175	50513	1	215.000	-- %1 Ruh Taşı
-	176	50525	1	215.000	-- %1 Ruh Taşı+
-	177	27810	1	215.000	-- %1 Zargana
-	178	27803	1	215.000	-- %1 Sudak Balığı
-	179	27813	1	215.000	-- %1 Hamsi
-	180	27804	1	215.000	-- %1 Ringa Balığı
-	181	27823	1	215.000	-- %1 Altın Sudak Balığı
-	182	27827	1	215.000	-- %1 Yabbie yengeci
-	183	27809	1	215.000	-- %1 Dere Alabalığı
-	184	27812	1	215.000	-- %1 Nehir Alabalığı
-	185	27811	1	215.000	-- %1 Gökkuşağı Alabalığı
-	186	27816	1	215.000	-- %1 Yayın Balığı
-	187	27820	1	215.000	-- %1 Palamut Balığı
-	188	27821	1	215.000	-- %1 Kadife Balığı
-	189	27818	1	215.000	-- %1 Lüfer Balığı
-	190	27815	1	215.000	-- %1 Tekir Balığı
-	191	27805	1	215.000	-- %1 Büyük Sudak Balığı
-	192	27807	1	215.000	-- %1 Som Balığı
-	193	27822	1	215.000	-- %1 Aynalı Sazan
-	194	27819	1	215.000	-- %1 Sevimli Balık
-	195	27826	1	215.000	-- %1 Kral yengeci
-	196	27814	1	215.000	-- %1 Levrek
-	197	27817	1	215.000	-- %1 Çopra Balığı
-	198	27824	1	215.000	-- %1 Yılan başı balığı
-	199	27808	1	215.000	-- %1 Ot Sazanı
-	200	27806	1	215.000	-- %1 Sazan
-	201	50301	1	215.000	-- %1 Sun zi Savaş Sanatı
-	202	50302	1	215.000	-- %1 Wu zi Savaş Sanatı
-	203	50303	1	215.000	-- %1 WeiLiao Zi Savaş Sanatı
-	204	50304	1	215.000	-- %1 Kombo Ustalığı
-	205	50305	1	215.000	-- %1 Combo Ustasının Kaydı
-	206	50306	1	215.000	-- %1 Kombo Sanatı
-	207	50317	1	215.000	-- %1 Görev Kitabı(Test)
-	208	50318	1	215.000	-- %1 Görev Kitabı(Kolay)
-	209	50319	1	215.000	-- %1 Görev Kitabı(Normal)
-	210	50320	1	215.000	-- %1 Görev Kitabı(Zor)
-	211	50321	1	215.000	-- %1 Görev Kitabı(Uzman)
-	212	53501	1	215.000	-- %1 Ateş Ankası Kafesi
-	213	53502	1	215.000	-- %1 Ren Geyiği Yavrusu Sand.
-	214	53503	1	215.000	-- %1 Buz Ankası Kafesi
-	215	53505	1	215.000	-- %1 Yavru Azrail Sandığı
+	Vnum	50120 -- Demir Hazne
+	1	72014	1	100 -- Balıkçılık Klavuzu
+	2	72003	1	100 -- Tecrübe yüzüğü (3 sa.)
+	3	71016	1	100 -- Hırsızın eldivenleri
+	4	72011	1	100 -- Sevgi Kuşu Tüyü
+	5	30190	1	100 -- Kan taşı
+	6	76008	1	100 -- Ejderha Madalyası
+	7	50513	1	100 -- Ruh taşı
+	8	39004	1	100 -- Kutsama Küresi
+	9	39011	1	100 -- Yaşam Kutsaması
+	10	39012	1	100 -- Sihir Kutsaması
+	11	71101	1	100 -- Soğutma iksiri
+	12	16045	1	400 -- Gümüş Kolye+5
+	13	16065	1	400 -- Altın Kolye+5
+	14	16085	1	400 -- YeşimTaşı Kolye+5
+	15	16105	1	400 -- Abanoz Kolye+5
+	16	16125	1	400 -- İnci Kolye+5
+	17	16145	1	400 -- Beyaz Altın Kolye+5
+	18	14145	1	400 -- Beyaz Altın Bilezik+5
+	19	14165	1	400 -- Kristal Bilezik+5
+	20	14185	1	400 -- Mor Yakut Bilezik+5
+	21	14204	1	400 -- Cennetin Gözü Bilezik+4
+	22	17165	1	400 -- Kristal Küpe+5
+	23	17185	1	400 -- Ametist Küpe+5
+	24	17205	1	400 -- Cennetin Gözü Küpe+5
+}
+
+Group	Chest_drop
+{
+	Vnum	50121 -- Demir Kutu
+	1	72014	1	100 -- Balıkçılık Klavuzu
+	2	72003	1	100 -- Tecrübe yüzüğü (3 sa.)
+	3	71016	1	100 -- Hırsızın eldivenleri
+	4	72011	1	100 -- Sevgi Kuşu Tüyü
+	5	30190	1	100 -- Kan taşı
+	6	76008	1	100 -- Ejderha Madalyası
+	7	50513	1	100 -- Ruh taşı
+	8	39004	1	100 -- Kutsama Küresi
+	9	39011	1	100 -- Yaşam Kutsaması
+	10	39012	1	100 -- Sihir Kutsaması
+	11	71101	1	100 -- Soğutma iksiri
+	12	16045	1	400 -- Gümüş Kolye+5
+	13	16065	1	400 -- Altın Kolye+5
+	14	16085	1	400 -- YeşimTaşı Kolye+5
+	15	16105	1	400 -- Abanoz Kolye+5
+	16	16125	1	400 -- İnci Kolye+5
+	17	16145	1	400 -- Beyaz Altın Kolye+5
+	18	14145	1	400 -- Beyaz Altın Bilezik+5
+	19	14165	1	400 -- Kristal Bilezik+5
+	20	14185	1	400 -- Mor Yakut Bilezik+5
+	21	14204	1	400 -- Cennetin Gözü Bilezik+4
+	22	17165	1	400 -- Kristal Küpe+5
+	23	17185	1	400 -- Ametist Küpe+5
+	24	17205	1	400 -- Cennetin Gözü Küpe+5
+}
+
+Group	Chest_drop
+{
+	Vnum	50122 -- Demir Sandık
+	1	72014	1	100 -- Balıkçılık Klavuzu
+	2	72003	1	100 -- Tecrübe yüzüğü (3 sa.)
+	3	71016	1	100 -- Hırsızın eldivenleri
+	4	72011	1	100 -- Sevgi Kuşu Tüyü
+	5	30190	1	100 -- Kan taşı
+	6	76008	1	100 -- Ejderha Madalyası
+	7	50513	1	100 -- Ruh taşı
+	8	39004	1	100 -- Kutsama Küresi
+	9	39011	1	100 -- Yaşam Kutsaması
+	10	39012	1	100 -- Sihir Kutsaması
+	11	71101	1	100 -- Soğutma iksiri
+	12	16045	1	400 -- Gümüş Kolye+5
+	13	16065	1	400 -- Altın Kolye+5
+	14	16085	1	400 -- YeşimTaşı Kolye+5
+	15	16105	1	400 -- Abanoz Kolye+5
+	16	16125	1	400 -- İnci Kolye+5
+	17	16145	1	400 -- Beyaz Altın Kolye+5
+	18	14145	1	400 -- Beyaz Altın Bilezik+5
+	19	14165	1	400 -- Kristal Bilezik+5
+	20	14185	1	400 -- Mor Yakut Bilezik+5
+	21	14204	1	400 -- Cennetin Gözü Bilezik+4
+	22	17165	1	400 -- Kristal Küpe+5
+	23	17185	1	400 -- Ametist Küpe+5
+	24	17205	1	400 -- Cennetin Gözü Küpe+5
+}
+
+Group	Tılsım_Drop
+{
+	Vnum	83008 -- Mücevher Kutusu
+	1	71145	1	1000 -- Ebedi Aşk Tılsımı
+	2	72054	1	10 -- Bekçiler Tılsımı
+	3	71135	1	1000 -- Hilal Yüzüğü
+	4	71158	1	100 -- Kahramanlık Madalyası
+	5	76047	1	1000 -- Güç lolipopu (3 g)
+	6	76030	1	1000 -- Güç lolipopu
+	7	71188	1	500 -- Sihir Lolipopu
+	8	71136	1	400 -- Güçlü Lolipop
+	9	71202	1	50 -- Nazar tılsımı
+	10	71143	1	400 -- Mutluluk Yüzüğü
+	11	71149	1	400 -- Ölümcül Gücün Yüzüğü
+	12	71148	1	400 -- İrade Gücü Yüzüğü
+	13	71199	1	400 -- Çikolata Tılsımı
+	14	71181	1	400 -- Bilgelik İksiri
+	15	71180	1	1000 -- Yükseliş İksiri (3 sa.)
+}
+Group	Chest_Drop
+{
+	Vnum	50006 -- Altın Define Sandığı
+	1	50300	1	500 -- Beceri Kitabı
+	2	30075	2	500 -- Shiriken+
+	3	30006	2	500 -- Ork Dişi
+	4	30047	2	500 -- Lanet Kitabı
+	5	30070	2	500 -- Kurt Postu+
+	6	30050	2	500 -- Buz Topu
+	7	30018	2	500 -- K. Domuzkuyruğu Kurdele
+	8	25040	1	500 -- Kutsama Kağıdı
+	9	30083	2	500 -- Bilinmeyen İlaç+
+	10	30082	2	500 -- Yılan Kuyruğu+
+	11	30081	2	500 -- Akrep Kuyruğu+
+
+}
+Group	Chest_Drop
+{
+	Vnum	50007 -- Gümüş Define Sandığı
+	1	50300	1	500 -- Beceri Kitabı
+	2	30075	2	500 -- Shiriken+
+	3	30006	2	500 -- Ork Dişi
+	4	30047	2	500 -- Lanet Kitabı
+	5	30070	2	500 -- Kurt Postu+
+	6	30050	2	500 -- Buz Topu
+	7	30018	2	500 -- K. Domuzkuyruğu Kurdele
+	8	25040	1	500 -- Kutsama Kağıdı
+	9	30083	2	500 -- Bilinmeyen İlaç+
+	10	30082	2	500 -- Yılan Kuyruğu+
+	11	30081	2	500 -- Akrep Kuyruğu+
+}
+Group	Chest_Drop
+{
+	Vnum	50012 -- Altın Define Sandığı+
+	1	25040	1	100 -- Kutsama Kağıdı
+	2	50300	1	500 -- Beceri Kitabı
+}
+Group	Chest_Drop
+{
+	Vnum	50013 -- Gümüş Define Sandığı+
+	1	25040	1	100 -- Kutsama Kağıdı
+	2	50300	1	500 -- Beceri Kitabı
+}
+Group	Chest_Drop
+{
+	Vnum	83032 -- Deniz kızı sandığı
+	1	27624	1	5 -- Karbon fiber
+	2	27621	1	20 -- İşlenmemiş olta
+	3	27622	1	20 -- Olta halkası
+	4	27623	1	20 -- Olta sapı
+	5	55003	1	100 -- Genç Pet Kitabı
+	6	55004	1	100 -- Yabani Pet Kitabı
+	7	55005	1	100 -- Cesur Pet Kitabı
+	8	55400	1	100 -- Rastgele sandığı
+	9	55001	1	100 -- Protein Lokması
+	10	76018	1	20 -- Saldırı iksiri +20
+}
+Group	Chest_Drop
+{
+	Vnum	70600 -- Ruh Sandukası
+	Type	PCT
+	1	70500	1	400 -- Rüya ruhu+0
+	2	70505	1	400 -- Gök ruhu+0
+}
+Group	Chest_Drop
+{
+	Vnum	50934 -- Süs taşı kesesi
+	1	50926	200	500 -- Süs Taşı
+}
+
+Group	Chest_Drop
+{
+	Vnum	50033 -- Gizemli Sandık
+	1	27992	1	200 -- Beyaz İnci
+	2	70102	2	100 -- Zen Fasulye
+	3	25040	2	100 -- Kutsama Kağıdı
+	4	50300	2	300 -- Beceri Kitabı
+	5	mob	8501	4	300 -- Yabani Köpek
+	6	mob	8502	4	300 -- Yaban Domuzu
+	7	mob	8503	4	300 -- Ayı
+	8	mob	8504	4	300 -- Beyaz Kaplan
+	9	mob	8505	4	300 -- Siyah Dev Ork
+	10	mob	8506	4	300 -- Ağaç Kurbağası Lideri
+	11	mob	8507	4	300 -- Çöl Haydutu
+	12	mob	8508	4	300 -- Mistik İşkenceci
+	13	mob	8509	4	300 -- Mistik Haberci
+	14	mob	8510	4	300 -- Alev Savaşçı
+	15	mob	8511	4	300 -- Buz Golemi
+	16	exp	10000	100 -- Tecrübe Puanı (10k)
+	17	exp	20000	100 -- Tecrübe Puanı (20k)
+	18	exp	40000	100 -- Tecrübe Puanı (40k)
+	19	exp	50000	100 -- Tecrübe Puanı (50k)
+}
+Group	Chest_Drop
+{
+	Vnum	83016 -- Sırlar sandığı
+	1	27992	1	200 -- Beyaz İnci
+	2	27993	1	200 -- Mavi İnci
+	3	27994	1	200 -- Kankırmızı İnci
+	4	30616	1	30 -- Titandiyoksit
+	5	30617	1	70 -- Akik
+	6	30618	1	70 -- Ay Taşı
+	7	30619	1	200 -- Altın metalik boya
+	8	18900	1	100 -- Kızıl Alev Taşı
+	9	50270	1	80 -- Kraliçe Meley'in Sandığı
+	10	50271	1	80 -- Ejderha Bekçisi Sandığı
+	11	54700	1	100 -- Beran Setaouin sandığı
+	12	54701	1	100 -- Bagjanamu sandığı
+	13	54702	1	100 -- Razadör'ün sandığı
+	14	54703	1	100 -- Nemere sandığı
+	15	54704	1	100 -- Jotun Thrym sandığı
+	16	54705	1	80 -- Hidra'nın sandığı
+}
+Group	Chest_Drop
+{
+	Vnum	83017 -- Yakut sandığı
+	1	27992	1	200 -- Beyaz İnci
+	2	27993	1	300 -- Mavi İnci
+	3	27994	1	100 -- Kankırmızı İnci
+}
+Group	Mob_Drop
+{
+	Vnum	72058 -- Zihin Taşı Destesi
+	1	28012	1	500 -- Lycanlar'a karşı taş +0
+	2	28030	1	500 -- Kavrama Taşı+0
+	3	28031	1	500 -- Öldürücü Darbe Taşı+0
+	4	28032	1	500 -- Soğutma Taşı+0
+	5	28033	1	500 -- Savaşcıdan Koruyan Taş+0
+	6	28034	1	500 -- Ninjadan Koruyan Taş+0
+	7	28035	1	500 -- Suradan KoruyanTaş+0
+	8	28036	1	500 -- Samandan Koruyan Taş+0
+	9	28037	1	500 -- Canavardan Koruyan Taş+0
+	10	28038	1	500 -- Korunma Taşı+0
+	11	28039	1	500 -- Kurnazlık Taşı+0
+	12	28040	1	500 -- Sihir Taşı+0
+	13	28041	1	500 -- Yaşam Taşı +0
+	14	28042	1	500 -- Savunma Taşı+0
+	15	28043	1	500 -- Hız Taşı+0
+	16	28044	1	500 -- Büyü Bozma Taşı+0
+	17	28045	1	500 -- Büyü Bozma Taşı+0
+	18	28112	1	500 -- Lycanlar'a karşı taş +1
+	19	28130	1	500 -- Kavrama Taşı+1
+	20	28131	1	500 -- Öldürücü Darbe Taşı+1
+	21	28132	1	500 -- Soğutma Taşı+1
+	22	28133	1	500 -- Savaşcıdan Koruyan Taş+1
+	23	28134	1	500 -- Ninjadan Koruyan Taş+1
+	24	28135	1	500 -- Suradan KoruyanTaş+1
+	25	28136	1	500 -- Samandan Koruyan Taş+1
+	26	28137	1	500 -- Canavardan Koruyan Taş+1
+	27	28138	1	500 -- Korunma Taşı+1
+	28	28139	1	500 -- Kurnazlık Taşı+1
+	29	28140	1	500 -- Sihir Taşı+1
+	30	28141	1	500 -- Yaşam Taşı +1
+	31	28142	1	500 -- Savunma Taşı+1
+	32	28143	1	500 -- Hız Taşı+1
+	33	28144	1	500 -- Büyü Bozma Taşı+1
+	34	28145	1	500 -- Büyü Bozma Taşı+1
+	35	28212	1	500 -- Lycanlar'a karşı taş +2
+	36	28230	1	500 -- Kavrama Taşı+2
+	37	28231	1	500 -- Öldürücü Darbe Taşı+2
+	38	28232	1	500 -- Soğutma Taşı+2
+	39	28233	1	500 -- Savaşcıdan Koruyan Taş+2
+	40	28234	1	500 -- Ninjadan Koruyan Taş+2
+	41	28235	1	500 -- Suradan KoruyanTaş+2
+	42	28236	1	500 -- Samandan Koruyan Taş+2
+	43	28237	1	500 -- Canavardan Koruyan Taş+2
+	44	28238	1	500 -- Korunma Taşı+2
+	45	28239	1	500 -- Kurnazlık Taşı+2
+	46	28240	1	500 -- Sihir Taşı+2
+	47	28241	1	500 -- Yaşam Taşı +2
+	48	28242	1	500 -- Savunma Taşı+2
+	49	28243	1	500 -- Hız Taşı+2
+	50	28244	1	500 -- Büyü Bozma Taşı+2
+	51	28245	1	500 -- Büyü Bozma Taşı+2
+}
+Group	Chest_Drop
+{
+	Vnum	60101 -- Premium Dükkan Tesadüfi Kutusu
+	1	72355	1	20 -- Kiş. Premium dükkan(7g)
+	2	72356	1	100 -- Kişisel premium dükkan(1g)
+	3	72356	1	100 -- Kişisel premium dükkan(1g)
+	4	72356	1	100 -- Kişisel premium dükkan(1g)
+	5	72356	1	100 -- Kişisel premium dükkan(1g)
+	6	72356	1	100 -- Kişisel premium dükkan(1g)
+	7	72356	1	100 -- Kişisel premium dükkan(1g)
+}
+
+
+####################################- Author *@* - ARWEN -######################################
+#################                                                             ##################
+#################                  Etkinlik Sandık Dropları                   ##################
+#################                                                             ##################
+####################################- Author *@* - ARWEN -######################################
+
+
+Group	Event_Sandıkları
+{
+	Vnum	50282 -- Termos çanta
+	1	25041	1	50 -- Büyülü Metal
+	2	72726	1	400 -- Güneş Özütü (Ö)
+	3	72730	1	400 -- Ay Özütü (Ö)
+	4	71094	1	400 -- Münzevi Tavsiyesi
+	5	50255	5	100 -- Cor Draconis, İşlenmemiş
+	6	70102	1	100 -- Zen Fasulye
+	7	100300	4	400 -- Yeşil Ejderha Fasulyesi
+	8	100400	3	200 -- Mavi Ejderha Fasulyesi
+	9	100500	2	100 -- Pembe Ejderha Fasulyesi
+	10	100700	1	100 -- Ejderha alevi (B)
+	11	72347	1	400 -- Hızlandırıcı (%30)
+	12	72348	1	200 -- Hızlandırıcı (%50)
+	13	72349	1	100 -- Hızlandırıcı (%75)
+	14	27992	1	400 -- Beyaz İnci
+	15	27993	1	400 -- Mavi İnci
+	16	27994	1	400 -- Kankırmızı İnci
+	17	71189	1	80 -- Efsun Nesnesi+
+	18	72059	1	100 -- Liderin kitabı+
+	19	71084	50	100 -- Efsun Nesnesi
+	20	71158	1	100 -- Kahramanlık Madalyası
+	21	56012	1	100 -- Büyük bağış belgesi
+}
+Group	Event_Sandıkları
+{
+	Vnum	50265 -- Altın Futbol Topu
+	1	70039	1	500 -- Demircinin El Kitabı
+	2	71094	1	400 -- Münzevi Tavsiyesi
+	3	72726	1	400 -- Güneş Özütü (Ö)
+	4	72730	1	400 -- Ay Özütü (Ö)
+	5	50255	5	100 -- Cor Draconis, İşlenmemiş
+	6	100300	2	400 -- Yeşil Ejderha Fasulyesi
+	7	72347	1	400 -- Hızlandırıcı (%30)
+	8	27992	1	400 -- Beyaz İnci
+	9	27993	1	400 -- Mavi İnci
+	10	27994	1	400 -- Kankırmızı İnci
+	11	72059	1	100 -- Liderin kitabı+
+	12	71084	20	100 -- Efsun Nesnesi
+	13	70102	1	100 -- Zen Fasulye
+	14	70035	1	400 -- Büyülü Bakır
+	15	70024	1	400 -- Kutsama Küresi
+	16	56011	1	100 -- Orta bağış belgesi
+}
+
+
+Group	Event_Sandıkları
+{
+	Vnum	50011 -- Ayışığı Define Sandığı
+	1	71095	1	10 -- Geçit Bileti
+	2	39011	5	200 -- Yaşam Kutsaması
+	3	72726	1	15 -- Güneş Özütü (Ö)
+	4	72730	1	20 -- Ay Özütü (Ö)
+	5	39012	5	300 -- Sihir Kutsaması
+	6	39013	5	200 -- Ejderha Kutsaması
+	7	39014	1	70 -- Savaş Kağıdı
+	8	25040	1	70 -- Kutsama Kağıdı
+	9	39022	1	70 -- Ejderha Parşömeni
+	10	70102	1	100 -- Zen Fasulye
+	11	70035	1	400 -- Büyülü Bakır
+	12	70024	2	100 -- Kutsama Küresi
+	13	50600	1	400 -- Madencilik Rehberi
+	14	50314	1	400 -- Dönüşüm Kitabı
+	15	50315	1	400 -- İleri Dönüşüm Kitabı
+	16	50316	1	400 -- Master Dönüşüm Kitabı
+	17	71004	3	400 -- Ejderha Madalyası
+	18	71027	1	100 -- Ejderha tanrı hayatı
+	19	71028	1	60 -- Ejderha tanrı saldırısı
+	20	71029	1	100 -- Ejderha tanrı zekası
+	21	71030	1	60 -- Ejderha tanrı savunması
+	22	71044	2	100 -- Kritik savaş
+	23	71045	2	100 -- Delici savaş
+	24	50060	1	400 -- Binicilik Klavuzu
+}
+
+#-------------------------------------------------------------------------#
+#------------------- Noel Eventi Created by ARWEN ------------------------#
+#-------------------------------------------------------------------------#
+
+Group	Event_Sandıkları
+{
+	Vnum	71144 -- Noel Sandığı
+	1	27887	5	500 -- Izgara Yabbie yengeci
+	2	27880	5	500 -- Izgara palamut balığı
+	3	27881	5	500 -- Izgara kadife balığı
+	4	27885	5	500 -- Izgara kurbağa balığı
+	5	71181	1	500 -- Bilgelik İksiri
+	6	71153	1	500 -- Bilgelik İksiri
+	7	72006	1	500 -- Hırsızın eldivenleri
+	8	71027	10	500 -- Ejderha tanrı hayatı
+	9	71028	10	500 -- Ejderha tanrı saldırısı
+	10	71029	10	500 -- Ejderha tanrı zekası
+	11	71030	10	500 -- Ejderha tanrı savunması
+	12	71044	20	500 -- Kritik savaş
+	13	71045	20	500 -- Delici savaş
+	14	56002	1	100 -- Ateşin yazısı
+	15	56003	1	100 -- Buzun yazısı
+	16	56004	1	100 -- Simşeğin yazısı
+	17	56005	1	100 -- Rüzgarın yazısı
+	18	56006	1	100 -- Toprağın yazısı
+	19	56007	1	100 -- Karanlığın yazısı
+	20	71095	10	500 -- Geçit Bileti
+	21	72346	1	500 -- Kutsama
+	22	100700	1	50 -- Ejderha alevi (B)
+	23	25041	1	50 -- Büyülü Metal
+	24	25043	1	1 -- Tanrıların mührü
+	25	25042	1	1 -- Ritüel Taşı
+	26	100101	1	50 -- Ejderha kerpeteni+
+	27	31136	1	50 -- Basit Kaos Taşı
+	28	31137	1	50 -- Güzel kaos taşı
+	29	31138	1	1 -- Görkemli kaos taşı
+	30	86055	1	50 -- Hai Bandı (basit)
+	31	86045	1	50 -- Yu Bandı (basit)
+	32	86015	1	50 -- Mao Bandı (basit)
+	33	70065	1	50 -- Kostüm Bonusu Aktarımı
+	34	71202	1	1 -- Nazar tılsımı
+	35	71224	1	1 -- Manni
+}
+
+Group	Event_Sandıkları
+{
+	Vnum	70613 -- Kar Tanesi Sandığı
+	1	25041	1	7  // Büyülü Metal
+	2	56008	1	7  // Lanetin yazısı
+	3	56009	1	7  // Değişiklik yazısı
+	4	51506	1	7  // Cor Draconis (destansı
+	5	72346	1	7  // Kutsama
+	6	80014	1	7  // 100ep 
+	7	71202	1	7  // Nazar Tılsımı (3Günlük)
+	8	100700	1	15  // Ejderha Alevi
+	9	56002	1	15  // Ateşin yazısı
+	10	56003	1	15  // Buzun yazısı
+	11	56004	1	15  // Simşeğin yazısı
+	12	56005	1	15  // Rüzgarın yazısı
+	13	56006	1	15  // Toprağın yazısı
+	14	56007	1	15  // Karanlığın yazısı
+	15	72348	1	15  // Hızlandırıcı %50
+	16	72349	1	15  // Hızlandırıcı %75
+	17	72001	1	35  // Tecrübe yüzüğü (10 sa.)
+	18	51509	1	35  // Cor Draconis (antika)
+	19	85007	1	35  // Usta Kuşağı (asil)
+	20	85003	1	35  // Hakim Kuşağı (asil)
+	21	56012	1	35  // Büyük bağış belgesi
+	22	72347	1	35  // Hızlandırıcı %30
+	23	71025	1	35  // Demirci Taşı
+	24	50267	1	35  // Altın Okey Sandığı
+	25	71158	1	35  // Kahramanlık Madalyonu 1 hafta
+	26	50152	1	35  // gokyakut anahtarı
+	27	55400	4	35  // Rastgele sandığı 4x
+	28	39119	1	35  // Elementer güç taşı
+	29	39120	1	35  // Elementer koruma taşı
+	30	56011	1	50  // Orta bağış belgesi
+	31	49995	1	50  // Auranın Ateş Run. (500)
+	32	85002	1	50  // Hakim Kuşağı (zarif)
+	33	85006	1	50  // Usta Kuşağı (zarif)
+	34	51505	1	50  // Cor Draconis (değerli)
+	35	71181	1	50  // Bilgelik İksiri
+	36	71028	10	50  // Ejderha tanrı saldırısı	 10x
+	37	71030	10	50  // Ejderha tanrı savunması	10x
+	38	60005	1	50  // Ticaret Camı 1 Hafta
+	39	9830	1	7  // Buz Tılsımı+0 zor
+	40	9600	1	10  // Ateş Tılsımı+0 biraz zor
+	41	10060	1	10  // Toprak Tılsımı+0 biraz zor
+	42	10290	1	10  // Karanlık Tılsım+0 biraz zor
+	43	10750	1	5  // Simşek Tılsımı+0 oldukça zor
+	44	10520	1	7  // Rüzgar Tılsımı+0 biraz zor
+	45	31270	5	10  // Tılsım Özü x5 biraz zor
+	46	31270	10	10  // Tılsım Özü x10 biraz zor
+	47	31270	15	7  // Tılsım Özü x15  zor
+	48	31270	20	5  // Tılsım Özü x20  çok zor
+}
+
+
+#-------------------------------------------------------------------------#
+#------------------ Kralı Yakala Created by ARWEN ------------------------#
+#-------------------------------------------------------------------------#
+
+
+Group	Event_Sandıkları
+{
+	Vnum	50930 -- Bronz kral ganimeti
+	1	79604	1	1 -- Kral destesi
+	4	exp		10000	700 -- Tecrübe (10k)
+	5	exp		10000	700 -- Tecrübe (10k)
+	6	exp		10000	700 -- Tecrübe (10k)
+	7	exp		10000	700 -- Tecrübe (10k)
+	8	exp		10000	700 -- Tecrübe (10k)
+	9	exp		10000	700 -- Tecrübe (10k)
+	10	exp		10000	700 -- Tecrübe (10k)
+	11	exp		10000	700 -- Tecrübe (10k)
+	12	exp		10000	700 -- Tecrübe (10k)
+	13	exp		10000	700 -- Tecrübe (10k)
+	14	exp		10000	700 -- Tecrübe (10k)
+	15	exp		10000	700 -- Tecrübe (10k)
+	16	exp		10000	700 -- Tecrübe (10k)
+	17	exp		10000	700 -- Tecrübe (10k)
+	18	exp		10000	700 -- Tecrübe (10k)
+	19	exp		10000	700 -- Tecrübe (10k)
+	20	exp		10000	700 -- Tecrübe (10k)
+	25	exp		10000	700 -- Tecrübe (10k)
+	26	exp		10000	700 -- Tecrübe (10k)
+	27	exp		10000	700 -- Tecrübe (10k)
+	28	exp		10000	700 -- Tecrübe (10k)
+	29	exp		10000	700 -- Tecrübe (10k)
+	30	exp		10000	700 -- Tecrübe (10k)
+}
+Group	Event_Sandıkları
+{
+	Vnum	50929 -- Gümüş kral ganimeti
+	1	79604	1	300 -- Okey Kart Seti
+	2	71094	1	100 -- Münzevi Tavsiyesi
+	3	72726	1	400 -- Güneş Özütü (Ö)
+	4	72730	1	400 -- Ay Özütü (Ö)
+	5	100300	2	400 -- Yeşil Ejderha Fasulyesi
+	6	72347	1	400 -- Hızlandırıcı (%30)
+	7	27992	1	400 -- Beyaz İnci
+	8	27993	1	400 -- Mavi İnci
+	9	27994	1	400 -- Kankırmızı İnci
+	10	71084	20	100 -- Efsun Nesnesi
+	11	70102	3	200 -- Zen Fasulye
+	12	85001	1	100 -- Hakim Kuşağı (basit)
+	13	38058	1	80 -- Bilgelik İksiri (3 sa.)
+	14	55402	1	100 -- Örümcek Yumurtası
+	15	50107	3	400 -- Çin Havai Fişekleri
+	16	50255	3	100 -- Cor Draconis, İşlenmemiş
+	17	51504	1	80 -- Cor Draconis (soylu)
+	18	50108	10	400 -- Havai fişek topacı
+	19	70039	1	40 -- Demircinin El Kitabı
+	20	50926	200	400 -- Süs Taşı
+	21	71189	1	80 -- Efsun Nesnesi+
+	22	56011	1	100 -- Orta bağış belgesi
+	23	71148	1	400
+	24	71149	1	400
+	25	71044	2	400
+	26	71045	2	400
+	27	71027	2	400
+	28	71028	2	400
+	29	71029	2	400
+	30	71030	2	400
+}
+Group	Event_Sandıkları
+{
+	Vnum	50928 -- Altın kral ganimeti
+	1	25041	1	7  // Büyülü Metal
+	2	56008	1	7  // Lanetin yazısı
+	3	56009	1	7  // Değişiklik yazısı
+	4	51506	1	7  // Cor Draconis (destansı
+	5	72346	1	7  // Kutsama
+	6	80014	1	7  // 100ep 
+	7	71202	1	7  // Nazar Tılsımı (3Günlük)
+	8	100700	1	15  // Ejderha Alevi
+	9	56002	1	15  // Ateşin yazısı
+	10	56003	1	15  // Buzun yazısı
+	11	56004	1	15  // Simşeğin yazısı
+	12	56005	1	15  // Rüzgarın yazısı
+	13	56006	1	15  // Toprağın yazısı
+	14	56007	1	15  // Karanlığın yazısı
+	15	72348	1	15  // Hızlandırıcı %50
+	16	72349	1	15  // Hızlandırıcı %75
+	17	72001	1	35  // Tecrübe yüzüğü (10 sa.)
+	18	51509	1	35  // Cor Draconis (antika)
+	19	85007	1	35  // Usta Kuşağı (asil)
+	20	85003	1	35  // Hakim Kuşağı (asil)
+	21	56012	1	35  // Büyük bağış belgesi
+	22	72347	1	35  // Hızlandırıcı %30
+	23	71025	1	35  // Demirci Taşı
+	24	50267	1	35  // Altın Okey Sandığı
+	25	71158	1	35  // Kahramanlık Madalyonu 1 hafta
+	26	50152	1	35  // gokyakut anahtarı
+	27	55400	4	35  // Rastgele sandığı 4x
+	28	39119	1	35  // Elementer güç taşı
+	29	39120	1	35  // Elementer koruma taşı
+	30	56011	1	50  // Orta bağış belgesi
+	31	49995	1	50  // Auranın Ateş Run. (500)
+	32	85002	1	50  // Hakim Kuşağı (zarif)
+	33	85006	1	50  // Usta Kuşağı (zarif)
+	34	51505	1	50  // Cor Draconis (değerli)
+	35	71181	1	50  // Bilgelik İksiri
+	36	71028	10	50  // Ejderha tanrı saldırısı	 10x
+	37	71030	10	50  // Ejderha tanrı savunması	10x
+	38	60005	1	50  // Ticaret Camı 1 Hafta
+	39	9830	1	7  // Buz Tılsımı+0 zor
+	40	9600	1	10  // Ateş Tılsımı+0 biraz zor
+	41	10060	1	10  // Toprak Tılsımı+0 biraz zor
+	42	10290	1	10  // Karanlık Tılsım+0 biraz zor
+	43	10750	1	5  // Simşek Tılsımı+0 oldukça zor
+	44	10520	1	7  // Rüzgar Tılsımı+0 biraz zor
+	45	31270	5	10  // Tılsım Özü x5 biraz zor
+	46	31270	10	10  // Tılsım Özü x10 biraz zor
+	47	31270	15	7  // Tılsım Özü x15  zor
+	48	31270	20	5  // Tılsım Özü x20  çok zor
+}
+
+
+#-------------------------------------------------------------------------#
+#------------------- Okey Eventi Created by ARWEN ------------------------#
+#-------------------------------------------------------------------------#
+
+
+Group	Event_Sandıkları
+{
+	Vnum	50269 -- Bronz Okey Sandığı
+	1	79506	1	1 -- Okey Kart Seti
+	4	exp		10000	1	700 -- Tecrübe (10k)
+	5	exp		10000	1	700 -- Tecrübe (10k)
+	6	exp		10000	1	700 -- Tecrübe (10k)
+	7	exp		10000	1	700 -- Tecrübe (10k)
+	8	exp		10000	1	700 -- Tecrübe (10k)
+	9	exp		10000	1	700 -- Tecrübe (10k)
+	10	exp		10000	1	700 -- Tecrübe (10k)
+	11	exp		10000	1	700 -- Tecrübe (10k)
+	12	exp		10000	1	700 -- Tecrübe (10k)
+	13	exp		10000	1	700 -- Tecrübe (10k)
+	14	exp		10000	1	700 -- Tecrübe (10k)
+	15	exp		10000	1	700 -- Tecrübe (10k)
+	16	exp		10000	1	700 -- Tecrübe (10k)
+	17	exp		10000	1	700 -- Tecrübe (10k)
+	18	exp		10000	1	700 -- Tecrübe (10k)
+	19	exp		10000	1	700 -- Tecrübe (10k)
+	20	exp		10000	1	700 -- Tecrübe (10k)
+	25	exp		10000	1	700 -- Tecrübe (10k)
+	26	exp		10000	1	700 -- Tecrübe (10k)
+	27	exp		10000	1	700 -- Tecrübe (10k)
+	28	exp		10000	1	700 -- Tecrübe (10k)
+	29	exp		10000	1	700 -- Tecrübe (10k)
+	30	exp		10000	1	700 -- Tecrübe (10k)
+	31	exp		10000	1	700 -- Tecrübe (10k)
+	32	exp		10000	1	700 -- Tecrübe (10k)
+	33	exp		10000	1	700 -- Tecrübe (10k)
+	34	exp		10000	1	700 -- Tecrübe (10k)
+	35	exp		10000	1	700 -- Tecrübe (10k)
+	36	exp		10000	1	700 -- Tecrübe (10k)
+}
+Group	Event_Sandıkları
+{
+	Vnum	50268 -- Gümüş Okey Sandığı
+	1	79506	1	300 -- Okey Kart Seti
+	2	71094	1	100 -- Münzevi Tavsiyesi
+	3	72726	1	400 -- Güneş Özütü (Ö)
+	4	72730	1	400 -- Ay Özütü (Ö)
+	5	100300	2	400 -- Yeşil Ejderha Fasulyesi
+	6	72347	1	400 -- Hızlandırıcı (%30)
+	7	27992	1	400 -- Beyaz İnci
+	8	27993	1	400 -- Mavi İnci
+	9	27994	1	400 -- Kankırmızı İnci
+	10	71084	20	100 -- Efsun Nesnesi
+	11	70102	3	200 -- Zen Fasulye
+	12	85001	1	100 -- Hakim Kuşağı (basit)
+	13	38058	1	80 -- Bilgelik İksiri (3 sa.)
+	14	55402	1	100 -- Örümcek Yumurtası
+	15	50107	3	400 -- Çin Havai Fişekleri
+	16	50255	3	100 -- Cor Draconis, İşlenmemiş
+	17	51504	1	80 -- Cor Draconis (soylu)
+	18	50108	10	400 -- Havai fişek topacı
+	19	70039	1	40 -- Demircinin El Kitabı
+	20	50926	200	400 -- Süs Taşı
+	21	71189	1	80 -- Efsun Nesnesi+
+	22	56011	1	100 -- Orta bağış belgesi
+	23	71148	1	400
+	24	71149	1	400
+	25	71044	2	400
+	26	71045	2	400
+	27	71027	2	400
+	28	71028	2	400
+	29	71029	2	400
+	30	71030	2	400
+}
+Group	Event_Sandıkları
+{
+	Vnum	50267 -- Altın Okey Sandığı
+	1	79506	1	100 -- Okey Kart Seti
+	2	30617	1	100 -- Akik
+	3	50107	3	400 -- Çin Havai Fişekleri
+	4	51505	1	100 -- Cor Draconis (değerli)
+	5	51506	1	80 -- Cor Draconis (destansı)
+	6	56012	1	100 -- Büyük bağış belgesi
+	7	71189	1	80 -- Efsun Nesnesi+
+	8	72058	5	400 -- Zihin Taşı Destesi
+	9	71225	1	10 -- Manu
+	10	76044	1	80 -- Pet Kitabı Sandığı
+	11	71224	1	10 -- Manni
+	12	30618	1	50 -- Ay Taşı
+	13	71095	3	400 -- Geçit Bileti
+	14	25041	1	80 -- Büyülü Metal
+	15	71025	1	50 -- Demirci Taşı
+	16	76039	1	80 -- Ejderha Sandığı
+	17	55405	1	100 -- Mavi Ejderha Yumurtası
+	18	72726	1	200 -- Güneş Özütü (Ö)
+	19	72730	1	200 -- Ay Özütü (Ö)
+	20	38058	1	80 -- Bilgelik İksiri (3 sa.)
+	21	71094	1	400 -- Münzevi Tavsiyesi
+	22	27992	1	400 -- Beyaz İnci
+	23	30616	1	100 -- Titandiyoksit
+	24	71136	1	10 -- Güçlü Lolipop
+	25	72347	1	150 -- Hızlandırıcı (%30)
+	26	72348	1	100 -- Hızlandırıcı (%50)
+	27	72349	1	80 -- Hızlandırıcı (%75)
+	28	71148	1	400
+	29	71149	1	400
+	30	71044	2	400
+	31	71045	2	400
+	32	71027	2	400
+	33	71028	2	400
+	34	71029	2	400
+	35	71030	2	400
+}
+
+Group	Event_Sandıkları
+{
+	Vnum	50277 -- Bronz Okey Sandığı Yeni
+	1	79506	1	1 -- Okey Kart Seti
+	4	exp		10000	1	700 -- Tecrübe (10k)
+	5	exp		10000	1	700 -- Tecrübe (10k)
+	6	exp		10000	1	700 -- Tecrübe (10k)
+	7	exp		10000	1	700 -- Tecrübe (10k)
+	8	exp		10000	1	700 -- Tecrübe (10k)
+	9	exp		10000	1	700 -- Tecrübe (10k)
+	10	exp		10000	1	700 -- Tecrübe (10k)
+	11	exp		10000	1	700 -- Tecrübe (10k)
+	12	exp		10000	1	700 -- Tecrübe (10k)
+	13	exp		10000	1	700 -- Tecrübe (10k)
+	14	exp		10000	1	700 -- Tecrübe (10k)
+	15	exp		10000	1	700 -- Tecrübe (10k)
+	16	exp		10000	1	700 -- Tecrübe (10k)
+	17	exp		10000	1	700 -- Tecrübe (10k)
+	18	exp		10000	1	700 -- Tecrübe (10k)
+	19	exp		10000	1	700 -- Tecrübe (10k)
+	20	exp		10000	1	700 -- Tecrübe (10k)
+	25	exp		10000	1	700 -- Tecrübe (10k)
+	26	exp		10000	1	700 -- Tecrübe (10k)
+	27	exp		10000	1	700 -- Tecrübe (10k)
+	28	exp		10000	1	700 -- Tecrübe (10k)
+	29	exp		10000	1	700 -- Tecrübe (10k)
+	30	exp		10000	1	700 -- Tecrübe (10k)
+	31	exp		10000	1	700 -- Tecrübe (10k)
+	32	exp		10000	1	700 -- Tecrübe (10k)
+	33	exp		10000	1	700 -- Tecrübe (10k)
+	34	exp		10000	1	700 -- Tecrübe (10k)
+	35	exp		10000	1	700 -- Tecrübe (10k)
+	36	exp		10000	1	700 -- Tecrübe (10k)
+}
+Group	Event_Sandıkları
+{
+	Vnum	50276 -- Gümüş Okey Sandığı Yeni
+	1	79506	1	300 -- Okey Kart Seti
+	2	71094	1	100 -- Münzevi Tavsiyesi
+	3	72726	1	400 -- Güneş Özütü (Ö)
+	4	72730	1	400 -- Ay Özütü (Ö)
+	5	100300	2	400 -- Yeşil Ejderha Fasulyesi
+	6	72347	1	400 -- Hızlandırıcı (%30)
+	7	27992	1	400 -- Beyaz İnci
+	8	27993	1	400 -- Mavi İnci
+	9	27994	1	400 -- Kankırmızı İnci
+	10	71084	20	100 -- Efsun Nesnesi
+	11	70102	3	200 -- Zen Fasulye
+	12	85001	1	100 -- Hakim Kuşağı (basit)
+	13	38058	1	80 -- Bilgelik İksiri (3 sa.)
+	14	55402	1	100 -- Örümcek Yumurtası
+	15	50107	3	400 -- Çin Havai Fişekleri
+	16	50255	3	100 -- Cor Draconis, İşlenmemiş
+	17	51504	1	80 -- Cor Draconis (soylu)
+	18	50108	10	400 -- Havai fişek topacı
+	19	70039	1	40 -- Demircinin El Kitabı
+	20	50926	200	400 -- Süs Taşı
+	21	71189	1	80 -- Efsun Nesnesi+
+	22	56011	1	100 -- Orta bağış belgesi
+	23	71148	1	400
+	24	71149	1	400
+	25	71044	2	400
+	26	71045	2	400
+	27	71027	2	400
+	28	71028	2	400
+	29	71029	2	400
+	30	71030	2	400
+}
+Group	Event_Sandıkları
+{
+	Vnum	50275 -- Altın Okey Sandığı Yeni
+	1	25041	1	7  // Büyülü Metal
+	2	56008	1	7  // Lanetin yazısı
+	3	56009	1	7  // Değişiklik yazısı
+	4	51506	1	7  // Cor Draconis (destansı
+	5	72346	1	7  // Kutsama
+	6	80014	1	7  // 100ep 
+	7	71202	1	7  // Nazar Tılsımı (3Günlük)
+	8	100700	1	15  // Ejderha Alevi
+	9	56002	1	15  // Ateşin yazısı
+	10	56003	1	15  // Buzun yazısı
+	11	56004	1	15  // Simşeğin yazısı
+	12	56005	1	15  // Rüzgarın yazısı
+	13	56006	1	15  // Toprağın yazısı
+	14	56007	1	15  // Karanlığın yazısı
+	15	72348	1	15  // Hızlandırıcı %50
+	16	72349	1	15  // Hızlandırıcı %75
+	17	72001	1	35  // Tecrübe yüzüğü (10 sa.)
+	18	51509	1	35  // Cor Draconis (antika)
+	19	85007	1	35  // Usta Kuşağı (asil)
+	20	85003	1	35  // Hakim Kuşağı (asil)
+	21	56012	1	35  // Büyük bağış belgesi
+	22	72347	1	35  // Hızlandırıcı %30
+	23	71025	1	35  // Demirci Taşı
+	24	50267	1	35  // Altın Okey Sandığı
+	25	71158	1	35  // Kahramanlık Madalyonu 1 hafta
+	26	50152	1	35  // gokyakut anahtarı
+	27	55400	4	35  // Rastgele sandığı 4x
+	28	39119	1	35  // Elementer güç taşı
+	29	39120	1	35  // Elementer koruma taşı
+	30	56011	1	50  // Orta bağış belgesi
+	31	49995	1	50  // Auranın Ateş Run. (500)
+	32	85002	1	50  // Hakim Kuşağı (zarif)
+	33	85006	1	50  // Usta Kuşağı (zarif)
+	34	51505	1	50  // Cor Draconis (değerli)
+	35	71181	1	50  // Bilgelik İksiri
+	36	71028	10	50  // Ejderha tanrı saldırısı	 10x
+	37	71030	10	50  // Ejderha tanrı savunması	10x
+	38	60005	1	50  // Ticaret Camı 1 Hafta
+	39	9830	1	7  // Buz Tılsımı+0 zor
+	40	9600	1	10  // Ateş Tılsımı+0 biraz zor
+	41	10060	1	10  // Toprak Tılsımı+0 biraz zor
+	42	10290	1	10  // Karanlık Tılsım+0 biraz zor
+	43	10750	1	5  // Simşek Tılsımı+0 oldukça zor
+	44	10520	1	7  // Rüzgar Tılsımı+0 biraz zor
+	45	31270	5	10  // Tılsım Özü x5 biraz zor
+	46	31270	10	10  // Tılsım Özü x10 biraz zor
+	47	31270	15	7  // Tılsım Özü x15  zor
+	48	31270	20	5  // Tılsım Özü x20  çok zor
+}
+
+
+#-------------------------------------------------------------------------#
+#------------------ Kahin Eventi Created by ARWEN ------------------------#
+#-------------------------------------------------------------------------#
+
+
+Group	Event_Sandıkları
+{
+	Vnum	83043 -- Bronz kahin sandığı
+	1	79513	1	1 -- Tarot Seti
+	4	exp		10000	1	700 -- Tecrübe (10k)
+	5	exp		10000	1	700 -- Tecrübe (10k)
+	6	exp		10000	1	700 -- Tecrübe (10k)
+	7	exp		10000	1	700 -- Tecrübe (10k)
+	8	exp		10000	1	700 -- Tecrübe (10k)
+	9	exp		10000	1	700 -- Tecrübe (10k)
+	10	exp		10000	1	700 -- Tecrübe (10k)
+	11	exp		10000	1	700 -- Tecrübe (10k)
+	12	exp		10000	1	700 -- Tecrübe (10k)
+	13	exp		10000	1	700 -- Tecrübe (10k)
+	14	exp		10000	1	700 -- Tecrübe (10k)
+	15	exp		10000	1	700 -- Tecrübe (10k)
+	16	exp		10000	1	700 -- Tecrübe (10k)
+	17	exp		10000	1	700 -- Tecrübe (10k)
+	18	exp		10000	1	700 -- Tecrübe (10k)
+	19	exp		10000	1	700 -- Tecrübe (10k)
+	20	exp		10000	1	700 -- Tecrübe (10k)
+	25	exp		10000	1	700 -- Tecrübe (10k)
+	26	exp		10000	1	700 -- Tecrübe (10k)
+	27	exp		10000	1	700 -- Tecrübe (10k)
+	28	exp		10000	1	700 -- Tecrübe (10k)
+	29	exp		10000	1	700 -- Tecrübe (10k)
+	30	exp		10000	1	700 -- Tecrübe (10k)
+}
+Group	Event_Sandıkları
+{
+	Vnum	83042 -- Gümüş kahin sandığı
+	1	79513	1	100 -- Tarot Seti
+	2	71094	1	100 -- Münzevi Tavsiyesi
+	3	72726	1	400 -- Güneş Özütü (Ö)
+	4	72730	1	400 -- Ay Özütü (Ö)
+	5	100300	2	400 -- Yeşil Ejderha Fasulyesi
+	6	72347	1	400 -- Hızlandırıcı (%30)
+	7	27992	1	400 -- Beyaz İnci
+	8	27993	1	400 -- Mavi İnci
+	9	27994	1	400 -- Kankırmızı İnci
+	10	71084	20	100 -- Efsun Nesnesi
+	11	70102	5	100 -- Zen Fasulye
+	12	85001	1	100 -- Hakim Kuşağı (basit)
+	13	38058	1	80 -- Bilgelik İksiri (3 sa.)
+	14	55403	1	80 -- Razadör Yumurtası
+	15	55404	1	80 -- Nemere Yumurtası
+	16	55402	1	80 -- Örümcek Yumurtası
+	17	50107	3	400 -- Çin Havai Fişekleri
+	18	50255	3	100 -- Cor Draconis, İşlenmemiş
+	19	51504	1	80 -- Cor Draconis (soylu)
+	20	50108	10	400 -- Havai fişek topacı
+	21	70039	1	40 -- Demircinin El Kitabı
+	22	50926	20	400 -- Süs Taşı
+	23	71189	1	80 -- Efsun Nesnesi+
+}
+Group	Event_Sandıkları
+{
+	Vnum	83041 -- Altın kahin sandığı
+	1	79513	1	100 -- Tarot Seti
+	2	30617	1	100 -- Akik
+	3	50107	3	400 -- Çin Havai Fişekleri
+	4	51505	1	100 -- Cor Draconis (değerli)
+	5	51506	1	80 -- Cor Draconis (destansı)
+	6	70058	1	80 -- Işınlama yüzüğü
+	7	71189	1	80 -- Efsun Nesnesi+
+	8	72058	5	400 -- Zihin Taşı Destesi
+	9	71225	1	30 -- Manu
+	10	76044	1	80 -- Pet Kitabı Sandığı
+	11	71224	1	30 -- Manni
+	12	30618	1	50 -- Ay Taşı
+	13	71095	1	400 -- Geçit Bileti
+	14	25041	1	80 -- Büyülü Metal
+	15	71025	1	50 -- Demirci Taşı
+	16	76039	1	80 -- Ejderha Sandığı
+	17	55405	1	80 -- Mavi Ejderha Yumurtası
+	18	72726	1	200 -- Güneş Özütü (Ö)
+	19	72730	1	200 -- Ay Özütü (Ö)
+	20	71189	1	80 -- Efsun Nesnesi+
+	21	55403	1	80 -- Razadör Yumurtası
+	22	55404	1	80 -- Nemere Yumurtası
+	23	38058	1	80 -- Bilgelik İksiri (3 sa.)
+	24	71094	1	400 -- Münzevi Tavsiyesi
+	25	27992	1	400 -- Beyaz İnci
+	26	30616	1	100 -- Titandiyoksit
+	27	71136	1	40 -- Güçlü Lolipop
+	28	72347	1	150 -- Hızlandırıcı (%30)
+	29	72348	1	100 -- Hızlandırıcı (%50)
+	30	72349	1	80 -- Hızlandırıcı (%75)
+}
+
+
+#-------------------------------------------------------------------------#
+#----------------- Balıkçılık Eventi Created by ARWEN --------------------#
+#-------------------------------------------------------------------------#
+
+
+Group	Event_Sandıkları
+{
+	Vnum	83001 -- Altın Balık Sandığı (K)
+	1	70039	1	2 -- Demircinin El Kitabı
+	2	85015	1	2 -- Kral Kuşağı (basit)
+	3	71015	1	5 -- Tecrübe yüzüğü
+	4	76018	2	10 -- Saldırı iksiri +20
+	5	72725	1	10 -- Güneş Özütü (B)
+	6	72729	1	10 -- Ay Özütü (B)
+	7	70102	1	4 -- Zen Fasulye
+	8	55401	1	10 -- Maymun Yumurtası
+	9	50513	1	10 -- Ruh Taşı
+	10	50525	1	10 -- Ruh Taşı+
+	11	50108	3	10 -- Havai fişek topacı
+	12	71044	3	10 -- Kritik savaş
+	13	71045	3	10 -- Delici savaş
+	14	27883	1	2 -- Izgara altın sudak
+	15	27992	1	1 -- Beyaz İnci
+	16	27993	1	3 -- Mavi İnci
+	17	27994	1	10 -- Kankırmızı İnci
+	18	71032	1	2 -- Ejderha Parşömeni
+	19	38016	1	2 -- Kaplan Parası (20)
+	20	72347	1	2 -- Hızlandırıcı (%30)
+	21	72351	1	2 -- Küçük Kutsama
+}
+Group	Event_Sandıkları
+{
+	Vnum	83002 -- Altın Balık Sandığı (O)
+	1	70039	1	2 -- Demircinin El Kitabı
+	2	85015	1	2 -- Kral Kuşağı (basit)
+	3	71015	1	5 -- Tecrübe yüzüğü
+	4	76018	2	10 -- Saldırı iksiri +20
+	5	72725	1	10 -- Güneş Özütü (B)
+	6	72729	1	10 -- Ay Özütü (B)
+	7	70102	1	4 -- Zen Fasulye
+	8	55401	1	10 -- Maymun Yumurtası
+	9	50513	1	10 -- Ruh Taşı
+	10	50525	1	10 -- Ruh Taşı+
+	11	50108	3	10 -- Havai fişek topacı
+	12	71044	3	10 -- Kritik savaş
+	13	71045	3	10 -- Delici savaş
+	14	27883	1	2 -- Izgara altın sudak
+	15	27992	1	1 -- Beyaz İnci
+	16	27993	1	3 -- Mavi İnci
+	17	27994	1	10 -- Kankırmızı İnci
+	18	71032	1	2 -- Ejderha Parşömeni
+	19	38016	1	2 -- Kaplan Parası (20)
+	20	72347	1	2 -- Hızlandırıcı (%30)
+	21	72351	1	2 -- Küçük Kutsama
+}
+Group	Event_Sandıkları
+{
+	Vnum	83003 -- Altın Balık Sandığı (B)
+	1	70039	1	2 -- Demircinin El Kitabı
+	2	85015	1	2 -- Kral Kuşağı (basit)
+	3	71015	1	5 -- Tecrübe yüzüğü
+	4	76018	2	10 -- Saldırı iksiri +20
+	5	72725	1	10 -- Güneş Özütü (B)
+	6	72729	1	10 -- Ay Özütü (B)
+	7	70102	1	4 -- Zen Fasulye
+	8	55401	1	10 -- Maymun Yumurtası
+	9	50513	1	10 -- Ruh Taşı
+	10	50525	1	10 -- Ruh Taşı+
+	11	50108	3	10 -- Havai fişek topacı
+	12	71044	3	10 -- Kritik savaş
+	13	71045	3	10 -- Delici savaş
+	14	27883	1	2 -- Izgara altın sudak
+	15	27992	1	1 -- Beyaz İnci
+	16	27993	1	3 -- Mavi İnci
+	17	27994	1	10 -- Kankırmızı İnci
+	18	71032	1	2 -- Ejderha Parşömeni
+	19	38016	1	2 -- Kaplan Parası (20)
+	20	72347	1	2 -- Hızlandırıcı (%30)
+	21	72351	1	2 -- Küçük Kutsama
+	22	86061	1	1	-- kusak
+}
+
+#-------------------------------------------------------------------------#
+#--------------- Çiçek Çocuklar Eventi Created by ARWEN ------------------#
+#-------------------------------------------------------------------------#
+
+
+Group	Event_Sandıkları
+{
+	Vnum	83023 -- Kasımpatı kutusu
+	1	55408	1	40 -- Tombk cellatck yumurtası
+	2	72059	1	10 -- Liderin kitabı+
+	3	50255	1	10 -- Cor Draconis, İşlenmemiş
+	4	25121	1	70 -- Kasımpatı
+	5	25122	1	70 -- İnci çiçeği
+	6	25123	1	70 -- Nergis
+	7	25124	1	70 -- Zambak
+	8	25125	1	70 -- Ayçiçeği
+	9	71018	3	40 -- Yaşam Kutsaması
+	10	55400	1	200 -- Rastgele sandığı
+	11	76018	1	20 -- Saldırı İksiri +20
+}
+Group	Event_Sandıkları
+{
+	Vnum	83024 -- İnci çiçeği kutusu
+	1	55408	1	40 -- Tombk cellatck yumurtası
+	2	72059	1	10 -- Liderin kitabı+
+	3	50255	1	10 -- Cor Draconis, İşlenmemiş
+	4	25121	1	50 -- Kasımpatı
+	5	25122	1	50 -- İnci çiçeği
+	6	25123	1	50 -- Nergis
+	7	25124	1	50 -- Zambak
+	8	25125	1	50 -- Ayçiçeği
+	9	71018	3	40 -- Yaşam Kutsaması
+	10	55400	1	100 -- Rastgele sandığı
+	11	76018	1	20 -- Saldırı İksiri +20
+}
+Group	Event_Sandıkları
+{
+	Vnum	83025 -- Nergis kutusu
+	1	55402	1	40 -- Örümcek Yumurtası
+	2	72059	1	10 -- Liderin kitabı+
+	3	50255	1	10 -- Cor Draconis, İşlenmemiş
+	4	25121	1	50 -- Kasımpatı
+	5	25122	1	50 -- İnci çiçeği
+	6	25123	1	50 -- Nergis
+	7	25124	1	50 -- Zambak
+	8	25125	1	50 -- Ayçiçeği
+	9	71018	3	40 -- Yaşam Kutsaması
+	10	55400	1	100 -- Rastgele sandığı
+	11	76018	1	20 -- Saldırı İksiri +20
+}
+Group	Event_Sandıkları
+{
+	Vnum	83026 -- Zambak kutusu
+	1	55401	1	40 -- Maymun Yumurtası
+	2	72059	1	10 -- Liderin kitabı+
+	3	50255	1	10 -- Cor Draconis, İşlenmemiş
+	4	25121	1	50 -- Kasımpatı
+	5	25122	1	50 -- İnci çiçeği
+	6	25123	1	50 -- Nergis
+	7	25124	1	50 -- Zambak
+	8	25125	1	50 -- Ayçiçeği
+	9	71018	3	40 -- Yaşam Kutsaması
+	10	55400	1	100 -- Rastgele sandığı
+	11	76018	1	20 -- Saldırı İksiri +20
+}
+Group	Event_Sandıkları
+{
+	Vnum	83027 -- Ayçiçeği kutusu
+	1	55401	1	40 -- Maymun Yumurtası
+	2	72059	1	10 -- Liderin kitabı+
+	3	50255	1	10 -- Cor Draconis, İşlenmemiş
+	4	25121	1	50 -- Kasımpatı
+	5	25122	1	50 -- İnci çiçeği
+	6	25123	1	50 -- Nergis
+	7	25124	1	50 -- Zambak
+	8	25125	1	50 -- Ayçiçeği
+	9	71018	3	40 -- Yaşam Kutsaması
+	10	55400	1	100 -- Rastgele sandığı
+	11	76018	1	20 -- Saldırı İksiri +20
+}
+
+#-------------------------------------------------------------------------#
+#-------------- Renkli Event Sandıkları Created by ARWEN -----------------#
+#-------------------------------------------------------------------------#
+
+
+Group	Event_Sandıkları
+{
+	Vnum	50109 -- Kırmızı Abanoz Sandık
+	1	70102	20	100 -- Zen Fasulye
+	2	72059	1	100 -- Liderin kitabı+
+	3	50255	10	5 -- Cor Draconis, İşlenmemiş
+	4	70063	20	100 -- Köstümü dönüştür
+	5	70064	30	100 -- Kostümü efsunla
+	6	71084	20	50 -- Efsun Nesnesi
+	7	71085	20	50 -- Arttırma Kağıdı
+	8	70024	5	50 -- Kutsama Küresi
+	9	71018	5	100 -- Yaşam Kutsaması
+	10	55400	1	100 -- Rastgele sandığı
+}
+Group	Event_Sandıkları
+{
+	Vnum	50110 -- İhtişamlı Abanoz Sandık
+	1	70102	20	100 -- Zen Fasulye
+	2	72059	1	100 -- Liderin kitabı+
+	3	50255	10	100 -- Cor Draconis, İşlenmemiş
+	4	70063	20	100 -- Köstümü dönüştür
+	5	70064	20	100 -- Kostümü efsunla
+	6	71084	20	50 -- Efsun Nesnesi
+	7	71085	20	50 -- Arttırma Kağıdı
+	8	70024	5	50 -- Kutsama Küresi
+	9	71018	5	100 -- Yaşam Kutsaması
+	10	55400	1	100 -- Rastgele sandığı
+}
+Group	Event_Sandıkları
+{
+	Vnum	50111 -- Sarı Abanoz Sandık
+	1	70102	20	100 -- Zen Fasulye
+	2	72059	1	100 -- Liderin kitabı+
+	3	50255	10	100 -- Cor Draconis, İşlenmemiş
+	4	70063	20	100 -- Köstümü dönüştür
+	5	70064	20	100 -- Kostümü efsunla
+	6	71084	20	50 -- Efsun Nesnesi
+	7	71085	20	50 -- Arttırma Kağıdı
+	8	70024	5	50 -- Kutsama Küresi
+	9	71018	5	100 -- Yaşam Kutsaması
+	10	55400	1	100 -- Rastgele sandığı
+}
+Group	Event_Sandıkları
+{
+	Vnum	50112 -- Açık Yeşil Abanoz Sandık
+	1	70102	20	100 -- Zen Fasulye
+	2	72059	1	100 -- Liderin kitabı+
+	3	50255	10	100 -- Cor Draconis, İşlenmemiş
+	4	70063	20	100 -- Köstümü dönüştür
+	5	70064	20	100 -- Kostümü efsunla
+	6	71084	20	50 -- Efsun Nesnesi
+	7	71085	20	50 -- Arttırma Kağıdı
+	8	70024	5	50 -- Kutsama Küresi
+	9	71018	5	100 -- Yaşam Kutsaması
+	10	55400	1	100 -- Rastgele sandığı
+}
+Group	Event_Sandıkları
+{
+	Vnum	50113 -- Yeşil Abanoz Sandık
+	1	70102	20	100 -- Zen Fasulye
+	2	72059	1	100 -- Liderin kitabı+
+	3	50255	10	100 -- Cor Draconis, İşlenmemiş
+	4	70063	20	100 -- Köstümü dönüştür
+	5	70064	20	100 -- Kostümü efsunla
+	6	71084	20	50 -- Efsun Nesnesi
+	7	71085	20	50 -- Arttırma Kağıdı
+	8	70024	5	50 -- Kutsama Küresi
+	9	71018	5	100 -- Yaşam Kutsaması
+	10	55400	1	100 -- Rastgele sandığı
+	11	72347	1	100 -- Hızlandırıcı (%30)
+}
+Group	Event_Sandıkları
+{
+	Vnum	50114 -- Mavi Abanoz Sandık
+	1	70102	20	100 -- Zen Fasulye
+	2	72059	1	100 -- Liderin kitabı+
+	3	50255	10	100 -- Cor Draconis, İşlenmemiş
+	4	70063	20	100 -- Köstümü dönüştür
+	5	70064	20	100 -- Kostümü efsunla
+	6	71084	20	50 -- Efsun Nesnesi
+	7	71085	20	50 -- Arttırma Kağıdı
+	8	70024	5	50 -- Kutsama Küresi
+	9	71018	5	100 -- Yaşam Kutsaması
+	10	55400	1	100 -- Rastgele sandığı
+	11	72347	1	100 -- Hızlandırıcı (%30)
+}
+Group	Event_Sandıkları
+{
+	Vnum	50115 -- Koyu Kır. Abanoz Sandık
+	1	70102	20	100 -- Zen Fasulye
+	2	72059	1	100 -- Liderin kitabı+
+	3	50255	10	100 -- Cor Draconis, İşlenmemiş
+	4	70063	20	100 -- Köstümü dönüştür
+	5	70064	20	100 -- Kostümü efsunla
+	6	71084	20	50 -- Efsun Nesnesi
+	7	71085	20	50 -- Arttırma Kağıdı
+	8	70024	5	50 -- Kutsama Küresi
+	9	71018	5	100 -- Yaşam Kutsaması
+	10	55400	1	100 -- Rastgele sandığı
+	11	72347	1	100 -- Hızlandırıcı (%30)
+}
+
+Group	Event_Sandıkları
+{
+	Vnum	50037 -- Altıgen Hediye Paketi
+	1	30005	1	1000 -- Kırık Zırh Parçası
+	2	30006	1	1000 -- Ork Dişi
+	3	30007	1	1000 -- Ork Muskası
+	4	30008	1	1000 -- Başlangıç Elkitabı
+	5	30009	1	1000 -- Bilinmeyen İlaç
+	6	30010	1	1000 -- Ayı Safrası
+	7	30011	1	1000 -- Çile
+	8	30012	1	1000 -- Sarap Sişesi
+	9	30013	1	1000 -- Likör Kabı
+	10	30014	1	1000 -- Yeti Postu
+	11	30015	1	1000 -- Seytan Hatırası
+	12	30016	1	1000 -- Seytan Mücevheri
+	13	30017	1	1000 -- Süslü Saç Tokası
+	14	30018	1	1000 -- K. Domuzkuyruğu Kurdele
+	15	30019	1	1000 -- Alev Yelesi
+	16	30027	1	1000 -- Kurt Postu
+	17	30021	1	1000 -- Değerli Taş Parçası
+	18	30022	1	1000 -- Yılan Kuyruğu
+	19	30023	1	1000 -- Beyaz Kaplan Postu
+	20	30030	1	1000 -- Paslı Bıçak
+	21	30025	1	1000 -- Örümceğin Zehir Kesesi
+	22	30035	1	1000 -- Yüz Kremi
+	23	30075	1	1000 -- Shiriken+
+	24	30081	1	1000 -- Akrep Kuyruğu+
+	25	30082	1	1000 -- Yılan Kuyruğu+
+}
+
+
+
+Group	Event_Sandıkları
+{
+	Vnum	83015 -- Gaya sandığı
+	1	50926	200	500 -- Süs Taşı
+}
+
+Group	Event_Sandıkları
+{
+	Vnum	83009 -- Pet sandığı
+	1	55401	1	400 -- Maymun Yumurtası
+	2	55402	1	400 -- Örümcek Yumurtası
+	3	55403	1	20 -- Razadör Yumurtası
+	4	55404	1	20 -- Nemere Yumurtası
+	5	55405	1	100 -- Mavi Ejderha Yumurtası
+	6	55406	1	20 -- Kızıl Ejderha Yumurtası
+	7	55407	1	400 -- Azrailcik yumurtası
+	8	55408	1	400 -- Tombk cellatck yumurtası
+}
+
+Group	Event_Sandıkları
+{
+	Vnum	50096 -- Futbol Topu
+	1	50721	1	20 -- Seftali Çiçeği
+	2	50721	3	10 -- Seftali Çiçeği
+	3	50721	5	7 -- Seftali Çiçeği
+	4	50721	10	3 -- Seftali Çiçeği
+	5	50722	1	20 -- Çançiçeği
+	6	50722	3	10 -- Çançiçeği
+	7	50722	5	7 -- Çançiçeği
+	8	50722	10	3 -- Çançiçeği
+	9	50723	1	20 -- Kaki Çiçeği
+	10	50723	3	15 -- Kaki Çiçeği
+	11	50723	5	10 -- Kaki Çiçeği
+	12	50723	10	5 -- Kaki Çiçeği
+	13	50724	1	20 -- Gango Kökü
+	14	50724	3	15 -- Gango Kökü
+	15	50724	5	10 -- Gango Kökü
+	16	50724	10	5 -- Gango Kökü
+	17	50725	1	20 -- Leylak
+	18	50725	3	10 -- Leylak
+	19	50725	5	7 -- Leylak
+	20	50725	10	3 -- Leylak
+	21	50726	1	20 -- Tue Mantarı
+	22	50726	3	15 -- Tue Mantarı
+	23	50726	5	10 -- Tue Mantarı
+	24	50726	10	5 -- Tue Mantarı
+	25	50727	1	20 -- Alp Gülü
+	26	50727	3	10 -- Alp Gülü
+	27	50727	5	7 -- Alp Gülü
+	28	50727	10	3 -- Alp Gülü
+	29	50728	1	20 -- Dut
+	30	50728	3	15 -- Dut
+	31	50728	5	10 -- Dut
+	32	50728	10	5 -- Dut
+	33	50813	3	7
+	34	50814	3	7
+	35	50815	3	7
+	36	50816	3	7
+	37	50817	3	7
+	38	50818	3	7
+	39	50819	3	7
+	40	50820	3	7
+	41	55400	1	30
+}
+
+Group	Event_Sandıkları
+{
+	Vnum	50024 -- Gül
+	1	70102	1	50 -- Zen Fasulye
+	2	50300	1	50 -- Beceri Kitabı
+	3	25041	1	1 -- Büyülü Metal
+	4	70063	3	50 -- Köstümü dönüştür
+	5	70064	3	50 -- Kostümü efsunla
+	6	71084	3	30 -- Efsun Nesnesi
+	7	71085	3	30 -- Arttırma Kağıdı
+	8	70024	1	30 -- Kutsama Küresi
+	9	55400	1	50 -- Rastgele sandığı
+	10	71094	3	40 -- Münzevi Tavsiyesi
+	11	25040	1	40 -- Kutsama Kağıdı
+	12	50513	1	40 -- Ruh Taşı
+	18	exp	250000	1	50 -- Zen Fasulye
+	19	exp	250000	1	50 -- Beceri Kitabı
+	13	72726	1	30 -- Güneş Özütü (Ö)
+	14	72730	1	30 -- Ay Özütü (Ö)
+	15	72347	1	30 -- Hızlandırıcı (%30)
+}
+
+
+#-------------------------------------------------------------------------#
+#------------- Nesne Market Sandıkları Created by ARWEN ------------------#
+#-------------------------------------------------------------------------#
+
+Group	Nesne_Sandıkları
+{
+	Vnum	83010 -- Kuşak kutusu
+	1	85001	1	1000 -- Hakim Kuşağı (basit)
+	2	85005	1	1000 -- Usta Kuşağı (basit)
+	3	85011	1	1000 -- Bey Kuşağı (basit)
+	4	85015	1	1000 -- Kral Kuşağı (basit)
+}
+
+Group	Nesne_Sandıkları
+{
+	Vnum	83048 -- Bonus artırma kutusu
+	Type	pct
+	1	39068	20	1000 -- Süslü parça sandığı
+	2	39069	5	1000 -- Parlak parça sandnığı
+	3	72349	3	1000 -- Hızlandırıcı (%30)
+}
+
+Group	Nesne_Sandıkları
+{
+	Vnum	38052 -- Krallar Sandığı
+	1	49001	1	1000 -- Genel Aura Giysisi
+}
+
+
+Group	Nesne_Sandıkları
+{
+	Vnum	39068 -- Süslü parça sandığı
+	1	39070	1	500 -- Gri parça
+	2	39071	1	500 -- Beyaz parça
+	3	39072	1	500 -- Yeşil parça
+	4	39073	1	200 -- Sarı parça
+	5	39074	1	500 -- Mavi parça
+	6	39075	1	200 -- Mor parça
+	7	39076	1	200 -- Kırmızı parça
+	8	39077	1	200 -- Gökkuşağı parça
+	9	39078	1	500 -- Gri parlak parça
+	10	39079	1	500 -- Yeşil parlak parça
+	11	39080	1	100 -- Sarı parlak parça
+	12	39081	1	100 -- Kutsal parça
+}
+
+Group	Nesne_Sandıkları
+{
+	Vnum	39069 -- Parlak parça sandnığı
+	1	39078	1	1000 -- Gri parlak parça
+	2	39079	1	1000 -- Yeşil parlak parça
+	3	39080	1	100 -- Sarı parlak parça
+}
+
+Group	Nesne_Sandıkları
+{
+	Vnum	39048 -- BedenselSavaşçıSandık(G)
+	Type	pct
+	1	71001	10	1000 -- Kötü Ruh Kovma Kağıdı
+	2	71094	5	1000 -- Münzevi Tavsiyesi
+	3	50401	5	1000 -- Üç Yönlü Kesme Klavuzu
+	4	50402	5	1000 -- Kılıç Çevirme Klavuzu
+	5	50403	5	1000 -- Öfke Klavuzu
+	6	50404	5	1000 -- Hava Kılıcı Klavuzu
+	7	50405	5	1000 -- Hamle Klavuzu
+	8	50406	5	1000 -- Yaşama İsteği Kitabı
+}
+
+Group	Nesne_Sandıkları
+{
+	Vnum	39050 -- ZihinselSavaşçıSandık(G)
+	Type	pct
+	1	71001	10	1000 -- Kötü Ruh Kovma Kağıdı
+	2	71094	5	1000 -- Münzevi Tavsiyesi
+	3	50416	5	1000 -- Ruh Vuruşu Klavuzu
+	4	50417	5	1000 -- Siddetli Vuruş Klavuzu
+	5	50418	5	1000 -- Güçlü Vuruş Klavuzu
+	6	50419	5	1000 -- Güçlü Beden Klavuzu
+	7	50420	5	1000 -- Kılıç Darbesi Klavuzu
+	8	50421	5	1000 -- Kılıç Çemberi Kitabı
+}
+
+Group	Nesne_Sandıkları
+{
+	Vnum	39052 -- YakınDövüşçüNinjaSndk(G)
+	Type	pct
+	1	71001	10	1000 -- Kötü Ruh Kovma Kağıdı
+	2	71094	5	1000 -- Münzevi Tavsiyesi
+	3	50431	5	1000 -- Suikast Klavuzu
+	4	50432	5	1000 -- Hızlı Saldırı Klavuzu
+	5	50433	5	1000 -- Bıçak Çevirme Klavuzu
+	6	50434	5	1000 -- Kamuflaj Klavuzu
+	7	50435	5	1000 -- Zehirli Bulut Klavuzu
+	8	50436	5	1000 -- Sinsi Zehir Kitabı
+}
+
+Group	Nesne_Sandıkları
+{
+	Vnum	39054 -- UzakDövüşçüNinjaSndk(G)
+	Type	pct
+	1	71001	10	1000 -- Kötü Ruh Kovma Kağıdı
+	2	71094	5	1000 -- Münzevi Tavsiyesi
+	3	50446	5	1000 -- Tekrarlanan Atış Klavuzu
+	4	50447	5	1000 -- Ok Yağmuru Klavuzu
+	5	50448	5	1000 -- Ateşli Ok Klavuzu
+	6	50449	5	1000 -- Hafif Adım Klavuzu
+	7	50450	5	1000 -- Zehirli Ok Klavuzu
+	8	50451	5	1000 -- Kıvılcım Vuruşu Kitabı
+}
+
+Group	Nesne_Sandıkları
+{
+	Vnum	39056 -- Silah Surası Sandığı (G)
+	Type	pct
+	1	71001	10	1000 -- Kötü Ruh Kovma Kağıdı
+	2	71094	5	1000 -- Münzevi Tavsiyesi
+	3	50461	5	1000 -- Parmak Darbesi Klavuzu
+	4	50462	5	1000 -- Ejderha Dönüşü Klavuzu
+	5	50463	5	1000 -- Büyülü Keskinlik Klavuzu
+	6	50464	5	1000 -- Dehşet Klavuzu
+	7	50465	5	1000 -- Büyülü Zırh Klavuzu
+	8	50466	5	1000 -- Büyü Çözme Klavuzu
+}
+
+Group	Nesne_Sandıkları
+{
+	Vnum	39058 -- Büyü Surası Sandığı (G)
+	Type	pct
+	1	71001	10	1000 -- Kötü Ruh Kovma Kağıdı
+	2	71094	5	1000 -- Münzevi Tavsiyesi
+	3	50476	5	1000 -- Karanlık Vuruş Klavuzu
+	4	50477	5	1000 -- Ateş Vuruş Klavuzu
+	5	50478	5	1000 -- Ateş Hayaleti Klavuzu
+	6	50479	5	1000 -- Karanlık Koruma Klavuzu
+	7	50480	5	1000 -- Hayalet Vuruş Klavuzu
+	8	50481	5	1000 -- Karanlık Küre Klavuzu
+}
+
+Group	Nesne_Sandıkları
+{
+	Vnum	39060 -- Ejderha Saman Sandığı(G)
+	Type	pct
+	1	71001	10	1000 -- Kötü Ruh Kovma Kağıdı
+	2	71094	5	1000 -- Münzevi Tavsiyesi
+	3	50491	5	1000 -- Uçan Tılsım Klavuzu
+	4	50492	5	1000 -- Ejderha darbesi kitabı
+	5	50493	5	1000 -- Ejder Kükremesi Klavuzu
+	6	50494	5	1000 -- Kutsama Klavuzu
+	7	50495	5	1000 -- Yansıtma Klavuzu
+	8	50496	5	1000 -- Ejderha Yardımı Kitabı
+}
+
+Group	Nesne_Sandıkları
+{
+	Vnum	39062 -- Sifacı Saman Sandığı (G)
+	Type	pct
+	1	71001	10	1000 -- Kötü Ruh Kovma Kağıdı
+	2	71094	5	1000 -- Münzevi Tavsiyesi
+	3	50506	5	1000 -- Simşek Atmak Klavuzu
+	4	50507	5	1000 -- Simşek Çağırma Klavuzu
+	5	50508	5	1000 -- Simşek Pençesi Klavuzu
+	6	50509	5	1000 -- İyileştirme Klavuzu
+	7	50510	5	1000 -- Hız Klavuzu
+	8	50511	5	1000 -- Yüksek Saldırı Klavuzu
+}
+
+###################################- Author *@* - ARWEN -#######################################
+#################                                                             ##################
+#################                     CONQEUROR OF YOHARA                     ##################
+#################                                                             ##################
+###################################- Author *@* - ARWEN -#######################################
+
+####################################- Author *@* - ARWEN -######################################
+#################                                                             ##################
+#################            CONQEUROR OF YOHARA Sandık Dropları              ##################
+#################                                                             ##################
+####################################- Author *@* - ARWEN -######################################
+
+
+Group	Yohara_Drop
+{
+	Vnum	50529 -- 9. yolun kitap sandığı
+	1	50569	1	500 -- Deprem (9. beceri)
+	2	50570	1	500 -- Işık yıldızı (9. beceri)
+	3	50571	1	500 -- Saldırı ateşi (9. Skill)
+	4	50572	1	500 -- Ateş darbesi (9. beceri)
+	5	50573	1	500 -- Ölüm dalgası (9. beceri)
+	6	50574	1	500 -- Meteor (9. beceri)
+	7	50575	1	500 -- Eter kalkanı (9. beceri)
+	8	50576	1	500 -- Pençe atağı (9. beceri)
+}
+Group	Yohara_Drop
+{
+	Vnum	50528 -- Yohara Hazine Sandığı
+	1	50325	1	500 -- Tamlığın kitabı
+	2	81000	1	100 -- STR irade tılsımı+0
+	3	81250	1	100 -- RES irade tılsımı+0
+	4	81300	1	100 -- VIT irade tılsımı+0
+	5	81550	1	100 -- INT irade tılsımı+0
+	6	31246	1	500 -- Eldiven çizimi
+	7	72353	1	500 -- İrade topazı
+	8	72351	1	5 -- Küçük Kutsama
+	9	31218	1	500 -- Demirhane çelik plakası
+	10	31216	1	500 -- Ham metal plaka
+	11	31217	1	500 -- Trol kornosu
+	12	31224	1	500 -- Takı çelik plakası
+	13	31245	1	500 -- Sert deri
+	14	50529	1	500 -- 9. yolun kitap sandığı
+	15	80019	10	500 -- İnce Kumaş
+	16	71095	1	500 -- Geçit Bileti
+	17	17540	1	1 -- Zümrüt Küpeler +0
+	18	16580	1	5 -- Sis jediti kolyesi+0
+	19	14580	1	5 -- Sis jediti bilekliği+0
+	20	17570	1	5 -- Sis jediti küpesi+0
+	21	17560	1	20 -- Safir Küpeler +0
+	22	17520	1	20 -- Grena Küpeler +0
+	23	17500	1	1 -- Yakut Küpeler +0
+	24	16560	1	30 -- Safir Kolye +0
+	25	16570	1	30 -- Turmalin Kolye +0
+	26	16540	1	30 -- Zümrüt Kolye +0
+	27	16520	1	30 -- Grena Kolye +0
+	28	16500	1	30 -- Yakut Kolye +0
+	29	14570	1	30 -- Turmalin Bilezik +0
+	30	14560	1	30 -- Safir Bileklik +0
+	31	14540	1	30 -- Zümrüt Bileklik +0
+	32	14520	1	30 -- Grena Bileklik +0
+	33	14500	1	30 -- Yakut Bileklik +0
+	34	20000	1	70 -- Seytan Boynuzu Zırhı +0
+	35	20250	1	70 -- Ejder Süvari Giysisi +0
+	36	20500	1	70 -- Kemik Plaka Zırh +0
+	37	20750	1	70 -- Altın Giysi +0
+	38	21090	1	70 -- Başkomutan Zırhı +0
+}
+
+Group	Yohara_Drop
+{
+	Vnum	31253 -- Gnoll usta sandığı
+	1	31245	1	400 -- Sert deri
+	2	31246	1	400 -- Eldiven çizimi
+	3	31251	1	80 -- Deri sertleştirici
+	4	31252	1	80 -- Deri sertleştirici+
+	5	31250	1	400 -- Yeşil SungMa runiği
+	6	31249	1	400 -- Mavi SungMa runiği
+	7	31248	1	400 -- Mor SungMa runiği
+	8	31247	1	80 -- Kırmızı SungMa runiği
+	9	38060	1	400 -- Duygu çantası
+	10	70401	1	400 -- Kafatası flm. (tic. var)
+	11	71095	1	400 -- Geçit Bileti
+	12	50529	1	400 -- 9. yolun kitap sandığı
+	13	50926	50	400 -- Süs Taşı
+	14	50513	1	400 -- Ruh Taşı
+	15	50341	1	100 -- Çırağın ilhamı
+	16	50342	1	100 -- Ustanın ilhamı
+	17	50338	1	100 -- Çırağın Karizması
+	18	50339	1	100 -- Ustanın Karizması
+}
+Group	Yohara_Drop
+{
+	Vnum	31254 -- Ahtrin usta sandığı
+	1	31245	1	400 -- Sert deri
+	2	31246	1	400 -- Eldiven çizimi
+	3	31251	1	80 -- Deri sertleştirici
+	4	31252	1	80 -- Deri sertleştirici+
+	5	31250	1	400 -- Yeşil SungMa runiği
+	6	31249	1	400 -- Mavi SungMa runiği
+	7	31248	1	400 -- Mor SungMa runiği
+	8	31247	1	80 -- Kırmızı SungMa runiği
+	9	38060	1	400 -- Duygu çantası
+	10	70401	1	400 -- Kafatası flm. (tic. var)
+	11	71095	1	400 -- Geçit Bileti
+	12	50529	1	400 -- 9. yolun kitap sandığı
+	13	50926	50	400 -- Süs Taşı
+	14	50513	1	400 -- Ruh Taşı
+	15	50341	1	100 -- Çırağın ilhamı
+	16	50342	1	100 -- Ustanın ilhamı
+	17	50338	1	100 -- Çırağın Karizması
+	18	50339	1	100 -- Ustanın Karizması
+}
+Group	Yohara_Drop
+{
+	Vnum	31255 -- Altın yaldızlı sandık
+	1	31245	1	400 -- Sert deri
+	2	31246	1	400 -- Eldiven çizimi
+	3	31251	1	80 -- Deri sertleştirici
+	4	31252	1	80 -- Deri sertleştirici+
+	5	31250	1	400 -- Yeşil SungMa runiği
+	6	31249	1	400 -- Mavi SungMa runiği
+	7	31248	1	400 -- Mor SungMa runiği
+	8	31247	1	80 -- Kırmızı SungMa runiği
+	9	38060	1	400 -- Duygu çantası
+	10	70401	1	400 -- Kafatası flm. (tic. var)
+	11	71095	1	400 -- Geçit Bileti
+	12	50529	1	400 -- 9. yolun kitap sandığı
+	13	50926	50	400 -- Süs Taşı
+	14	50513	1	400 -- Ruh Taşı
+	15	50341	1	100 -- Çırağın ilhamı
+	16	50342	1	100 -- Ustanın ilhamı
+	17	50338	1	100 -- Çırağın Karizması
+	18	50339	1	100 -- Ustanın Karizması
+	19	50340	1	80 -- Profesyonelin karizması
+	20	50343	1	80 -- Profesyonelin ilhamı
+	21	27992	1	400 -- Beyaz İnci
+	22	27993	1	400 -- Mavi İnci
+	23	27994	1	400 -- Kankırmızı İnci
+}
+Group	Yohara_Drop
+{
+	Vnum	31256 -- Labirent Sandığı
+	1	31218	1	400 -- Demirhane çelik plakası
+	2	31216	1	400 -- Ham metal plaka
+	3	31251	1	80 -- Deri sertleştirici
+	4	31224	1	400 -- Takı çelik plakası
+	5	31250	1	400 -- Yeşil SungMa runiği
+	6	31249	1	400 -- Mavi SungMa runiği
+	7	31248	1	400 -- Mor SungMa runiği
+	8	31247	1	80 -- Kırmızı SungMa runiği
+	9	72353	5	100 -- İrade topazı
+	10	50527	1	400 -- Yetenek iksiri
+	11	71095	1	400 -- Geçit Bileti
+	12	50529	1	400 -- 9. yolun kitap sandığı
+	13	50926	50	400 -- Süs Taşı
+	14	50513	1	400 -- Ruh Taşı
+	15	50341	1	100 -- Çırağın ilhamı
+	16	50342	1	100 -- Ustanın ilhamı
+	17	50338	1	100 -- Çırağın Karizması
+	18	50339	1	100 -- Ustanın Karizması
+	19	50340	1	80 -- Profesyonelin karizması
+	20	50343	1	80 -- Profesyonelin ilhamı
+	21	27992	1	400 -- Beyaz İnci
+	22	27993	1	400 -- Mavi İnci
+	23	27994	1	400 -- Kankırmızı İnci
+	24	17540	1	20 -- Zümrüt Küpeler +0
+	25	17560	1	50 -- Safir Küpeler +0
+	26	17520	1	50 -- Grena Küpeler +0
+	27	17500	1	50 -- Yakut Küpeler +0
+	28	16560	1	50 -- Safir Kolye +0
+	29	16570	1	50 -- Turmalin Kolye +0
+	30	16540	1	50 -- Zümrüt Kolye +0
+	31	16520	1	50 -- Grena Kolye +0
+	32	16500	1	50 -- Yakut Kolye +0
+	33	14570	1	50 -- Turmalin Bilezik +0
+	34	14560	1	50 -- Safir Bileklik +0
+	35	14540	1	50 -- Zümrüt Bileklik +0
+	36	14520	1	50 -- Grena Bileklik +0
+	37	14500	1	50 -- Yakut Bileklik +0
+	38	17580	1	80 -- Güneş jediti küpesi+0
+	39	17570	1	80 -- Sis jediti küpesi+0
+	40	16590	1	80 -- Güneş jediti kolyesi+0
+	41	16580	1	80 -- Sis jediti kolyesi+0
+	42	14590	1	80 -- Güneş jediti bilekliği+0
+	43	14580	1	80 -- Sis jediti bilekliği+0
+	44	81000	1	100 -- STR irade tılsımı+0
+	45	81250	1	100 -- RES irade tılsımı+0
+	46	81300	1	100 -- VIT irade tılsımı+0
+	47	81550	1	100 -- INT irade tılsımı+0
+	48	31217	1	400 -- Trol kornosu
+}
+Group	Yohara_Drop
+{
+	Vnum	70406 -- Cehennem K. sıralama snd
+	1	31227	20	400 -- Argos dişi
+	2	31228	20	400 -- Argos pulu
+	3	31217	10	400 -- Trol kornosu
+	4	72353	25	400 -- İrade topazı
+	5	72353	50	100 -- İrade topazı
+	6	72353	75	100 -- İrade topazı
+	7	72353	150	80 -- İrade topazı
+	8	72353	200	50 -- İrade topazı
+	9	30618	1	400 -- Ay Taşı
+	10	81004	1	100 -- STR irade tılsımı+4
+	11	81254	1	100 -- RES irade tılsımı+4
+	12	81304	1	100 -- VIT irade tılsımı+4
+	13	81554	1	100 -- INT irade tılsımı+4
+	14	81005	1	50 -- STR irade tılsımı+5
+	15	81255	1	50 -- RES irade tılsımı+5
+	16	81305	1	50 -- VIT irade tılsımı+5
+	17	81555	1	50 -- INT irade tılsımı+5
+	18	50529	10	400 -- 9. yolun kitap sandığı
+	19	50529	20	400 -- 9. yolun kitap sandığı
+	20	51505	5	100 -- Cor Draconis (değerli)
+	21	51506	5	100 -- Cor Draconis (destansı)
+	22	100101	1	70 -- Ejderha kerpeteni+
+	23	100700	5	90 -- Ejderha alevi (B)
+	24	100700	10	70 -- Ejderha alevi (B)
+	25	39080	5	400 -- Sarı parlak parça
+	26	39080	10	100 -- Sarı parlak parça
+	27	31251	75	100 -- Deri sertleştirici
+	28	31251	100	80 -- Deri sertleştirici
+	29	31251	150	60 -- Deri sertleştirici
+	30	25042	1	80 -- Ritüel Taşı
+	31	31225	1	80 -- Runik taşı
+	32	83008	5	50 -- Mücevher kutusu
+	33	53536	1	50 -- Bruce Sandığı
+	34	53537	1	50 -- Wayne Sandığı
+	35	72346	5	50 -- Kutsama
+	36	72346	10	50 -- Kutsama
+	37	72348	3	400 -- Hızlandırıcı %50
+	38	72349	2	400 -- Hızlandırıcı %75
+	39	50528	10	100 -- Yohara Hazine Sandığı
+	40	50528	20	100 -- Yohara Hazine Sandığı
+	41	80014	1	50 -- 100 ep
+	42	80015	1	20 -- 500 ep
+	43	80016	1	10 -- 1000 ep
+	44	80017	1	50 -- 50 ep
+	45	38017	1	100 -- 50 kaplan
+	46	38018	1	100 -- 100 kaplan
+	47	25041	1	100 -- büyülü metal
+	48	25043	1	50 -- tanrıların mührü
+	49	30338	1	100 -- başlık fişi
+	50	30339	1	100 -- silah fişi
+
+}
+Group	Yohara_Drop
+{
+	Vnum	70429 -- Yılan Hazinesi
+	1	21326	1	300 -- Yılan mantosu (üretm.)
+	2	21346	1	300 -- Yılan yeleği
+	3	21366	1	300 -- K. Yılan m. (üretm.)
+	4	21386	1	300 -- S. Yılan m. (üretm.)
+	5	21406	1	300 -- G. Yılan m. (üretm.)
+	6	31239	1	60 -- Parlt. beyaz inci
+	7	31240	1	70 -- Parlt. mavi inci
+	8	31241	1	80 -- Parlt. kan kırmızı inci
+	9	31257	5	400 -- Yılan deseni
+	10	31258	2	400 -- Yılan ipeği
+	11	31262	5	400 -- Yılan cilası
+	12	31233	30	400 -- Yılan taşı
+	13	31234	30	400 -- Yılan taşı+
+	14	31217	3	400 -- Trol kornosu
+	15	72353	6	400 -- İrade topazı
+	16	100700	1	50 -- Ejderha alevi (B)
+	17	56002	1	30 -- Ateşin yazısı
+	18	56003	1	30 -- Buzun yazısı
+	19	56004	1	30 -- Simşeğin yazısı
+	20	56005	1	30 -- Rüzgarın yazısı
+	21	56006	1	30 -- Toprağın yazısı
+	22	56007	1	30 -- Karanlığın yazısı
+	23	72351	1	80 -- Küçük Kutsama
+	24	28447	1	50 -- Seytanların güç taşı+4
+	25	85003	1	10 -- Hakim Kuşağı (asil)
+	26	31238	3	400 -- Parıltılı istiridye
+	27	28446	1	50 -- Seytanların taşı+4
+	28	50662	10	50 -- Gece jediti
+	29	72346	1	30 -- Kutsama
+	30	51505	1	50  // Cor Draconis (değerli)
+	31	51506	1	7  // Cor Draconis (destansı
+	32	71158	1	35  // Kahramanlık Madalyonu 1 hafta
+	33	71202	1	7  // Nazar Tılsımı (3Günlük)
+	34	60005	1	50  // Ticaret Camı 1 Hafta
+	35	163000	1	10
+	36	153000	1	10
+	37	143000	1	10
+	38	133000	1	10
+	39	123000	1	10
+	40	113000	1	10
+	41	164000	1	5
+	42	154000	1	5
+	43	144000	1	5
+	44	134000	1	5
+	45	124000	1	5
+	46	114000	1	5
+}
+Group	Yohara_Sandıkları
+{
+	Vnum	70411 -- B. ejderha kutusu (haf.)
+	1	30618	1	100 -- Ay Taşı
+	2	30617	1	400 -- Akik
+	3	30616	1	200 -- Titandiyoksit
+	4	31242	10	300 -- Kuzey Rüzgarı silah taşı
+	5	31243	10	300 -- Kuzey R. silah taşı+
+	6	31235	1	100 -- Beyaz ejderha başı
+	7	31236	1	100 -- Beyaz ejderha pulu
+	8	31237	1	100 -- Kuzey Rüzgarı ruh taşı
+	9	31244	5	100 -- Kuzey Rüzgarı eldiven t.
+	10	31263	3	100 -- Kuzey Rüzgarı çarkı
+	11	31238	1	400 -- Parıltılı istiridye
+	12	31239	1	60 -- Parlt. beyaz inci
+	13	31240	1	70 -- Parlt. mavi inci
+	14	31241	1	80 -- Parlt. kan kırmızı inci
+	15	6166	1	400 -- Yılan pençesi(ürtm.)
+	16	5216	1	400 -- Yılan çanı(ürtm.)
+	17	7346	1	400 -- Yılan yelpazesi(ürtm.)
+	18	2246	1	400 -- Yılan yayı(ürtm.)
+	19	396		1	400 -- Yılan bıçağı(ürtm.)
+	20	376		1	400 -- Yılan kılıcı(ürtm.)
+	21	3266	1	400 -- Yılan büyük kılıcı(ürt.)
+	22	1226	1	400 -- Yılan hançeri(ürtm.)
+	23	50663	1	100 -- Duman jediti
+	24	31217	3	400 -- Trol kornosu
+	25	72353	6	400 -- İrade topazı
+	26	50325	1	100 -- Tamlığın kitabı
+	27	100700	1	50 -- Ejderha alevi (B)
+	28	60005	1	50 -- Ticaret Camı
+	29	72351	3	80 -- Küçük Kutsama
+	30	28447	1	50 -- Seytanların güç taşı+4
+	31	85003	1	50 -- Hakim Kuşağı (asil)
+	32	50527	1	300 -- Yetenek iksiri
+	33	72355	1	100 -- Kiş. Premium dükkan
+	34	31238	1	400 -- Parıltılı istiridye
+	35	28446	1	50 -- Seytanların taşı+4
+	36	50662	1	50 -- Gece jediti
+	37	39081	1	300 -- Kutsal parça (120)
+	38	49993	1	100 -- Auranın Ateş Run. (100)
+}
+Group	Yohara_Sandıkları
+{
+	Vnum	70412 -- B. ejderha kutusu (ağır)
+	1	80014	1	50
+	2	80015	1	10
+	3	80016	1	5
+	4	80017	1	70
+	5	25041	1	200
+	6	25042	1	70
+	7	25043	1	5
+	8	51506	1	50
+	9	51509	1	100
+	10	51505	1	100
+	11	56008	1	50
+	12	55412	1	60 -- Beyaz ejderha yumurtası
+	13	30618	1	200 -- Ay Taşı
+	14	30617	1	400 -- Akik
+	15	30616	1	250 -- Titandiyoksit
+	16	31242	15	500 -- Kuzey Rüzgarı silah taşı
+	17	31243	15	500 -- Kuzey R. silah taşı+
+	18	31235	3	100 -- Beyaz ejderha başı
+	19	31236	3	100 -- Beyaz ejderha pulu
+	20	31237	3	100 -- Kuzey Rüzgarı ruh taşı
+	21	31244	7	100 -- Kuzey Rüzgarı eldiven t.
+	22	31263	10	100 -- Kuzey Rüzgarı çarkı
+	23	31238	1	400 -- Parıltılı istiridye
+	24	31239	1	70 -- Parlt. beyaz inci
+	25	31240	1	80 -- Parlt. mavi inci
+	26	31241	1	90 -- Parlt. kan kırmızı inci
+	27	6166	1	500 -- Yılan pençesi(ürtm.)
+	28	5216	1	500 -- Yılan çanı(ürtm.)
+	29	7346	1	500 -- Yılan yelpazesi(ürtm.)
+	30	2246	1	500 -- Yılan yayı(ürtm.)
+	31	396		1	500 -- Yılan bıçağı(ürtm.)
+	32	376		1	500 -- Yılan kılıcı(ürtm.)
+	33	3266	1	500 -- Yılan büyük kılıcı(ürt.)
+	34	1226	1	500 -- Yılan hançeri(ürtm.)
+	35	50663	1	100 -- Duman jediti
+	36	31217	3	400 -- Trol kornosu
+	37	72353	6	400 -- İrade topazı
+	38	50325	1	100 -- Tamlığın kitabı
+	39	100700	1	50 -- Ejderha alevi (B)
+	40	60005	1	50 -- Ticaret Camı
+	41	72351	3	80 -- Küçük Kutsama
+	42	28447	1	50 -- Seytanların güç taşı+4
+	43	85003	1	50 -- Hakim Kuşağı (asil)
+	44	50527	1	300 -- Yetenek iksiri
+	45	31238	1	400 -- Parıltılı istiridye
+	46	28446	1	50 -- Seytanların taşı+4
+	47	50662	1	50 -- Gece jediti
+	48	39081	1	300 -- Kutsal parça (120)
+	49	49993	1	100 -- Auranın Ateş Run. (100)
+	50	2230	1	80 -- Yılan yayı+0
+	51	360		1	80 -- Yılan kılıcı+0
+	52	380		1	80 -- Yılan bıçağı+0
+	53	3250	1	80 -- Yılan büyük kılıcı+0
+	54	1210	1	80 -- Yılan hançeri+0
+	55	5200	1	80 -- Yılan çanı+0
+	56	7330	1	80 -- Yılan yelpazesi+0
+	57	6150	1	80 -- Yılan pençesi+0
+	58	50926	200	50
+}
+Group	Yohara_Sandıkları
+{
+	Vnum	83072 -- SungMa İstila Sandığı
+	1	72738	1	50 -- EP şans sandığı
+	2	49993	1	100 -- Auranın Ateş Run. (100)
+	3	39078	5	400 -- Gri parlak parça
+	4	39079	5	300 -- Yeşil parlak parça
+	5	39080	5	80 -- Sarı parlak parça
+	6	72351	3	80 -- Küçük Kutsama
+	7	28447	1	50 -- Seytanların güç taşı+4
+	8	70434	1	400 -- Hazine parş. (Derece A)
+	9	72067	5	100 -- Güçlü ekleme
+	10	70401	1	100 -- Kafatası flaması
+	11	70408	1	100 -- Gizemli bilet
+	12	50741	5	100 -- Altın ot
+	13	31238	1	400 -- Parıltılı istiridye
+	14	30668	1	50 -- Sağlam düğüm+
+	15	30666	3	50 -- Titan plaka
+	16	30667	1	50 -- Sağlam ip+
+}
+Group	Yohara_Sandıkları
+{
+	Vnum	31238 -- Parıltılı istiridye
+	1	27990	1	500 -- Taş Parçası
+	2	31239	1	15 -- Parlt. beyaz inci
+	3	31240	1	20 -- Parlt. mavi inci
+	4	31241	1	30 -- Parlt. kan kırmızı inci
+	5	27990	1	500 -- Taş Parçası
+	6	27990	1	500 -- Taş Parçası
+	7	27990	1	500 -- Taş Parçası
+	8	27990	1	500 -- Taş Parçası
+
+}
+Group	Yohara_Sandıkları
+{
+	Vnum	83051 -- Kusr. Tılsım sandığı
+	1	81000	1	400 -- STR irade tılsımı+0
+	2	81250	1	400 -- RES irade tılsımı+0
+	3	81300	1	400 -- VIT irade tılsımı+0
+	4	81550	1	400 -- INT irade tılsımı+0
+	5	31238	1	400 -- Parıltılı istiridye
+	6	72353	1	400 -- İrade topazı
+	7	72353	2	400 -- İrade topazı
+	8	72353	3	400 -- İrade topazı
+	9	72353	4	400 -- İrade topazı
+}
+Group	Yohara_Sandıkları
+{
+	Vnum	83052 -- Kusr. Kolye sandığı
+	1	16600	1	400 -- Gece jediti kolyesi+0
+	2	16590	1	400 -- Güneş jediti kolyesi+0
+	3	16580	1	400 -- Sis jediti kolyesi+0
+	4	16610	1	400 -- Duman jediti kolyesi+0
+	5	50662	1	400 -- Gece jediti
+	6	31238	1	400 -- Parıltılı istiridye
+	7	50661	1	400 -- Güneş jediti
+	8	31217	5	400 -- Trol kornosu
+	9	31227	1	400 -- Argos dişi
+	10	31226	1	400 -- Çürük çekirdek
+	11	50664	1	400 -- Sis jediti
+	12	72339	1	400 -- Yohara Metin taşı
+}
+Group	Yohara_Sandıkları
+{
+	Vnum	83053 -- Kusr. Küpe sandığı
+	1	17580	1	400 -- Güneş jediti küpesi+0
+	2	17570	1	400 -- Sis jediti küpesi+0
+	3	17590	1	400 -- Gece jediti küpesi+0
+	4	17600	1	400 -- Duman jediti küpesi+0
+	5	50662	1	400 -- Gece jediti
+	6	31238	1	400 -- Parıltılı istiridye
+	7	50661	1	400 -- Güneş jediti
+	8	31217	5	400 -- Trol kornosu
+	9	31227	1	400 -- Argos dişi
+	10	31226	1	400 -- Çürük çekirdek
+	11	50664	1	400 -- Sis jediti
+	12	72339	1	400 -- Yohara Metin taşı
+}
+Group	Yohara_Sandıkları
+{
+	Vnum	83067 -- Kusr. bileklik sandığı
+	1	14590	1	400 -- Güneş jediti bilekliği+0
+	2	14580	1	400 -- Sis jediti bilekliği+0
+	3	14600	1	400 -- Gece jediti bilekliği+0
+	4	14610	1	400 -- Duman jediti bilekliği+0
+	5	50662	1	400 -- Gece jediti
+	6	31238	1	400 -- Parıltılı istiridye
+	7	50661	1	400 -- Güneş jediti
+	8	31217	5	400 -- Trol kornosu
+	9	31227	1	400 -- Argos dişi
+	10	31226	1	400 -- Çürük çekirdek
+	11	50664	1	400 -- Sis jediti
+	12	72339	1	400 -- Yohara Metin taşı
+}
+Group	Yohara_Sandıkları
+{
+	Vnum	83065 -- Tesadüfi hazine kutusu
+	1	50006	1	400 -- Altın Define Sandığı
+	2	50007	1	400 -- Gümüş Define Sandığı
+	3	83055	1	400 -- Platin hazine kutusu
+	4	50249	1	400 -- Zafer Sandığı
+	5	50037	1	400 -- Altıgen Hediye Paketi
+}
+
+Group	Yohara_Sandıkları
+{
+	Vnum	83066 -- Tesadüfi hazine anahtarı
+	1	50008	1	400 -- Altın Anahtar
+	2	50009	1	400 -- Gümüş Anahtar
+	3	83056	1	400 -- Platin hazine anahtarı
+}
+
+Group	Yohara_Sandıkları
+{
+	Vnum	83055 -- Platin hazine kutusu
+	1	31227	1	400 -- Argos dişi
+	2	31228	1	400 -- Argos pulu
+	3	31229	1	400 -- Çürük ruh taşı
+	4	31217	1	400 -- Trol kornosu
+	5	31216	1	400 -- Ham metal plaka
+	6	31218	1	400 -- Demirhane çelik plakası
+	7	31238	1	400 -- Parıltılı istiridye
+}
+
+Group	Yohara_Sandıkları
+{
+	Vnum	50249 -- Zafer Sandığı
+	1	31227	1	400 -- Argos dişi
+	2	31228	1	400 -- Argos pulu
+	3	31229	1	400 -- Çürük ruh taşı
+	4	31217	1	400 -- Trol kornosu
+	5	31216	1	400 -- Ham metal plaka
+	6	31218	1	400 -- Demirhane çelik plakası
+	7	31238	1	400 -- Parıltılı istiridye
+	8	72353	1	400 -- İrade topazı
+}
+
+Group	Yohara_Sandıkları
+{
+	Vnum	50117 -- Mücevher Kutusu
+	1	21326	1	200 -- Yılan mantosu (üretm.)
+	2	21346	1	200 -- Yılan yeleği
+	3	21366	1	200 -- K. Yılan m. (üretm.)
+	4	21386	1	200 -- S. Yılan m. (üretm.)
+	5	21406	1	200 -- G. Yılan m. (üretm.)
+	6	71027	5	400 -- Ejderha tanrı hayatı
+	7	71028	5	100 -- Ejderha tanrı saldırısı
+	8	71029	5	400 -- Ejderha tanrı zekası
+	9	71030	5	100 -- Ejderha tanrı savunması
+	10	50255	15	100 -- Cor Draconis, İşlenmemiş
+}
+
+
+
+
+
+
+
+
+
+
+
+
+Group	WorldBoss_LootLevelI
+{
+	Vnum	11001
+	Type	Pct
+	1	50926	100	100 -- Süs Taşı
+	2	83016	1	100 -- Sırlar sandığı
+	3	50033	1	100 -- Gizemli Sandık
+	4	38017	1	100 -- Kaplan Parası (50)
+}
+Group	WorldBoss_LootLevelII
+{
+	Vnum	11002
+	Type	Pct
+	1	50926	50	100 -- Süs Taşı
+	2	50033	1	100 -- Gizemli Sandık
+	3	38016	1	100 -- Kaplan Parası (20)
+}
+Group	WorldBoss_LootLevelIII
+{
+	Vnum	11003
+	Type	Pct
+	1	50926	50	100 -- Süs Taşı
+	2	38015	1	100 -- Kaplan Parası (10)
+}
+Group	WorldBoss_LootLevelIV
+{
+	Vnum	11004
+	Type	Pct
+	1	50926	25	100 -- Süs Taşı
+}
+
+Group	Power
+{
+	Vnum	38050
+	1	25041	1	3 // B.Metal
+	2	25043	1	1  // Tanrilarin Muhru
+	3	71032	1	13 // Ejderha Parsomeni
+	4	25042	1	2  // Rituel
+	5	76037	1	2  // Hirsiz Eldiven
+	6	71027	2	13 // Marka saldiri
+	7	71028	2	13 // Marka savunma
+	8	71029	2	13 // Marka zeka
+	9	71030	2	13 // Marka yasam
+	10	71044	5	13 // Kritik
+	11	71045	5	13 // Delici
+	12	27887	2	13 // Yabbie
+	13	27883	2	13 // Altin Sudak
+	14	27880	2	13 // Palamut
+	15	27881	2	13 // Kadife
+	16	30618	1	5 // Ay Taşı
+	17	30616	1	5 // Titandiyoksit
+	18	30617	1	5 // Akik
+	19	71025	1	5 // Demirci Tasi
+	20	27992	1	6 // Beyaz Incı
+	21	50183	1	6 // Tatli
+	22	50216	1	6 // Punc
+}
+
+Group	Baslangic
+{
+	Vnum	53627
+	Type	Pct
+	1	30338	1	100
+	2	30339	1	100
+	3	71027	10	100
+	4	71028	10	100
+	5	71029	10	100
+	6	71030	10	100
+	7	38058	1	100
+	8	38058	1	100
+	9	72003	1	100
+	10	72003	1	100
+	11	72006	1	100
+
+}
+
+Group	Mazarif
+{
+	Vnum	30999
+	1	25041	1	7  // Büyülü Metal
+	2	56008	1	7  // Lanetin yazısı
+	3	56009	1	7  // Değişiklik yazısı
+	4	51506	1	7  // Cor Draconis (destansı
+	5	72346	1	7  // Kutsama
+	6	80014	1	7  // 100ep 
+	7	71202	1	7  // Nazar Tılsımı (3Günlük)
+	8	100700	1	15  // Ejderha Alevi
+	9	56002	1	15  // Ateşin yazısı
+	10	56003	1	15  // Buzun yazısı
+	11	56004	1	15  // Simşeğin yazısı
+	12	56005	1	15  // Rüzgarın yazısı
+	13	56006	1	15  // Toprağın yazısı
+	14	56007	1	15  // Karanlığın yazısı
+	15	72348	1	15  // Hızlandırıcı %50
+	16	72349	1	15  // Hızlandırıcı %75
+	17	72001	1	35  // Tecrübe yüzüğü (10 sa.)
+	18	51509	1	35  // Cor Draconis (antika)
+	19	85007	1	35  // Usta Kuşağı (asil)
+	20	85003	1	35  // Hakim Kuşağı (asil)
+	21	56012	1	35  // Büyük bağış belgesi
+	22	72347	1	35  // Hızlandırıcı %30
+	23	71025	1	35  // Demirci Taşı
+	24	50267	1	35  // Altın Okey Sandığı
+	25	71158	1	35  // Kahramanlık Madalyonu 1 hafta
+	26	50152	1	35  // gokyakut anahtarı
+	27	55400	4	35  // Rastgele sandığı 4x
+	28	39119	1	35  // Elementer güç taşı
+	29	39120	1	35  // Elementer koruma taşı
+	30	56011	1	50  // Orta bağış belgesi
+	31	49995	1	50  // Auranın Ateş Run. (500)
+	32	85002	1	50  // Hakim Kuşağı (zarif)
+	33	85006	1	50  // Usta Kuşağı (zarif)
+	34	51505	1	50  // Cor Draconis (değerli)
+	35	71181	1	50  // Bilgelik İksiri
+	36	71028	10	50  // Ejderha tanrı saldırısı	 10x
+	37	71030	10	50  // Ejderha tanrı savunması	10x
+	38	60005	1	50  // Ticaret Camı 1 Hafta
+	39	9830	1	7  // Buz Tılsımı+0 zor
+	40	9600	1	10  // Ateş Tılsımı+0 biraz zor
+	41	10060	1	10  // Toprak Tılsımı+0 biraz zor
+	42	10290	1	10  // Karanlık Tılsım+0 biraz zor
+	43	10750	1	5  // Simşek Tılsımı+0 oldukça zor
+	44	10520	1	7  // Rüzgar Tılsımı+0 biraz zor
+	45	31270	5	10  // Tılsım Özü x5 biraz zor
+	46	31270	10	10  // Tılsım Özü x10 biraz zor
+	47	31270	15	7  // Tılsım Özü x15  zor
+	48	31270	20	5  // Tılsım Özü x20  çok zor
+	49	113000	1	10
+	50	123000	1	10
+	51	133000	1	10
+	52	143000	1	10
+	53	153000	1	10
+	54	163000	1	10
+}
+
+Group	Bereket
+{
+	Vnum	50182
+	1	80014	1	1
+	2	72319	3	1
+	3	71035	3	1
+	4	38052	1	1
+	5	71158	1	1
+	6	71225	1	1
+	7	25041	1	1
+	8	80017	1	1
+	9	30618	1	1
+	10	30616	1	1
+	11	30610	4	1
+	12	72349	1	1
+	13	70039	1	30
+	14	70024	5	50
+	15	70005	1	30
+	16	71084	10	50
+	17	72006	1	50
+	18	50294	1	30
+	19	54704	1	30
+	20	54705	1	30
+	21	50513	2	50
+	22	71083	2	50
+	23	50186	1	30
+	24	25040	5	50
+	25	27883	5	50
+	26	27887	5	50
+	27	27880	5	50
+	28	27992	1	50
+	29	27993	1	50
+	30	27994	1	50
+	31	76014	5	50
+	32	76013	5	50
+	33	76025	1	50
+	34	50183	5	50
+	35	50216	5	50
+	36	71084	5	30
+	37	71085	5	50
+	38	71094	5	50
+	39	71001	5	50
+	40	71095	3	50
+	41	76023	10	50
+	42	76024	10	50
+	43	71153	1	50
+	44	72319	1	50
+	45	71030	6	50
+	46	71028	6	50
+	47	71027	6	50
+	48	71029	6	50
+	49	71044	10	50
+	50	71045	10	50
+	51	50817	50	50
+	52	50818	50	50
+	53	50814	50	50
+	54	50813	50	50
+	55	30617	1	30
+	56	30604	4	30
+	57	30612	4	10
+}
+
+
+
+Group	SungMaKaos
+{
+	Vnum	53628
+	1	25041	1	5
+	2	100101	1	5
+	3	71095	10	5
+	4	25043	1	2
+	5	25042	1	5
+	6	31136	1	17
+	7	31137	1	17
+	8	31138	1	10
+	9	86055	1	5
+	10	86045	1	5
+	11	86015	1	5
+	12	70065	1	5
+	13	71202	1	5
+	14	71028	10	50
+	15	71030	10	50
+	16	71027	10	50
+	17	71045	20	50
+	18	71044	20	50
+	19	27887	5	50
+	20	27883	10	50
+	21	27880	5	50
+	22	27881	5	50
+	23	27885	5	50
+	24	71181	1	50
+	25	71153	1	50
+	26	71016	1	50
+	27	100700	1	5
+}
+
+Group	Sebnem
+{
+	Vnum	53629
+	Type	Pct
+}
+
+Group	Marka
+{
+	Vnum	53630
+	Type	Pct
+}
+
+Group	Paskalya
+{
+	Vnum	30995
+	1	25041	1	7  // Büyülü Metal
+	2	56008	1	7  // Lanetin yazısı
+	3	56009	1	7  // Değişiklik yazısı
+	4	51506	1	7  // Cor Draconis (destansı
+	5	72346	1	7  // Kutsama
+	6	80014	1	7  // 100ep 
+	7	71202	1	7  // Nazar Tılsımı (3Günlük)
+	8	100700	1	15  // Ejderha Alevi
+	9	56002	1	15  // Ateşin yazısı
+	10	56003	1	15  // Buzun yazısı
+	11	56004	1	15  // Simşeğin yazısı
+	12	56005	1	15  // Rüzgarın yazısı
+	13	56006	1	15  // Toprağın yazısı
+	14	56007	1	15  // Karanlığın yazısı
+	15	72348	1	15  // Hızlandırıcı %50
+	16	72349	1	15  // Hızlandırıcı %75
+	17	72001	1	35  // Tecrübe yüzüğü (10 sa.)
+	18	51509	1	35  // Cor Draconis (antika)
+	19	85007	1	35  // Usta Kuşağı (asil)
+	20	85003	1	35  // Hakim Kuşağı (asil)
+	21	56012	1	35  // Büyük bağış belgesi
+	22	72347	1	35  // Hızlandırıcı %30
+	23	71025	1	35  // Demirci Taşı
+	24	50267	1	35  // Altın Okey Sandığı
+	25	71158	1	35  // Kahramanlık Madalyonu 1 hafta
+	26	50152	1	35  // gokyakut anahtarı
+	27	55400	4	35  // Rastgele sandığı 4x
+	28	39119	1	35  // Elementer güç taşı
+	29	39120	1	35  // Elementer koruma taşı
+	30	56011	1	50  // Orta bağış belgesi
+	31	49995	1	50  // Auranın Ateş Run. (500)
+	32	85002	1	50  // Hakim Kuşağı (zarif)
+	33	85006	1	50  // Usta Kuşağı (zarif)
+	34	51505	1	50  // Cor Draconis (değerli)
+	35	71181	1	50  // Bilgelik İksiri
+	36	71028	10	50  // Ejderha tanrı saldırısı	 10x
+	37	71030	10	50  // Ejderha tanrı savunması	10x
+	38	60005	1	50  // Ticaret Camı 1 Hafta
+	39	9830	1	7  // Buz Tılsımı+0 zor
+	40	9600	1	10  // Ateş Tılsımı+0 biraz zor
+	41	10060	1	10  // Toprak Tılsımı+0 biraz zor
+	42	10290	1	10  // Karanlık Tılsım+0 biraz zor
+	43	10750	1	5  // Simşek Tılsımı+0 oldukça zor
+	44	10520	1	7  // Rüzgar Tılsımı+0 biraz zor
+	45	31270	5	10  // Tılsım Özü x5 biraz zor
+	46	31270	10	10  // Tılsım Özü x10 biraz zor
+	47	31270	15	7  // Tılsım Özü x15  zor
+	48	31270	20	5  // Tılsım Özü x20  çok zor
+	49	163000	1	10
+	50	153000	1	10
+	51	143000	1	10
+	52	133000	1	10
+	53	123000	1	10
+	54	113000	1	10
+}
+
+Group	Titan
+{
+	Vnum	71200
+	1	70102	3	1
+	2	25041	1	1
+	3	70063	3	1
+	4	70064	3	1
+	5	71084	1	1
+	6	71085	5	1
+	7	55400	1	1
+	8	71094	3	1
+	9	25040	5	1
+	10	50513	2	1
+	11	72726	1	1
+	12	72730	1	1
+	13	72347	1	1
+	14	40002	1	1
+	15	33029	25	1
+	16	33033	1	1
+	17	39068	5	1
+	18	39069	2	1
+	19	72346	1	1
+}
+
+Group	Tecrube_Sandigi
+{
+	Vnum	53631 -- 
+	1	71224	1	12 -- Manni 3 gun
+	2	71225	1	12 -- Mannu 3 gun
+	3	70005	1	80 -- Tecrube yuzugu metin
+	4	72006	1	80 -- Eldiven metin
+	5	72062	1	4 -- Tecrube+200
+	6	50183	2	200 -- Tatlilar
+	7	50216	5	200 -- Punc
+	8	70003	1	100 -- Lider
+	9	72059	1	4 -- Lider+
+	10	27883	1	40 -- Izgara altn sudak
+	11	27887	1	20 -- Izgara yabbie
+	12	27879	1	60 -- Izgara sevimli balk
+	13	71181	1	15 -- Bilgelik
+}
+Group	Buyulu_Yumurta
+{
+	Vnum	71150
+	1	31270	4	1
+	2	31270	2	1
+	3	31270	1	1
+	4	60005	1	1
+	5	70039	1	1
+	6	27883	1	1
+	7	27887	1	1
+	8	18900	1	1
+	9	72319	1	1
+	10	72059	1	1
+	11	79605	1	1
+	12	31270	3	1
+	13	100500	1	1
+	14	100300	1	1
+	15	100400	1	1
+	16	71181	1	1
+	17	70102	1	1
+	18	27992	1	1
+	19	71225	1	1
+	20	71202	1	1
+	21	53235	1	1
+	22	25040	3	1
+	23	70063	5	1
+	24	70064	5	1
+	25	72347	1	1
+	26	55400	1	1
+	27	50513	1	1
+	28	70102	2	1
+	29	71084	2	1
+	30	71085	3	1
+	31	39068	1	1
+	32	72062	1	1
+}
+
+Group	Savas_Reisi
+{
+	Vnum	53635
+	1	50513	10	5 -- Ruh Taşı
+	2	50527	5	5 -- Yetenek iksiri
+	3	50529	10	5 -- 9. yolun kitap sandığı
+	4	83065	10	5 -- Tesadüfi hazine kutusu
+	5	83066	10	5 -- Tesadüfi hazine anahtarı
+	6	49994	2	5 -- Auranın Ateş Run. (250)
+	7	49995	2	5 -- Auranın Ateş Run. (500)
+	8	50734	10	5 -- Ayaz kökü
+	9	50735	10	5 -- Simşek otu
+	10	50736	10	5 -- Kuzey Rüzgarı çiçeği
+	11	50737	10	5 -- Toprak filizi
+	12	50738	10	5 -- Kara diken
+	13	50733	10	5
+	14	28443	1	5 -- Hız Taşı+4
+	15	28442	1	5 -- Savunma Taşı+4
+	16	28438	1	5 -- Korunma Taşı+4
+	17	28437	1	5 -- Canavardan Koruyan Taş+4
+	18	28431	1	5 -- Öldürücü Darbe Taşı+4
+	19	28430	1	5 -- Kavrama Taşı+4
+	20	28444	1	5 -- Büyü Bozma Taşı+4
+	21	28445	1	5 -- Büyü Bozma Taşı+4
+	22	28441	1	5 -- Yaşam Taşı +4
+	23	28439	1	5 -- Kurnazlık Taşı+4
+	24	28446	1	5 -- Seytanların taşı+4
+	25	31244	5	5 -- Kuzey Rüzgarı eldiven t.
+	26	31243	2	5 -- Kuzey R. silah taşı+
+	27	31242	2	5 -- Kuzey Rüzgarı silah taşı
+	28	31238	3	5 -- Parıltılı istiridye
+	29	31239	1	1 -- Parlt. beyaz inci
+	30	31240	1	1 -- Parlt. mavi inci
+	31	31241	1	1 -- Parlt. kan kırmızı inci
+	32	31237	2	5 -- Kuzey Rüzgarı ruh taşı
+	33	31263	3	5 -- Kuzey Rüzgarı çarkı
+	34	31258	10	5 -- Yılan ipeği
+	35	31236	2	5 -- Beyaz ejderha pulu
+	36	31270	10	5 -- Tılsım özü
+	37	177		1	5 -- Azap Kılıcı+7
+	38	257		1	5 -- Seytani Pala+7
+	39	1127	1	5 -- Siam Bıçağı+7
+	40	2187	1	5 -- Mavi Ejderha Yayı+7
+	41	3157	1	5 -- Yarı-İnsan Kılıç+7
+	42	7157	1	5 -- Mutluluk Yelpazesi+7
+	43	178		1	5 -- Azap Kılıcı+8
+	44	258		1	5 -- Seytani Pala+8
+	45	1128	1	5 -- Siam Bıçağı+8
+	46	2188	1	5 -- Mavi Ejderha Yayı+8
+	47	3158	1	5 -- Yarı-İnsan Kılıç+8
+	48	7158	1	5 -- Mutluluk Yelpazesi+8
+	49	76044	1	5 -- Pet Kitabı Sandığı
+	
+}
+
+Group	Market_Sandik
+{
+	Vnum	53636
+	1	80014	1	5 // 100 ep
+	2	80015	1	1 // 500 ep
+	3	80016	1	1 // 1000 ep
+	4	80017	1	10 // 50 ep
+	5	38015	1	90 // 10 kaplan
+	6	38016	1	90 // 20 kaplan
+	7	38017	1	50 // 50 kaplan
+	8	38018	1	25 // 100 kaplan
+}
+
+Group	Azrail_Sandik
+{
+	Vnum	53637
+	1	72054	1	1
+	2	53263	1	1
+}
+
+Group	Halloween
+{
+	Vnum	34023
+	1	25041	1	7  // Büyülü Metal
+	2	56008	1	7  // Lanetin yazısı
+	3	56009	1	7  // Değişiklik yazısı
+	4	51506	1	7  // Cor Draconis (destansı
+	5	72346	1	7  // Kutsama
+	6	80014	1	7  // 100ep 
+	7	71202	1	7  // Nazar Tılsımı (3Günlük)
+	8	100700	1	15  // Ejderha Alevi
+	9	56002	1	15  // Ateşin yazısı
+	10	56003	1	15  // Buzun yazısı
+	11	56004	1	15  // Simşeğin yazısı
+	12	56005	1	15  // Rüzgarın yazısı
+	13	56006	1	15  // Toprağın yazısı
+	14	56007	1	15  // Karanlığın yazısı
+	15	72348	1	15  // Hızlandırıcı %50
+	16	72349	1	15  // Hızlandırıcı %75
+	17	72001	1	35  // Tecrübe yüzüğü (10 sa.)
+	18	51509	1	35  // Cor Draconis (antika)
+	19	85007	1	35  // Usta Kuşağı (asil)
+	20	85003	1	35  // Hakim Kuşağı (asil)
+	21	56012	1	35  // Büyük bağış belgesi
+	22	72347	1	35  // Hızlandırıcı %30
+	23	71025	1	35  // Demirci Taşı
+	24	50267	1	35  // Altın Okey Sandığı
+	25	71158	1	35  // Kahramanlık Madalyonu 1 hafta
+	26	50152	1	35  // gokyakut anahtarı
+	27	55400	4	35  // Rastgele sandığı 4x
+	28	39119	1	35  // Elementer güç taşı
+	29	39120	1	35  // Elementer koruma taşı
+	30	56011	1	50  // Orta bağış belgesi
+	31	49995	1	50  // Auranın Ateş Run. (500)
+	32	85002	1	50  // Hakim Kuşağı (zarif)
+	33	85006	1	50  // Usta Kuşağı (zarif)
+	34	51505	1	50  // Cor Draconis (değerli)
+	35	71181	1	50  // Bilgelik İksiri
+	36	71028	10	50  // Ejderha tanrı saldırısı	 10x
+	37	71030	10	50  // Ejderha tanrı savunması	10x
+	38	60005	1	50  // Ticaret Camı 1 Hafta
+	39	9830	1	7  // Buz Tılsımı+0 zor
+	40	9600	1	10  // Ateş Tılsımı+0 biraz zor
+	41	10060	1	10  // Toprak Tılsımı+0 biraz zor
+	42	10290	1	10  // Karanlık Tılsım+0 biraz zor
+	43	10750	1	5  // Simşek Tılsımı+0 oldukça zor
+	44	10520	1	7  // Rüzgar Tılsımı+0 biraz zor
+	45	31270	5	10  // Tılsım Özü x5 biraz zor
+	46	31270	10	10  // Tılsım Özü x10 biraz zor
+	47	31270	15	7  // Tılsım Özü x15  zor
+	48	31270	20	5  // Tılsım Özü x20  çok zor
+	49	163000	1	10
+	50	153000	1	10
+	51	143000	1	10
+	52	133000	1	10
+	53	123000	1	10
+	54	113000	1	10
+}
+Group	Lanetlenme
+{
+	Vnum	70446
+	1	30657	1	2
+	2	30657	2	1
+	3	30656	1	2
+	4	30656	2	1
+	5	30660	1	2
+	6	30660	2	1
+	7	30659	1	2
+	8	30659	2	1
+}
+
+Group	Lanetlenme+
+{
+	Vnum	70447
+	1	30657	2	30
+	2	30657	4	30
+	3	30656	3	30
+	4	30656	5	30
+	5	30658	1x	20
+	6	30659	3	30
+	7	30659	5	30
+	8	30659	7	10
+	9	30659	10	10
+	10	30660	3	30
+	11	30660	5	30
+	12	30660	7	10
+	13	30660	10	10
+	14	30664	1	1
+}
+
+Group	Degerli
+{
+	Vnum	53638
+	1	38050	1	30
+	2	70412	1	1
+	3	70429	1	1
+	4	54705	1	1
+}
+
+Group	Halife
+{
+	Vnum	53639
+	1	27887	1	5
+	2	27885	2	5
+	3	27881	2	25
+	4	27880	2	25
+	5	71035	1	25
+	6	71027	3	70
+	7	71028	3	70
+	8	71029	3	70
+	9	71030	3	70
+	10	71084	5	70
+	11	71085	5	70
+	12	71026	1	25
+	13	71025	1	25
+	14	76015	1	70
+	15	71045	5	70
+	16	71044	5	70
+	17	71012	1	70
+	18	71095	3	70
+	19	71094	1	25
+	20	50216	1	70
+	21	50183	1	70
+	22	71181	1	70
+	23	25040	2	70
+}
+
+Group	Bahar
+{
+	Vnum	53640
+	1	71035	1	25
+	2	71012	1	70
+	3	71026	1	25
+	4	71025	1	25
+	5	71027	3	70
+	6	71028	3	70
+	7	71029	3	70
+	8	71030	3	70
+	9	27881	2	70
+	10	27880	2	70
+	11	27887	1	25
+	12	27885	2	70
+	13	71181	1	70
+	14	50216	1	25
+	15	50183	1	25
+	16	76015	1	25
+	17	71094	1	25
+	18	71095	3	25
+	19	71045	5	25
+	20	71044	5	25
+	21	71085	2	70
+	22	71084	2	70
+	23	50926	200	25
+	24	72726	1	70
+	25	72730	1	70
+	26	25040	2	70
+}
+
+Group	Kurtulus_Metini1
+{
+	Vnum	70450
+	1	mob	8640	1	500
 }
