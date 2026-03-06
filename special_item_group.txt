@@ -324,7 +324,7 @@ Group	Çırak_Sandığı
 	3	39024	5	500 -- Kritik İsabet
 	4	39025	5	500 -- Delici İsabet
 	5	39017	5	500 -- Ejderha Tanrı Yaşamı
-	6	39018	5	500 -- Ejderha Tanrı Saldırısı1
+	6	39018	5	500 -- Ejderha Tanrı Saldırısı11
 	7	72724	1	500 -- Güneş Özütü (O)
 	8	72728	1	500 -- Ay Özütü (O)
 	9	38058	1	500 -- Bilgelik İksiri (3sa.)
