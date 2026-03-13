@@ -323,6 +323,7 @@ function Build-MetinTableHtml {
 		foreach ($item in $g.Items) {
 			$iVnum    = $item.Vnum
 			$iName    = [System.Security.SecurityElement]::Escape($item.Name)
+			$iCount   = $item.Count
 			$iChance  = $item.Chance
 			$badgeClass = ""
 			$chVal = 0.0
@@ -332,12 +333,18 @@ function Build-MetinTableHtml {
 				elseif($chVal -ge 10) { $badgeClass = "chance-low"  }
 				else                  { $badgeClass = "chance-rare" }
 			}
+			$countDisplay = ""
+			$countVal = 0
+			if ([int]::TryParse($iCount, [ref]$countVal) -and $countVal -gt 1) {
+				$countDisplay = "<span class=`"drop-item-count`">x$countVal</span>"
+			}
 			$dropItemsHtml += @"
-                        <div class="drop-item-row">
-                            <span class="drop-item-vnum">#$iVnum</span>
-                            <span class="drop-item-name">$iName</span>
-                            <span class="drop-item-chance $badgeClass">%$iChance</span>
-                        </div>
+		                      <div class="drop-item-row">
+		                          <img class="drop-item-icon" src="icons/$iVnum.png" onerror="this.src='icons/default.png'" alt="$iName" loading="lazy">
+		                          <span class="drop-item-name">$iName</span>
+		                          $countDisplay
+		                          <span class="drop-item-chance $badgeClass">%$iChance</span>
+		                      </div>
 "@
 		}
 
@@ -952,15 +959,21 @@ $html = @"
             gap: 0.5rem;
             padding: 0.2rem 0;
         }
-        .drop-item-vnum {
-            font-family: monospace;
-            color: var(--accent-gold);
-            font-size: 0.6rem;
-            min-width: 50px;
+        .drop-item-icon {
+            width: 20px;
+            height: 20px;
+            image-rendering: pixelated;
+            border-radius: 3px;
+            flex-shrink: 0;
         }
         .drop-item-name {
             flex: 1;
             color: var(--text-med);
+        }
+        .drop-item-count {
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-size: 0.62rem;
         }
         .drop-item-chance {
             font-weight: 600;
