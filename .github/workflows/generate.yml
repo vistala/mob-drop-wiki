@@ -10,6 +10,9 @@ on:
       - 'convert_icons.py'
       - 'icon/**'
   workflow_dispatch:
+  schedule:
+    # Run every 6 hours to keep wiki in sync with Harbi2_Files data
+    - cron: '0 */6 * * *'
 
 permissions:
   contents: write
