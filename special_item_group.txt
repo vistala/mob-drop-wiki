@@ -293,7 +293,7 @@ Group	S성17
 #	Vnum	10031
 #	Type	Quest
 #	1	70058	1	1 -- Teleportation Ring
-#	2	76042	1	1 -- Teleportation Ring
+#	2	76042	1	1 -- Teleportation Ring1
 #}
 
 Group	TicketGroup
