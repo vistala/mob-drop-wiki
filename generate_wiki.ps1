@@ -310,6 +310,78 @@ $gridItemsHtml
 "@
 }
 
+# ======================== METIN TABLE BUILDER ========================
+function Build-MetinTableHtml {
+	param($MetinGroups)
+
+	$tableRowsHtml = ""
+	foreach ($g in $MetinGroups) {
+		$mobName = [System.Security.SecurityElement]::Escape($g.MobName)
+		$mobVnum = $g.MobVnum
+
+		$dropItemsHtml = ""
+		foreach ($item in $g.Items) {
+			$iVnum    = $item.Vnum
+			$iName    = [System.Security.SecurityElement]::Escape($item.Name)
+			$iChance  = $item.Chance
+			$badgeClass = ""
+			$chVal = 0.0
+			if ([double]::TryParse($iChance, [ref]$chVal)) {
+				if    ($chVal -ge 80) { $badgeClass = "chance-high" }
+				elseif($chVal -ge 30) { $badgeClass = "chance-mid"  }
+				elseif($chVal -ge 10) { $badgeClass = "chance-low"  }
+				else                  { $badgeClass = "chance-rare" }
+			}
+			$dropItemsHtml += @"
+                        <div class="drop-item-row">
+                            <span class="drop-item-vnum">#$iVnum</span>
+                            <span class="drop-item-name">$iName</span>
+                            <span class="drop-item-chance $badgeClass">%$iChance</span>
+                        </div>
+"@
+		}
+
+		$tableRowsHtml += @"
+                <tr>
+                    <td class="metin-name-cell">$mobName</td>
+                    <td class="metin-vnum-cell">$mobVnum</td>
+                    <td class="drop-items-cell">$dropItemsHtml</td>
+                </tr>
+"@
+	}
+
+	$displayAttr = ""  # Always visible as first card
+
+	return @"
+	                   <div class="wiki-card" id="special-metin-table" data-category="mob"$displayAttr>
+                        <div class="w-card-header" style="background: linear-gradient(135deg, rgba(99,102,241,0.08), transparent);">
+                            <div class="w-icon" style="background: rgba(99,102,241,0.15); color: var(--accent-blue);"><i class="fas fa-table"></i></div>
+                            <div>
+                                <div class="w-title">Metin Drop Tablosu</div>
+                                <div class="w-type"><span class="cat-label cat-mob">Ozet</span> Tum metinlerin drop listesi</div>
+                            </div>
+                        </div>
+                        <div style="padding: 0.75rem 1rem; background: rgba(0,0,0,0.15); overflow-x: auto;">
+                            <table class="metin-drop-table">
+                                <thead>
+                                    <tr>
+                                        <th><i class="fas fa-meteor" style="margin-right:4px;color:var(--accent-blue)"></i> Metin Adi</th>
+                                        <th><i class="fas fa-hashtag" style="margin-right:4px;color:var(--accent-blue)"></i> VNUM</th>
+                                        <th><i class="fas fa-gift" style="margin-right:4px;color:var(--accent-blue)"></i> Drop Esyalar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+$tableRowsHtml
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-meteor"></i> $($MetinGroups.Count) metin</span>
+                        </div>
+                    </div>
+"@
+}
+
 # ======================== MAIN ========================
 Write-Host "=== Harbi2 Drop Wiki Generator v3 ===" -ForegroundColor Cyan
 
@@ -351,6 +423,14 @@ $sidebarHtml += "                        <div class=`"sidebar-section-title`"><i
 $firstCard = $true
 $icons = @{ "Canavarlar" = "fa-ghost"; "Patronlar" = "fa-crown"; "Metinler" = "fa-meteor" }
 
+# Add Metin Drop Table button at the top
+$metinGroups = $lists["Metinler"]
+if ($metinGroups.Count -gt 0) {
+    $activeClass = if ($firstCard) { " active" } else { "" }
+    $sidebarHtml += "                        <button class=`"w-cat-btn$activeClass`" data-target=`"special-metin-table`" data-category=`"mob`" style=`"margin-bottom: 0.5rem; background: rgba(99,102,241,0.08); border-left-color: var(--accent-blue);`"><i class=`"fas fa-table`" style=`"margin-right: 6px;`"></i> Metin Drop Tablosu</button>`n"
+    $firstCard = $false
+}
+
 foreach ($catKey in @("Patronlar", "Metinler", "Canavarlar")) {
 	$catList = $lists[$catKey]
 	if ($catList.Count -gt 0) {
@@ -379,6 +459,12 @@ $sidebarHtml += "                    </div>`n"
 # Build cards
 $cardsHtml = ""
 $isFirst = $true
+
+# Add Metin Drop Table card first (shown by default as first card)
+if ($metinGroups.Count -gt 0) {
+    $cardsHtml += Build-MetinTableHtml -MetinGroups $metinGroups
+    $isFirst = $false
+}
 
 foreach ($catKey in @("Patronlar", "Metinler", "Canavarlar")) {
 	foreach ($g in $lists[$catKey]) {
@@ -807,6 +893,81 @@ $html = @"
         }
         .drop-count { font-size: 0.62rem; color: var(--text-low); }
         .drop-count i { color: var(--accent-blue); margin-right: 3px; }
+
+        /* ========== METIN DROP TABLE ========== */
+        .metin-drop-table-container {
+            display: none;
+            padding: 1rem;
+        }
+        .metin-drop-table-container.active {
+            display: block;
+        }
+        .metin-drop-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+        .metin-drop-table thead {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), transparent);
+        }
+        .metin-drop-table th {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-high);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border);
+        }
+        .metin-drop-table td {
+            padding: 0.6rem 1rem;
+            font-size: 0.68rem;
+            color: var(--text-med);
+            border-bottom: 1px solid var(--border);
+        }
+        .metin-drop-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .metin-drop-table tbody tr:hover {
+            background: rgba(99,102,241,0.05);
+        }
+        .metin-name-cell {
+            font-weight: 600;
+            color: var(--text-high);
+        }
+        .metin-vnum-cell {
+            font-family: monospace;
+            color: var(--accent-blue);
+        }
+        .drop-items-cell {
+            font-size: 0.65rem;
+        }
+        .drop-item-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.2rem 0;
+        }
+        .drop-item-vnum {
+            font-family: monospace;
+            color: var(--accent-gold);
+            font-size: 0.6rem;
+            min-width: 50px;
+        }
+        .drop-item-name {
+            flex: 1;
+            color: var(--text-med);
+        }
+        .drop-item-chance {
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 0.58rem;
+        }
 
         /* ========== MOBILE ========== */
         .mobile-topbar {
