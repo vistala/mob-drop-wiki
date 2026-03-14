@@ -12329,3 +12329,412 @@ Group	Metin
 	30	7154	1	1 -- Mutluluk Yelpazesi+4
 	31	50576	1	20 -- Pençe atağı (9. beceri)
 }
+
+Group	Metin_8001
+{
+	Mob	8001 -- Üzüntü Metini
+	Type	drop
+	1	50300	1	30 -- Beceri Kitabi
+}
+
+Group	Metin_8002
+{
+	Mob	8002 -- Dövüş Metini
+	Type	drop
+	1	50300	1	40 -- Beceri Kitabi
+}
+
+Group	Metin_8003
+{
+	Mob	8003 -- Savaş Metini
+	Type	drop
+	1	50300	1	40 -- Beceri Kitabi
+}
+
+Group	Metin_8004
+{
+	Mob	8004 -- Hırs Metini
+	Type	drop
+	1	50300	1	40 -- Beceri Kitabi
+}
+
+Group	Metin_8005
+{
+	Mob	8005 -- Siyah Metin
+	Type	drop
+	1	50300	1	40 -- Beceri Kitabi
+	2	71152	1	1 -- Yesil Guc
+	3	71151	1	20 -- Yesil Efsun
+}
+
+Group	Metin_8006
+{
+	Mob	8006 -- Karanlık Metin
+	Type	drop
+	1	50300	1	40 -- Beceri Kitabi
+	2	71152	1	1 -- Yesil Guc
+	3	71151	1	25 -- Yesil Efsun
+}
+
+Group	Metin_8007
+{
+	Mob	8007 -- Kıskançlık Metini
+	Type	drop
+	1	50300	1	40 -- Beceri Kitabi
+	2	71152	1	1 -- Yesil Guc
+	3	71151	1	30 -- Yesil Efsun
+}
+
+Group	Metin_8008
+{
+	Mob	8008 -- Ruh Metini
+	Type	drop
+	1	50300	1	40 -- Beceri Kitabi
+	2	71152	1	1 -- Yesil Guc
+	3	71151	1	35 -- Yesil Efsun
+}
+
+Group	Metin_8009
+{
+	Mob	8009 -- Gölge Metini
+	Type	drop
+	1	50300	1	40 -- Beceri Kitabi
+	2	71152	1	1 -- Yesil Guc
+	3	71151	1	40 -- Yesil Efsun
+	4	25040	1	1 -- Kutsama Kagidi
+}
+
+Group	Metin_8010
+{
+	Mob	8010 -- Dayanıklılık Metini
+	Type	drop
+	1	50300	1	50 -- Beceri Kitabi
+	2	71152	1	1 -- Yesil Guc
+	3	71151	1	45 -- Yesil Efsun
+	4	25040	1	3 -- Kutsama Kagidi
+}
+
+Group	Metin_8011
+{
+	Mob	8011 -- Şeytan Metini
+	Type	drop
+	1	50300	1	65 -- Beceri Kitabi
+	2	71152	1	1 -- Yesil Guc
+	3	71151	1	50 -- Yesil Efsun
+	4	25040	1	6 -- Kutsama Kagidi
+}
+
+Group	Metin_8013
+{
+	Mob	8013 -- Ölüm Metini
+	Type	drop
+	1	50300	1	80 -- Beceri Kitabi
+	2	71152	1	1 -- Yesil Guc
+	3	71151	1	55 -- Yesil Efsun
+	4	25040	1	10 -- Kutsama Kagidi
+}
+
+Group	Metin_8014
+{
+	Mob	8014 -- Katil Metini
+	Type	drop
+	1	25040	1	25 -- Kutsama Kagidi
+	2	71085	1	1 -- Arttirma Kagidi
+	3	71084	1	5 -- Efsun Nesnesi
+	4	50513	1	1 -- Ruh Tasi
+	5	71001	1	5 -- Kotu Ruh Kovma
+	6	70102	1	5 -- Zen Fasulyesi
+}
+
+Group	Metin_8024
+{
+	Mob	8024 -- Metin Pung-Ma
+	Type	drop
+	1	25040	1	30 -- Kutsama Kagidi
+	2	71085	1	1 -- Arttirma Kagidi
+	3	71084	1	10 -- Efsun Nesnesi
+	4	50513	1	2 -- Ruh Tasi
+	5	71001	1	10 -- Kotu Ruh Kovma
+	6	70102	1	10 -- Zen Fasulyesi
+}
+
+Group	Metin_8025
+{
+	Mob	8025 -- Metin Ma-An
+	Type	drop
+	1	25040	1	35 -- Kutsama Kagidi
+	2	71085	1	1 -- Arttirma Kagidi
+	3	71084	1	12.5 -- Efsun Nesnesi
+	4	50513	1	2.5 -- Ruh Tasi
+	5	71001	1	12.5 -- Kotu Ruh Kovma
+	6	70102	1	12.5 -- Zen Fasulyesi
+}
+
+Group	Metin_8026
+{
+	Mob	8026 -- Metin Tu-Young
+	Type	drop
+	1	25040	1	40 -- Kutsama Kagidi
+	2	71085	1	1 -- Arttirma Kagidi
+	3	71084	1	15 -- Efsun Nesnesi
+	4	50513	1	3 -- Ruh Tasi
+	5	71001	1	25 -- Kotu Ruh Kovma
+	6	71094	1	5 -- Munzevi Tavsiyesi
+	7	70102	1	15 -- Zen Fasulyesi
+}
+
+Group	Metin_8027
+{
+	Mob	8027 -- Metin Jeon-Un
+	Type	drop
+	1	25040	1	45 -- Kutsama Kagidi
+	2	71085	1	1 -- Arttirma Kagidi
+	3	71084	1	25 -- Efsun Nesnesi
+	4	50513	1	5 -- Ruh Tasi
+	5	71001	1	50 -- Kotu Ruh Kovma
+	6	71094	1	10 -- Munzevi Tavsiyesi
+	7	70102	1	25 -- Zen Fasulyesi
+}
+
+Group	Metin_8032
+{
+	Mob	8032 -- İntikam Metini
+	Type	drop
+	1	25040	1	15 -- Kutsama Kagidi
+	2	71085	1	1 -- Arttirma Kagidi
+	3	71084	1	5 -- Efsun Nesnesi
+	4	50513	1	7 -- Ruh Tasi
+	5	50324	1	1 -- DersGuclenSan
+	6	50323	1	1 -- DersMisilleSan
+	7	70102	1	25 -- Zen Fasulyesi
+}
+
+Group	Metin_8033
+{
+	Mob	8033 -- Kimsesizlik Metini
+	Type	drop
+	1	25040	1	20 -- Kutsama Kagidi
+	2	71085	1	1 -- Arttirma Kagidi
+	3	71084	1	10 -- Efsun Nesnesi
+	4	50513	1	9 -- Ruh Tasi
+	5	50324	1	1 -- DersGuclenSan
+	6	50323	1	1 -- DersMisilleSan
+	7	70102	1	25 -- Zen Fasulyesi
+}
+
+Group	Metin_8051
+{
+	Mob	8051 -- Işıksızlık Metini
+	Type	drop
+	1	25040	1	25 -- Kutsama Kagidi
+	2	71085	1	1 -- Arttirma Kagidi
+	3	71084	1	15 -- Efsun Nesnesi
+	4	50513	1	10 -- Ruh Tasi
+	5	50324	1	1 -- DersGuclenSan
+	6	50323	1	1 -- DersMisilleSan
+	7	70102	1	25 -- Zen Fasulyesi
+}
+
+Group	Metin_8052
+{
+	Mob	8052 -- Korluğun Metini
+	Type	drop
+	1	25040	1	30 -- Kutsama Kagidi
+	2	71085	1	1 -- Arttirma Kagidi
+	3	71084	1	20 -- Efsun Nesnesi
+	4	50513	1	11 -- Ruh Tasi
+	5	50324	1	1 -- DersGuclenSan
+	6	50323	1	1 -- DersMisilleSan
+	7	70102	1	25 -- Zen Fasulyesi
+}
+
+Group	Metin_8053
+{
+	Mob	8053 -- Mağrurluğun Metini
+	Type	drop
+	1	25040	1	35 -- Kutsama Kagidi
+	2	71085	1	1 -- Arttirma Kagidi
+	3	71084	1	25 -- Efsun Nesnesi
+	4	50513	1	12 -- Ruh Tasi
+	5	50324	1	1 -- DersGuclenSan
+	6	50323	1	1 -- DersMisilleSan
+	7	70102	1	25 -- Zen Fasulyesi
+}
+
+Group	Metin_8054
+{
+	Mob	8054 -- Öfkenin Metini
+	Type	drop
+	1	25040	1	40 -- Kutsama Kagidi
+	2	71085	1	1 -- Arttirma Kagidi
+	3	71084	1	30 -- Efsun Nesnesi
+	4	50513	1	13 -- Ruh Tasi
+	5	50324	1	1 -- DersGuclenSan
+	6	50323	1	1 -- DersMisilleSan
+	7	70102	1	25 -- Zen Fasulyesi
+}
+
+Group	Metin_8055
+{
+	Mob	8055 -- Felaketin Metini
+	Type	drop
+	1	25040	1	45 -- Kutsama Kagidi
+	2	71085	1	1 -- Arttirma Kagidi
+	3	71084	1	35 -- Efsun Nesnesi
+	4	50513	1	14 -- Ruh Tasi
+	5	50324	1	1 -- DersGuclenSan
+	6	50323	1	1 -- DersMisilleSan
+	7	70102	1	25 -- Zen Fasulyesi
+}
+
+Group	Metin_8056
+{
+	Mob	8056 -- Namertlik Metini
+	Type	drop
+	1	25040	1	50 -- Kutsama Kagidi
+	2	71085	1	1 -- Arttirma Kagidi
+	3	71084	1	40 -- Efsun Nesnesi
+	4	50513	1	15 -- Ruh Tasi
+	5	50324	1	1 -- DersGuclenSan
+	6	50323	1	1 -- DersMisilleSan
+	7	70102	1	25 -- Zen Fasulyesi
+}
+
+Group	Metin_8059
+{
+	Mob	8059 -- Ağaç Yaratığı Metini
+	Type	drop
+	1	25040	1	55 -- Kutsama Kagidi
+	2	71085	1	1 -- Arttirma Kagidi
+	3	71084	1	45 -- Efsun Nesnesi
+	4	50513	1	16 -- Ruh Tasi
+	5	50324	1	1 -- DersGuclenSan
+	6	50323	1	1 -- DersMisilleSan
+	7	70102	1	25 -- Zen Fasulyesi
+}
+
+Group	Metin_8061
+{
+	Mob	8061 -- Orman Metini
+	Type	drop
+	1	25040	1	50 -- Kutsama Kagidi
+	2	71085	1	1 -- Arttirma Kagidi
+	3	71084	1	50 -- Efsun Nesnesi
+	4	50513	1	25 -- Ruh Tasi
+	5	50324	1	1 -- DersGuclenSan
+	6	50323	1	1 -- DersMisilleSan
+	7	70102	1	50 -- Zen Fasulyesi
+}
+
+Group	Metin_8062
+{
+	Mob	8062 -- Farkındalık Metini (G)
+	Type	drop
+	1	25040	2	75 -- Kutsama Kagidi
+	2	71085	1	1 -- Yohara Arttirma
+	3	71084	1	5 -- Yohara Efsun
+	4	50513	1	1 -- Ruh Tasi
+	5	50525	1	1 -- Ruh Tasi Plus
+	6	50324	1	1 -- DersGuclenSan
+	7	50323	1	1 -- DersMisilleSan
+	8	50326	1	1 -- 9 Yolun Kitap San
+}
+
+Group	Metin_8063
+{
+	Mob	8063 -- Takdir Metini
+	Type	drop
+	1	25040	2	75 -- Kutsama Kagidi
+	2	71085	1	1 -- Yohara Arttirma
+	3	71084	1	5 -- Yohara Efsun
+	4	50513	1	1 -- Ruh Tasi
+	5	50525	1	1 -- Ruh Tasi Plus
+	6	50324	1	1 -- DersGuclenSan
+	7	50323	1	1 -- DersMisilleSan
+	8	50326	1	1 -- 9 Yolun Kitap San
+}
+
+Group	Metin_8064
+{
+	Mob	8064 -- Bilinç Metini
+	Type	drop
+	1	25040	2	85 -- Kutsama Kagidi
+	2	71085	1	1 -- Yohara Arttirma
+	3	71084	1	10 -- Yohara Efsun
+	4	50513	1	1 -- Ruh Tasi
+	5	50525	1	1 -- Ruh Tasi Plus
+	6	50324	1	1 -- DersGuclenSan
+	7	50323	1	1 -- DersMisilleSan
+	8	50326	1	1 -- 9 Yolun Kitap San
+}
+
+Group	Metin_8065
+{
+	Mob	8065 -- Jin Metini
+	Type	drop
+	1	25040	2	85 -- Kutsama Kagidi
+	2	71085	1	1 -- Yohara Arttirma
+	3	71084	1	10 -- Yohara Efsun
+	4	50513	1	1 -- Ruh Tasi
+	5	50525	1	1 -- Ruh Tasi Plus
+	6	50324	1	1 -- DersGuclenSan
+	7	50323	1	1 -- DersMisilleSan
+	8	50326	1	1 -- 9 Yolun Kitap San
+}
+
+Group	Metin_8066
+{
+	Mob	8066 -- Shiho Metini
+	Type	drop
+	1	25040	2	95 -- Kutsama Kagidi
+	2	71085	1	1 -- Yohara Arttirma
+	3	71084	1	15 -- Yohara Efsun
+	4	50513	1	1 -- Ruh Tasi
+	5	50525	1	1 -- Ruh Tasi Plus
+	6	50324	1	1 -- DersGuclenSan
+	7	50323	1	1 -- DersMisilleSan
+	8	50326	1	1 -- 9 Yolun Kitap San
+}
+
+Group	Metin_8067
+{
+	Mob	8067 -- Farklandırma Metini
+	Type	drop
+	1	25040	2	95 -- Kutsama Kagidi
+	2	71085	1	1 -- Yohara Arttirma
+	3	71084	1	15 -- Yohara Efsun
+	4	50513	1	1 -- Ruh Tasi
+	5	50525	1	1 -- Ruh Tasi Plus
+	6	50324	1	1 -- DersGuclenSan
+	7	50323	1	1 -- DersMisilleSan
+	8	50326	1	1 -- 9 Yolun Kitap San
+}
+
+Group	Metin_8076
+{
+	Mob	8076 -- Mekan Yılanı Metini
+	Type	drop
+	1	25040	2	100 -- Kutsama Kagidi
+	2	71085	1	1 -- Yohara Arttirma
+	3	71084	1	20 -- Yohara Efsun
+	4	50513	1	1 -- Ruh Tasi
+	5	50525	1	1 -- Ruh Tasi Plus
+	6	50324	1	1 -- DersGuclenSan
+	7	50323	1	1 -- DersMisilleSan
+	8	50326	1	1 -- 9 Yolun Kitap San
+}
+
+Group	Metin_8077
+{
+	Mob	8077 -- Gumarlı Metin
+	Type	drop
+	1	25040	2	100 -- Kutsama Kagidi
+	2	71085	1	1 -- Yohara Arttirma
+	3	71084	1	20 -- Yohara Efsun
+	4	50513	1	1 -- Ruh Tasi
+	5	50525	1	1 -- Ruh Tasi Plus
+	6	50324	1	1 -- DersGuclenSan
+	7	50323	1	1 -- DersMisilleSan
+	8	50326	1	1 -- 9 Yolun Kitap San
+}
+
