@@ -349,10 +349,10 @@ function Build-MetinTableHtml {
             }
             $dropItemsHtml += @"
 		                      <div class="drop-item-row">
+		                          <span class="drop-item-chance $badgeClass" style="margin-right: 4px; width: 40px; text-align: right;">%$iChance</span>
+		                          $countDisplay
 		                          <img class="drop-item-icon" src="icons/$iVnum.png" onerror="this.src='icons/default.png'" alt="$iName" loading="lazy">
 		                          <span class="drop-item-name">$iName</span>
-		                          $countDisplay
-		                          <span class="drop-item-chance $badgeClass">%$iChance</span>
 		                      </div>
 "@
         }
@@ -428,10 +428,10 @@ function Build-CategoryTableHtml {
             }
             $dropItemsHtml += @"
 		                      <div class="drop-item-row">
+		                          <span class="drop-item-chance $badgeClass" style="margin-right: 4px; width: 40px; text-align: right;">%$iChance</span>
+		                          $countDisplay
 		                          <img class="drop-item-icon" src="icons/$iVnum.png" onerror="this.src='icons/default.png'" alt="$iName" loading="lazy">
 		                          <span class="drop-item-name">$iName</span>
-		                          $countDisplay
-		                          <span class="drop-item-chance $badgeClass">%$iChance</span>
 		                      </div>
 "@
         }
@@ -1093,7 +1093,7 @@ $html = @"
             display: block;
         }
         .metin-drop-table {
-            width: 600px;
+            width: 450px;
             max-width: 100%;
             border-collapse: collapse;
             background: var(--bg-card);
@@ -1118,7 +1118,7 @@ $html = @"
         }
         .metin-drop-table th:nth-child(1) { width: 140px; }
         .metin-drop-table th:nth-child(2) { width: 80px; }
-        .metin-drop-table th:nth-child(3) { width: 380px; }
+        .metin-drop-table th:nth-child(3) { width: 230px; }
         .metin-drop-table td {
             padding: 0.3rem 0.8rem;
             font-size: 0.6rem;
@@ -1177,6 +1177,8 @@ $html = @"
             color: var(--accent-gold);
             font-size: 0.55rem;
             flex-shrink: 0;
+            margin-right: 4px;
+            width: 20px;
         }
         .drop-item-chance {
             font-weight: 600;
@@ -1184,6 +1186,7 @@ $html = @"
             border-radius: 2px;
             font-size: 0.52rem;
             flex-shrink: 0;
+            display: inline-block;
         }
 
         /* ========== MOBILE ========== */
