@@ -12,12 +12,13 @@ $localSourceDir = "c:\Users\orkun\OneDrive\Documents\GitHub\Harbi2_Files\srv1\sh
 if (Test-Path $localSourceDir) {
     $sourceDir = $localSourceDir
     Write-Host "Kaynak: Harbi2_Files yerel klasoru kullaniliyor" -ForegroundColor DarkGray
-} else {
+}
+else {
     $sourceDir = $scriptDir
     Write-Host "Kaynak: Yerel kopya kullaniliyor (CI modu)" -ForegroundColor DarkYellow
 }
 
-$mobDropFile   = Join-Path $sourceDir "mob_drop_item.txt"
+$mobDropFile = Join-Path $sourceDir "mob_drop_item.txt"
 $chestDropFile = Join-Path $sourceDir "special_item_group.txt"
 
 # Output always goes to the local mob_drop_wiki folder
@@ -25,243 +26,243 @@ $outputPath = Join-Path $scriptDir "index.html"
 
 # ======================== PARSER: mob_drop_item.txt ========================
 function Parse-MobDropFile {
-	param([string]$Path, [hashtable]$MobNames = @{}, [hashtable]$ItemNames = @{})
-	if (-not (Test-Path $Path)) {
-		Write-Host "UYARI: $Path bulunamadi" -ForegroundColor Yellow
-		return @()
-	}
-	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
-	$groups = @()
-	$currentGroup = $null
-	$inGroup = $false
+    param([string]$Path, [hashtable]$MobNames = @{}, [hashtable]$ItemNames = @{})
+    if (-not (Test-Path $Path)) {
+        Write-Host "UYARI: $Path bulunamadi" -ForegroundColor Yellow
+        return @()
+    }
+    $lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
+    $groups = @()
+    $currentGroup = $null
+    $inGroup = $false
 
-	foreach ($line in $lines) {
-		$trimmed = $line.Trim()
-		if ($trimmed.StartsWith("#") -or $trimmed -eq "") { continue }
-		if ($trimmed -match "^Group\s+(.+)$") {
-			$groupName = $Matches[1].Trim()
-			$currentGroup = @{ MobVnum = ""; MobName = $groupName; Type = ""; Items = @() }
-			continue
-		}
-		if ($trimmed -eq "{") { $inGroup = $true; continue }
-		if ($trimmed -eq "}") {
-			$inGroup = $false
-			if ($currentGroup -and $currentGroup.MobVnum) { $groups += $currentGroup }
-			$currentGroup = $null
-			continue
-		}
-		if ($inGroup -and $currentGroup) {
-			if ($trimmed -match "^Mob\s+(\d+)") {
-				$vnum = $Matches[1]
-				$currentGroup.MobVnum = $vnum
-				# Always resolve mob name from mob_names.txt by VNUM
-				if ($MobNames.ContainsKey($vnum)) {
-					$currentGroup.MobName = $MobNames[$vnum]
-				}
-				else {
-					$currentGroup.MobName = "Mob $vnum"
-				}
-				continue
-			}
-			if ($trimmed -match "^Type\s+(.+)$") { $currentGroup.Type = $Matches[1].Trim(); continue }
-			if ($trimmed -match "^\d+\s+(\d+)\s+([\d.]+)\s+([\d.]+)") {
-				$capVnum = $Matches[1]
-				$capCount = $Matches[2]
-				$capChance = $Matches[3]
-				# Always resolve item name from item_names.txt by VNUM
-				if ($ItemNames.ContainsKey($capVnum)) {
-					$itemName = $ItemNames[$capVnum]
-				}
-				else {
-					$itemName = "Item $capVnum"
-				}
-				$currentGroup.Items += @{
-					Vnum = $capVnum; Count = $capCount; Chance = $capChance; Name = $itemName
-				}
-			}
-		}
-	}
-	return $groups
+    foreach ($line in $lines) {
+        $trimmed = $line.Trim()
+        if ($trimmed.StartsWith("#") -or $trimmed -eq "") { continue }
+        if ($trimmed -match "^Group\s+(.+)$") {
+            $groupName = $Matches[1].Trim()
+            $currentGroup = @{ MobVnum = ""; MobName = $groupName; Type = ""; Items = @() }
+            continue
+        }
+        if ($trimmed -eq "{") { $inGroup = $true; continue }
+        if ($trimmed -eq "}") {
+            $inGroup = $false
+            if ($currentGroup -and $currentGroup.MobVnum) { $groups += $currentGroup }
+            $currentGroup = $null
+            continue
+        }
+        if ($inGroup -and $currentGroup) {
+            if ($trimmed -match "^Mob\s+(\d+)") {
+                $vnum = $Matches[1]
+                $currentGroup.MobVnum = $vnum
+                # Always resolve mob name from mob_names.txt by VNUM
+                if ($MobNames.ContainsKey($vnum)) {
+                    $currentGroup.MobName = $MobNames[$vnum]
+                }
+                else {
+                    $currentGroup.MobName = "Mob $vnum"
+                }
+                continue
+            }
+            if ($trimmed -match "^Type\s+(.+)$") { $currentGroup.Type = $Matches[1].Trim(); continue }
+            if ($trimmed -match "^\d+\s+(\d+)\s+([\d.]+)\s+([\d.]+)") {
+                $capVnum = $Matches[1]
+                $capCount = $Matches[2]
+                $capChance = $Matches[3]
+                # Always resolve item name from item_names.txt by VNUM
+                if ($ItemNames.ContainsKey($capVnum)) {
+                    $itemName = $ItemNames[$capVnum]
+                }
+                else {
+                    $itemName = "Item $capVnum"
+                }
+                $currentGroup.Items += @{
+                    Vnum = $capVnum; Count = $capCount; Chance = $capChance; Name = $itemName
+                }
+            }
+        }
+    }
+    return $groups
 }
 
 # ======================== PARSER: mob_proto.txt ========================
 function Get-MobCategories {
-	param([string]$Path)
-	$catMap = @{}
-	if (-not (Test-Path $Path)) { return $catMap }
-	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
-	foreach ($line in $lines) {
-		$parts = $line.Split("`t")
-		if ($parts.Count -ge 5 -and $parts[0] -match "^\d+$") {
-			$vnum = $parts[0]
-			$rank = $parts[2]
-			$type = $parts[3]
-			if ($rank -eq "BOSS") { $catMap[$vnum] = "Patronlar" }
-			elseif ($type -eq "STONE") { $catMap[$vnum] = "Metinler" }
-			else { $catMap[$vnum] = "Canavarlar" }
-		}
-	}
-	return $catMap
+    param([string]$Path)
+    $catMap = @{}
+    if (-not (Test-Path $Path)) { return $catMap }
+    $lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
+    foreach ($line in $lines) {
+        $parts = $line.Split("`t")
+        if ($parts.Count -ge 5 -and $parts[0] -match "^\d+$") {
+            $vnum = $parts[0]
+            $rank = $parts[2]
+            $type = $parts[3]
+            if ($rank -eq "BOSS") { $catMap[$vnum] = "Patronlar" }
+            elseif ($type -eq "STONE") { $catMap[$vnum] = "Metinler" }
+            else { $catMap[$vnum] = "Canavarlar" }
+        }
+    }
+    return $catMap
 }
 
 # ======================== PARSER: item_names.txt ========================
 function Get-ItemNames {
-	param([string]$Path)
-	$nameMap = @{}
-	if (-not (Test-Path $Path)) { return $nameMap }
-	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
-	$firstLine = $true
-	foreach ($line in $lines) {
-		if ($firstLine) { $firstLine = $false; continue } # skip header
-		$parts = $line.Split("`t")
-		if ($parts.Count -ge 2 -and $parts[0] -match "^\d+$") {
-			$nameMap[$parts[0].Trim()] = $parts[1].Trim()
-		}
-	}
-	return $nameMap
+    param([string]$Path)
+    $nameMap = @{}
+    if (-not (Test-Path $Path)) { return $nameMap }
+    $lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
+    $firstLine = $true
+    foreach ($line in $lines) {
+        if ($firstLine) { $firstLine = $false; continue } # skip header
+        $parts = $line.Split("`t")
+        if ($parts.Count -ge 2 -and $parts[0] -match "^\d+$") {
+            $nameMap[$parts[0].Trim()] = $parts[1].Trim()
+        }
+    }
+    return $nameMap
 }
 
 # ======================== LOADER: mob_names.txt ========================
 function Get-MobNames {
-	param([string]$Path)
-	$nameMap = @{}
-	if (-not (Test-Path $Path)) { return $nameMap }
-	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
-	$firstLine = $true
-	foreach ($line in $lines) {
-		if ($firstLine) { $firstLine = $false; continue } # skip header
-		$parts = $line.Split("`t")
-		if ($parts.Count -ge 2 -and $parts[0] -match "^\d+$") {
-			$nameMap[$parts[0].Trim()] = $parts[1].Trim()
-		}
-	}
-	return $nameMap
+    param([string]$Path)
+    $nameMap = @{}
+    if (-not (Test-Path $Path)) { return $nameMap }
+    $lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
+    $firstLine = $true
+    foreach ($line in $lines) {
+        if ($firstLine) { $firstLine = $false; continue } # skip header
+        $parts = $line.Split("`t")
+        if ($parts.Count -ge 2 -and $parts[0] -match "^\d+$") {
+            $nameMap[$parts[0].Trim()] = $parts[1].Trim()
+        }
+    }
+    return $nameMap
 }
 
 # ======================== PARSER: special_item_group.txt ========================
 function Parse-ChestDropFile {
-	param([string]$Path, [hashtable]$ItemNames = @{})
-	if (-not (Test-Path $Path)) {
-		Write-Host "UYARI: $Path bulunamadi" -ForegroundColor Yellow
-		return @()
-	}
-	$lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
-	$groups = @()
-	$currentGroup = $null
-	$inGroup = $false
+    param([string]$Path, [hashtable]$ItemNames = @{})
+    if (-not (Test-Path $Path)) {
+        Write-Host "UYARI: $Path bulunamadi" -ForegroundColor Yellow
+        return @()
+    }
+    $lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
+    $groups = @()
+    $currentGroup = $null
+    $inGroup = $false
 
-	foreach ($line in $lines) {
-		$trimmed = $line.Trim()
-		if ($trimmed.StartsWith("#") -or $trimmed -eq "") { continue }
-		if ($trimmed -match "^Group\s+(.+)$") {
-			$currentGroup = @{ GroupName = $Matches[1].Trim(); ChestVnum = ""; ChestName = ""; Type = ""; Items = @() }
-			continue
-		}
-		if ($trimmed -eq "{") { $inGroup = $true; continue }
-		if ($trimmed -eq "}") {
-			$inGroup = $false
-			if ($currentGroup -and $currentGroup.ChestVnum) {
-				# Resolve chest name: priority = inline comment > item_names.txt > cleaned GroupName
-				if (-not $currentGroup.ChestName) {
-					if ($ItemNames.ContainsKey($currentGroup.ChestVnum)) {
-						$currentGroup.ChestName = $ItemNames[$currentGroup.ChestVnum]
-					}
-					else {
-						$currentGroup.ChestName = $currentGroup.GroupName -replace "_", " "
-					}
-				}
-				$groups += $currentGroup
-			}
-			$currentGroup = $null
-			continue
-		}
-		if ($inGroup -and $currentGroup) {
-			if ($trimmed -match "^Vnum\s+(\d+)") {
-				$vstr = $Matches[1]
-				$currentGroup.ChestVnum = $vstr
-				# Always resolve chest name from item_names.txt by VNUM
-				if ($ItemNames.ContainsKey($vstr)) {
-					$currentGroup.ChestName = $ItemNames[$vstr]
-				}
-				else {
-					$currentGroup.ChestName = "Sandik $vstr"
-				}
-				continue
-			}
-			if ($trimmed -match "^[Tt]ype\s+(.+)$") { $currentGroup.Type = $Matches[1].Trim(); continue }
-			# Skip exp and mob lines
-			if ($trimmed -match "^\d+\s+(exp|mob)\s+" ) { continue }
-			if ($trimmed -match "^\d+\s+(\d+)\s+([\d.]+)\s+([\d.]+)") {
-				$capVnum = $Matches[1]
-				$capCount = $Matches[2]
-				$capChance = $Matches[3]
-				# Always resolve item name from item_names.txt by VNUM
-				if ($ItemNames.ContainsKey($capVnum)) {
-					$itemName = $ItemNames[$capVnum]
-				}
-				else {
-					$itemName = "Item $capVnum"
-				}
-				$currentGroup.Items += @{
-					Vnum = $capVnum; Count = $capCount; Chance = $capChance; Name = $itemName
-				}
-			}
-		}
-	}
+    foreach ($line in $lines) {
+        $trimmed = $line.Trim()
+        if ($trimmed.StartsWith("#") -or $trimmed -eq "") { continue }
+        if ($trimmed -match "^Group\s+(.+)$") {
+            $currentGroup = @{ GroupName = $Matches[1].Trim(); ChestVnum = ""; ChestName = ""; Type = ""; Items = @() }
+            continue
+        }
+        if ($trimmed -eq "{") { $inGroup = $true; continue }
+        if ($trimmed -eq "}") {
+            $inGroup = $false
+            if ($currentGroup -and $currentGroup.ChestVnum) {
+                # Resolve chest name: priority = inline comment > item_names.txt > cleaned GroupName
+                if (-not $currentGroup.ChestName) {
+                    if ($ItemNames.ContainsKey($currentGroup.ChestVnum)) {
+                        $currentGroup.ChestName = $ItemNames[$currentGroup.ChestVnum]
+                    }
+                    else {
+                        $currentGroup.ChestName = $currentGroup.GroupName -replace "_", " "
+                    }
+                }
+                $groups += $currentGroup
+            }
+            $currentGroup = $null
+            continue
+        }
+        if ($inGroup -and $currentGroup) {
+            if ($trimmed -match "^Vnum\s+(\d+)") {
+                $vstr = $Matches[1]
+                $currentGroup.ChestVnum = $vstr
+                # Always resolve chest name from item_names.txt by VNUM
+                if ($ItemNames.ContainsKey($vstr)) {
+                    $currentGroup.ChestName = $ItemNames[$vstr]
+                }
+                else {
+                    $currentGroup.ChestName = "Sandik $vstr"
+                }
+                continue
+            }
+            if ($trimmed -match "^[Tt]ype\s+(.+)$") { $currentGroup.Type = $Matches[1].Trim(); continue }
+            # Skip exp and mob lines
+            if ($trimmed -match "^\d+\s+(exp|mob)\s+" ) { continue }
+            if ($trimmed -match "^\d+\s+(\d+)\s+([\d.]+)\s+([\d.]+)") {
+                $capVnum = $Matches[1]
+                $capCount = $Matches[2]
+                $capChance = $Matches[3]
+                # Always resolve item name from item_names.txt by VNUM
+                if ($ItemNames.ContainsKey($capVnum)) {
+                    $itemName = $ItemNames[$capVnum]
+                }
+                else {
+                    $itemName = "Item $capVnum"
+                }
+                $currentGroup.Items += @{
+                    Vnum = $capVnum; Count = $capCount; Chance = $capChance; Name = $itemName
+                }
+            }
+        }
+    }
 
-	# Apply custom chest chance calculation
-	# Probability = item_chance / sum_of_all_chances * 100
-	# Count does NOT affect probability, only how many you receive
-	foreach ($g in $groups) {
-		$totalChance = 0.0
-		foreach ($item in $g.Items) {
-			$ch = 0.0
-			[double]::TryParse($item.Chance, [ref]$ch) | Out-Null
-			$totalChance += $ch
-		}
-		if ($totalChance -gt 0) {
-			foreach ($item in $g.Items) {
-				$ch = 0.0
-				[double]::TryParse($item.Chance, [ref]$ch) | Out-Null
-				$realProb = ($ch / $totalChance) * 100.0
-				$item.Chance = [math]::Round($realProb, 2).ToString("0.##")
-			}
-		}
-	}
+    # Apply custom chest chance calculation
+    # Probability = item_chance / sum_of_all_chances * 100
+    # Count does NOT affect probability, only how many you receive
+    foreach ($g in $groups) {
+        $totalChance = 0.0
+        foreach ($item in $g.Items) {
+            $ch = 0.0
+            [double]::TryParse($item.Chance, [ref]$ch) | Out-Null
+            $totalChance += $ch
+        }
+        if ($totalChance -gt 0) {
+            foreach ($item in $g.Items) {
+                $ch = 0.0
+                [double]::TryParse($item.Chance, [ref]$ch) | Out-Null
+                $realProb = ($ch / $totalChance) * 100.0
+                $item.Chance = [math]::Round($realProb, 2).ToString("0.##")
+            }
+        }
+    }
 
-	return $groups
+    return $groups
 }
 
 # ======================== HTML HELPERS ========================
 function Get-ChanceBadgeClass {
-	param([string]$ChanceStr)
-	$val = 0.0
-	if ([double]::TryParse($ChanceStr, [ref]$val)) {
-		if ($val -ge 80) { return "chance-high" }
-		elseif ($val -ge 30) { return "chance-mid" }
-		elseif ($val -ge 10) { return "chance-low" }
-		else { return "chance-rare" }
-	}
-	return "chance-mid"
+    param([string]$ChanceStr)
+    $val = 0.0
+    if ([double]::TryParse($ChanceStr, [ref]$val)) {
+        if ($val -ge 80) { return "chance-high" }
+        elseif ($val -ge 30) { return "chance-mid" }
+        elseif ($val -ge 10) { return "chance-low" }
+        else { return "chance-rare" }
+    }
+    return "chance-mid"
 }
 
 function Build-GridItemHtml {
-	param($Item)
-	$iVnum = $Item.Vnum
-	$iName = $Item.Name
-	$iChance = $Item.Chance
-	$iCount = $Item.Count
-	$badgeClass = Get-ChanceBadgeClass -ChanceStr $iChance
-	$countHtml = ""
-	$countVal = 0
-	if ([int]::TryParse($iCount, [ref]$countVal) -and $countVal -gt 1) {
-		$countHtml = "<span class=`"grid-count`">x$iCount</span>"
-	}
-	# Truncate name for display (max ~12 chars)
-	$shortName = $iName
-	if ($shortName.Length -gt 14) { $shortName = $shortName.Substring(0, 12) + ".." }
+    param($Item)
+    $iVnum = $Item.Vnum
+    $iName = $Item.Name
+    $iChance = $Item.Chance
+    $iCount = $Item.Count
+    $badgeClass = Get-ChanceBadgeClass -ChanceStr $iChance
+    $countHtml = ""
+    $countVal = 0
+    if ([int]::TryParse($iCount, [ref]$countVal) -and $countVal -gt 1) {
+        $countHtml = "<span class=`"grid-count`">x$iCount</span>"
+    }
+    # Truncate name for display (max ~12 chars)
+    $shortName = $iName
+    if ($shortName.Length -gt 14) { $shortName = $shortName.Substring(0, 12) + ".." }
 
-	return @"
+    return @"
                                 <div class="grid-item" title="$iName (#$iVnum)">
                                     <div class="grid-icon-wrap">
                                         <img class="grid-icon" src="icons/$iVnum.png" onerror="this.src='icons/default.png'" alt="$iName" loading="lazy">
@@ -274,29 +275,29 @@ function Build-GridItemHtml {
 }
 
 function Build-CardHtml {
-	param($Entity, [string]$Category, [string]$IdPrefix, [string]$SubCategory, [bool]$Hidden = $true)
-	$entityName = if ($Category -eq "mob") { $Entity.MobName } else { $Entity.ChestName }
-	$entityVnum = if ($Category -eq "mob") { $Entity.MobVnum } else { $Entity.ChestVnum }
-	$cardId = "$IdPrefix-$entityVnum"
-	$iconClass = if ($Category -eq "mob") { "fas fa-dragon" } else { "fas fa-box-open" }
-	$headerGrad = if ($Category -eq "mob") { "rgba(99,102,241,0.08)" } else { "rgba(245,158,11,0.08)" }
-	$iconBg = if ($Category -eq "mob") { "rgba(99,102,241,0.15)" } else { "rgba(245,158,11,0.15)" }
-	$iconColor = if ($Category -eq "mob") { "var(--accent-blue)" } else { "var(--accent-gold)" }
-	$displayAttr = if ($Hidden) { " style=`"display:none;`"" } else { "" }
+    param($Entity, [string]$Category, [string]$IdPrefix, [string]$SubCategory, [bool]$Hidden = $true)
+    $entityName = if ($Category -eq "mob") { $Entity.MobName } else { $Entity.ChestName }
+    $entityVnum = if ($Category -eq "mob") { $Entity.MobVnum } else { $Entity.ChestVnum }
+    $cardId = "$IdPrefix-$entityVnum"
+    $iconClass = if ($Category -eq "mob") { "fas fa-dragon" } else { "fas fa-box-open" }
+    $headerGrad = if ($Category -eq "mob") { "rgba(99,102,241,0.08)" } else { "rgba(245,158,11,0.08)" }
+    $iconBg = if ($Category -eq "mob") { "rgba(99,102,241,0.15)" } else { "rgba(245,158,11,0.15)" }
+    $iconColor = if ($Category -eq "mob") { "var(--accent-blue)" } else { "var(--accent-gold)" }
+    $displayAttr = if ($Hidden) { " style=`"display:none;`"" } else { "" }
 	
-	$catLabel = "Sandik"
-	if ($Category -eq "mob") {
-		if ($SubCategory -eq "Patronlar") { $catLabel = "Patron" }
-		elseif ($SubCategory -eq "Metinler") { $catLabel = "Metin" }
-		else { $catLabel = "Canavar" }
-	}
+    $catLabel = "Sandik"
+    if ($Category -eq "mob") {
+        if ($SubCategory -eq "Patronlar") { $catLabel = "Patron" }
+        elseif ($SubCategory -eq "Metinler") { $catLabel = "Metin" }
+        else { $catLabel = "Canavar" }
+    }
 
-	$gridItemsHtml = ""
-	foreach ($item in $Entity.Items) {
-		$gridItemsHtml += Build-GridItemHtml -Item $item
-	}
+    $gridItemsHtml = ""
+    foreach ($item in $Entity.Items) {
+        $gridItemsHtml += Build-GridItemHtml -Item $item
+    }
 
-	return @"
+    return @"
                     <div class="wiki-card" id="$cardId" data-category="$Category"$displayAttr>
                         <div class="w-card-header" style="background: linear-gradient(135deg, $headerGrad, transparent);">
                             <div class="w-icon" style="background: $iconBg; color: $iconColor;"><i class="$iconClass"></i></div>
@@ -320,33 +321,33 @@ $gridItemsHtml
 
 # ======================== METIN TABLE BUILDER ========================
 function Build-MetinTableHtml {
-	param($MetinGroups)
+    param($MetinGroups)
 
-	$tableRowsHtml = ""
-	foreach ($g in $MetinGroups) {
-		$mobName = [System.Security.SecurityElement]::Escape($g.MobName)
-		$mobVnum = $g.MobVnum
+    $tableRowsHtml = ""
+    foreach ($g in $MetinGroups) {
+        $mobName = [System.Security.SecurityElement]::Escape($g.MobName)
+        $mobVnum = $g.MobVnum
 
-		$dropItemsHtml = ""
-		foreach ($item in $g.Items) {
-			$iVnum    = $item.Vnum
-			$iName    = [System.Security.SecurityElement]::Escape($item.Name)
-			$iCount   = $item.Count
-			$iChance  = $item.Chance
-			$badgeClass = ""
-			$chVal = 0.0
-			if ([double]::TryParse($iChance, [ref]$chVal)) {
-				if    ($chVal -ge 80) { $badgeClass = "chance-high" }
-				elseif($chVal -ge 30) { $badgeClass = "chance-mid"  }
-				elseif($chVal -ge 10) { $badgeClass = "chance-low"  }
-				else                  { $badgeClass = "chance-rare" }
-			}
-			$countDisplay = ""
-			$countVal = 0
-			if ([int]::TryParse($iCount, [ref]$countVal) -and $countVal -gt 1) {
-				$countDisplay = "<span class=`"drop-item-count`">x$countVal</span>"
-			}
-			$dropItemsHtml += @"
+        $dropItemsHtml = ""
+        foreach ($item in $g.Items) {
+            $iVnum = $item.Vnum
+            $iName = [System.Security.SecurityElement]::Escape($item.Name)
+            $iCount = $item.Count
+            $iChance = $item.Chance
+            $badgeClass = ""
+            $chVal = 0.0
+            if ([double]::TryParse($iChance, [ref]$chVal)) {
+                if ($chVal -ge 80) { $badgeClass = "chance-high" }
+                elseif ($chVal -ge 30) { $badgeClass = "chance-mid" }
+                elseif ($chVal -ge 10) { $badgeClass = "chance-low" }
+                else { $badgeClass = "chance-rare" }
+            }
+            $countDisplay = ""
+            $countVal = 0
+            if ([int]::TryParse($iCount, [ref]$countVal) -and $countVal -gt 1) {
+                $countDisplay = "<span class=`"drop-item-count`">x$countVal</span>"
+            }
+            $dropItemsHtml += @"
 		                      <div class="drop-item-row">
 		                          <img class="drop-item-icon" src="icons/$iVnum.png" onerror="this.src='icons/default.png'" alt="$iName" loading="lazy">
 		                          <span class="drop-item-name">$iName</span>
@@ -354,20 +355,20 @@ function Build-MetinTableHtml {
 		                          <span class="drop-item-chance $badgeClass">%$iChance</span>
 		                      </div>
 "@
-		}
+        }
 
-		$tableRowsHtml += @"
+        $tableRowsHtml += @"
                 <tr>
                     <td class="metin-name-cell">$mobName</td>
                     <td class="metin-vnum-cell">$mobVnum</td>
                     <td class="drop-items-cell">$dropItemsHtml</td>
                 </tr>
 "@
-	}
+    }
 
-	$displayAttr = ""  # Always visible as first card
+    $displayAttr = ""  # Always visible as first card
 
-	return @"
+    return @"
 	                   <div class="wiki-card" id="special-metin-table" data-category="mob"$displayAttr>
                         <div class="w-card-header" style="background: linear-gradient(135deg, rgba(99,102,241,0.08), transparent);">
                             <div class="w-icon" style="background: rgba(99,102,241,0.15); color: var(--accent-blue);"><i class="fas fa-table"></i></div>
@@ -397,6 +398,83 @@ $tableRowsHtml
 "@
 }
 
+# ======================== CATEGORY TABLE BUILDER ========================
+function Build-CategoryTableHtml {
+    param($MobGroups, [string]$Category, [string]$CardId, [string]$Icon, [string]$Title)
+
+    $tableRowsHtml = ""
+    foreach ($g in $MobGroups) {
+        $mobName = [System.Security.SecurityElement]::Escape($g.MobName)
+        $mobVnum = $g.MobVnum
+
+        $dropItemsHtml = ""
+        foreach ($item in $g.Items) {
+            $iVnum = $item.Vnum
+            $iName = [System.Security.SecurityElement]::Escape($item.Name)
+            $iCount = $item.Count
+            $iChance = $item.Chance
+            $badgeClass = ""
+            $chVal = 0.0
+            if ([double]::TryParse($iChance, [ref]$chVal)) {
+                if ($chVal -ge 80) { $badgeClass = "chance-high" }
+                elseif ($chVal -ge 30) { $badgeClass = "chance-mid" }
+                elseif ($chVal -ge 10) { $badgeClass = "chance-low" }
+                else { $badgeClass = "chance-rare" }
+            }
+            $countDisplay = ""
+            $countVal = 0
+            if ([int]::TryParse($iCount, [ref]$countVal) -and $countVal -gt 1) {
+                $countDisplay = "<span class=`"drop-item-count`">x$countVal</span>"
+            }
+            $dropItemsHtml += @"
+		                      <div class="drop-item-row">
+		                          <img class="drop-item-icon" src="icons/$iVnum.png" onerror="this.src='icons/default.png'" alt="$iName" loading="lazy">
+		                          <span class="drop-item-name">$iName</span>
+		                          $countDisplay
+		                          <span class="drop-item-chance $badgeClass">%$iChance</span>
+		                      </div>
+"@
+        }
+
+        $tableRowsHtml += @"
+                <tr>
+                    <td class="metin-name-cell">$mobName</td>
+                    <td class="metin-vnum-cell">$mobVnum</td>
+                    <td class="drop-items-cell">$dropItemsHtml</td>
+                </tr>
+"@
+    }
+
+    return @"
+	                   <div class="wiki-card" id="$CardId" data-category="mob" style="display:none;">
+                        <div class="w-card-header" style="background: linear-gradient(135deg, rgba(99,102,241,0.08), transparent);">
+                            <div class="w-icon" style="background: rgba(99,102,241,0.15); color: var(--accent-blue);"><i class="fas fa-$Icon"></i></div>
+                            <div>
+                                <div class="w-title">$Title</div>
+                                <div class="w-type"><span class="cat-label cat-mob">Ozet</span> Tum $Category drop listesi</div>
+                            </div>
+                        </div>
+                        <div style="padding: 0.75rem 1rem; background: rgba(0,0,0,0.15); overflow-x: auto;">
+                            <table class="metin-drop-table">
+                                <thead>
+                                    <tr>
+                                        <th><i class="fas fa-$Icon" style="margin-right:4px;color:var(--accent-blue)"></i> Mob Adi</th>
+                                        <th><i class="fas fa-hashtag" style="margin-right:4px;color:var(--accent-blue)"></i> VNUM</th>
+                                        <th><i class="fas fa-gift" style="margin-right:4px;color:var(--accent-blue)"></i> Drop Esyalar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+$tableRowsHtml
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-$Icon"></i> $($MobGroups.Count) mob</span>
+                        </div>
+                    </div>
+"@
+}
+
 # ======================== MAIN ========================
 Write-Host "=== Harbi2 Drop Wiki Generator v3 ===" -ForegroundColor Cyan
 
@@ -421,15 +499,15 @@ $mobProtoPath = Join-Path $scriptDir "mob_proto.txt"
 $mobCategories = Get-MobCategories -Path $mobProtoPath
 
 $lists = @{
-	"Canavarlar" = @()
-	"Patronlar"  = @()
-	"Metinler"   = @()
+    "Canavarlar" = @()
+    "Patronlar"  = @()
+    "Metinler"   = @()
 }
 
 foreach ($g in $mobGroups) {
-	$cat = $mobCategories[$g.MobVnum]
-	if (-not $cat) { $cat = "Canavarlar" }
-	$lists[$cat] += $g
+    $cat = $mobCategories[$g.MobVnum]
+    if (-not $cat) { $cat = "Canavarlar" }
+    $lists[$cat] += $g
 }
 
 $sidebarHtml = "                    <div class=`"sidebar-section`">`n"
@@ -438,30 +516,43 @@ $sidebarHtml += "                        <div class=`"sidebar-section-title`"><i
 $firstCard = $true
 $icons = @{ "Canavarlar" = "fa-ghost"; "Patronlar" = "fa-crown"; "Metinler" = "fa-meteor" }
 
-# Add Metin Drop Table button at the top
+# Add category table buttons at the top
 $metinGroups = $lists["Metinler"]
+$patronGroups = $lists["Patronlar"]
+$canavarGroups = $lists["Canavarlar"]
+
 if ($metinGroups.Count -gt 0) {
     $activeClass = if ($firstCard) { " active" } else { "" }
     $sidebarHtml += "                        <button class=`"w-cat-btn$activeClass`" data-target=`"special-metin-table`" data-category=`"mob`" style=`"margin-bottom: 0.5rem; background: rgba(99,102,241,0.08); border-left-color: var(--accent-blue);`"><i class=`"fas fa-table`" style=`"margin-right: 6px;`"></i> Metin Drop Tablosu</button>`n"
     $firstCard = $false
 }
+if ($patronGroups.Count -gt 0) {
+    $activeClass = if ($firstCard) { " active" } else { "" }
+    $sidebarHtml += "                        <button class=`"w-cat-btn$activeClass`" data-target=`"special-patron-table`" data-category=`"mob`" style=`"margin-bottom: 0.5rem; background: rgba(245,158,11,0.08); border-left-color: var(--accent-gold);`"><i class=`"fas fa-table`" style=`"margin-right: 6px;`"></i> Patron Drop Tablosu</button>`n"
+    $firstCard = $false
+}
+if ($canavarGroups.Count -gt 0) {
+    $activeClass = if ($firstCard) { " active" } else { "" }
+    $sidebarHtml += "                        <button class=`"w-cat-btn$activeClass`" data-target=`"special-canavar-table`" data-category=`"mob`" style=`"margin-bottom: 0.5rem; background: rgba(99,102,241,0.08); border-left-color: var(--accent-blue);`"><i class=`"fas fa-table`" style=`"margin-right: 6px;`"></i> Canavar Drop Tablosu</button>`n"
+    $firstCard = $false
+}
 
 foreach ($catKey in @("Patronlar", "Metinler", "Canavarlar")) {
-	$catList = $lists[$catKey]
-	if ($catList.Count -gt 0) {
-		$sidebarHtml += "                        <div class=`"tree-folder`">`n"
-		$sidebarHtml += "                            <div class=`"tree-header`" onclick=`"this.parentElement.classList.toggle('open')`">`n"
-		$sidebarHtml += "                                <i class=`"fas fa-chevron-right tree-icon`"></i> <i class=`"fas $($icons[$catKey])`" style=`"margin:0 4px; font-size:0.6rem; color:var(--text-low)`"></i> $catKey ($($catList.Count))`n"
-		$sidebarHtml += "                            </div>`n"
-		$sidebarHtml += "                            <div class=`"tree-content`">`n"
-		foreach ($g in $catList) {
-			$activeClass = if ($firstCard) { " active" } else { "" }
-			$sidebarHtml += "                                <button class=`"w-cat-btn$activeClass`" data-target=`"mob-$($g.MobVnum)`" data-category=`"mob`">$($g.MobName)</button>`n"
-			$firstCard = $false
-		}
-		$sidebarHtml += "                            </div>`n"
-		$sidebarHtml += "                        </div>`n"
-	}
+    $catList = $lists[$catKey]
+    if ($catList.Count -gt 0) {
+        $sidebarHtml += "                        <div class=`"tree-folder`">`n"
+        $sidebarHtml += "                            <div class=`"tree-header`" onclick=`"this.parentElement.classList.toggle('open')`">`n"
+        $sidebarHtml += "                                <i class=`"fas fa-chevron-right tree-icon`"></i> <i class=`"fas $($icons[$catKey])`" style=`"margin:0 4px; font-size:0.6rem; color:var(--text-low)`"></i> $catKey ($($catList.Count))`n"
+        $sidebarHtml += "                            </div>`n"
+        $sidebarHtml += "                            <div class=`"tree-content`">`n"
+        foreach ($g in $catList) {
+            $activeClass = if ($firstCard) { " active" } else { "" }
+            $sidebarHtml += "                                <button class=`"w-cat-btn$activeClass`" data-target=`"mob-$($g.MobVnum)`" data-category=`"mob`">$($g.MobName)</button>`n"
+            $firstCard = $false
+        }
+        $sidebarHtml += "                            </div>`n"
+        $sidebarHtml += "                        </div>`n"
+    }
 }
 
 # Boss chest VNUMs (50000-50999 range with boss_box icon)
@@ -476,7 +567,8 @@ $regularChests = @()
 foreach ($g in $chestGroups) {
     if ($g.ChestVnum -in $bossChestVnums) {
         $bossChests += $g
-    } else {
+    }
+    else {
         $regularChests += $g
     }
 }
@@ -485,7 +577,7 @@ $sidebarHtml += "                    </div>`n"
 $sidebarHtml += "                    <div class=`"sidebar-section`">`n"
 $sidebarHtml += "                        <div class=`"sidebar-section-title`"><i class=`"fas fa-box-open`"></i> Sandiklar <span class=`"section-count`">$($regularChests.Count)</span></div>`n"
 foreach ($g in $regularChests) {
-	$sidebarHtml += "                        <button class=`"w-cat-btn`" data-target=`"chest-$($g.ChestVnum)`" data-category=`"chest`">$($g.ChestName)</button>`n"
+    $sidebarHtml += "                        <button class=`"w-cat-btn`" data-target=`"chest-$($g.ChestVnum)`" data-category=`"chest`">$($g.ChestName)</button>`n"
 }
 if ($bossChests.Count -gt 0) {
     $sidebarHtml += "                        <div class=`"tree-folder`">`n"
@@ -511,19 +603,29 @@ if ($metinGroups.Count -gt 0) {
     $isFirst = $false
 }
 
+# Add Patron Drop Table card
+if ($patronGroups.Count -gt 0) {
+    $cardsHtml += Build-CategoryTableHtml -MobGroups $patronGroups -Category "patronlarin" -CardId "special-patron-table" -Icon "crown" -Title "Patron Drop Tablosu"
+}
+
+# Add Canavar Drop Table card
+if ($canavarGroups.Count -gt 0) {
+    $cardsHtml += Build-CategoryTableHtml -MobGroups $canavarGroups -Category "canavarlarin" -CardId "special-canavar-table" -Icon "ghost" -Title "Canavar Drop Tablosu"
+}
+
 foreach ($catKey in @("Patronlar", "Metinler", "Canavarlar")) {
-	foreach ($g in $lists[$catKey]) {
-		$cardsHtml += Build-CardHtml -Entity $g -Category "mob" -IdPrefix "mob" -SubCategory $catKey -Hidden (-not $isFirst)
-		$isFirst = $false
-	}
+    foreach ($g in $lists[$catKey]) {
+        $cardsHtml += Build-CardHtml -Entity $g -Category "mob" -IdPrefix "mob" -SubCategory $catKey -Hidden (-not $isFirst)
+        $isFirst = $false
+    }
 }
 # Add regular chests first
 foreach ($g in $regularChests) {
-	$cardsHtml += Build-CardHtml -Entity $g -Category "chest" -IdPrefix "chest" -SubCategory "Sandik" -Hidden $true
+    $cardsHtml += Build-CardHtml -Entity $g -Category "chest" -IdPrefix "chest" -SubCategory "Sandik" -Hidden $true
 }
 # Then add boss chests
 foreach ($g in $bossChests) {
-	$cardsHtml += Build-CardHtml -Entity $g -Category "chest" -IdPrefix "chest" -SubCategory "Boss Sandik" -Hidden $true
+    $cardsHtml += Build-CardHtml -Entity $g -Category "chest" -IdPrefix "chest" -SubCategory "Boss Sandik" -Hidden $true
 }
 
 $totalMobs = $mobGroups.Count
@@ -784,6 +886,45 @@ $html = @"
             border-radius: var(--radius-sm);
             font-size: 0.68rem; color: var(--text-med);
         }
+
+        /* ========== HERO SEARCH ========== */
+        .hero-search {
+            padding: 1rem 2rem 1.5rem 2rem;
+            background: linear-gradient(180deg, rgba(99,102,241,0.03), transparent);
+            border-bottom: 1px solid var(--border);
+        }
+        .hero-search-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .hero-search .search-mode-toggle {
+            display: flex; gap: 2px; padding: 0;
+        }
+        .hero-search .category-filter {
+            display: flex; gap: 2px; padding: 0;
+        }
+        .hero-search .search-box {
+            flex: 1; min-width: 200px;
+        }
+        .hero-search .search-box input {
+            width: 100%; padding: 0.5rem 0.65rem 0.5rem 2.5rem;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-high); font-size: 0.75rem;
+            font-family: var(--font-body); outline: none;
+            transition: border-color var(--anim-med);
+        }
+        .hero-search .search-box input:focus { border-color: var(--border-active); }
+        .hero-search .search-box input::placeholder { color: var(--text-muted); }
+        .hero-search .search-box i {
+            position: absolute; left: 0.65rem; top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-low); font-size: 0.7rem;
+            pointer-events: none;
+        }
         .stat-chip i { font-size: 0.65rem; }
         .stat-chip .mob-icon { color: var(--accent-blue); }
         .stat-chip .chest-icon { color: var(--accent-gold); }
@@ -958,23 +1099,27 @@ $html = @"
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
             overflow: hidden;
+            table-layout: fixed;
         }
         .metin-drop-table thead {
             background: linear-gradient(135deg, rgba(99,102,241,0.1), transparent);
         }
         .metin-drop-table th {
-            padding: 0.75rem 1rem;
+            padding: 0.4rem 0.5rem;
             text-align: left;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 700;
             color: var(--text-high);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             border-bottom: 1px solid var(--border);
         }
+        .metin-drop-table th:nth-child(1) { width: 28%; }
+        .metin-drop-table th:nth-child(2) { width: 10%; }
+        .metin-drop-table th:nth-child(3) { width: 62%; }
         .metin-drop-table td {
-            padding: 0.6rem 1rem;
-            font-size: 0.68rem;
+            padding: 0.35rem 0.5rem;
+            font-size: 0.62rem;
             color: var(--text-med);
             border-bottom: 1px solid var(--border);
         }
@@ -987,10 +1132,14 @@ $html = @"
         .metin-name-cell {
             font-weight: 600;
             color: var(--text-high);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .metin-vnum-cell {
             font-family: monospace;
             color: var(--accent-blue);
+            font-size: 0.58rem;
         }
         .drop-items-cell {
             font-size: 0.65rem;
@@ -998,12 +1147,12 @@ $html = @"
         .drop-item-row {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.2rem 0;
+            gap: 0.3rem;
+            padding: 0.15rem 0;
         }
         .drop-item-icon {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             image-rendering: pixelated;
             border-radius: 3px;
             flex-shrink: 0;
@@ -1011,17 +1160,23 @@ $html = @"
         .drop-item-name {
             flex: 1;
             color: var(--text-med);
+            font-size: 0.6rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .drop-item-count {
             font-weight: 700;
             color: var(--accent-gold);
-            font-size: 0.62rem;
+            font-size: 0.58rem;
+            flex-shrink: 0;
         }
         .drop-item-chance {
             font-weight: 600;
-            padding: 1px 6px;
+            padding: 1px 4px;
             border-radius: 3px;
-            font-size: 0.58rem;
+            font-size: 0.55rem;
+            flex-shrink: 0;
         }
 
         /* ========== MOBILE ========== */
@@ -1074,20 +1229,6 @@ $html = @"
                 </div>
             </div>
         </div>
-        <div class="sidebar-search">
-            <div class="search-box">
-                <input type="text" id="search-input" placeholder="Ara...">
-                <i class="fas fa-search"></i>
-            </div>
-        </div>
-        <div class="search-mode-toggle">
-            <button class="search-mode-btn active" data-mode="entity"><i class="fas fa-crosshairs"></i> Mob/Sandik</button>
-            <button class="search-mode-btn" data-mode="item"><i class="fas fa-gem"></i> Esya</button>
-        </div>
-        <div class="category-filter">
-            <button class="cat-filter-btn active" data-filter="mob"><i class="fas fa-dragon"></i> Mob</button>
-            <button class="cat-filter-btn" data-filter="chest"><i class="fas fa-box-open"></i> Sandik</button>
-        </div>
         <nav class="sidebar-nav" id="sidebar-nav">
 $sidebarHtml
         </nav>
@@ -1103,6 +1244,22 @@ $sidebarHtml
                 <div class="stat-chip"><i class="fas fa-dragon mob-icon"></i> <strong>$totalMobs</strong> Canavar</div>
                 <div class="stat-chip"><i class="fas fa-box-open chest-icon"></i> <strong>$totalChests</strong> Sandik</div>
                 <div class="stat-chip"><i class="fas fa-gem item-icon-stat"></i> <strong>$totalItems</strong> Esya</div>
+            </div>
+        </div>
+        <div class="hero-search">
+            <div class="hero-search-container">
+                <div class="search-mode-toggle">
+                    <button class="search-mode-btn active" data-mode="entity"><i class="fas fa-crosshairs"></i> Mob/Sandik</button>
+                    <button class="search-mode-btn" data-mode="item"><i class="fas fa-gem"></i> Esya</button>
+                </div>
+                <div class="category-filter">
+                    <button class="cat-filter-btn active" data-filter="mob"><i class="fas fa-dragon"></i> Mob</button>
+                    <button class="cat-filter-btn" data-filter="chest"><i class="fas fa-box-open"></i> Sandik</button>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Mob veya sandik ara...">
+                    <i class="fas fa-search"></i>
+                </div>
             </div>
         </div>
         <div class="content-area" id="content-area">
