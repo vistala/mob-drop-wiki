@@ -6,12 +6,20 @@
 
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 
-# Source data: use full Harbi2_Files locale data (authoritative, always up to date)
-$sourceDir = "c:\Users\orkun\OneDrive\Documents\GitHub\Harbi2_Files\srv1\share\locale\germany"
-$mobDropFile = Join-Path $sourceDir "mob_drop_item.txt"
+# Source data: prefer full Harbi2_Files locale data on local machine,
+# fall back to local copies when running in GitHub Actions / CI
+$localSourceDir = "c:\Users\orkun\OneDrive\Documents\GitHub\Harbi2_Files\srv1\share\locale\germany"
+if (Test-Path $localSourceDir) {
+    $sourceDir = $localSourceDir
+    Write-Host "Kaynak: Harbi2_Files yerel klasoru kullaniliyor" -ForegroundColor DarkGray
+} else {
+    $sourceDir = $scriptDir
+    Write-Host "Kaynak: Yerel kopya kullaniliyor (CI modu)" -ForegroundColor DarkYellow
+}
+
+$mobDropFile   = Join-Path $sourceDir "mob_drop_item.txt"
 $chestDropFile = Join-Path $sourceDir "special_item_group.txt"
 
-# item_names and mob_proto stay local (already maintained as full copies)
 # Output always goes to the local mob_drop_wiki folder
 $outputPath = Join-Path $scriptDir "index.html"
 
