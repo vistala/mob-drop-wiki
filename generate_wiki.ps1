@@ -349,7 +349,6 @@ function Build-MetinTableHtml {
             }
             $dropItemsHtml += @"
 		                      <div class="drop-item-row">
-		                          <span class="drop-item-chance $badgeClass" style="margin-right: 4px; width: 40px; text-align: right;">%$iChance</span>
 		                          $countDisplay
 		                          <img class="drop-item-icon" src="icons/$iVnum.png" onerror="this.src='icons/default.png'" alt="$iName" loading="lazy">
 		                          <span class="drop-item-name">$iName</span>
@@ -360,7 +359,6 @@ function Build-MetinTableHtml {
         $tableRowsHtml += @"
                 <tr>
                     <td class="metin-name-cell">$mobName</td>
-                    <td class="metin-vnum-cell">$mobVnum</td>
                     <td class="drop-items-cell">$dropItemsHtml</td>
                 </tr>
 "@
@@ -382,7 +380,6 @@ function Build-MetinTableHtml {
                                 <thead>
                                     <tr>
                                         <th><i class="fas fa-meteor" style="margin-right:4px;color:var(--accent-blue)"></i> Metin Adi</th>
-                                        <th><i class="fas fa-hashtag" style="margin-right:4px;color:var(--accent-blue)"></i> VNUM</th>
                                         <th><i class="fas fa-gift" style="margin-right:4px;color:var(--accent-blue)"></i> Drop Esyalar</th>
                                     </tr>
                                 </thead>
@@ -428,7 +425,6 @@ function Build-CategoryTableHtml {
             }
             $dropItemsHtml += @"
 		                      <div class="drop-item-row">
-		                          <span class="drop-item-chance $badgeClass" style="margin-right: 4px; width: 40px; text-align: right;">%$iChance</span>
 		                          $countDisplay
 		                          <img class="drop-item-icon" src="icons/$iVnum.png" onerror="this.src='icons/default.png'" alt="$iName" loading="lazy">
 		                          <span class="drop-item-name">$iName</span>
@@ -439,7 +435,6 @@ function Build-CategoryTableHtml {
         $tableRowsHtml += @"
                 <tr>
                     <td class="metin-name-cell">$mobName</td>
-                    <td class="metin-vnum-cell">$mobVnum</td>
                     <td class="drop-items-cell">$dropItemsHtml</td>
                 </tr>
 "@
@@ -459,7 +454,6 @@ function Build-CategoryTableHtml {
                                 <thead>
                                     <tr>
                                         <th><i class="fas fa-$Icon" style="margin-right:4px;color:var(--accent-blue)"></i> Mob Adi</th>
-                                        <th><i class="fas fa-hashtag" style="margin-right:4px;color:var(--accent-blue)"></i> VNUM</th>
                                         <th><i class="fas fa-gift" style="margin-right:4px;color:var(--accent-blue)"></i> Drop Esyalar</th>
                                     </tr>
                                 </thead>
@@ -1117,8 +1111,7 @@ $html = @"
             white-space: nowrap;
         }
         .metin-drop-table th:nth-child(1) { width: 140px; }
-        .metin-drop-table th:nth-child(2) { width: 80px; }
-        .metin-drop-table th:nth-child(3) { width: 230px; }
+        .metin-drop-table th:nth-child(2) { width: auto; }
         .metin-drop-table td {
             padding: 0.3rem 0.8rem;
             font-size: 0.6rem;
