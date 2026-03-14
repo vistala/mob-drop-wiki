@@ -1093,7 +1093,8 @@ $html = @"
             display: block;
         }
         .metin-drop-table {
-            width: auto;
+            width: max-content;
+            min-width: 50%;
             border-collapse: collapse;
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -1105,7 +1106,7 @@ $html = @"
             background: linear-gradient(135deg, rgba(99,102,241,0.1), transparent);
         }
         .metin-drop-table th {
-            padding: 0.25rem 0.4rem;
+            padding: 0.4rem 1rem;
             text-align: left;
             font-size: 0.6rem;
             font-weight: 700;
@@ -1113,12 +1114,10 @@ $html = @"
             text-transform: uppercase;
             letter-spacing: 0.3px;
             border-bottom: 1px solid var(--border);
+            white-space: nowrap;
         }
-        .metin-drop-table th:nth-child(1) { width: 1%; white-space: nowrap; padding-right: 1.5rem; }
-        .metin-drop-table th:nth-child(2) { width: 1%; white-space: nowrap; padding-right: 1.5rem; }
-        .metin-drop-table th:nth-child(3) { width: 1%; white-space: nowrap; }
         .metin-drop-table td {
-            padding: 0.2rem 0.4rem;
+            padding: 0.3rem 1rem;
             font-size: 0.6rem;
             color: var(--text-med);
             border-bottom: 1px solid var(--border);
