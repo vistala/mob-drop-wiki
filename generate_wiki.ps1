@@ -1126,8 +1126,11 @@ $html = @"
         .metin-drop-table tbody tr:last-child td {
             border-bottom: none;
         }
+        .metin-drop-table tbody tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
+        }
         .metin-drop-table tbody tr:hover {
-            background: rgba(99,102,241,0.05);
+            background: rgba(99,102,241,0.08);
         }
         .metin-name-cell {
             font-weight: 600;
