@@ -1116,7 +1116,7 @@ $html = @"
         }
         .metin-drop-table th:nth-child(1) { width: 1%; white-space: nowrap; padding-right: 1.5rem; }
         .metin-drop-table th:nth-child(2) { width: 1%; white-space: nowrap; padding-right: 1.5rem; }
-        .metin-drop-table th:nth-child(3) { width: auto; }
+        .metin-drop-table th:nth-child(3) { width: 1%; white-space: nowrap; }
         .metin-drop-table td {
             padding: 0.2rem 0.4rem;
             font-size: 0.6rem;
@@ -1162,13 +1162,10 @@ $html = @"
             flex-shrink: 0;
         }
         .drop-item-name {
-            flex: 0 1 auto;
             color: var(--text-med);
             font-size: 0.58rem;
             white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            min-width: 150px;
+            margin-right: 15px;
         }
         .drop-item-count {
             font-weight: 700;
