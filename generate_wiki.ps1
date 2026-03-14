@@ -463,11 +463,41 @@ foreach ($catKey in @("Patronlar", "Metinler", "Canavarlar")) {
 		$sidebarHtml += "                        </div>`n"
 	}
 }
+
+# Boss chest VNUMs (50000-50999 range with boss_box icon)
+$bossChestVnums = @(
+    "50068", "50070", "50071", "50072", "50073", "50074", "50075", "50076", "50077", "50078", "50079", "50080", "50081", "50082", "50083",
+    "50186", "50270", "50271", "50294", "54700", "54701", "54702", "54703", "54704", "54705"
+)
+
+# Separate boss chests from regular chests
+$bossChests = @()
+$regularChests = @()
+foreach ($g in $chestGroups) {
+    if ($g.ChestVnum -in $bossChestVnums) {
+        $bossChests += $g
+    } else {
+        $regularChests += $g
+    }
+}
+
 $sidebarHtml += "                    </div>`n"
 $sidebarHtml += "                    <div class=`"sidebar-section`">`n"
-$sidebarHtml += "                        <div class=`"sidebar-section-title`"><i class=`"fas fa-box-open`"></i> Sandiklar <span class=`"section-count`">$($chestGroups.Count)</span></div>`n"
-foreach ($g in $chestGroups) {
+$sidebarHtml += "                        <div class=`"sidebar-section-title`"><i class=`"fas fa-box-open`"></i> Sandiklar <span class=`"section-count`">$($regularChests.Count)</span></div>`n"
+foreach ($g in $regularChests) {
 	$sidebarHtml += "                        <button class=`"w-cat-btn`" data-target=`"chest-$($g.ChestVnum)`" data-category=`"chest`">$($g.ChestName)</button>`n"
+}
+if ($bossChests.Count -gt 0) {
+    $sidebarHtml += "                        <div class=`"tree-folder`">`n"
+    $sidebarHtml += "                            <div class=`"tree-header`" onclick=`"this.parentElement.classList.toggle('open')`">`n"
+    $sidebarHtml += "                                <i class=`"fas fa-chevron-right tree-icon`"></i> <i class=`"fas fa-crown`" style=`"margin:0 4px; font-size:0.6rem; color:var(--text-low)`"></i> Boss Sandiklari ($($bossChests.Count))`n"
+    $sidebarHtml += "                            </div>`n"
+    $sidebarHtml += "                            <div class=`"tree-content`">`n"
+    foreach ($g in $bossChests) {
+        $sidebarHtml += "                                <button class=`"w-cat-btn`" data-target=`"chest-$($g.ChestVnum)`" data-category=`"chest`">$($g.ChestName)</button>`n"
+    }
+    $sidebarHtml += "                            </div>`n"
+    $sidebarHtml += "                        </div>`n"
 }
 $sidebarHtml += "                    </div>`n"
 
@@ -487,8 +517,13 @@ foreach ($catKey in @("Patronlar", "Metinler", "Canavarlar")) {
 		$isFirst = $false
 	}
 }
-foreach ($g in $chestGroups) {
+# Add regular chests first
+foreach ($g in $regularChests) {
 	$cardsHtml += Build-CardHtml -Entity $g -Category "chest" -IdPrefix "chest" -SubCategory "Sandik" -Hidden $true
+}
+# Then add boss chests
+foreach ($g in $bossChests) {
+	$cardsHtml += Build-CardHtml -Entity $g -Category "chest" -IdPrefix "chest" -SubCategory "Boss Sandik" -Hidden $true
 }
 
 $totalMobs = $mobGroups.Count
@@ -644,7 +679,6 @@ $html = @"
             cursor: pointer; transition: all var(--anim-fast);
         }
         .cat-filter-btn:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); }
-        .cat-filter-btn:nth-child(2) { border-radius: 0; }
         .cat-filter-btn:last-child { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
         .cat-filter-btn.active {
             background: var(--accent-blue-dim);
@@ -1051,8 +1085,7 @@ $html = @"
             <button class="search-mode-btn" data-mode="item"><i class="fas fa-gem"></i> Esya</button>
         </div>
         <div class="category-filter">
-            <button class="cat-filter-btn active" data-filter="all"><i class="fas fa-globe"></i> Tumu</button>
-            <button class="cat-filter-btn" data-filter="mob"><i class="fas fa-dragon"></i> Mob</button>
+            <button class="cat-filter-btn active" data-filter="mob"><i class="fas fa-dragon"></i> Mob</button>
             <button class="cat-filter-btn" data-filter="chest"><i class="fas fa-box-open"></i> Sandik</button>
         </div>
         <nav class="sidebar-nav" id="sidebar-nav">
@@ -1085,7 +1118,7 @@ $cardsHtml
         const searchInput = document.getElementById('search-input');
         const emptyState = document.getElementById('empty-state');
         let searchMode = 'entity';
-        let categoryFilter = 'all';
+        let categoryFilter = 'mob';
 
         catBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -1106,7 +1139,7 @@ $cardsHtml
             let anyVisible = false;
             wikiCards.forEach(card => {
                 const cat = card.getAttribute('data-category');
-                if (categoryFilter !== 'all' && cat !== categoryFilter) { card.style.display = 'none'; return; }
+                if (cat !== categoryFilter) { card.style.display = 'none'; return; }
                 let match = false;
                 if (searchMode === 'entity') {
                     const title = card.querySelector('.w-title');
@@ -1143,7 +1176,7 @@ $cardsHtml
                 categoryFilter = btn.getAttribute('data-filter');
                 catBtns.forEach(sb => {
                     const cat = sb.getAttribute('data-category');
-                    sb.style.display = (categoryFilter === 'all' || cat === categoryFilter) ? '' : 'none';
+                    sb.style.display = (cat === categoryFilter) ? '' : 'none';
                 });
                 document.querySelectorAll('.sidebar-section').forEach(sec => {
                     const btns = sec.querySelectorAll('.w-cat-btn');
@@ -1157,7 +1190,7 @@ $cardsHtml
                     catBtns.forEach(b => b.classList.remove('active'));
                     wikiCards.forEach(card => {
                         const cat = card.getAttribute('data-category');
-                        if (!found && (categoryFilter === 'all' || cat === categoryFilter)) {
+                        if (!found && cat === categoryFilter) {
                             card.style.display = ''; found = true;
                             const mb = document.querySelector('[data-target="'+card.id+'"]');
                             if (mb) mb.classList.add('active');
@@ -1174,7 +1207,7 @@ $cardsHtml
             wikiCards.forEach(card => { card.style.display = card.id === at ? '' : 'none'; });
             catBtns.forEach(b => {
                 const cat = b.getAttribute('data-category');
-                b.style.display = (categoryFilter === 'all' || cat === categoryFilter) ? '' : 'none';
+                b.style.display = (cat === categoryFilter) ? '' : 'none';
             });
             document.querySelectorAll('.sidebar-section').forEach(sec => {
                 const btns = sec.querySelectorAll('.w-cat-btn');
