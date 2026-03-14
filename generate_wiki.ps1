@@ -377,7 +377,7 @@ function Build-MetinTableHtml {
                                 <div class="w-type"><span class="cat-label cat-mob">Ozet</span> Tum metinlerin drop listesi</div>
                             </div>
                         </div>
-                        <div style="padding: 0.75rem 1rem; background: rgba(0,0,0,0.15); overflow-x: auto;">
+                        <div style="padding: 0.25rem 0.5rem; background: rgba(0,0,0,0.15); overflow-x: auto;">
                             <table class="metin-drop-table">
                                 <thead>
                                     <tr>
@@ -454,7 +454,7 @@ function Build-CategoryTableHtml {
                                 <div class="w-type"><span class="cat-label cat-mob">Ozet</span> Tum $Category drop listesi</div>
                             </div>
                         </div>
-                        <div style="padding: 0.75rem 1rem; background: rgba(0,0,0,0.15); overflow-x: auto;">
+                        <div style="padding: 0.25rem 0.5rem; background: rgba(0,0,0,0.15); overflow-x: auto;">
                             <table class="metin-drop-table">
                                 <thead>
                                     <tr>
@@ -948,15 +948,15 @@ $html = @"
         }
 
         .w-card-header {
-            display: flex; align-items: center; gap: 0.85rem;
-            padding: 1rem 1.15rem;
+            display: flex; align-items: center; gap: 0.6rem;
+            padding: 0.5rem 0.75rem;
             border-bottom: 1px solid var(--border);
         }
         .w-icon {
-            width: 38px; height: 38px;
+            width: 32px; height: 32px;
             border-radius: var(--radius-sm);
             display: flex; align-items: center; justify-content: center;
-            font-size: 0.95rem; flex-shrink: 0;
+            font-size: 0.85rem; flex-shrink: 0;
         }
         .w-title {
             font-family: var(--font-display);
@@ -1077,7 +1077,7 @@ $html = @"
         .grid-item:hover::after { opacity: 1; }
 
         .w-card-footer {
-            padding: 0.45rem 1.15rem;
+            padding: 0.3rem 0.75rem;
             border-top: 1px solid var(--border);
             background: rgba(0,0,0,0.1);
         }
@@ -1099,27 +1099,27 @@ $html = @"
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
             overflow: hidden;
-            table-layout: fixed;
+            table-layout: auto;
         }
         .metin-drop-table thead {
             background: linear-gradient(135deg, rgba(99,102,241,0.1), transparent);
         }
         .metin-drop-table th {
-            padding: 0.4rem 0.5rem;
+            padding: 0.25rem 0.4rem;
             text-align: left;
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-weight: 700;
             color: var(--text-high);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
             border-bottom: 1px solid var(--border);
         }
-        .metin-drop-table th:nth-child(1) { width: 28%; }
-        .metin-drop-table th:nth-child(2) { width: 10%; }
-        .metin-drop-table th:nth-child(3) { width: 62%; }
+        .metin-drop-table th:nth-child(1) { width: 1%; white-space: nowrap; padding-right: 1.5rem; }
+        .metin-drop-table th:nth-child(2) { width: 1%; white-space: nowrap; padding-right: 1.5rem; }
+        .metin-drop-table th:nth-child(3) { width: auto; }
         .metin-drop-table td {
-            padding: 0.35rem 0.5rem;
-            font-size: 0.62rem;
+            padding: 0.2rem 0.4rem;
+            font-size: 0.6rem;
             color: var(--text-med);
             border-bottom: 1px solid var(--border);
         }
@@ -1147,35 +1147,37 @@ $html = @"
         .drop-item-row {
             display: flex;
             align-items: center;
-            gap: 0.3rem;
-            padding: 0.15rem 0;
+            gap: 0.2rem;
+            padding: 0.05rem 0;
+            line-height: 1.1;
         }
         .drop-item-icon {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             image-rendering: pixelated;
-            border-radius: 3px;
+            border-radius: 2px;
             flex-shrink: 0;
         }
         .drop-item-name {
-            flex: 1;
+            flex: 0 1 auto;
             color: var(--text-med);
-            font-size: 0.6rem;
+            font-size: 0.58rem;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            min-width: 150px;
         }
         .drop-item-count {
             font-weight: 700;
             color: var(--accent-gold);
-            font-size: 0.58rem;
+            font-size: 0.55rem;
             flex-shrink: 0;
         }
         .drop-item-chance {
             font-weight: 600;
-            padding: 1px 4px;
-            border-radius: 3px;
-            font-size: 0.55rem;
+            padding: 0px 3px;
+            border-radius: 2px;
+            font-size: 0.52rem;
             flex-shrink: 0;
         }
 
