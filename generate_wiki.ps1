@@ -1093,7 +1093,7 @@ $html = @"
             display: block;
         }
         .metin-drop-table {
-            width: 100%;
+            width: auto;
             border-collapse: collapse;
             background: var(--bg-card);
             border: 1px solid var(--border);
