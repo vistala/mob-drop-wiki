@@ -1093,20 +1093,20 @@ $html = @"
             display: block;
         }
         .metin-drop-table {
-            width: max-content;
-            min-width: 50%;
+            width: 600px;
+            max-width: 100%;
             border-collapse: collapse;
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
             overflow: hidden;
-            table-layout: auto;
+            table-layout: fixed;
         }
         .metin-drop-table thead {
             background: linear-gradient(135deg, rgba(99,102,241,0.1), transparent);
         }
         .metin-drop-table th {
-            padding: 0.4rem 1rem;
+            padding: 0.4rem 0.8rem;
             text-align: left;
             font-size: 0.6rem;
             font-weight: 700;
@@ -1116,8 +1116,11 @@ $html = @"
             border-bottom: 1px solid var(--border);
             white-space: nowrap;
         }
+        .metin-drop-table th:nth-child(1) { width: 140px; }
+        .metin-drop-table th:nth-child(2) { width: 80px; }
+        .metin-drop-table th:nth-child(3) { width: 380px; }
         .metin-drop-table td {
-            padding: 0.3rem 1rem;
+            padding: 0.3rem 0.8rem;
             font-size: 0.6rem;
             color: var(--text-med);
             border-bottom: 1px solid var(--border);
@@ -1161,9 +1164,12 @@ $html = @"
             flex-shrink: 0;
         }
         .drop-item-name {
+            flex: 1;
             color: var(--text-med);
             font-size: 0.58rem;
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             margin-right: 15px;
         }
         .drop-item-count {
