@@ -10412,6 +10412,7 @@ VNUM	LOCALE_NAME
 70014	Kan Hapı
 70020	Şeftali Çiçeği Şurubu
 70021	Meleğin Kutsaması
+70022	Biyolog Süre Sıfırlama
 70024	Kutsama Küresi
 70026	Gizlenme Aynası
 70027	Demircinin Notu
@@ -10932,13 +10933,13 @@ VNUM	LOCALE_NAME
 72711	Kaplan Kemiği Bilezik
 72712	Ejder Kemiği Bilezik
 72713	Güç Kutsaması
-72723	Güneş Özütü (K)
-72724	Güneş Özütü (O)
-72725	Güneş Özütü (B)
+72723	Güneş Özütü (K) (B)
+72724	Güneş Özütü (O) (B)
+72725	Güneş Özütü (B) (B)
 72726	Güneş Özütü (Ö)
-72727	Ay Özütü (K)
-72728	Ay Özütü (O)
-72729	Ay Özütü (B)
+72727	Ay Özütü (K) (B)
+72728	Ay Özütü (O) (B)
+72729	Ay Özütü (B) (B)
 72730	Ay Özütü (Ö)
 72734	Mavi şans kutusu
 72735	Kırmızı şans kutusu
@@ -12079,3 +12080,139 @@ VNUM	LOCALE_NAME
 175200	Mitsi ejderha ametisti
 175300	Mitsi ejderha ametisti
 175400	Mitsi ejderha ametisti
+600000	Royale Pass Bitirici
+600001	Kırmızı Şebnem+
+600002	Turuncu Şebnem+
+600003	Sarı Şebnem+
+600004	Yeşil Şebnem+
+600005	Mavi Şebnem+
+600006	Beyaz Şebnem+
+600007	Siyah Şebnem+
+600008	Mor Şebnem+
+600009	Gri Şebnem+
+600010	Turkuaz Şebnem+
+600011	Sandik 1
+600012	Sandik 2
+600013	Sandik 3
+600014	Sandik 4
+600015	Sandik 5
+600019	Ay Jediti
+600020	Ay Jediti Küpesi+0
+600021	Ay Jediti Küpesi+1
+600022	Ay Jediti Küpesi+2
+600023	Ay Jediti Küpesi+3
+600024	Ay Jediti Küpesi+4
+600025	Ay Jediti Küpesi+5
+600026	Ay Jediti Küpesi+6
+600027	Ay Jediti Küpesi+7
+600028	Ay Jediti Küpesi+8
+600029	Ay Jediti Küpesi+9
+600030	Ay Jediti Bileziği+0
+600031	Ay Jediti Bileziği+1
+600032	Ay Jediti Bileziği+2
+600033	Ay Jediti Bileziği+3
+600034	Ay Jediti Bileziği+4
+600035	Ay Jediti Bileziği+5
+600036	Ay Jediti Bileziği+6
+600037	Ay Jediti Bileziği+7
+600038	Ay Jediti Bileziği+8
+600039	Ay Jediti Bileziği+9
+600040	Ay Jediti Kolyesi+0
+600041	Ay Jediti Kolyesi+1
+600042	Ay Jediti Kolyesi+2
+600043	Ay Jediti Kolyesi+3
+600044	Ay Jediti Kolyesi+4
+600045	Ay Jediti Kolyesi+5
+600046	Ay Jediti Kolyesi+6
+600047	Ay Jediti Kolyesi+7
+600048	Ay Jediti Kolyesi+8
+600049	Ay Jediti Kolyesi+9
+600050	Skill Parşomeni
+600051	Metin Parşomeni
+600052	1. Efsun Değiştir
+600053	2. Efsun Değiştir
+600054	3. Efsun Değiştir
+600055	4. Efsun Değiştir
+600056	5. Efsun Değiştir
+600057	Çiçek Sandığı
+600058	Marka Sandığı
+600059	Şebnem Sandığı
+600060	Yohara Çiçek Sandığı
+600061	Pet Yaş+
+600062	Sungma Jedit Sandığı
+600071	EP Kuponu (10)
+600072	EP Kuponu (20)
+600073	EP Kuponu (50)
+600074	EP Kuponu (100)
+600075	EP Kuponu (250)
+600076	EP Kuponu (500)
+600077	EP Kuponu (1000)
+600078	EP Kuponu (2000)
+600079	EP Kuponu (5000)
+600081	MP Kuponu (10)
+600082	MP Kuponu (20)
+600083	MP Kuponu (50)
+600084	MP Kuponu (100)
+600085	MP Kuponu (250)
+600086	MP Kuponu (500)
+600087	MP Kuponu (1000)
+600088	MP Kuponu (2000)
+600089	MP Kuponu (5000)
+600098	Tecrübe Yüzüğü Parçası
+600099	Hırsız Eldiveni Parçası
+600101	İsimsiz Sandık1b
+600102	İsimsiz Sandık1c
+600103	İsimsiz Sandık1d
+600104	İsimsiz Sandık1e
+600105	İsimsiz Sandık1f
+600106	Metin Sandığı Sv1
+600107	Metin Sandığı Sv2
+600108	Metin Sandığı Sv3
+600109	Metin Sandığı Sv4
+600110	Metin Sandığı Sv5
+600111	Patron Sandığı Sv1
+600112	Patron Sandığı Sv2
+600113	Patron Sandığı Sv3
+600114	Patron Sandığı Sv4
+600115	Patron Sandığı Sv5
+600116	İsimsiz Sandık2b
+600117	İsimsiz Sandık2c
+600118	İsimsiz Sandık2d
+600119	İsimsiz Sandık2e
+600120	İsimsiz Sandık2f
+600121	Geliştirme Eşya Sandığı Sv1
+600122	Geliştirme Eşya Sandığı Sv2
+600123	Geliştirme Eşya Sandığı Sv3
+600124	Geliştirme Eşya Sandığı Sv4
+600125	Geliştirme Eşya Sandığı Sv5
+600126	İsimsiz Sandık4b
+600127	İsimsiz Sandık4c
+600128	İsimsiz Sandık4d
+600129	İsimsiz Sandık4e
+600130	İsimsiz Sandık4f
+600131	İsimsiz Sandık5b
+600132	İsimsiz Sandık5c
+600133	İsimsiz Sandık5d
+600134	İsimsiz Sandık5e
+600135	İsimsiz Sandık5f
+600136	İsimsiz Sandık6b
+600137	İsimsiz Sandık6c
+600138	İsimsiz Sandık6d
+600139	İsimsiz Sandık6e
+600140	İsimsiz Sandık6f
+600141	Zindan Süre Sıfırlama
+713044	Süre Özütü Sandığı
+713045	Bronz Kutu
+713046	Gümüş Kutu
+713047	Altın Kutu
+713048	Elmas Kutu
+713049	Depo Bonus Değiştirici
+721027	Tecrübe Sandığı
+733049	Başlangıç Çarkı (50 EP)
+733050	Gelişim Çarkı (50 EP)
+733051	Uzman Çarkı (50 EP)
+733052	Cor Çarkı (50 EP)
+733053	Adaptasyon Çarkı (50 EP)
+733054	Savaş Çarkı (50 EP)
+733055	Yohara Çarkı (50 EP)
+733056	Bayram Çarkı (50 EP)

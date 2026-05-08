@@ -111,12 +111,10 @@ function Get-ItemNames {
     $nameMap = @{}
     if (-not (Test-Path $Path)) { return $nameMap }
     $lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
-    $firstLine = $true
     foreach ($line in $lines) {
-        if ($firstLine) { $firstLine = $false; continue } # skip header
-        $parts = $line.Split("`t")
-        if ($parts.Count -ge 2 -and $parts[0] -match "^\d+$") {
-            $nameMap[$parts[0].Trim()] = $parts[1].Trim()
+        $trimmed = $line.Trim()
+        if ($trimmed -match "^(\d+)\s+(.+)$") {
+            $nameMap[$Matches[1]] = $Matches[2].Trim()
         }
     }
     return $nameMap
