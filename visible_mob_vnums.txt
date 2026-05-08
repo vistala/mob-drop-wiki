@@ -1,0 +1,54 @@
+8001	Üzüntü Metini
+8002	Dövüş Metini
+8003	Savaş Metini
+8004	Hırs Metini
+8005	Siyah Metin
+8006	Karanlık Metin
+8007	Kıskançlık Metini
+8008	Ruh Metini
+8009	Gölge Metini
+8010	Dayanıklılık Metini
+8011	Şeytan Metini
+8013	Ölüm Metini
+8014	Katil Metini
+8024	Metin Pung-Ma
+8025	Metin Ma-An
+8026	Metin Tu-Young
+8027	Metin Jeon-Un
+8051	Işıksızlık Metini
+8052	Korluğun Metini
+8053	Mağrurluğun Metini
+8054	Öfkenin Metini
+8055	Felaketin Metini
+8056	Namertlik Metini
+8059	Ağaç Yaratığı Metini
+8061	Orman Metini
+691	Ork Reisi
+1901	Dokuz Kuyruk
+1304	Sarı Kaplan H.
+2206	Alev Kral
+2191	Tosbağa 
+3590	Kemiksurat
+3591	Kızıl Reis
+3595	Zalim Kemiksurat
+3596	Zalim Kızıl Reis
+3490	General Kappa
+3491	Triton
+3690	General Istakoz
+3691	Kral Yengeç
+3790	Gargoyle
+3791	Kral Voba
+3290	Rakshasa
+3291	Martyaxwar
+3190	Arges
+3191	Polyphemos
+3090	Lord Gnoll
+3091	Baş Gnoll Nöbetçi
+3390	Lemur Prensi
+3391	Lemur Muhafız
+3890	Kaptan Şrak
+3891	Dev Öcü
+6391	Ochao Dükü
+6392	Ochao Muhafızı
+6393	Güçlü Ochao Dükü
+6394	Güçlü Ochao Muhafızı

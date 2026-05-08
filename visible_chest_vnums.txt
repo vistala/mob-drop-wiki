@@ -1,0 +1,7 @@
+# Bu dosyaya sadece wiki'de gorunmesini istedigin sandik VNUM'larini yaz.
+# Her satira bir VNUM yaz. # ile baslayan satirlar yok sayilir.
+# Dosyada hic VNUM yoksa tum sandik droplari gosterilir.
+#
+# Ornek:
+# 50011
+# 50070

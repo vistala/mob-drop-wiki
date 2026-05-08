@@ -139,6 +139,74 @@ function Get-MobNames {
     return $nameMap
 }
 
+function Get-VisibleMobVnums {
+    param([string]$Path)
+    $vnums = @{}
+    if (-not (Test-Path $Path)) { return $vnums }
+
+    $lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
+    foreach ($line in $lines) {
+        $clean = ($line -replace "#.*$", "").Trim()
+        if ($clean -match "^\d+$") {
+            $vnums[$clean] = $true
+        }
+    }
+    return $vnums
+}
+
+function Merge-MobGroupsByVnum {
+    param($Groups)
+
+    $merged = @{}
+    $order = @()
+    foreach ($g in $Groups) {
+        $key = [string]$g.MobVnum
+        if (-not $merged.ContainsKey($key)) {
+            $merged[$key] = @{
+                MobVnum = $g.MobVnum
+                MobName = $g.MobName
+                Type    = $g.Type
+                Items   = @()
+            }
+            $order += $key
+        }
+        $merged[$key].Items += $g.Items
+    }
+
+    $result = @()
+    foreach ($key in $order) {
+        $result += $merged[$key]
+    }
+    return $result
+}
+
+function Merge-ChestGroupsByVnum {
+    param($Groups)
+
+    $merged = @{}
+    $order = @()
+    foreach ($g in $Groups) {
+        $key = [string]$g.ChestVnum
+        if (-not $merged.ContainsKey($key)) {
+            $merged[$key] = @{
+                GroupName = $g.GroupName
+                ChestVnum = $g.ChestVnum
+                ChestName = $g.ChestName
+                Type      = $g.Type
+                Items     = @()
+            }
+            $order += $key
+        }
+        $merged[$key].Items += $g.Items
+    }
+
+    $result = @()
+    foreach ($key in $order) {
+        $result += $merged[$key]
+    }
+    return $result
+}
+
 # ======================== PARSER: special_item_group.txt ========================
 function Parse-ChestDropFile {
     param([string]$Path, [hashtable]$ItemNames = @{})
@@ -483,9 +551,23 @@ $mobNamesMap = Get-MobNames -Path $mobNamesPath
 Write-Host "Mob isimleri yuklendi: $($mobNamesMap.Count) kayit" -ForegroundColor DarkGray
 
 $mobGroups = Parse-MobDropFile -Path $mobDropFile -MobNames $mobNamesMap -ItemNames $itemNamesMap
+$visibleMobVnumsPath = Join-Path $scriptDir "visible_mob_vnums.txt"
+$visibleMobVnums = Get-VisibleMobVnums -Path $visibleMobVnumsPath
+if ($visibleMobVnums.Count -gt 0) {
+    $mobGroups = @($mobGroups | Where-Object { $visibleMobVnums.ContainsKey([string]$_.MobVnum) })
+    Write-Host "Mob VNUM filtresi aktif: $($visibleMobVnums.Count) VNUM" -ForegroundColor DarkGray
+}
+$mobGroups = Merge-MobGroupsByVnum -Groups $mobGroups
 Write-Host "Canavarlar: $($mobGroups.Count) grup" -ForegroundColor Green
 
 $chestGroups = Parse-ChestDropFile -Path $chestDropFile -ItemNames $itemNamesMap
+$visibleChestVnumsPath = Join-Path $scriptDir "visible_chest_vnums.txt"
+$visibleChestVnums = Get-VisibleMobVnums -Path $visibleChestVnumsPath
+if ($visibleChestVnums.Count -gt 0) {
+    $chestGroups = @($chestGroups | Where-Object { $visibleChestVnums.ContainsKey([string]$_.ChestVnum) })
+    Write-Host "Sandik VNUM filtresi aktif: $($visibleChestVnums.Count) VNUM" -ForegroundColor DarkGray
+}
+$chestGroups = Merge-ChestGroupsByVnum -Groups $chestGroups
 Write-Host "Sandiklar: $($chestGroups.Count) grup" -ForegroundColor Green
 
 # Build sidebar
