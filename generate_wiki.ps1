@@ -531,24 +531,6 @@ if ($canavarGroups.Count -gt 0) {
     $firstCard = $false
 }
 
-foreach ($catKey in @("Patronlar", "Metinler", "Canavarlar")) {
-    $catList = $lists[$catKey]
-    if ($catList.Count -gt 0) {
-        $sidebarHtml += "                        <div class=`"tree-folder`">`n"
-        $sidebarHtml += "                            <div class=`"tree-header`" onclick=`"this.parentElement.classList.toggle('open')`">`n"
-        $sidebarHtml += "                                <i class=`"fas fa-chevron-right tree-icon`"></i> <i class=`"fas $($icons[$catKey])`" style=`"margin:0 4px; font-size:0.6rem; color:var(--text-low)`"></i> $catKey ($($catList.Count))`n"
-        $sidebarHtml += "                            </div>`n"
-        $sidebarHtml += "                            <div class=`"tree-content`">`n"
-        foreach ($g in $catList) {
-            $activeClass = if ($firstCard) { " active" } else { "" }
-            $sidebarHtml += "                                <button class=`"w-cat-btn$activeClass`" data-target=`"mob-$($g.MobVnum)`" data-category=`"mob`">$($g.MobName)</button>`n"
-            $firstCard = $false
-        }
-        $sidebarHtml += "                            </div>`n"
-        $sidebarHtml += "                        </div>`n"
-    }
-}
-
 # Boss chest VNUMs (50000-50999 range with boss_box icon)
 $bossChestVnums = @(
     "50068", "50070", "50071", "50072", "50073", "50074", "50075", "50076", "50077", "50078", "50079", "50080", "50081", "50082", "50083",
@@ -567,24 +549,6 @@ foreach ($g in $chestGroups) {
     }
 }
 
-$sidebarHtml += "                    </div>`n"
-$sidebarHtml += "                    <div class=`"sidebar-section`">`n"
-$sidebarHtml += "                        <div class=`"sidebar-section-title`"><i class=`"fas fa-box-open`"></i> Sandiklar <span class=`"section-count`">$($regularChests.Count)</span></div>`n"
-foreach ($g in $regularChests) {
-    $sidebarHtml += "                        <button class=`"w-cat-btn`" data-target=`"chest-$($g.ChestVnum)`" data-category=`"chest`">$($g.ChestName)</button>`n"
-}
-if ($bossChests.Count -gt 0) {
-    $sidebarHtml += "                        <div class=`"tree-folder`">`n"
-    $sidebarHtml += "                            <div class=`"tree-header`" onclick=`"this.parentElement.classList.toggle('open')`">`n"
-    $sidebarHtml += "                                <i class=`"fas fa-chevron-right tree-icon`"></i> <i class=`"fas fa-crown`" style=`"margin:0 4px; font-size:0.6rem; color:var(--text-low)`"></i> Boss Sandiklari ($($bossChests.Count))`n"
-    $sidebarHtml += "                            </div>`n"
-    $sidebarHtml += "                            <div class=`"tree-content`">`n"
-    foreach ($g in $bossChests) {
-        $sidebarHtml += "                                <button class=`"w-cat-btn`" data-target=`"chest-$($g.ChestVnum)`" data-category=`"chest`">$($g.ChestName)</button>`n"
-    }
-    $sidebarHtml += "                            </div>`n"
-    $sidebarHtml += "                        </div>`n"
-}
 $sidebarHtml += "                    </div>`n"
 
 # Build cards
