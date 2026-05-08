@@ -2982,3 +2982,4 @@ VNUM	LOCALE_NAME
 60001	Lonca yöneticisi
 60002	Lonca yöneticisi
 60003	Teovahdan
+ 
