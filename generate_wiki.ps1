@@ -147,8 +147,8 @@ function Get-VisibleMobVnums {
     $lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
     foreach ($line in $lines) {
         $clean = ($line -replace "#.*$", "").Trim()
-        if ($clean -match "^\d+$") {
-            $vnums[$clean] = $true
+        if ($clean -match "^(\d+)\b") {
+            $vnums[$Matches[1]] = $true
         }
     }
     return $vnums
