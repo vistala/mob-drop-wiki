@@ -24,6 +24,7 @@ else:
 ICON_OUT = SCRIPT_DIR / "icons"
 MOB_DROP = SCRIPT_DIR / "mob_drop_item.txt"
 CHEST_DROP = SCRIPT_DIR / "special_item_group.txt"
+ICON_FILE_INDEXES = {}
 
 def extract_vnums_from_file(filepath):
     """Extract all item vnums from a drop file."""
@@ -85,14 +86,16 @@ def convert_tga_to_png(vnum, src_dir, out_dir, mapping):
         icon_subpath = f"icon/item/{padded}.tga"
         
     tga_path = src_dir / icon_subpath
-    
+
     # Try one final raw fallback if the composed path doesn't exist
     if not tga_path.exists():
         alt_path = src_dir / "icon/item" / f"{str(vnum_int - (vnum_int%10)).zfill(5)}.tga"
         if alt_path.exists():
              tga_path = alt_path
         else:
-             return False
+             tga_path = find_icon_by_vnum(src_dir, vnum_int)
+             if not tga_path:
+                 return False
     
     try:
         img = Image.open(tga_path)
@@ -106,6 +109,46 @@ def convert_tga_to_png(vnum, src_dir, out_dir, mapping):
     except Exception as e:
         print(f"  HATA: {vnum} -> {e}")
         return False
+
+def find_icon_by_vnum(src_dir, vnum_int):
+    """Find icons that are present in nested icon packs but missing from item_list.txt."""
+    global ICON_FILE_INDEXES
+    src_key = str(src_dir.resolve())
+    if src_key not in ICON_FILE_INDEXES:
+        ICON_FILE_INDEXES[src_key] = build_icon_file_index(src_dir)
+
+    candidates = [
+        f"{vnum_int}.tga",
+        f"{vnum_int}.dds",
+        f"{vnum_int - (vnum_int % 10)}.tga",
+        f"{vnum_int - (vnum_int % 10)}.dds",
+        f"{str(vnum_int).zfill(5)}.tga",
+        f"{str(vnum_int).zfill(5)}.dds",
+        f"{str(vnum_int - (vnum_int % 10)).zfill(5)}.tga",
+        f"{str(vnum_int - (vnum_int % 10)).zfill(5)}.dds",
+    ]
+
+    for filename in dict.fromkeys(candidates):
+        match = ICON_FILE_INDEXES[src_key].get(filename.lower())
+        if match:
+            return match
+    return None
+
+def build_icon_file_index(src_dir):
+    index = {}
+    roots = [
+        src_dir / "icon" / "item",
+        src_dir / "icon",
+        src_dir,
+    ]
+    for root in roots:
+        if not root.exists():
+            continue
+        for path in root.rglob("*"):
+            if path.suffix.lower() not in (".tga", ".dds"):
+                continue
+            index.setdefault(path.name.lower(), path)
+    return index
 
 def create_default_icon(out_dir):
     """Create a default fallback icon."""

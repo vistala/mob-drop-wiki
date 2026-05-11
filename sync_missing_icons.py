@@ -38,7 +38,9 @@ DUPLICATE_FILES = [
 
 ITEM_PROTO_FILES = [
     SCRIPT_DIR / "item_proto.txt",
+    SCRIPT_DIR / "global_item_proto.txt",
     REPO_ROOT / "Harbi2_Files" / "srv1" / "share" / "conf" / "item_proto.txt",
+    REPO_ROOT / "Harbi2_Files" / "srv1" / "share" / "conf" / "global_item_proto.txt",
 ]
 
 ITEM_LIST_FILES = [
