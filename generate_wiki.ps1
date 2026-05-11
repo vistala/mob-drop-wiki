@@ -20,6 +20,8 @@ else {
 
 $mobDropFile = Join-Path $sourceDir "mob_drop_item.txt"
 $chestDropFile = Join-Path $sourceDir "special_item_group.txt"
+$localConfDir = "c:\Users\orkun\OneDrive\Documents\GitHub\Harbi2_Files\srv1\share\conf"
+$confDir = if (Test-Path $localConfDir) { $localConfDir } else { $scriptDir }
 
 # Output always goes to the local mob_drop_wiki folder
 $outputPath = Join-Path $scriptDir "index.html"
@@ -539,12 +541,12 @@ $tableRowsHtml
 Write-Host "=== Harbi2 Drop Wiki Generator v3 ===" -ForegroundColor Cyan
 
 # Load item names for name resolution (chest names + item names)
-$itemNamesPath = Join-Path $scriptDir "item_names.txt"
+$itemNamesPath = Join-Path $confDir "item_names.txt"
 $itemNamesMap = Get-ItemNames -Path $itemNamesPath
 Write-Host "Item isimleri yuklendi: $($itemNamesMap.Count) kayit" -ForegroundColor DarkGray
 
 # Load mob names for name resolution
-$mobNamesPath = Join-Path $scriptDir "mob_names.txt"
+$mobNamesPath = Join-Path $confDir "mob_names.txt"
 $mobNamesMap = Get-MobNames -Path $mobNamesPath
 Write-Host "Mob isimleri yuklendi: $($mobNamesMap.Count) kayit" -ForegroundColor DarkGray
 
@@ -569,7 +571,7 @@ $chestGroups = Merge-ChestGroupsByVnum -Groups $chestGroups
 Write-Host "Sandiklar: $($chestGroups.Count) grup" -ForegroundColor Green
 
 # Build sidebar
-$mobProtoPath = Join-Path $scriptDir "mob_proto.txt"
+$mobProtoPath = Join-Path $confDir "mob_proto.txt"
 $mobCategories = Get-MobCategories -Path $mobProtoPath
 
 $lists = @{
@@ -585,7 +587,7 @@ foreach ($g in $mobGroups) {
 }
 
 $sidebarHtml = "                    <div class=`"sidebar-section`">`n"
-$sidebarHtml += "                        <div class=`"sidebar-section-title`"><i class=`"fas fa-dragon`"></i> Canavarlar <span class=`"section-count`">$($mobGroups.Count)</span></div>`n"
+$sidebarHtml += "                        <div class=`"sidebar-section-title`"><i class=`"fas fa-dragon`"></i> Moblar <span class=`"section-count`">$($mobGroups.Count)</span></div>`n"
 
 $firstCard = $true
 $icons = @{ "Canavarlar" = "fa-ghost"; "Patronlar" = "fa-crown"; "Metinler" = "fa-meteor" }
@@ -848,6 +850,11 @@ $html = @"
             text-transform: uppercase; letter-spacing: 2px;
             color: var(--text-muted);
             display: flex; align-items: center; gap: 0.4rem;
+        }
+        .sidebar-subtitle {
+            padding-top: 0.7rem;
+            color: var(--text-low);
+            letter-spacing: 1.5px;
         }
         .sidebar-section-title i { font-size: 0.55rem; }
         .section-count {

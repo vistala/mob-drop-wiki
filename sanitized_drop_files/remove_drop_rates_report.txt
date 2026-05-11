@@ -1,0 +1,12 @@
+Drop rate temizleme raporu
+Tarih: 2026-05-12 01:40:41
+Dosya sayisi: 2
+
+Kaynak: C:\Users\orkun\OneDrive\Documents\Github\mob-drop-wiki\mob_drop_item.txt
+Cikti : C:\Users\orkun\OneDrive\Documents\Github\mob-drop-wiki\sanitized_drop_files\mob_drop_item.txt
+Degisen satir: 6810
+
+Kaynak: C:\Users\orkun\OneDrive\Documents\Github\mob-drop-wiki\special_item_group.txt
+Cikti : C:\Users\orkun\OneDrive\Documents\Github\mob-drop-wiki\sanitized_drop_files\special_item_group.txt
+Degisen satir: 8395
+
