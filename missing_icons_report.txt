@@ -1,17 +1,32 @@
-Gerekli icon sayisi: 3777
-Baslangicta eksik: 1101
-TGA donusumuyle cozuldu: 123
+Gerekli icon sayisi: 3632
+Baslangicta eksik: 996
+TGA donusumuyle cozuldu: 0
 item_list ayni icon yolundan kopyalandi: 0
 Duplicate itemden kopyalandi: 0
-Sayisal base VNUM'dan kopyalandi: 1
+Sayisal base VNUM'dan kopyalandi: 0
 item_proto grubundan kopyalandi: 0
-Cozulemeyen: 977
-
-Sayisal base kopyalari:
-713050 <- 713000
+Cozulemeyen: 996
 
 Cozulemeyenler:
+45408
+45409
+45410
+45411
+45600
+45601
+45602
+45603
+45640
+45641
+45642
+45643
+45648
+45649
+45650
+45651
 50901
+52202
+70604
 71288
 700000
 700001
@@ -501,6 +516,7 @@ Cozulemeyenler:
 703060
 703061
 703062
+704040
 705000
 705001
 705002

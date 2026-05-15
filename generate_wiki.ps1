@@ -122,6 +122,53 @@ function Get-ItemNames {
     return $nameMap
 }
 
+function Get-ItemIconPaths {
+    param([string]$Path)
+    $iconMap = @{}
+    if (-not (Test-Path $Path)) { return $iconMap }
+    $lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
+    foreach ($line in $lines) {
+        $trimmed = $line.Trim()
+        if ($trimmed -match "^(\d+)\s+\S+\s+(.+)$") {
+            $iconMap[$Matches[1]] = $Matches[2].Trim().ToLowerInvariant()
+        }
+    }
+    return $iconMap
+}
+
+function Get-ItemIconBaseVnums {
+    param([string[]]$Paths)
+    $baseMap = @{}
+    foreach ($path in $Paths) {
+        if (-not (Test-Path $path)) { continue }
+        $lines = [System.IO.File]::ReadAllLines($path, [System.Text.Encoding]::UTF8)
+        foreach ($line in $lines) {
+            $parts = $line.Split("`t")
+            if ($parts.Count -ge 31 -and $parts[0] -match "^\d+$" -and $parts[30] -match "^\d+$") {
+                $base = [int]$parts[30]
+                if ($base -ge 40000) {
+                    $baseMap[$parts[0].Trim()] = [string]$base
+                }
+            }
+        }
+    }
+    return $baseMap
+}
+
+function Get-GlobalItemIconRefs {
+    param([string]$Path)
+    $refMap = @{}
+    if (-not (Test-Path $Path)) { return $refMap }
+    $lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
+    foreach ($line in $lines) {
+        $trimmed = $line.Trim()
+        if ($trimmed -match "^(\d+)\s+.*\[IN;(\d+)\]") {
+            $refMap[$Matches[1]] = $Matches[2]
+        }
+    }
+    return $refMap
+}
+
 # ======================== LOADER: mob_names.txt ========================
 function Get-MobNames {
     param([string]$Path)
@@ -537,6 +584,325 @@ $tableRowsHtml
 "@
 }
 
+function New-CostumeItem {
+    param([string]$Vnum, [string]$Name, [string]$IconKey = "", [string]$IconVnum = "")
+    if ($IconVnum -eq "") { $IconVnum = $Vnum }
+    return @{ Vnum = $Vnum; Name = $Name; IconKey = $IconKey; IconVnum = $IconVnum }
+}
+
+function New-CostumeSlot {
+    param([string]$Title, [array]$Items, [string]$Note = "")
+    return @{ Title = $Title; Items = $Items; Note = $Note }
+}
+
+function New-CostumeSet {
+    param([string]$Name, [array]$Slots, [hashtable]$Bonuses)
+    return @{ Name = $Name; Slots = $Slots; Bonuses = $Bonuses }
+}
+
+function Get-SetRequirementLabel {
+    param([string]$Token)
+    switch ($Token) {
+        "SET_ITEM_COSTUME_BODY" { return "Kostum" }
+        "SET_ITEM_COSTUME_HAIR" { return "Kask" }
+        "SET_ITEM_COSTUME_MOUNT" { return "Binek" }
+        "SET_ITEM_COSTUME_ACCE" { return "Kusak" }
+        "SET_ITEM_COSTUME_WEAPON" { return "Silah Kostumu" }
+        "SET_ITEM_UNIQUE" { return "Yuzuk/Esya" }
+        "SET_ITEM_PET" { return "Pet" }
+        default { return ($Token -replace "^SET_ITEM_", "" -replace "_", " ") }
+    }
+}
+
+function Get-ApplyLabel {
+    param([string]$Apply)
+    $labels = @{
+        "MAX_HP" = "HP"
+        "MOV_SPEED" = "Hareket Hizi"
+        "MALL_EXPBONUS" = "EXP Bonusu"
+        "MALL_ITEMBONUS" = "Esya Dusurme Sansi"
+        "ITEM_DROP_BONUS" = "Esya Dusurme Sansi"
+        "ATTBONUS_MONSTER" = "Canavarlara Karsi Guc"
+        "ATTBONUS_STONE" = "Metinlere Karsi Guc"
+        "SKILL_DAMAGE_BONUS" = "Beceri Hasari"
+        "NORMAL_HIT_DAMAGE_BONUS" = "Ortalama Zarar"
+        "NORMAL_HIT_DAMAGE_BONUS_BOSS_OR_MORE" = "Patronlara Karsi Saldiri Hasari"
+        "MELEE_MAGIC_ATTBONUS_PER" = "Buyu/Yakin Dovus Saldiri"
+        "STUN_PCT" = "Sersemletme Sansi"
+        "HP_REGEN" = "HP Yenileme"
+        "RESIST_FIRE" = "Atese Karsi Dayaniklilik"
+        "RESIST_ICE" = "Buza Karsi Dayaniklilik"
+        "ENCHANT_PER_ELECT" = "Simsek Gucu"
+        "ENCHANT_PER_FIRE" = "Ates Gucu"
+        "ENCHANT_PER_ICE" = "Buz Gucu"
+        "ENCHANT_PER_WIND" = "Ruzgar Gucu"
+        "ENCHANT_PER_EARTH" = "Toprak Gucu"
+        "ENCHANT_PER_DARK" = "Karanlik Gucu"
+        "ENCHANT_DARK" = "Karanlik Efsunu"
+        "ATTBONUS_UNDEAD" = "Olumsuzlere Karsi Guc"
+    }
+    if ($labels.ContainsKey($Apply)) { return $labels[$Apply] }
+    return ($Apply -replace "_", " ")
+}
+
+function Format-SetBonus {
+    param([string]$Apply, [string]$Value)
+    $label = Get-ApplyLabel -Apply $Apply
+    if ($Apply -eq "MAX_HP" -or $Apply -match "^ENCHANT_") {
+        return "+$Value $label"
+    }
+    return "+%$Value $label"
+}
+
+function Get-SetDisplayName {
+    param([string]$GroupName)
+    $name = $GroupName -replace "SetBonus", "" -replace "_", " "
+    $name = $name.Trim()
+    if ($name.EndsWith("+")) { $name = $name.Substring(0, $name.Length - 1).Trim() + "+" }
+    return "$name Seti"
+}
+
+function New-ItemsFromRange {
+    param([int]$Min, [int]$Max, [int]$Step, [hashtable]$ItemNames = @{}, [hashtable]$IconPaths = @{}, [hashtable]$IconBaseVnums = @{})
+    if ($Max -le 0 -or $Max -lt $Min) { $Max = $Min }
+    if ($Step -le 0) { $Step = 1 }
+
+    $items = @()
+    for ($v = $Min; $v -le $Max; $v += $Step) {
+        $name = ""
+        if ($ItemNames.ContainsKey([string]$v)) { $name = $ItemNames[[string]$v] }
+        $iconKey = ""
+        $iconVnum = [string]$v
+        if ($IconBaseVnums.ContainsKey([string]$v)) { $iconVnum = $IconBaseVnums[[string]$v] }
+        if ($IconPaths.ContainsKey($iconVnum)) { $iconKey = $IconPaths[$iconVnum] }
+        elseif ($IconPaths.ContainsKey([string]$v)) { $iconKey = $IconPaths[[string]$v] }
+        $items += New-CostumeItem -Vnum ([string]$v) -Name $name -IconKey $iconKey -IconVnum $iconVnum
+    }
+    return $items
+}
+
+function Parse-SetItemTable {
+    param([string]$Path, [hashtable]$ItemNames = @{}, [hashtable]$IconPaths = @{}, [hashtable]$IconBaseVnums = @{}, [hashtable]$GlobalIconRefs = @{})
+    if (-not (Test-Path $Path)) {
+        Write-Host "UYARI: $Path bulunamadi" -ForegroundColor Yellow
+        return @()
+    }
+
+    $sets = @()
+    $lines = [System.IO.File]::ReadAllLines($Path, [System.Text.Encoding]::UTF8)
+    $current = $null
+    $inGroup = $false
+
+    foreach ($line in $lines) {
+        $clean = ($line -replace "#.*$", "").Trim()
+        if ($clean -eq "") { continue }
+
+        if ($clean -match "^Group\s+(.+)$") {
+            $current = @{
+                Name = $Matches[1].Trim()
+                Requirements = @()
+                BonusLines = @()
+            }
+            continue
+        }
+        if ($clean -eq "{") { $inGroup = $true; continue }
+        if ($clean -eq "}") {
+            if ($inGroup -and $current) {
+                if ($current.Requirements.Count -gt 0 -and $current.BonusLines.Count -gt 0) {
+                    if ($current.Name -in @("Galip_Sandigi", "AzrailSetBonus+")) {
+                        $current = $null
+                        $inGroup = $false
+                        continue
+                    }
+                    $slots = @()
+                    $slotIndex = 1
+                    foreach ($req in $current.Requirements) {
+                        if ($req.Token -eq "SET_ITEM_UNIQUE") {
+                            $items = @()
+                            foreach ($fixedVnum in @("701000", "701030", "701040")) {
+                                $iconVnum = if ($GlobalIconRefs.ContainsKey($fixedVnum)) { $GlobalIconRefs[$fixedVnum] } else { $fixedVnum }
+                                $name = if ($ItemNames.ContainsKey($iconVnum)) { $ItemNames[$iconVnum] } elseif ($ItemNames.ContainsKey($fixedVnum)) { $ItemNames[$fixedVnum] } else { "Tilsim" }
+                                $iconKey = if ($IconPaths.ContainsKey($iconVnum)) { $IconPaths[$iconVnum] } else { "" }
+                                $items += New-CostumeItem -Vnum $fixedVnum -Name $name -IconKey $iconKey -IconVnum $iconVnum
+                            }
+                        }
+                        else {
+                            $items = New-ItemsFromRange -Min $req.Min -Max $req.Max -Step $req.Step -ItemNames $ItemNames -IconPaths $IconPaths -IconBaseVnums $IconBaseVnums
+                        }
+                        $note = if ($req.Max -gt $req.Min) { "Aralik: $($req.Min)-$($req.Max)" } else { "" }
+                        $slots += New-CostumeSlot -Title "$slotIndex. Urun - $($req.Label)" -Items $items -Note $note
+                        $slotIndex++
+                    }
+
+                    $bonuses = @{}
+                    foreach ($bonus in $current.BonusLines) {
+                        $key = [string]$bonus.Pieces
+                        $formatted = Format-SetBonus -Apply $bonus.Apply -Value $bonus.Value
+                        if ($bonuses.ContainsKey($key)) { $bonuses[$key] += " + $formatted" }
+                        else { $bonuses[$key] = $formatted }
+                    }
+
+                    $sets += New-CostumeSet -Name (Get-SetDisplayName -GroupName $current.Name) -Slots $slots -Bonuses $bonuses
+                }
+            }
+            $current = $null
+            $inGroup = $false
+            continue
+        }
+
+        if (-not $inGroup -or -not $current) { continue }
+
+        if ($clean -match "^SET_VALUE\s+(\d+)") { continue }
+        if ($clean -match "^(SET_ITEM_[A-Z_]+)\s+(\d+)\s+(\d+)\s+(\d+)") {
+            $min = [int]$Matches[2]
+            $max = [int]$Matches[3]
+            $step = [int]$Matches[4]
+            $current.Requirements += @{
+                Token = $Matches[1]
+                Label = Get-SetRequirementLabel -Token $Matches[1]
+                Min = $min
+                Max = $max
+                Step = $step
+            }
+            continue
+        }
+        if ($clean -match "^\d+\s+(\d+)\s+([A-Z0-9_]+)\s+(-?\d+)") {
+            $current.BonusLines += @{
+                Pieces = [int]$Matches[1]
+                Apply = $Matches[2]
+                Value = $Matches[3]
+            }
+        }
+    }
+
+    return $sets
+}
+
+function Resolve-CostumeItemNames {
+    param([array]$Sets, [hashtable]$ItemNames = @{})
+    foreach ($set in $Sets) {
+        foreach ($slot in $set.Slots) {
+            foreach ($item in $slot.Items) {
+                if (($item.Name -eq "" -or $null -eq $item.Name) -and $ItemNames.ContainsKey([string]$item.Vnum)) {
+                    $item.Name = $ItemNames[[string]$item.Vnum]
+                }
+                elseif ($item.Name -eq "" -or $null -eq $item.Name) {
+                    $item.Name = "Item $($item.Vnum)"
+                }
+            }
+        }
+    }
+    return $Sets
+}
+
+function Build-CostumeItemHtml {
+    param($Item)
+    $iVnum = [System.Security.SecurityElement]::Escape([string]$Item.Vnum)
+    $iName = [System.Security.SecurityElement]::Escape([string]$Item.Name)
+    $iconVnum = [System.Security.SecurityElement]::Escape([string]$Item.IconVnum)
+    return "<span class=`"costume-item`" title=`"$iName`"><img src=`"icons/$iconVnum.png`" onerror=`"this.src='icons/default.png'`" alt=`"$iName`" loading=`"lazy`"></span>"
+}
+
+function Get-UniqueIconItems {
+    param([array]$Items)
+    $seen = @{}
+    $unique = @()
+    foreach ($item in $Items) {
+        $key = [string]$item.IconKey
+        if ($key -eq "") { $key = [string]$item.Vnum }
+        if ($seen.ContainsKey($key)) { continue }
+        $seen[$key] = $true
+        $unique += $item
+    }
+    return $unique
+}
+
+function Build-CostumeSetsHtml {
+    param([array]$Sets)
+
+    $setsHtml = ""
+    foreach ($set in $Sets) {
+        $setName = [System.Security.SecurityElement]::Escape([string]$set.Name)
+        $maxPieces = 0
+        foreach ($slot in $set.Slots) {
+            $pieceNo = 0
+            if ([int]::TryParse(($slot.Title -replace "\D", ""), [ref]$pieceNo) -and $pieceNo -gt $maxPieces) {
+                $maxPieces = $pieceNo
+            }
+        }
+
+        $headCells = ""
+        foreach ($slot in $set.Slots) {
+            $slotTitle = [System.Security.SecurityElement]::Escape([string]$slot.Title)
+            $itemsHtml = ""
+            $visibleSlotItems = @($slot.Items | Where-Object { [string]$_.IconVnum -ne "76030" -and [string]$_.Vnum -ne "701010" })
+            $uniqueItems = Get-UniqueIconItems -Items $visibleSlotItems
+            $displayItems = @($uniqueItems | Select-Object -First 12)
+            foreach ($item in $displayItems) {
+                $itemsHtml += Build-CostumeItemHtml -Item $item
+            }
+            $noteHtml = ""
+            $headCells += @"
+                                    <th>
+                                        <div class="costume-piece-title">$slotTitle</div>
+                                        <div class="costume-icons">$itemsHtml</div>
+                                        $noteHtml
+                                    </th>
+"@
+        }
+
+        $bonusRows = ""
+        for ($i = 2; $i -le $maxPieces; $i++) {
+            if ($set.Bonuses.ContainsKey([string]$i)) {
+                $bonusText = [System.Security.SecurityElement]::Escape([string]$set.Bonuses[[string]$i])
+                $bonusRows += @"
+                                <tr>
+                                    <td class="bonus-tier">$i Urun Bonusu</td>
+                                    <td colspan="$($set.Slots.Count)" class="bonus-text">$bonusText</td>
+                                </tr>
+"@
+            }
+        }
+
+        $setsHtml += @"
+                        <section class="costume-set-block">
+                            <h3>$setName</h3>
+                            <div class="costume-table-wrap">
+                                <table class="costume-set-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="bonus-corner"></th>
+$headCells
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+$bonusRows
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+"@
+    }
+
+    return @"
+                    <div class="wiki-card" id="costume-set-bonuses" data-category="costume" style="display:none;">
+                        <div class="w-card-header" style="background: linear-gradient(135deg, rgba(168,85,247,0.08), transparent);">
+                            <div class="w-icon" style="background: rgba(168,85,247,0.15); color: #a855f7;"><i class="fas fa-shirt"></i></div>
+                            <div>
+                                <div class="w-title">Kostum Set Bonuslari</div>
+                                <div class="w-type"><span class="cat-label cat-costume">Kostum</span> Parca sayisina gore aktif olan set bonuslari</div>
+                            </div>
+                        </div>
+                        <div class="costume-sets">
+$setsHtml
+                        </div>
+                        <div class="w-card-footer">
+                            <span class="drop-count"><i class="fas fa-shirt"></i> $($Sets.Count) set</span>
+                        </div>
+                    </div>
+"@
+}
+
 # ======================== MAIN ========================
 Write-Host "=== Harbi2 Drop Wiki Generator v3 ===" -ForegroundColor Cyan
 
@@ -544,6 +910,24 @@ Write-Host "=== Harbi2 Drop Wiki Generator v3 ===" -ForegroundColor Cyan
 $itemNamesPath = Join-Path $confDir "item_names.txt"
 $itemNamesMap = Get-ItemNames -Path $itemNamesPath
 Write-Host "Item isimleri yuklendi: $($itemNamesMap.Count) kayit" -ForegroundColor DarkGray
+
+$itemListPath = Join-Path $scriptDir "item_list.txt"
+$itemIconPaths = Get-ItemIconPaths -Path $itemListPath
+Write-Host "Item icon yollari yuklendi: $($itemIconPaths.Count) kayit" -ForegroundColor DarkGray
+
+$itemProtoPathForIcons = Join-Path $confDir "item_proto.txt"
+$globalItemProtoPathForIcons = Join-Path $confDir "global_item_proto.txt"
+$itemIconBaseVnums = Get-ItemIconBaseVnums -Paths @($itemProtoPathForIcons, $globalItemProtoPathForIcons)
+Write-Host "Item base icon VNUM yuklendi: $($itemIconBaseVnums.Count) kayit" -ForegroundColor DarkGray
+
+$globalItemNamesPath = Join-Path $confDir "global_item_names.txt"
+$globalIconRefs = Get-GlobalItemIconRefs -Path $globalItemNamesPath
+Write-Host "Global item icon referanslari yuklendi: $($globalIconRefs.Count) kayit" -ForegroundColor DarkGray
+
+$setItemTablePath = Join-Path $sourceDir "set_item_table.txt"
+$costumeSets = Parse-SetItemTable -Path $setItemTablePath -ItemNames $itemNamesMap -IconPaths $itemIconPaths -IconBaseVnums $itemIconBaseVnums -GlobalIconRefs $globalIconRefs
+$costumeSets = Resolve-CostumeItemNames -Sets $costumeSets -ItemNames $itemNamesMap
+Write-Host "Kostum setleri yuklendi: $($costumeSets.Count) set" -ForegroundColor Green
 
 # Load mob names for name resolution
 $mobNamesPath = Join-Path $confDir "mob_names.txt"
@@ -632,6 +1016,10 @@ foreach ($g in $chestGroups) {
 }
 
 $sidebarHtml += "                    </div>`n"
+$sidebarHtml += "                    <div class=`"sidebar-section`">`n"
+$sidebarHtml += "                        <div class=`"sidebar-section-title`"><i class=`"fas fa-shirt`"></i> Kostumler <span class=`"section-count`">$($costumeSets.Count)</span></div>`n"
+$sidebarHtml += "                        <button class=`"w-cat-btn`" data-target=`"costume-set-bonuses`" data-category=`"costume`" style=`"margin-bottom: 0.5rem; background: rgba(168,85,247,0.08); border-left-color: #a855f7;`"><i class=`"fas fa-table`" style=`"margin-right: 6px;`"></i> Set Bonuslari</button>`n"
+$sidebarHtml += "                    </div>`n"
 
 # Build cards
 $cardsHtml = ""
@@ -667,6 +1055,7 @@ foreach ($g in $regularChests) {
 foreach ($g in $bossChests) {
     $cardsHtml += Build-CardHtml -Entity $g -Category "chest" -IdPrefix "chest" -SubCategory "Boss Sandik" -Hidden $true
 }
+$cardsHtml += Build-CostumeSetsHtml -Sets $costumeSets
 
 $totalMobs = $mobGroups.Count
 $totalChests = $chestGroups.Count
@@ -1020,6 +1409,7 @@ $html = @"
         }
         .cat-mob { background: var(--accent-blue-dim); color: var(--accent-blue); }
         .cat-chest { background: var(--accent-gold-dim); color: var(--accent-gold); }
+        .cat-costume { background: rgba(168,85,247,0.15); color: #a855f7; }
 
         /* ========== DROP GRID ========== */
         .drop-grid-wrap {
@@ -1128,6 +1518,131 @@ $html = @"
         }
         .drop-count { font-size: 0.62rem; color: var(--text-low); }
         .drop-count i { color: var(--accent-blue); margin-right: 3px; }
+
+        /* ========== COSTUME SETS ========== */
+        .costume-sets {
+            padding: 1rem;
+            background: rgba(0,0,0,0.15);
+        }
+        .costume-set-block {
+            margin-bottom: 1.25rem;
+        }
+        .costume-set-block:last-child { margin-bottom: 0; }
+        .costume-set-block h3 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-high);
+            letter-spacing: 1px;
+            margin-bottom: 0.55rem;
+        }
+        .costume-table-wrap {
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: rgba(255,255,255,0.02);
+        }
+        .costume-set-table {
+            width: 100%;
+            min-width: 760px;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        .costume-set-table th,
+        .costume-set-table td {
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+        }
+        .costume-set-table th:last-child,
+        .costume-set-table td:last-child { border-right: none; }
+        .costume-set-table tbody tr:last-child td { border-bottom: none; }
+        .costume-set-table thead th {
+            padding: 0.45rem 0.5rem;
+            background: rgba(120,0,0,0.5);
+            vertical-align: top;
+        }
+        .costume-set-table .bonus-corner {
+            width: 130px;
+            background: rgba(120,0,0,0.35);
+        }
+        .costume-piece-title {
+            font-size: 0.68rem;
+            font-weight: 800;
+            color: #f7d28b;
+            margin-bottom: 0.35rem;
+        }
+        .costume-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem;
+            flex-wrap: wrap;
+            min-height: 38px;
+        }
+        .costume-item {
+            display: inline-flex;
+            width: 34px;
+            min-height: 34px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            background: rgba(0,0,0,0.22);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .costume-item img {
+            width: 30px;
+            height: auto;
+            max-height: 72px;
+            image-rendering: pixelated;
+        }
+        .costume-more {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 34px;
+            height: 34px;
+            border-radius: 4px;
+            background: rgba(168,85,247,0.14);
+            color: #d8b4fe;
+            font-size: 0.62rem;
+            font-weight: 800;
+            border: 1px solid rgba(168,85,247,0.25);
+        }
+        .costume-range-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 34px;
+            padding: 0 0.7rem;
+            border-radius: 4px;
+            background: rgba(168,85,247,0.14);
+            color: #f7d28b;
+            font-size: 0.66rem;
+            font-weight: 800;
+            border: 1px solid rgba(168,85,247,0.25);
+        }
+        .costume-note {
+            margin-top: 0.25rem;
+            color: #f4dca4;
+            font-size: 0.58rem;
+            font-style: italic;
+        }
+        .bonus-tier {
+            width: 130px;
+            padding: 0.35rem 0.55rem;
+            background: rgba(120,0,0,0.45);
+            color: #f7d28b;
+            font-size: 0.62rem;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+        .bonus-text {
+            padding: 0.35rem 0.65rem;
+            color: var(--text-high);
+            font-size: 0.66rem;
+            text-align: center;
+            line-height: 1.35;
+        }
 
         /* ========== METIN DROP TABLE ========== */
         .metin-drop-table-container {
@@ -1263,6 +1778,628 @@ $html = @"
         .empty-state { display: none; text-align: center; padding: 3rem; color: var(--text-muted); }
         .empty-state i { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
         .empty-state p { font-size: 0.8rem; }
+
+        /* ========== METIN2 WIKI SKIN OVERRIDE ========== */
+        :root {
+            --bg-base: #d7c3a3;
+            --bg-surface: #f5ead5;
+            --bg-card: #fff8e8;
+            --bg-sidebar: #ead7b6;
+            --bg-input: #fffaf0;
+            --text-high: #2b1a10;
+            --text-med: #4b3524;
+            --text-low: #7c6245;
+            --text-muted: #9a8464;
+            --accent-blue: #8b1e16;
+            --accent-blue-dim: rgba(139,30,22,0.12);
+            --accent-gold: #b0781f;
+            --accent-gold-dim: rgba(176,120,31,0.18);
+            --brand-gold: #ffd37a;
+            --border: #b89863;
+            --border-active: #8b1e16;
+            --radius-sm: 2px;
+            --radius-md: 2px;
+        }
+        body {
+            background:
+                radial-gradient(circle at 20% 0%, rgba(255,244,205,0.55), transparent 34rem),
+                linear-gradient(90deg, rgba(116,72,35,0.12), transparent 16rem),
+                #d7c3a3;
+            color: var(--text-high);
+        }
+        ::-webkit-scrollbar-thumb { background: #9d7a4c; }
+        .sidebar {
+            background: #ead7b6;
+            border-right: 1px solid #8c6a3e;
+            box-shadow: inset -1px 0 0 rgba(255,255,255,0.45), 2px 0 10px rgba(58,35,16,0.16);
+        }
+        .sidebar-header {
+            background: linear-gradient(#6d130e, #3b0906);
+            border-bottom: 2px solid #c99c30;
+            padding: 1rem;
+        }
+        .logo-icon {
+            background: #f0d080;
+            color: #5d100b;
+            border: 1px solid #2b0805;
+        }
+        .logo-text h2 { color: #ffd37a; text-shadow: 0 1px 0 #000; }
+        .logo-text p { color: #e9c987; }
+        .sidebar-search {
+            background: #d2b889;
+            border-bottom: 1px solid #a47b48;
+        }
+        .search-box input,
+        .hero-search .search-box input {
+            background: #fffaf0;
+            border: 1px solid #9d7a4c;
+            color: #2b1a10;
+            box-shadow: inset 0 1px 2px rgba(79,43,12,0.18);
+        }
+        .search-box input::placeholder,
+        .hero-search .search-box input::placeholder { color: #8b765b; }
+        .search-mode-toggle,
+        .category-filter { background: #d2b889; }
+        .search-mode-btn,
+        .cat-filter-btn {
+            background: #f7ead0;
+            border-color: #9d7a4c;
+            color: #5b4027;
+            font-weight: 700;
+        }
+        .search-mode-btn.active,
+        .cat-filter-btn.active {
+            background: linear-gradient(#8b1e16, #4c0d09);
+            border-color: #451008;
+            color: #ffe4a0;
+        }
+        .sidebar-nav { padding: 0.4rem 0.55rem; }
+        .sidebar-section {
+            border: 1px solid #9d7a4c;
+            background: #f5ead5;
+            margin-bottom: 0.55rem;
+        }
+        .sidebar-section-title {
+            background: linear-gradient(#7b1a13, #4b0d09);
+            color: #ffe4a0;
+            padding: 0.45rem 0.65rem;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #9d7a4c;
+        }
+        .section-count {
+            background: rgba(255,228,160,0.16);
+            color: #ffe4a0;
+            border-radius: 2px;
+        }
+        .w-cat-btn {
+            color: #3d2818;
+            border-left: 0;
+            border-top: 1px solid rgba(157,122,76,0.35);
+            padding: 0.38rem 0.65rem;
+            background: transparent !important;
+        }
+        .w-cat-btn:hover,
+        .w-cat-btn.active {
+            color: #7b1a13;
+            background: #ead1a3 !important;
+            font-weight: 800;
+        }
+        .sidebar-footer {
+            background: #d2b889;
+            color: #5b4027;
+            border-top-color: #9d7a4c;
+        }
+        .main-content {
+            background: rgba(255,248,232,0.42);
+            min-height: 100vh;
+        }
+        .page-hero {
+            margin: 1rem 1.25rem 0;
+            padding: 1.2rem 1.35rem;
+            background: linear-gradient(#fff8e8, #ead7b6);
+            border: 1px solid #9d7a4c;
+            border-top: 5px solid #7b1a13;
+            box-shadow: 0 2px 8px rgba(59,34,13,0.14);
+        }
+        .hero-tag {
+            color: #7b1a13;
+            border: 1px solid #b89863;
+            background: #f7ead0;
+            border-radius: 2px;
+        }
+        .hero-tag .dot { background: #7b1a13; animation: none; }
+        .page-hero h1 {
+            color: #5b120d;
+            font-size: 1.65rem;
+            letter-spacing: 1px;
+            text-shadow: 0 1px 0 #fff4d2;
+        }
+        .page-hero p { color: #5b4027; font-weight: 500; }
+        .stat-chip {
+            background: #fffaf0;
+            border: 1px solid #b89863;
+            color: #4b3524;
+            border-radius: 2px;
+        }
+        .stat-chip strong { color: #7b1a13; }
+        .hero-search {
+            margin: 0 1.25rem;
+            padding: 0.75rem;
+            background: #ead7b6;
+            border: 1px solid #9d7a4c;
+            border-top: 0;
+        }
+        .content-area { padding: 1rem 1.25rem 3rem; }
+        .wiki-card {
+            background: #fff8e8;
+            border: 1px solid #9d7a4c;
+            border-radius: 2px;
+            box-shadow: 0 1px 4px rgba(59,34,13,0.12);
+        }
+        .wiki-card:hover {
+            border-color: #7b1a13;
+            box-shadow: 0 2px 8px rgba(59,34,13,0.18);
+        }
+        .w-card-header {
+            background: linear-gradient(#7b1a13, #4b0d09) !important;
+            border-bottom: 2px solid #c99c30;
+            color: #ffe4a0;
+        }
+        .w-icon {
+            background: #f0d080 !important;
+            color: #5d100b !important;
+            border: 1px solid #2b0805;
+        }
+        .w-title {
+            color: #ffe4a0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 1px 0 #000;
+        }
+        .w-type { color: #e9c987; }
+        .cat-label {
+            background: #ead1a3 !important;
+            color: #5b120d !important;
+            border: 1px solid #b89863;
+            border-radius: 2px;
+        }
+        .drop-grid-wrap,
+        .costume-sets,
+        .wiki-card > div[style*="overflow-x"] {
+            background: #fff3d8 !important;
+        }
+        .drop-grid { gap: 7px; }
+        .grid-item {
+            background: #fffaf0;
+            border: 1px solid #c6a86f;
+            border-radius: 2px;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.45);
+        }
+        .grid-item:hover {
+            background: #f3ddb0;
+            border-color: #8b1e16;
+            transform: none;
+            box-shadow: 0 1px 5px rgba(73,39,13,0.2);
+        }
+        .grid-name,
+        .drop-item-name,
+        .drop-items-cell { color: #4b3524; }
+        .grid-chance,
+        .drop-item-chance {
+            background: #ead1a3;
+            color: #7b1a13;
+            border: 1px solid #c6a86f;
+        }
+        .grid-count,
+        .drop-item-count {
+            background: #7b1a13;
+            color: #ffe4a0;
+        }
+        .grid-item::after {
+            background: #fff8e8;
+            color: #2b1a10;
+            border-color: #9d7a4c;
+        }
+        .w-card-footer {
+            background: #ead7b6;
+            border-top-color: #9d7a4c;
+        }
+        .drop-count { color: #5b4027; }
+        .drop-count i { color: #7b1a13; }
+        .metin-drop-table,
+        .costume-set-table {
+            background: #fffaf0;
+            border: 1px solid #9d7a4c;
+            border-radius: 0;
+        }
+        .metin-drop-table thead,
+        .costume-set-table thead th {
+            background: linear-gradient(#7b1a13, #4b0d09);
+        }
+        .metin-drop-table th,
+        .costume-set-table th {
+            color: #ffe4a0;
+            border-color: #9d7a4c;
+        }
+        .metin-drop-table td,
+        .costume-set-table td {
+            color: #3d2818;
+            border-color: #d0b37d;
+        }
+        .metin-drop-table tbody tr:nth-child(even),
+        .costume-set-table tbody tr:nth-child(even) { background: #f7ead0; }
+        .metin-drop-table tbody tr:hover { background: #ead1a3; }
+        .metin-name-cell { color: #5b120d; }
+        .drop-item-icon {
+            background: #fffaf0;
+            border: 1px solid #c6a86f;
+        }
+        .costume-set-block h3 {
+            color: #5b120d;
+            border-bottom: 1px solid #b89863;
+            padding-bottom: 0.25rem;
+        }
+        .costume-table-wrap {
+            background: #fffaf0;
+            border-color: #9d7a4c;
+            border-radius: 0;
+        }
+        .costume-set-table thead th,
+        .costume-set-table .bonus-corner {
+            background: linear-gradient(#7b1a13, #4b0d09);
+        }
+        .costume-piece-title { color: #ffe4a0; }
+        .costume-item {
+            background: #fffaf0;
+            border: 1px solid #c6a86f;
+            border-radius: 2px;
+        }
+        .bonus-tier {
+            background: #7b1a13;
+            color: #ffe4a0;
+            border-color: #9d7a4c;
+        }
+        .bonus-text {
+            color: #2b1a10;
+            background: #fffaf0;
+            font-weight: 700;
+        }
+        .mobile-topbar {
+            background: linear-gradient(#7b1a13, #4b0d09);
+            border-bottom: 2px solid #c99c30;
+        }
+        .mobile-topbar h3 { color: #ffe4a0; }
+        .mobile-topbar button { color: #ffe4a0; }
+        @media (max-width: 768px) {
+            .page-hero { margin: 0; border-left: 0; border-right: 0; }
+            .hero-search { margin: 0; border-left: 0; border-right: 0; }
+        }
+
+        /* ========== SET BONUS PAGE DARK METIN2 TUNING ========== */
+        body {
+            background: #050402;
+        }
+        .main-content {
+            background: #0a0805;
+        }
+        .page-hero,
+        .hero-search {
+            background: #4f3908;
+            border-color: #8b7137;
+            box-shadow: none;
+        }
+        .page-hero {
+            border-top-color: #b00000;
+        }
+        .page-hero h1,
+        .page-hero p,
+        .stat-chip,
+        .stat-chip strong {
+            color: #f3e7c0;
+        }
+        .stat-chip,
+        .search-mode-btn,
+        .cat-filter-btn,
+        .hero-search .search-box input {
+            background: #2b2008;
+            color: #f3e7c0;
+            border-color: #8b7137;
+        }
+        .search-mode-toggle,
+        .category-filter {
+            background: #4f3908;
+        }
+        .wiki-card {
+            background: #4f3908;
+            border-color: #8b7137;
+            box-shadow: none;
+        }
+        .wiki-card:hover {
+            border-color: #b00000;
+            box-shadow: none;
+        }
+        .w-card-header {
+            background: linear-gradient(#7f0000, #4b0000) !important;
+            border-bottom-color: #b79a49;
+        }
+        .drop-grid-wrap,
+        .costume-sets,
+        .wiki-card > div[style*="overflow-x"] {
+            background: #4f3908 !important;
+        }
+        .costume-set-block h3 {
+            color: #fff5cf;
+            border-bottom: 1px solid #8b7137;
+            font-size: 1.15rem;
+            letter-spacing: 0;
+        }
+        .costume-table-wrap {
+            background: #4f3908;
+            border-color: #8b7137;
+        }
+        .costume-set-table {
+            background: #4f3908;
+            border-color: #8b7137;
+        }
+        .costume-set-table thead th,
+        .costume-set-table .bonus-corner {
+            background: #7f0000;
+            color: #ffe6a3;
+            border-color: #8b7137;
+        }
+        .costume-piece-title {
+            color: #ffe6a3;
+            text-shadow: 0 1px 0 #000;
+        }
+        .costume-icons {
+            min-height: 58px;
+        }
+        .costume-item {
+            background: transparent;
+            border: 0;
+            width: 36px;
+            min-height: 42px;
+        }
+        .costume-item img {
+            width: 34px;
+            max-height: 88px;
+            border: 1px solid #d4a400;
+            background: #111;
+        }
+        .costume-set-table td {
+            background: #4f3908;
+            border-color: #8b7137;
+        }
+        .bonus-tier {
+            background: #8a0000;
+            color: #ffe6a3;
+            border-color: #8b7137;
+            text-align: center;
+            font-size: 0.68rem;
+        }
+        .bonus-text {
+            background: #4f3908;
+            color: #fffaf0;
+            font-size: 0.68rem;
+            font-weight: 600;
+        }
+        .w-card-footer {
+            background: #4f3908;
+            border-top-color: #8b7137;
+        }
+        .drop-count {
+            color: #f3e7c0;
+        }
+        .drop-count i {
+            color: #ffe6a3;
+        }
+        .grid-item {
+            background: #5a410c;
+            border-color: #8b7137;
+        }
+        .grid-item:hover {
+            background: #654b11;
+            border-color: #b00000;
+        }
+        .grid-name,
+        .drop-item-name,
+        .drop-items-cell,
+        .metin-drop-table td {
+            color: #fffaf0;
+        }
+        .metin-drop-table,
+        .metin-drop-table tbody tr:nth-child(even) {
+            background: #4f3908;
+        }
+        .metin-drop-table thead,
+        .metin-drop-table th {
+            background: #7f0000;
+            color: #ffe6a3;
+        }
+
+        /* ========== SET BONUS REFERENCE MATCH ========== */
+        :root {
+            --game-page-bg: #000;
+            --game-panel-bg: #4b3505;
+            --game-header-bg: #8a0000;
+            --game-border: #76622b;
+            --game-header-text: #ffe2a3;
+            --game-body-text: #fff8dc;
+            --game-title-text: #f6e4ba;
+        }
+        body { background: #000; }
+        .main-content { background: #000; }
+        .content-area { padding: 0 1.25rem 3rem; }
+        .wiki-card,
+        .wiki-card#costume-set-bonuses {
+            background: var(--game-panel-bg);
+            border: 1px solid var(--game-border);
+            border-radius: 0;
+            box-shadow: none;
+            margin-top: 0.75rem;
+        }
+        .wiki-card:hover {
+            border-color: var(--game-border);
+            box-shadow: none;
+        }
+        .wiki-card#costume-set-bonuses > .w-card-header,
+        .wiki-card#costume-set-bonuses > .w-card-footer {
+            display: none;
+        }
+        .wiki-card > div[style*="overflow-x"],
+        .wiki-card#costume-set-bonuses .costume-sets {
+            background: var(--game-panel-bg) !important;
+            padding: 0.9rem 1.35rem 1.7rem;
+        }
+        .costume-set-block {
+            margin-bottom: 1.7rem;
+        }
+        .costume-set-block h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--game-title-text);
+            font-size: 1.28rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin: 0 0 0.55rem;
+            padding: 0;
+            border: 0;
+            text-shadow: 0 1px 0 #000;
+        }
+        .costume-table-wrap {
+            border: 1px solid var(--game-border);
+            background: var(--game-panel-bg);
+            overflow-x: auto;
+        }
+        .metin-drop-table,
+        .costume-set-table {
+            min-width: 660px;
+            width: 100%;
+            background: var(--game-panel-bg);
+            border: 0;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+        .metin-drop-table th,
+        .metin-drop-table td,
+        .costume-set-table th,
+        .costume-set-table td {
+            border: 1px solid var(--game-border);
+        }
+        .metin-drop-table thead,
+        .metin-drop-table th,
+        .costume-set-table thead th,
+        .costume-set-table .bonus-corner {
+            background: var(--game-panel-bg);
+            padding: 0;
+            vertical-align: top;
+        }
+        .costume-set-table .bonus-corner {
+            width: 126px;
+            background: var(--game-header-bg);
+        }
+        .metin-drop-table th,
+        .costume-piece-title {
+            display: block;
+            margin: 0;
+            padding: 0.18rem 0.25rem;
+            background: var(--game-header-bg);
+            color: var(--game-header-text);
+            font-family: Arial, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            line-height: 1.15;
+            text-align: center;
+            text-transform: none;
+            letter-spacing: 0;
+            text-shadow: 0 1px 0 #000;
+        }
+        .metin-drop-table th {
+            display: table-cell;
+        }
+        .costume-icons {
+            min-height: 66px;
+            padding: 0.42rem 0.35rem 0.5rem;
+            background: var(--game-panel-bg);
+            gap: 0.16rem;
+        }
+        .costume-item {
+            width: auto;
+            min-height: 0;
+            background: transparent;
+            border: 0;
+        }
+        .costume-item img {
+            width: 32px;
+            max-height: 82px;
+            background: transparent;
+            border: 1px solid #d7ae17;
+            image-rendering: pixelated;
+        }
+        .bonus-tier {
+            width: 126px;
+            padding: 0.16rem 0.35rem;
+            background: var(--game-header-bg);
+            color: var(--game-header-text);
+            font-family: Arial, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            line-height: 1.15;
+            text-align: center;
+            text-shadow: 0 1px 0 #000;
+        }
+        .bonus-text {
+            padding: 0.16rem 0.45rem;
+            background: var(--game-panel-bg);
+            color: var(--game-body-text);
+            font-family: Arial, sans-serif;
+            font-size: 0.68rem;
+            font-weight: 400;
+            line-height: 1.25;
+            text-align: center;
+            text-shadow: 0 1px 0 #000;
+        }
+        .costume-set-table tbody tr {
+            height: 18px;
+        }
+        .metin-drop-table {
+            width: 100%;
+            min-width: 660px;
+            border: 1px solid var(--game-border);
+            border-radius: 0;
+        }
+        .metin-drop-table th:nth-child(1) { width: 126px; }
+        .metin-drop-table td {
+            padding: 0.16rem 0.45rem;
+            background: var(--game-panel-bg);
+            color: var(--game-body-text);
+            font-family: Arial, sans-serif;
+            font-size: 0.68rem;
+            font-weight: 400;
+            line-height: 1.25;
+            text-align: center;
+            text-shadow: 0 1px 0 #000;
+        }
+        .metin-drop-table tbody tr:nth-child(even),
+        .metin-drop-table tbody tr:hover {
+            background: var(--game-panel-bg);
+        }
+        .metin-name-cell {
+            color: var(--game-body-text);
+            font-weight: 400;
+        }
+        .page-hero,
+        .hero-search {
+            display: none;
+        }
+        .sidebar {
+            background: #ead8b4;
+        }
+        .sidebar-header {
+            background: linear-gradient(#7b0000, #4d0000);
+        }
+        .sidebar-section-title {
+            background: linear-gradient(#8a0000, #570000);
+        }
     </style>
 </head>
 <body>
@@ -1309,6 +2446,7 @@ $sidebarHtml
                 <div class="category-filter">
                     <button class="cat-filter-btn active" data-filter="mob"><i class="fas fa-dragon"></i> Mob</button>
                     <button class="cat-filter-btn" data-filter="chest"><i class="fas fa-box-open"></i> Sandik</button>
+                    <button class="cat-filter-btn" data-filter="costume"><i class="fas fa-shirt"></i> Kostum</button>
                 </div>
                 <div class="search-box">
                     <input type="text" id="search-input" placeholder="Mob veya sandik ara...">

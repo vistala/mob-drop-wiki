@@ -24,6 +24,7 @@ else:
 ICON_OUT = SCRIPT_DIR / "icons"
 MOB_DROP = SCRIPT_DIR / "mob_drop_item.txt"
 CHEST_DROP = SCRIPT_DIR / "special_item_group.txt"
+INDEX_HTML = SCRIPT_DIR / "index.html"
 ICON_FILE_INDEXES = {}
 
 def extract_vnums_from_file(filepath):
@@ -38,6 +39,14 @@ def extract_vnums_from_file(filepath):
             m = re.match(r"^\d+\s+(\d+)\s+", stripped)
             if m:
                 vnums.add(m.group(1))
+    return vnums
+
+def extract_icon_vnums_from_html(filepath):
+    vnums = set()
+    if not filepath.exists():
+        return vnums
+    html = filepath.read_text(encoding="utf-8", errors="replace")
+    vnums.update(re.findall(r"icons/(\d+)\.png", html))
     return vnums
 
 ITEM_LIST_PATH = SCRIPT_DIR / "item_list.txt"
@@ -170,6 +179,7 @@ def main():
     vnums = set()
     vnums.update(extract_vnums_from_file(MOB_DROP))
     vnums.update(extract_vnums_from_file(CHEST_DROP))
+    vnums.update(extract_icon_vnums_from_html(INDEX_HTML))
     print(f"Toplam {len(vnums)} benzersiz item vnum bulundu.")
     
     # Check source directory
