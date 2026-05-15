@@ -2060,7 +2060,7 @@ $html = @"
             border-color: #9d7a4c;
         }
         .bonus-text {
-            color: #2b1a10;
+            color: #ffffff;
             background: #fffaf0;
             font-weight: 700;
         }
