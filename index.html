@@ -1396,6 +1396,27 @@
 		.sidebar-section-title {
 			background: linear-gradient(#8a0000, #570000);
 		}
+		.logo-icon,
+		.w-icon,
+		.cat-label {
+			background: var(--theme-ui-badge-bg, #7b0000) !important;
+			color: var(--theme-ui-badge-text, #ffe2a3) !important;
+			border: 1px solid var(--game-border);
+		}
+		.w-cat-btn {
+			background: transparent !important;
+			color: var(--theme-sidebar-text, #ffffff) !important;
+		}
+		.w-cat-btn:hover,
+		.w-cat-btn.active {
+			background: var(--theme-sidebar-active-bg, #7b0000) !important;
+			color: var(--theme-sidebar-active-text, #ffe2a3) !important;
+			border-left-color: var(--game-border) !important;
+		}
+		.sidebar-footer {
+			background: var(--theme-sidebar-bg, #4b3505) !important;
+			color: var(--theme-sidebar-text, #ffffff) !important;
+		}
 		@media (max-width: 768px) {
 			.main-content {
 				width: 100%;
@@ -101593,6 +101614,8 @@
 			{ group: 'Genel Renkler', label: 'Cizgi Rengi', type: 'color', target: '--game-border', value: '#76622b' },
 			{ group: 'Genel Renkler', label: 'Kart Zemini', type: 'color', target: '--bg-card', value: '#4b3505' },
 			{ group: 'Genel Renkler', label: 'Input Zemini', type: 'color', target: '--bg-input', value: '#1b1b1b' },
+			{ group: 'Genel Renkler', label: 'Kucuk Kutular', type: 'color', target: '--theme-ui-badge-bg', value: '#7b0000' },
+			{ group: 'Genel Renkler', label: 'Kucuk Kutu Yazisi', type: 'color', target: '--theme-ui-badge-text', value: '#ffe2a3' },
 			{ group: 'Vurgu Renkleri', label: 'Mavi Vurgu', type: 'color', target: '--accent-blue', value: '#8b1e16' },
 			{ group: 'Vurgu Renkleri', label: 'Altin Vurgu', type: 'color', target: '--accent-gold', value: '#b0781f' },
 			{ group: 'Vurgu Renkleri', label: 'Marka Yazisi', type: 'color', target: '--brand-gold', value: '#ffe2a3' },
@@ -101679,6 +101702,8 @@
 			{ group: 'Sol Menu', label: 'Menu Basligi', type: 'color', target: '--theme-sidebar-head', value: '#7b0000' },
 			{ group: 'Sol Menu', label: 'Bolum Basligi', type: 'color', target: '--theme-sidebar-section', value: '#7b0000' },
 			{ group: 'Sol Menu', label: 'Menu Yazisi', type: 'color', target: '--theme-sidebar-text', value: '#ffffff' },
+			{ group: 'Sol Menu', label: 'Secili Menu Zemini', type: 'color', target: '--theme-sidebar-active-bg', value: '#7b0000' },
+			{ group: 'Sol Menu', label: 'Secili Menu Yazisi', type: 'color', target: '--theme-sidebar-active-text', value: '#ffe2a3' },
 			{ group: 'Sol Menu', label: 'Menu Genisligi', type: 'range', target: '--sidebar-w', value: '216px', min: 180, max: 380, step: 2, unit: 'px' }
 		];
 
@@ -101707,7 +101732,11 @@
 			'.sidebar { background: var(--theme-sidebar-bg, #4b3505); }',
 			'.sidebar-header { background: linear-gradient(var(--theme-sidebar-head, #7b0000), #4d0000); }',
 			'.sidebar-section-title { background: linear-gradient(var(--theme-sidebar-section, #8a0000), #570000); }',
-			'.w-cat-btn, .tree-header, .sidebar-footer { color: var(--theme-sidebar-text, #ffffff); }',
+			'.logo-icon, .w-icon, .cat-label { background: var(--theme-ui-badge-bg, #7b0000) !important; color: var(--theme-ui-badge-text, #ffe2a3) !important; border-color: var(--game-border, #76622b) !important; }',
+			'.w-cat-btn, .tree-header, .sidebar-footer { color: var(--theme-sidebar-text, #ffffff) !important; }',
+			'.w-cat-btn { background: transparent !important; }',
+			'.w-cat-btn:hover, .w-cat-btn.active { background: var(--theme-sidebar-active-bg, #7b0000) !important; color: var(--theme-sidebar-active-text, #ffe2a3) !important; border-left-color: var(--game-border, #76622b) !important; }',
+			'.sidebar-footer { background: var(--theme-sidebar-bg, #4b3505) !important; }',
 			'.wiki-card { border-radius: var(--radius-md, 0px); }',
 			'.theme-editor-toggle, .search-box input, .search-mode-btn, .cat-filter-btn { border-radius: var(--radius-sm, 0px); }'
 		].join('\n');
