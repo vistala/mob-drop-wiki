@@ -494,8 +494,8 @@ function Build-MetinTableHtml {
 							<table class="metin-drop-table">
 								<thead>
 									<tr>
-										<th><i class="fas fa-meteor" style="margin-right:4px;color:var(--accent-blue)"></i> Metin Adi</th>
-										<th><i class="fas fa-gift" style="margin-right:4px;color:var(--accent-blue)"></i> Drop Esyalar</th>
+										<th>Mob Name</th>
+										<th>Drop List</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -568,8 +568,8 @@ function Build-CategoryTableHtml {
 							<table class="metin-drop-table">
 								<thead>
 									<tr>
-										<th><i class="fas fa-$Icon" style="margin-right:4px;color:var(--accent-blue)"></i> Mob Adi</th>
-										<th><i class="fas fa-gift" style="margin-right:4px;color:var(--accent-blue)"></i> Drop Esyalar</th>
+										<th>Mob Name</th>
+										<th>Drop List</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -2230,12 +2230,27 @@ $html = @"
 			--game-header-text: #ffe2a3;
 			--game-body-text: #fff8dc;
 			--game-title-text: #f6e4ba;
+			--theme-layout-gap: 20px;
+			--theme-content-width: 716px;
+			--theme-table-width: 670px;
+			--theme-bonus-col-width: 126px;
 		}
 		body { background: var(--game-page-bg); }
-		.main-content { background: var(--game-page-bg); }
-		.content-area { padding: 0 1.25rem 3rem; }
+		.main-content {
+			background: var(--game-page-bg);
+			margin-left: var(--sidebar-w);
+			width: calc(100vw - var(--sidebar-w));
+			min-width: calc(var(--theme-content-width) + (var(--theme-layout-gap) * 2));
+		}
+		.content-area {
+			width: var(--theme-content-width);
+			max-width: var(--theme-content-width);
+			margin: 0 auto;
+			padding: 12px 0 3rem;
+		}
 		.wiki-card,
 		.wiki-card#costume-set-bonuses {
+			width: var(--theme-content-width);
 			background: var(--game-panel-bg);
 			border: 1px solid var(--game-border);
 			border-radius: 0;
@@ -2253,7 +2268,7 @@ $html = @"
 		.wiki-card > div[style*="overflow-x"],
 		.wiki-card#costume-set-bonuses .costume-sets {
 			background: var(--game-panel-bg) !important;
-			padding: 0.9rem 1.35rem 1.7rem;
+			padding: 14px 22px 26px;
 		}
 		.costume-set-block {
 			margin-bottom: 1.7rem;
@@ -2276,7 +2291,7 @@ $html = @"
 		}
 		.metin-drop-table,
 		.costume-set-table {
-			min-width: 660px;
+			min-width: var(--theme-table-width);
 			width: 100%;
 			background: var(--game-panel-bg);
 			border: 0;
@@ -2298,7 +2313,7 @@ $html = @"
 			vertical-align: top;
 		}
 		.costume-set-table .bonus-corner {
-			width: 126px;
+			width: var(--theme-bonus-col-width);
 			background: var(--game-header-bg);
 		}
 		.metin-drop-table th,
@@ -2340,10 +2355,10 @@ $html = @"
 			image-rendering: pixelated;
 		}
 		.bonus-tier {
-			width: 126px;
+			width: var(--theme-bonus-col-width);
 			padding: 0.16rem 0.35rem;
-			background: var(--game-header-bg);
-			color: var(--game-header-text);
+			background: var(--theme-bonus-tier-bg, var(--game-header-bg));
+			color: var(--theme-bonus-tier-text, var(--game-header-text));
 			font-family: Arial, sans-serif;
 			font-size: 0.72rem;
 			font-weight: 800;
@@ -2367,29 +2382,75 @@ $html = @"
 		}
 		.metin-drop-table {
 			width: 100%;
-			min-width: 660px;
+			min-width: var(--theme-table-width);
 			border: 1px solid var(--game-border);
 			border-radius: 0;
 		}
-		.metin-drop-table th:nth-child(1) { width: 126px; }
-		.metin-drop-table td {
-			padding: 0.16rem 0.45rem;
-			background: var(--game-panel-bg);
-			color: var(--game-body-text);
-			font-family: Arial, sans-serif;
-			font-size: 0.68rem;
-			font-weight: 400;
-			line-height: 1.25;
-			text-align: center;
-			text-shadow: 0 1px 0 #000;
+		.metin-drop-table th:nth-child(1) { width: var(--theme-bonus-col-width); }
+		.metin-drop-table th {
+			padding: 0.45rem 0.5rem;
+			background: var(--theme-drop-header-bg, #1b1b1b);
+			color: var(--theme-drop-header-text, #ffffff);
+			font-family: var(--theme-table-font, Arial, sans-serif);
+			font-size: var(--theme-drop-header-size, 0.72rem);
+			font-weight: 800;
+			line-height: 1.15;
+			text-align: left;
+			text-shadow: none;
 		}
-		.metin-drop-table tbody tr:nth-child(even),
-		.metin-drop-table tbody tr:hover {
-			background: var(--game-panel-bg);
+		.metin-drop-table td {
+			padding: var(--theme-drop-cell-pad, 0.45rem);
+			background: var(--theme-drop-row-bg, #202323);
+			color: var(--theme-drop-text, #ffffff);
+			font-family: Arial, sans-serif;
+			font-size: var(--theme-drop-text-size, 0.68rem);
+			font-weight: 400;
+			line-height: 1.35;
+			text-align: left;
+			text-shadow: none;
+			vertical-align: top;
+		}
+		.metin-drop-table tbody tr:nth-child(even) td {
+			background: var(--theme-drop-row-alt-bg, #191b1b);
+		}
+		.metin-drop-table tbody tr:hover td {
+			background: var(--theme-drop-row-hover-bg, #252929);
 		}
 		.metin-name-cell {
-			color: var(--game-body-text);
-			font-weight: 400;
+			color: var(--theme-drop-name-text, #ffffff);
+			font-weight: 500;
+			white-space: normal;
+		}
+		.drop-items-cell {
+			color: var(--theme-drop-text, #ffffff);
+		}
+		.drop-item-row {
+			display: list-item;
+			list-style-position: outside;
+			margin-left: 1.05rem;
+			padding: 0.1rem 0;
+			line-height: 1.35;
+		}
+		.drop-item-icon {
+			width: var(--theme-drop-icon-size, 22px);
+			height: auto;
+			max-height: 34px;
+			margin: 0 0.35rem;
+			vertical-align: middle;
+			image-rendering: pixelated;
+		}
+		.drop-item-name {
+			color: var(--theme-drop-text, #ffffff);
+			font-size: var(--theme-drop-text-size, 0.68rem);
+			vertical-align: middle;
+			white-space: normal;
+			overflow: visible;
+			text-overflow: clip;
+		}
+		.drop-item-count {
+			color: var(--accent-gold);
+			font-weight: 800;
+			margin-right: 0.25rem;
 		}
 		.page-hero,
 		.hero-search {
@@ -2403,6 +2464,21 @@ $html = @"
 		}
 		.sidebar-section-title {
 			background: linear-gradient(#8a0000, #570000);
+		}
+		@media (max-width: 768px) {
+			.main-content {
+				width: 100%;
+				min-width: 0;
+			}
+			.content-area {
+				width: min(var(--theme-content-width), calc(100vw - 18px));
+				max-width: calc(100vw - 18px);
+				padding-top: 9px;
+			}
+			.wiki-card,
+			.wiki-card#costume-set-bonuses {
+				width: 100%;
+			}
 		}
 
 		/* ========== THEME EDITOR ========== */
@@ -2769,6 +2845,8 @@ $cardsHtml
 				['Verdana', 'Verdana, sans-serif']
 			] },
 			{ group: 'Set Bonus Yazisi', label: 'Bonus Yazi Rengi', type: 'color', target: '--theme-bonus-text', value: '#fff8dc' },
+			{ group: 'Set Bonus Yazisi', label: 'Sol Hucre Yazisi', type: 'color', target: '--theme-bonus-tier-text', value: '#ffe2a3' },
+			{ group: 'Set Bonus Yazisi', label: 'Sol Hucre Zemini', type: 'color', target: '--theme-bonus-tier-bg', value: '#8a0000' },
 			{ group: 'Set Bonus Yazisi', label: 'Bonus Yazi Boyutu', type: 'range', target: '--theme-bonus-size', value: '0.68rem', min: 0.45, max: 1.1, step: 0.01, unit: 'rem' },
 			{ group: 'Set Bonus Yazisi', label: 'Bonus Kalinligi', type: 'range', target: '--theme-bonus-weight', value: '400', min: 300, max: 900, step: 100, unit: '' },
 			{ group: 'Set Bonus Yazisi', label: 'Bonus Satir Arasi', type: 'range', target: '--theme-bonus-line', value: '1.25', min: 0.9, max: 2, step: 0.05, unit: '' },
@@ -2789,10 +2867,25 @@ $cardsHtml
 				['Normal', '0 1px 0 #000'],
 				['Parlak', '0 0 4px rgba(255,226,163,0.45)']
 			] },
+			{ group: 'Drop Tablosu', label: 'Baslik Zemini', type: 'color', target: '--theme-drop-header-bg', value: '#1b1b1b' },
+			{ group: 'Drop Tablosu', label: 'Baslik Yazisi', type: 'color', target: '--theme-drop-header-text', value: '#ffffff' },
+			{ group: 'Drop Tablosu', label: 'Satir Zemini', type: 'color', target: '--theme-drop-row-bg', value: '#202323' },
+			{ group: 'Drop Tablosu', label: 'Alternatif Satir', type: 'color', target: '--theme-drop-row-alt-bg', value: '#191b1b' },
+			{ group: 'Drop Tablosu', label: 'Satir Hover', type: 'color', target: '--theme-drop-row-hover-bg', value: '#252929' },
+			{ group: 'Drop Tablosu', label: 'Mob Adi Rengi', type: 'color', target: '--theme-drop-name-text', value: '#ffffff' },
+			{ group: 'Drop Tablosu', label: 'Drop Yazi Rengi', type: 'color', target: '--theme-drop-text', value: '#ffffff' },
+			{ group: 'Drop Tablosu', label: 'Baslik Boyutu', type: 'range', target: '--theme-drop-header-size', value: '0.72rem', min: 0.5, max: 1.1, step: 0.01, unit: 'rem' },
+			{ group: 'Drop Tablosu', label: 'Drop Yazi Boyutu', type: 'range', target: '--theme-drop-text-size', value: '0.68rem', min: 0.45, max: 1.05, step: 0.01, unit: 'rem' },
+			{ group: 'Drop Tablosu', label: 'Drop Ikon Boyutu', type: 'range', target: '--theme-drop-icon-size', value: '22px', min: 12, max: 48, step: 1, unit: 'px' },
+			{ group: 'Drop Tablosu', label: 'Hucre Boslugu', type: 'range', target: '--theme-drop-cell-pad', value: '0.45rem', min: 0.15, max: 1.2, step: 0.01, unit: 'rem' },
 			{ group: 'Olculer', label: 'Set Baslik Boyutu', type: 'range', target: '--theme-title-size', value: '1.28rem', min: 0.8, max: 2.2, step: 0.05, unit: 'rem' },
 			{ group: 'Olculer', label: 'Tablo Yazi Boyutu', type: 'range', target: '--theme-table-size', value: '0.68rem', min: 0.45, max: 1.1, step: 0.01, unit: 'rem' },
 			{ group: 'Olculer', label: 'Ikon Genisligi', type: 'range', target: '--theme-icon-size', value: '32px', min: 18, max: 64, step: 1, unit: 'px' },
 			{ group: 'Olculer', label: 'Hucre Boslugu', type: 'range', target: '--theme-cell-pad', value: '0.42rem', min: 0.1, max: 1.2, step: 0.02, unit: 'rem' },
+			{ group: 'Olculer', label: 'Icerik Genisligi', type: 'range', target: '--theme-content-width', value: '716px', min: 560, max: 1100, step: 2, unit: 'px' },
+			{ group: 'Olculer', label: 'Tablo Genisligi', type: 'range', target: '--theme-table-width', value: '670px', min: 520, max: 1040, step: 2, unit: 'px' },
+			{ group: 'Olculer', label: 'Sol Bonus Sutunu', type: 'range', target: '--theme-bonus-col-width', value: '126px', min: 80, max: 190, step: 2, unit: 'px' },
+			{ group: 'Olculer', label: 'Icerik Boslugu', type: 'range', target: '--theme-layout-gap', value: '20px', min: 0, max: 80, step: 2, unit: 'px' },
 			{ group: 'Olculer', label: 'Kart Radius', type: 'range', target: '--radius-md', value: '0px', min: 0, max: 18, step: 1, unit: 'px' },
 			{ group: 'Olculer', label: 'Kucuk Radius', type: 'range', target: '--radius-sm', value: '0px', min: 0, max: 12, step: 1, unit: 'px' },
 			{ group: 'Ikonlar', label: 'Ikon Kenarligi', type: 'color', target: '--theme-icon-border', value: '#d7ae17' },
@@ -2800,7 +2893,7 @@ $cardsHtml
 			{ group: 'Sol Menu', label: 'Menu Basligi', type: 'color', target: '--theme-sidebar-head', value: '#7b0000' },
 			{ group: 'Sol Menu', label: 'Bolum Basligi', type: 'color', target: '--theme-sidebar-section', value: '#8a0000' },
 			{ group: 'Sol Menu', label: 'Menu Yazisi', type: 'color', target: '--theme-sidebar-text', value: '#3d2818' },
-			{ group: 'Sol Menu', label: 'Menu Genisligi', type: 'range', target: '--sidebar-w', value: '280px', min: 220, max: 380, step: 5, unit: 'px' }
+			{ group: 'Sol Menu', label: 'Menu Genisligi', type: 'range', target: '--sidebar-w', value: '216px', min: 180, max: 380, step: 2, unit: 'px' }
 		];
 
 		const dynamicStyle = document.createElement('style');
@@ -2808,9 +2901,23 @@ $cardsHtml
 			'.costume-set-block h3 { font-family: var(--theme-title-font, Georgia, "Times New Roman", serif); font-size: var(--theme-title-size, 1.28rem); color: var(--game-title-text); }',
 			'.bonus-tier, .costume-piece-title, .metin-drop-table td { font-family: var(--theme-table-font, Arial, sans-serif); font-size: var(--theme-table-size, 0.68rem); }',
 			'.bonus-text { color: var(--theme-bonus-text, var(--game-body-text)) !important; font-family: var(--theme-table-font, Arial, sans-serif); font-size: var(--theme-bonus-size, 0.68rem); font-weight: var(--theme-bonus-weight, 400); line-height: var(--theme-bonus-line, 1.25); text-align: var(--theme-bonus-align, center); text-shadow: var(--theme-bonus-shadow, none); }',
+			'.bonus-tier { color: var(--theme-bonus-tier-text, var(--game-header-text)) !important; background: var(--theme-bonus-tier-bg, var(--game-header-bg)) !important; }',
 			'.bonus-tier, .costume-piece-title, .metin-drop-table th { text-shadow: var(--theme-header-shadow, 0 1px 0 #000); }',
+			'.metin-drop-table th { background: var(--theme-drop-header-bg, #1b1b1b) !important; color: var(--theme-drop-header-text, #fff) !important; font-size: var(--theme-drop-header-size, 0.72rem); text-align: left; text-shadow: none; }',
+			'.metin-drop-table td { background: var(--theme-drop-row-bg, #202323) !important; color: var(--theme-drop-text, #fff) !important; font-size: var(--theme-drop-text-size, 0.68rem); padding: var(--theme-drop-cell-pad, 0.45rem); text-align: left; vertical-align: top; text-shadow: none; }',
+			'.metin-drop-table tbody tr:nth-child(even) td { background: var(--theme-drop-row-alt-bg, #191b1b) !important; }',
+			'.metin-drop-table tbody tr:hover td { background: var(--theme-drop-row-hover-bg, #252929) !important; }',
+			'.metin-name-cell { color: var(--theme-drop-name-text, #fff) !important; white-space: normal; }',
+			'.drop-item-row { display: list-item; list-style-position: outside; margin-left: 1.05rem; padding: 0.1rem 0; }',
+			'.drop-item-icon { width: var(--theme-drop-icon-size, 22px); height: auto; max-height: 34px; margin: 0 0.35rem; vertical-align: middle; }',
+			'.drop-item-name { color: var(--theme-drop-text, #fff) !important; font-size: var(--theme-drop-text-size, 0.68rem); white-space: normal; overflow: visible; text-overflow: clip; vertical-align: middle; }',
 			'.costume-item img { width: var(--theme-icon-size, 32px); border-color: var(--theme-icon-border, #d7ae17); }',
 			'.costume-icons { padding: var(--theme-cell-pad, 0.42rem) 0.35rem; }',
+			'.main-content { margin-left: var(--sidebar-w, 216px); width: calc(100vw - var(--sidebar-w, 216px)); min-width: calc(var(--theme-content-width, 716px) + (var(--theme-layout-gap, 20px) * 2)); }',
+			'.content-area { width: var(--theme-content-width, 716px); max-width: var(--theme-content-width, 716px); margin-left: auto; margin-right: auto; }',
+			'.wiki-card, .wiki-card#costume-set-bonuses { width: var(--theme-content-width, 716px); }',
+			'.metin-drop-table, .costume-set-table { min-width: var(--theme-table-width, 670px); }',
+			'.costume-set-table .bonus-corner, .bonus-tier, .metin-drop-table th:nth-child(1) { width: var(--theme-bonus-col-width, 126px); }',
 			'.sidebar { background: var(--theme-sidebar-bg, #ead8b4); }',
 			'.sidebar-header { background: linear-gradient(var(--theme-sidebar-head, #7b0000), #4d0000); }',
 			'.sidebar-section-title { background: linear-gradient(var(--theme-sidebar-section, #8a0000), #570000); }',
