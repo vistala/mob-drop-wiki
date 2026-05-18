@@ -464,9 +464,9 @@ function Build-MetinTableHtml {
 			}
 			$dropItemsHtml += @"
 							  <div class="drop-item-row">
-								  $countDisplay
 								  <img class="drop-item-icon" src="icons/$iVnum.png" onerror="this.src='icons/default.png'" alt="$iName" loading="lazy">
 								  <span class="drop-item-name">$iName</span>
+								  $countDisplay
 							  </div>
 "@
 		}
@@ -489,6 +489,10 @@ function Build-MetinTableHtml {
 								<div class="w-title">Metin Drop Tablosu</div>
 								<div class="w-type"><span class="cat-label cat-mob">Ozet</span> Tum metinlerin drop listesi</div>
 							</div>
+						</div>
+						<div class="mob-table-filters">
+							<label class="mob-table-filter"><i class="fas fa-dragon"></i><input type="text" class="mob-table-search" data-filter-kind="mob" placeholder="Canavar ara..."></label>
+							<label class="mob-table-filter"><i class="fas fa-gem"></i><input type="text" class="mob-table-search" data-filter-kind="item" placeholder="Esya ara..."></label>
 						</div>
 						<div style="padding: 0.25rem 0.5rem; background: rgba(0,0,0,0.15); overflow-x: auto;">
 							<table class="metin-drop-table">
@@ -540,9 +544,9 @@ function Build-CategoryTableHtml {
 			}
 			$dropItemsHtml += @"
 							  <div class="drop-item-row">
-								  $countDisplay
 								  <img class="drop-item-icon" src="icons/$iVnum.png" onerror="this.src='icons/default.png'" alt="$iName" loading="lazy">
 								  <span class="drop-item-name">$iName</span>
+								  $countDisplay
 							  </div>
 "@
 		}
@@ -563,6 +567,10 @@ function Build-CategoryTableHtml {
 								<div class="w-title">$Title</div>
 								<div class="w-type"><span class="cat-label cat-mob">Ozet</span> Tum $Category drop listesi</div>
 							</div>
+						</div>
+						<div class="mob-table-filters">
+							<label class="mob-table-filter"><i class="fas fa-dragon"></i><input type="text" class="mob-table-search" data-filter-kind="mob" placeholder="Canavar ara..."></label>
+							<label class="mob-table-filter"><i class="fas fa-gem"></i><input type="text" class="mob-table-search" data-filter-kind="item" placeholder="Esya ara..."></label>
 						</div>
 						<div style="padding: 0.25rem 0.5rem; background: rgba(0,0,0,0.15); overflow-x: auto;">
 							<table class="metin-drop-table">
@@ -1084,21 +1092,21 @@ $html = @"
 		:root {
 			--bg-base: #06060e;
 			--bg-surface: #0c0c1a;
-			--bg-card: #4b3505;
-			--bg-sidebar: #4b3505;
+			--bg-card: #181c1f;
+			--bg-sidebar: #111416;
 			--bg-input: #1b1b1b;
 
 			--text-high: #eaeaf4;
 			--text-med: #9898b8;
-			--text-low: #cdb675;
-			--text-muted: #a38a49;
+			--text-low: #9aa6ad;
+			--text-muted: #6f7a80;
 
-			--accent-blue: #8b1e16;
-			--accent-blue-dim: rgba(99,102,241,0.15);
-			--accent-gold: #f59e0b;
-			--accent-gold-dim: rgba(245,158,11,0.15);
+			--accent-blue: #8ba4b8;
+			--accent-blue-dim: rgba(139,164,184,0.14);
+			--accent-gold: #9aa6ad;
+			--accent-gold-dim: rgba(154,166,173,0.14);
 
-			--brand-gold: #ffe2a3;
+			--brand-gold: #e7edf2;
 
 			--border: rgba(255,255,255,0.06);
 			--border-active: rgba(99,102,241,0.4);
@@ -1125,7 +1133,7 @@ $html = @"
 
 		::-webkit-scrollbar { width: 5px; height: 0; }
 		::-webkit-scrollbar-track { background: #000; }
-		::-webkit-scrollbar-thumb { background: #7b0000; border-radius: 0; }
+		::-webkit-scrollbar-thumb { background: #30383d; border-radius: 0; }
 
 		/* ========== SIDEBAR ========== */
 		.sidebar {
@@ -1784,24 +1792,24 @@ $html = @"
 		.empty-state i { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
 		.empty-state p { font-size: 0.8rem; }
 
-		/* ========== METIN2 WIKI SKIN OVERRIDE ========== */
+		/* ========== DARK NEUTRAL WIKI SKIN OVERRIDE ========== */
 		:root {
-			--bg-base: #d7c3a3;
-			--bg-surface: #f5ead5;
-			--bg-card: #fff8e8;
-			--bg-sidebar: #ead7b6;
-			--bg-input: #fffaf0;
-			--text-high: #2b1a10;
-			--text-med: #4b3524;
-			--text-low: #7c6245;
-			--text-muted: #9a8464;
-			--accent-blue: #8b1e16;
-			--accent-blue-dim: rgba(139,30,22,0.12);
-			--accent-gold: #b0781f;
-			--accent-gold-dim: rgba(176,120,31,0.18);
-			--brand-gold: #ffd37a;
-			--border: #b89863;
-			--border-active: #8b1e16;
+			--bg-base: #07090a;
+			--bg-surface: #111416;
+			--bg-card: #181c1f;
+			--bg-sidebar: #111416;
+			--bg-input: #1b1f22;
+			--text-high: #e8eef2;
+			--text-med: #b7c1c7;
+			--text-low: #9aa6ad;
+			--text-muted: #6f7a80;
+			--accent-blue: #8ba4b8;
+			--accent-blue-dim: rgba(139,164,184,0.14);
+			--accent-gold: #9aa6ad;
+			--accent-gold-dim: rgba(154,166,173,0.14);
+			--brand-gold: #e7edf2;
+			--border: #3f474d;
+			--border-active: #65727a;
 			--radius-sm: 2px;
 			--radius-md: 2px;
 		}
@@ -1812,23 +1820,23 @@ $html = @"
 				#d7c3a3;
 			color: var(--text-high);
 		}
-		::-webkit-scrollbar-thumb { background: #9d7a4c; }
+		::-webkit-scrollbar-thumb { background: #3f474d; }
 		.sidebar {
-			background: #ead7b6;
+			background: #111416;
 			border-right: 1px solid #8c6a3e;
 			box-shadow: inset -1px 0 0 rgba(255,255,255,0.45), 2px 0 10px rgba(58,35,16,0.16);
 		}
 		.sidebar-header {
 			background: linear-gradient(#6d130e, #3b0906);
-			border-bottom: 2px solid #c99c30;
+			border-bottom: 2px solid #3f474d;
 			padding: 1rem;
 		}
 		.logo-icon {
-			background: #f0d080;
+			background: #232a2f;
 			color: #5d100b;
 			border: 1px solid #2b0805;
 		}
-		.logo-text h2 { color: #ffd37a; text-shadow: 0 1px 0 #000; }
+		.logo-text h2 { color: #e7edf2; text-shadow: 0 1px 0 #000; }
 		.logo-text p { color: #e9c987; }
 		.sidebar-search {
 			background: #d2b889;
@@ -1836,8 +1844,8 @@ $html = @"
 		}
 		.search-box input,
 		.hero-search .search-box input {
-			background: #fffaf0;
-			border: 1px solid #9d7a4c;
+			background: #1b1f22;
+			border: 1px solid #3f474d;
 			color: #2b1a10;
 			box-shadow: inset 0 1px 2px rgba(79,43,12,0.18);
 		}
@@ -1847,29 +1855,29 @@ $html = @"
 		.category-filter { background: #d2b889; }
 		.search-mode-btn,
 		.cat-filter-btn {
-			background: #f7ead0;
-			border-color: #9d7a4c;
+			background: #181c1f;
+			border-color: #3f474d;
 			color: #5b4027;
 			font-weight: 700;
 		}
 		.search-mode-btn.active,
 		.cat-filter-btn.active {
-			background: linear-gradient(#8b1e16, #4c0d09);
+			background: linear-gradient(#65727a, #101315);
 			border-color: #451008;
 			color: #ffe4a0;
 		}
 		.sidebar-nav { padding: 0.4rem 0.55rem; }
 		.sidebar-section {
-			border: 1px solid #9d7a4c;
+			border: 1px solid #3f474d;
 			background: rgba(157,122,76,0.35);
 			margin-bottom: 0.55rem;
 		}
 		.sidebar-section-title {
-			background: linear-gradient(#7b1a13, #4b0d09);
+			background: linear-gradient(#232a2f, #101315);
 			color: #ffe4a0;
 			padding: 0.45rem 0.65rem;
 			letter-spacing: 1px;
-			border-bottom: 1px solid #9d7a4c;
+			border-bottom: 1px solid #3f474d;
 		}
 		.section-count {
 			background: rgba(255,228,160,0.16);
@@ -1885,14 +1893,14 @@ $html = @"
 		}
 		.w-cat-btn:hover,
 		.w-cat-btn.active {
-			color: #7b1a13;
-			background: #ead1a3 !important;
+			color: #232a2f;
+			background: #232a2f !important;
 			font-weight: 800;
 		}
 		.sidebar-footer {
 			background: #d2b889;
 			color: #5b4027;
-			border-top-color: #9d7a4c;
+			border-top-color: #3f474d;
 		}
 		.main-content {
 			background: rgba(255,248,232,0.42);
@@ -1901,57 +1909,57 @@ $html = @"
 		.page-hero {
 			margin: 1rem 1.25rem 0;
 			padding: 1.2rem 1.35rem;
-			background: linear-gradient(#fff8e8, #ead7b6);
-			border: 1px solid #9d7a4c;
-			border-top: 5px solid #7b1a13;
+			background: linear-gradient(#181c1f, #111416);
+			border: 1px solid #3f474d;
+			border-top: 5px solid #232a2f;
 			box-shadow: 0 2px 8px rgba(59,34,13,0.14);
 		}
 		.hero-tag {
-			color: #7b1a13;
-			border: 1px solid #b89863;
-			background: #f7ead0;
+			color: #232a2f;
+			border: 1px solid #3f474d;
+			background: #181c1f;
 			border-radius: 2px;
 		}
-		.hero-tag .dot { background: #7b1a13; animation: none; }
+		.hero-tag .dot { background: #232a2f; animation: none; }
 		.page-hero h1 {
-			color: #5b120d;
+			color: #e8eef2;
 			font-size: 1.65rem;
 			letter-spacing: 1px;
 			text-shadow: 0 1px 0 #fff4d2;
 		}
 		.page-hero p { color: #5b4027; font-weight: 500; }
 		.stat-chip {
-			background: #fffaf0;
-			border: 1px solid #b89863;
+			background: #1b1f22;
+			border: 1px solid #3f474d;
 			color: #4b3524;
 			border-radius: 2px;
 		}
-		.stat-chip strong { color: #7b1a13; }
+		.stat-chip strong { color: #232a2f; }
 		.hero-search {
 			margin: 0 1.25rem;
 			padding: 0.75rem;
-			background: #ead7b6;
-			border: 1px solid #9d7a4c;
+			background: #111416;
+			border: 1px solid #3f474d;
 			border-top: 0;
 		}
 		.content-area { padding: 1rem 1.25rem 3rem; }
 		.wiki-card {
-			background: #fff8e8;
-			border: 1px solid #9d7a4c;
+			background: #181c1f;
+			border: 1px solid #3f474d;
 			border-radius: 2px;
 			box-shadow: 0 1px 4px rgba(59,34,13,0.12);
 		}
 		.wiki-card:hover {
-			border-color: #7b1a13;
+			border-color: #232a2f;
 			box-shadow: 0 2px 8px rgba(59,34,13,0.18);
 		}
 		.w-card-header {
-			background: linear-gradient(#7b1a13, #4b0d09) !important;
-			border-bottom: 2px solid #c99c30;
+			background: linear-gradient(#232a2f, #101315) !important;
+			border-bottom: 2px solid #3f474d;
 			color: #ffe4a0;
 		}
 		.w-icon {
-			background: #f0d080 !important;
+			background: #232a2f !important;
 			color: #5d100b !important;
 			border: 1px solid #2b0805;
 		}
@@ -1963,26 +1971,26 @@ $html = @"
 		}
 		.w-type { color: #e9c987; }
 		.cat-label {
-			background: #ead1a3 !important;
-			color: #5b120d !important;
-			border: 1px solid #b89863;
+			background: #232a2f !important;
+			color: #e8eef2 !important;
+			border: 1px solid #3f474d;
 			border-radius: 2px;
 		}
 		.drop-grid-wrap,
 		.costume-sets,
 		.wiki-card > div[style*="overflow-x"] {
-			background: #fff3d8 !important;
+			background: #181c1f !important;
 		}
 		.drop-grid { gap: 7px; }
 		.grid-item {
-			background: #fffaf0;
+			background: #1b1f22;
 			border: 1px solid #c6a86f;
 			border-radius: 2px;
 			box-shadow: inset 0 0 0 1px rgba(255,255,255,0.45);
 		}
 		.grid-item:hover {
-			background: #f3ddb0;
-			border-color: #8b1e16;
+			background: #181c1f;
+			border-color: #65727a;
 			transform: none;
 			box-shadow: 0 1px 5px rgba(73,39,13,0.2);
 		}
@@ -1991,40 +1999,40 @@ $html = @"
 		.drop-items-cell { color: #4b3524; }
 		.grid-chance,
 		.drop-item-chance {
-			background: #ead1a3;
-			color: #7b1a13;
+			background: #232a2f;
+			color: #232a2f;
 			border: 1px solid #c6a86f;
 		}
 		.grid-count,
 		.drop-item-count {
-			background: #7b1a13;
+			background: #232a2f;
 			color: #ffe4a0;
 		}
 		.grid-item::after {
-			background: #fff8e8;
+			background: #181c1f;
 			color: #2b1a10;
-			border-color: #9d7a4c;
+			border-color: #3f474d;
 		}
 		.w-card-footer {
-			background: #ead7b6;
-			border-top-color: #9d7a4c;
+			background: #111416;
+			border-top-color: #3f474d;
 		}
 		.drop-count { color: #5b4027; }
-		.drop-count i { color: #7b1a13; }
+		.drop-count i { color: #232a2f; }
 		.metin-drop-table,
 		.costume-set-table {
-			background: #fffaf0;
-			border: 1px solid #9d7a4c;
+			background: #1b1f22;
+			border: 1px solid #3f474d;
 			border-radius: 0;
 		}
 		.metin-drop-table thead,
 		.costume-set-table thead th {
-			background: linear-gradient(#7b1a13, #4b0d09);
+			background: linear-gradient(#232a2f, #101315);
 		}
 		.metin-drop-table th,
 		.costume-set-table th {
 			color: #ffe4a0;
-			border-color: #9d7a4c;
+			border-color: #3f474d;
 		}
 		.metin-drop-table td,
 		.costume-set-table td {
@@ -2032,46 +2040,46 @@ $html = @"
 			border-color: #d0b37d;
 		}
 		.metin-drop-table tbody tr:nth-child(even),
-		.costume-set-table tbody tr:nth-child(even) { background: #f7ead0; }
-		.metin-drop-table tbody tr:hover { background: #ead1a3; }
-		.metin-name-cell { color: #5b120d; }
+		.costume-set-table tbody tr:nth-child(even) { background: #181c1f; }
+		.metin-drop-table tbody tr:hover { background: #232a2f; }
+		.metin-name-cell { color: #e8eef2; }
 		.drop-item-icon {
-			background: #fffaf0;
+			background: #1b1f22;
 			border: 1px solid #c6a86f;
 		}
 		.costume-set-block h3 {
-			color: #5b120d;
-			border-bottom: 1px solid #b89863;
+			color: #e8eef2;
+			border-bottom: 1px solid #3f474d;
 			padding-bottom: 0.25rem;
 		}
 		.costume-table-wrap {
-			background: #fffaf0;
-			border-color: #9d7a4c;
+			background: #1b1f22;
+			border-color: #3f474d;
 			border-radius: 0;
 		}
 		.costume-set-table thead th,
 		.costume-set-table .bonus-corner {
-			background: linear-gradient(#7b1a13, #4b0d09);
+			background: linear-gradient(#232a2f, #101315);
 		}
 		.costume-piece-title { color: #ffe4a0; }
 		.costume-item {
-			background: #fffaf0;
+			background: #1b1f22;
 			border: 1px solid #c6a86f;
 			border-radius: 2px;
 		}
 		.bonus-tier {
-			background: #7b1a13;
+			background: #232a2f;
 			color: #ffe4a0;
-			border-color: #9d7a4c;
+			border-color: #3f474d;
 		}
 		.bonus-text {
 			color: #ffffff;
-			background: #fffaf0;
+			background: #1b1f22;
 			font-weight: 700;
 		}
 		.mobile-topbar {
-			background: linear-gradient(#7b1a13, #4b0d09);
-			border-bottom: 2px solid #c99c30;
+			background: linear-gradient(#232a2f, #101315);
+			border-bottom: 2px solid #3f474d;
 		}
 		.mobile-topbar h3 { color: #ffe4a0; }
 		.mobile-topbar button { color: #ffe4a0; }
@@ -2090,7 +2098,7 @@ $html = @"
 		.page-hero,
 		.hero-search {
 			background: #4f3908;
-			border-color: #8b7137;
+			border-color: #3f474d;
 			box-shadow: none;
 		}
 		.page-hero {
@@ -2108,7 +2116,7 @@ $html = @"
 		.hero-search .search-box input {
 			background: #2b2008;
 			color: #f3e7c0;
-			border-color: #8b7137;
+			border-color: #3f474d;
 		}
 		.search-mode-toggle,
 		.category-filter {
@@ -2116,7 +2124,7 @@ $html = @"
 		}
 		.wiki-card {
 			background: #4f3908;
-			border-color: #8b7137;
+			border-color: #3f474d;
 			box-shadow: none;
 		}
 		.wiki-card:hover {
@@ -2133,27 +2141,27 @@ $html = @"
 			background: #4f3908 !important;
 		}
 		.costume-set-block h3 {
-			color: #fff5cf;
-			border-bottom: 1px solid #8b7137;
+			color: #e8eef2;
+			border-bottom: 1px solid #3f474d;
 			font-size: 1.15rem;
 			letter-spacing: 0;
 		}
 		.costume-table-wrap {
 			background: #4f3908;
-			border-color: #8b7137;
+			border-color: #3f474d;
 		}
 		.costume-set-table {
 			background: #4f3908;
-			border-color: #8b7137;
+			border-color: #3f474d;
 		}
 		.costume-set-table thead th,
 		.costume-set-table .bonus-corner {
 			background: #7f0000;
-			color: #ffe6a3;
-			border-color: #8b7137;
+			color: #f1f5f8;
+			border-color: #3f474d;
 		}
 		.costume-piece-title {
-			color: #ffe6a3;
+			color: #f1f5f8;
 			text-shadow: 0 1px 0 #000;
 		}
 		.costume-icons {
@@ -2173,34 +2181,34 @@ $html = @"
 		}
 		.costume-set-table td {
 			background: #4f3908;
-			border-color: #8b7137;
+			border-color: #3f474d;
 		}
 		.bonus-tier {
-			background: #8a0000;
-			color: #ffe6a3;
-			border-color: #8b7137;
+			background: #121517;
+			color: #f1f5f8;
+			border-color: #3f474d;
 			text-align: center;
 			font-size: 0.68rem;
 		}
 		.bonus-text {
-			background: #4f3908;
-			color: #fffaf0;
+			background: #181c1f;
+			color: #1b1f22;
 			font-size: 0.68rem;
 			font-weight: 600;
 		}
 		.w-card-footer {
 			background: #4f3908;
-			border-top-color: #8b7137;
+			border-top-color: #3f474d;
 		}
 		.drop-count {
 			color: #f3e7c0;
 		}
 		.drop-count i {
-			color: #ffe6a3;
+			color: #f1f5f8;
 		}
 		.grid-item {
 			background: #5a410c;
-			border-color: #8b7137;
+			border-color: #3f474d;
 		}
 		.grid-item:hover {
 			background: #654b11;
@@ -2210,7 +2218,7 @@ $html = @"
 		.drop-item-name,
 		.drop-items-cell,
 		.metin-drop-table td {
-			color: #fffaf0;
+			color: #1b1f22;
 		}
 		.metin-drop-table,
 		.metin-drop-table tbody tr:nth-child(even) {
@@ -2219,18 +2227,18 @@ $html = @"
 		.metin-drop-table thead,
 		.metin-drop-table th {
 			background: #7f0000;
-			color: #ffe6a3;
+			color: #f1f5f8;
 		}
 
 		/* ========== SET BONUS REFERENCE MATCH ========== */
 		:root {
 			--game-page-bg: #000;
-			--game-panel-bg: #4b3505;
-			--game-header-bg: #8a0000;
-			--game-border: #76622b;
-			--game-header-text: #ffe2a3;
-			--game-body-text: #fff8dc;
-			--game-title-text: #f6e4ba;
+			--game-panel-bg: #181c1f;
+			--game-header-bg: #121517;
+			--game-border: #3f474d;
+			--game-header-text: #f1f5f8;
+			--game-body-text: #e8eef2;
+			--game-title-text: #f1f5f8;
 			--theme-layout-gap: 20px;
 			--theme-content-width: 716px;
 			--theme-table-width: 670px;
@@ -2352,7 +2360,7 @@ $html = @"
 			width: 32px;
 			max-height: 82px;
 			background: transparent;
-			border: 1px solid var(--theme-icon-border, #d7ae17);
+			border: 1px solid var(--theme-icon-border, #3f474d);
 			image-rendering: pixelated;
 		}
 		.bonus-tier {
@@ -2426,11 +2434,19 @@ $html = @"
 			color: var(--theme-drop-text, #ffffff);
 		}
 		.drop-item-row {
-			display: list-item;
-			list-style-position: outside;
+			display: grid;
+			grid-template-columns: auto auto 1fr auto;
+			align-items: center;
+			column-gap: 0.35rem;
 			margin-left: 1.05rem;
 			padding: 0.1rem 0;
 			line-height: 1.35;
+		}
+		.drop-item-row::before {
+			content: "•";
+			color: var(--theme-drop-text, #ffffff);
+			font-size: 0.8rem;
+			line-height: 1;
 		}
 		.drop-item-icon {
 			width: var(--theme-drop-icon-size, 22px);
@@ -2453,26 +2469,70 @@ $html = @"
 		.drop-item-count {
 			color: var(--accent-gold);
 			font-weight: 800;
-			margin-right: 0.25rem;
+			justify-self: end;
+			margin-left: 0.45rem;
+			white-space: nowrap;
+		}
+		.mob-table-filters {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 0.5rem;
+			padding: 0.55rem 0.65rem;
+			background: var(--game-panel-bg);
+			border-top: 1px solid var(--game-border);
+			border-bottom: 1px solid var(--game-border);
+		}
+		.mob-table-filter {
+			position: relative;
+			display: block;
+		}
+		.mob-table-filter i {
+			position: absolute;
+			left: 0.65rem;
+			top: 50%;
+			transform: translateY(-50%);
+			color: var(--text-low);
+			font-size: 0.72rem;
+			pointer-events: none;
+		}
+		.mob-table-filter input {
+			width: 100%;
+			height: 32px;
+			background: var(--bg-input);
+			border: 1px solid var(--game-border);
+			color: var(--text-high);
+			font-family: var(--font-body);
+			font-size: 0.72rem;
+			padding: 0 0.65rem 0 1.9rem;
+			outline: none;
+		}
+		.mob-table-filter input:focus {
+			border-color: var(--border-active);
+		}
+		.mob-table-filter input::placeholder {
+			color: var(--text-muted);
+		}
+		@media (max-width: 640px) {
+			.mob-table-filters { grid-template-columns: 1fr; }
 		}
 		.page-hero,
 		.hero-search {
 			display: none;
 		}
 		.sidebar {
-			background: #ead8b4;
+			background: #111416;
 		}
 		.sidebar-header {
-			background: linear-gradient(#7b0000, #4d0000);
+			background: linear-gradient(#171b1e, #101315);
 		}
 		.sidebar-section-title {
-			background: linear-gradient(#8a0000, #570000);
+			background: linear-gradient(#171b1e, #101315);
 		}
 		.logo-icon,
 		.w-icon,
 		.cat-label {
-			background: var(--theme-ui-badge-bg, #7b0000) !important;
-			color: var(--theme-ui-badge-text, #ffe2a3) !important;
+			background: var(--theme-ui-badge-bg, #171b1e) !important;
+			color: var(--theme-ui-badge-text, #f1f5f8) !important;
 			border: 1px solid var(--game-border);
 		}
 		.w-cat-btn {
@@ -2481,12 +2541,12 @@ $html = @"
 		}
 		.w-cat-btn:hover,
 		.w-cat-btn.active {
-			background: var(--theme-sidebar-active-bg, #7b0000) !important;
-			color: var(--theme-sidebar-active-text, #ffe2a3) !important;
+			background: var(--theme-sidebar-active-bg, #232a2f) !important;
+			color: var(--theme-sidebar-active-text, #f1f5f8) !important;
 			border-left-color: var(--game-border) !important;
 		}
 		.sidebar-footer {
-			background: var(--theme-sidebar-bg, #4b3505) !important;
+			background: var(--theme-sidebar-bg, #111416) !important;
 			color: var(--theme-sidebar-text, #ffffff) !important;
 		}
 		.wiki-card#costume-set-bonuses .costume-table-wrap {
@@ -2536,7 +2596,7 @@ $html = @"
 			bottom: 0;
 			z-index: 500;
 			width: min(380px, 100vw);
-			background: #ead8b4;
+			background: #111416;
 			color: #2b1a10;
 			border-left: 2px solid #6f5b25;
 			transform: translateX(100%);
@@ -2551,9 +2611,9 @@ $html = @"
 			align-items: center;
 			justify-content: space-between;
 			padding: 0.75rem 0.9rem;
-			background: linear-gradient(#8a0000, #570000);
-			color: #ffe2a3;
-			border-bottom: 2px solid #c99c30;
+			background: linear-gradient(#171b1e, #101315);
+			color: #f1f5f8;
+			border-bottom: 2px solid #3f474d;
 		}
 		.theme-editor-header h3 {
 			font-family: Georgia, "Times New Roman", serif;
@@ -2562,9 +2622,9 @@ $html = @"
 		}
 		.theme-editor-header button,
 		.theme-actions button {
-			border: 1px solid #6f5b25;
-			background: #f6e4ba;
-			color: #4b0d09;
+			border: 1px solid #3f474d;
+			background: #232a2f;
+			color: #f1f5f8;
 			cursor: pointer;
 			padding: 0.35rem 0.5rem;
 			font-weight: 700;
@@ -2574,14 +2634,14 @@ $html = @"
 			padding: 0.8rem;
 		}
 		.theme-section {
-			border: 1px solid #b89863;
-			background: #fff5dc;
+			border: 1px solid #3f474d;
+			background: #181c1f;
 			margin-bottom: 0.75rem;
 		}
 		.theme-section-title {
 			padding: 0.4rem 0.55rem;
-			background: #8a0000;
-			color: #ffe2a3;
+			background: #121517;
+			color: #f1f5f8;
 			font-weight: 800;
 			font-size: 0.72rem;
 			text-transform: uppercase;
@@ -2600,7 +2660,7 @@ $html = @"
 			width: 44px;
 			height: 28px;
 			padding: 0;
-			border: 1px solid #8b7137;
+			border: 1px solid #3f474d;
 			background: transparent;
 		}
 		.theme-field input[type="range"] {
@@ -2609,8 +2669,8 @@ $html = @"
 		.theme-field select,
 		.theme-field input[type="text"] {
 			width: 160px;
-			border: 1px solid #8b7137;
-			background: #fffaf0;
+			border: 1px solid #3f474d;
+			background: #1b1f22;
 			color: #2b1a10;
 			padding: 0.3rem;
 		}
@@ -2619,7 +2679,7 @@ $html = @"
 			grid-template-columns: repeat(2, 1fr);
 			gap: 0.45rem;
 			padding: 0.65rem;
-			border-top: 1px solid #b89863;
+			border-top: 1px solid #3f474d;
 			background: #d2b889;
 		}
 		.theme-actions button.wide { grid-column: 1 / -1; }
@@ -2627,8 +2687,8 @@ $html = @"
 			width: 100%;
 			min-height: 92px;
 			resize: vertical;
-			border: 1px solid #8b7137;
-			background: #fffaf0;
+			border: 1px solid #3f474d;
+			background: #1b1f22;
 			color: #2b1a10;
 			padding: 0.45rem;
 			font-family: Consolas, monospace;
@@ -2724,6 +2784,7 @@ $cardsHtml
 				catBtns.forEach(b => b.classList.remove('active'));
 				btn.classList.add('active');
 				searchInput.value = '';
+				clearMobTableFilters();
 				const targetId = btn.getAttribute('data-target');
 				wikiCards.forEach(card => { card.style.display = card.id === targetId ? '' : 'none'; });
 				emptyState.style.display = 'none';
@@ -2817,6 +2878,37 @@ $cardsHtml
 			emptyState.style.display = 'none';
 		}
 
+		function clearMobTableFilters() {
+			document.querySelectorAll('.mob-table-search').forEach(input => { input.value = ''; });
+			document.querySelectorAll('.metin-drop-table tbody tr').forEach(row => { row.style.display = ''; });
+		}
+
+		function applyMobTableFilters(card) {
+			const mobInput = card.querySelector('.mob-table-search[data-filter-kind="mob"]');
+			const itemInput = card.querySelector('.mob-table-search[data-filter-kind="item"]');
+			if (!mobInput || !itemInput) return;
+			const mobQuery = mobInput.value.toLowerCase().trim();
+			const itemQuery = itemInput.value.toLowerCase().trim();
+			let anyVisible = false;
+			card.querySelectorAll('.metin-drop-table tbody tr').forEach(row => {
+				const mobText = (row.querySelector('.metin-name-cell')?.textContent || '').toLowerCase();
+				const itemText = Array.from(row.querySelectorAll('.drop-item-name')).map(el => el.textContent.toLowerCase()).join(' ');
+				const mobMatch = !mobQuery || mobText.includes(mobQuery);
+				const itemMatch = !itemQuery || itemText.includes(itemQuery);
+				const visible = mobMatch && itemMatch;
+				row.style.display = visible ? '' : 'none';
+				if (visible) anyVisible = true;
+			});
+			emptyState.style.display = anyVisible ? 'none' : 'block';
+		}
+
+		document.querySelectorAll('.mob-table-search').forEach(input => {
+			input.addEventListener('input', () => {
+				const card = input.closest('.wiki-card');
+				if (card) applyMobTableFilters(card);
+			});
+		});
+
 		document.getElementById('mobile-menu-btn').addEventListener('click', () => {
 			document.getElementById('sidebar').classList.toggle('open');
 			document.getElementById('sidebar-backdrop').classList.toggle('show');
@@ -2829,29 +2921,29 @@ $cardsHtml
 	})();
 
 	(function() {
-		const STORAGE_KEY = 'harbi2-theme-editor-v2';
+		const STORAGE_KEY = 'harbi2-theme-editor-v3-dark';
 		const root = document.documentElement;
 		const editor = document.getElementById('theme-editor');
 		const editorBody = document.getElementById('theme-editor-body');
 		const jsonBox = document.getElementById('theme-json');
 		const fields = [
 			{ group: 'Genel Renkler', label: 'Sayfa Arka Plan', type: 'color', target: '--game-page-bg', value: '#000000' },
-			{ group: 'Genel Renkler', label: 'Panel Zemini', type: 'color', target: '--game-panel-bg', value: '#4b3505' },
-			{ group: 'Genel Renkler', label: 'Tablo Basligi', type: 'color', target: '--game-header-bg', value: '#8a0000' },
-			{ group: 'Genel Renkler', label: 'Cizgi Rengi', type: 'color', target: '--game-border', value: '#76622b' },
-			{ group: 'Genel Renkler', label: 'Kart Zemini', type: 'color', target: '--bg-card', value: '#4b3505' },
+			{ group: 'Genel Renkler', label: 'Panel Zemini', type: 'color', target: '--game-panel-bg', value: '#181c1f' },
+			{ group: 'Genel Renkler', label: 'Tablo Basligi', type: 'color', target: '--game-header-bg', value: '#121517' },
+			{ group: 'Genel Renkler', label: 'Cizgi Rengi', type: 'color', target: '--game-border', value: '#3f474d' },
+			{ group: 'Genel Renkler', label: 'Kart Zemini', type: 'color', target: '--bg-card', value: '#181c1f' },
 			{ group: 'Genel Renkler', label: 'Input Zemini', type: 'color', target: '--bg-input', value: '#1b1b1b' },
-			{ group: 'Genel Renkler', label: 'Kucuk Kutular', type: 'color', target: '--theme-ui-badge-bg', value: '#7b0000' },
-			{ group: 'Genel Renkler', label: 'Kucuk Kutu Yazisi', type: 'color', target: '--theme-ui-badge-text', value: '#ffe2a3' },
-			{ group: 'Vurgu Renkleri', label: 'Mavi Vurgu', type: 'color', target: '--accent-blue', value: '#8b1e16' },
-			{ group: 'Vurgu Renkleri', label: 'Altin Vurgu', type: 'color', target: '--accent-gold', value: '#b0781f' },
-			{ group: 'Vurgu Renkleri', label: 'Marka Yazisi', type: 'color', target: '--brand-gold', value: '#ffe2a3' },
-			{ group: 'Yazilar', label: 'Baslik Yazisi', type: 'color', target: '--game-header-text', value: '#ffe2a3' },
-			{ group: 'Yazilar', label: 'Govde Yazisi', type: 'color', target: '--game-body-text', value: '#fff8dc' },
-			{ group: 'Yazilar', label: 'Set Basligi', type: 'color', target: '--game-title-text', value: '#f6e4ba' },
-			{ group: 'Yazilar', label: 'Ana Metin', type: 'color', target: '--text-high', value: '#f3e7c0' },
-			{ group: 'Yazilar', label: 'Ikincil Metin', type: 'color', target: '--text-med', value: '#d8c89f' },
-			{ group: 'Yazilar', label: 'Soluk Metin', type: 'color', target: '--text-low', value: '#cdb675' },
+			{ group: 'Genel Renkler', label: 'Kucuk Kutular', type: 'color', target: '--theme-ui-badge-bg', value: '#171b1e' },
+			{ group: 'Genel Renkler', label: 'Kucuk Kutu Yazisi', type: 'color', target: '--theme-ui-badge-text', value: '#f1f5f8' },
+			{ group: 'Vurgu Renkleri', label: 'Mavi Vurgu', type: 'color', target: '--accent-blue', value: '#8ba4b8' },
+			{ group: 'Vurgu Renkleri', label: 'Altin Vurgu', type: 'color', target: '--accent-gold', value: '#9aa6ad' },
+			{ group: 'Vurgu Renkleri', label: 'Marka Yazisi', type: 'color', target: '--brand-gold', value: '#e7edf2' },
+			{ group: 'Yazilar', label: 'Baslik Yazisi', type: 'color', target: '--game-header-text', value: '#f1f5f8' },
+			{ group: 'Yazilar', label: 'Govde Yazisi', type: 'color', target: '--game-body-text', value: '#e8eef2' },
+			{ group: 'Yazilar', label: 'Set Basligi', type: 'color', target: '--game-title-text', value: '#f1f5f8' },
+			{ group: 'Yazilar', label: 'Ana Metin', type: 'color', target: '--text-high', value: '#e8eef2' },
+			{ group: 'Yazilar', label: 'Ikincil Metin', type: 'color', target: '--text-med', value: '#b7c1c7' },
+			{ group: 'Yazilar', label: 'Soluk Metin', type: 'color', target: '--text-low', value: '#9aa6ad' },
 			{ group: 'Yazilar', label: 'Baslik Fontu', type: 'select', target: '--font-display', value: 'Georgia, "Times New Roman", serif', options: [
 				['Varsayilan', ''],
 				['Georgia', 'Georgia, "Times New Roman", serif'],
@@ -2880,9 +2972,9 @@ $cardsHtml
 				['Georgia', 'Georgia, "Times New Roman", serif'],
 				['Verdana', 'Verdana, sans-serif']
 			] },
-			{ group: 'Set Bonus Yazisi', label: 'Bonus Yazi Rengi', type: 'color', target: '--theme-bonus-text', value: '#fff8dc' },
-			{ group: 'Set Bonus Yazisi', label: 'Sol Hucre Yazisi', type: 'color', target: '--theme-bonus-tier-text', value: '#ffe2a3' },
-			{ group: 'Set Bonus Yazisi', label: 'Sol Hucre Zemini', type: 'color', target: '--theme-bonus-tier-bg', value: '#8a0000' },
+			{ group: 'Set Bonus Yazisi', label: 'Bonus Yazi Rengi', type: 'color', target: '--theme-bonus-text', value: '#e8eef2' },
+			{ group: 'Set Bonus Yazisi', label: 'Sol Hucre Yazisi', type: 'color', target: '--theme-bonus-tier-text', value: '#f1f5f8' },
+			{ group: 'Set Bonus Yazisi', label: 'Sol Hucre Zemini', type: 'color', target: '--theme-bonus-tier-bg', value: '#121517' },
 			{ group: 'Set Bonus Yazisi', label: 'Bonus Yazi Boyutu', type: 'range', target: '--theme-bonus-size', value: '0.68rem', min: 0.45, max: 1.1, step: 0.01, unit: 'rem' },
 			{ group: 'Set Bonus Yazisi', label: 'Bonus Kalinligi', type: 'range', target: '--theme-bonus-weight', value: '400', min: 300, max: 900, step: 100, unit: '' },
 			{ group: 'Set Bonus Yazisi', label: 'Bonus Satir Arasi', type: 'range', target: '--theme-bonus-line', value: '1.25', min: 0.9, max: 2, step: 0.05, unit: '' },
@@ -2895,13 +2987,13 @@ $cardsHtml
 				['Yok', 'none'],
 				['Hafif', '0 1px 0 rgba(0,0,0,0.35)'],
 				['Normal', '0 1px 0 #000'],
-				['Parlak', '0 0 4px rgba(255,226,163,0.45)']
+				['Parlak', '0 0 4px rgba(180,205,220,0.35)']
 			] },
 			{ group: 'Set Bonus Yazisi', label: 'Baslik Golgesi', type: 'select', target: '--theme-header-shadow', value: '0 1px 0 #000', options: [
 				['Yok', 'none'],
 				['Hafif', '0 1px 0 rgba(0,0,0,0.35)'],
 				['Normal', '0 1px 0 #000'],
-				['Parlak', '0 0 4px rgba(255,226,163,0.45)']
+				['Parlak', '0 0 4px rgba(180,205,220,0.35)']
 			] },
 			{ group: 'Drop Tablosu', label: 'Baslik Zemini', type: 'color', target: '--theme-drop-header-bg', value: '#1b1b1b' },
 			{ group: 'Drop Tablosu', label: 'Baslik Yazisi', type: 'color', target: '--theme-drop-header-text', value: '#ffffff' },
@@ -2924,13 +3016,13 @@ $cardsHtml
 			{ group: 'Olculer', label: 'Icerik Boslugu', type: 'range', target: '--theme-layout-gap', value: '20px', min: 0, max: 80, step: 2, unit: 'px' },
 			{ group: 'Olculer', label: 'Kart Radius', type: 'range', target: '--radius-md', value: '0px', min: 0, max: 18, step: 1, unit: 'px' },
 			{ group: 'Olculer', label: 'Kucuk Radius', type: 'range', target: '--radius-sm', value: '0px', min: 0, max: 12, step: 1, unit: 'px' },
-			{ group: 'Ikonlar', label: 'Ikon Kenarligi', type: 'color', target: '--theme-icon-border', value: '#d7ae17' },
-			{ group: 'Sol Menu', label: 'Menu Zemini', type: 'color', target: '--theme-sidebar-bg', value: '#4b3505' },
-			{ group: 'Sol Menu', label: 'Menu Basligi', type: 'color', target: '--theme-sidebar-head', value: '#7b0000' },
-			{ group: 'Sol Menu', label: 'Bolum Basligi', type: 'color', target: '--theme-sidebar-section', value: '#7b0000' },
+			{ group: 'Ikonlar', label: 'Ikon Kenarligi', type: 'color', target: '--theme-icon-border', value: '#3f474d' },
+			{ group: 'Sol Menu', label: 'Menu Zemini', type: 'color', target: '--theme-sidebar-bg', value: '#111416' },
+			{ group: 'Sol Menu', label: 'Menu Basligi', type: 'color', target: '--theme-sidebar-head', value: '#171b1e' },
+			{ group: 'Sol Menu', label: 'Bolum Basligi', type: 'color', target: '--theme-sidebar-section', value: '#171b1e' },
 			{ group: 'Sol Menu', label: 'Menu Yazisi', type: 'color', target: '--theme-sidebar-text', value: '#ffffff' },
-			{ group: 'Sol Menu', label: 'Secili Menu Zemini', type: 'color', target: '--theme-sidebar-active-bg', value: '#7b0000' },
-			{ group: 'Sol Menu', label: 'Secili Menu Yazisi', type: 'color', target: '--theme-sidebar-active-text', value: '#ffe2a3' },
+			{ group: 'Sol Menu', label: 'Secili Menu Zemini', type: 'color', target: '--theme-sidebar-active-bg', value: '#232a2f' },
+			{ group: 'Sol Menu', label: 'Secili Menu Yazisi', type: 'color', target: '--theme-sidebar-active-text', value: '#f1f5f8' },
 			{ group: 'Sol Menu', label: 'Menu Genisligi', type: 'range', target: '--sidebar-w', value: '216px', min: 180, max: 380, step: 2, unit: 'px' }
 		];
 
@@ -2946,10 +3038,14 @@ $cardsHtml
 			'.metin-drop-table tbody tr:nth-child(even) td { background: var(--theme-drop-row-alt-bg, #191b1b) !important; }',
 			'.metin-drop-table tbody tr:hover td { background: var(--theme-drop-row-hover-bg, #252929) !important; }',
 			'.metin-name-cell { color: var(--theme-drop-name-text, #fff) !important; white-space: normal; }',
-			'.drop-item-row { display: list-item; list-style-position: outside; margin-left: 1.05rem; padding: 0.1rem 0; }',
+			'.drop-item-row { display: grid; grid-template-columns: auto auto 1fr auto; align-items: center; column-gap: 0.35rem; margin-left: 1.05rem; padding: 0.1rem 0; }',
+			'.drop-item-row::before { content: "•"; color: var(--theme-drop-text, #fff); font-size: 0.8rem; line-height: 1; }',
 			'.drop-item-icon { width: var(--theme-drop-icon-size, 22px); height: auto; max-height: 34px; margin: 0 0.35rem; vertical-align: middle; background: transparent !important; border: 0 !important; }',
 			'.drop-item-name { color: var(--theme-drop-text, #fff) !important; font-size: var(--theme-drop-text-size, 0.68rem); white-space: normal; overflow: visible; text-overflow: clip; vertical-align: middle; }',
-			'.costume-item img { width: var(--theme-icon-size, 32px); border-color: var(--theme-icon-border, #d7ae17); }',
+			'.drop-item-count { justify-self: end; margin-left: 0.45rem; white-space: nowrap; }',
+			'.mob-table-filters { background: var(--game-panel-bg); border-color: var(--game-border); }',
+			'.mob-table-filter input { background: var(--bg-input); border-color: var(--game-border); color: var(--text-high); }',
+			'.costume-item img { width: var(--theme-icon-size, 32px); border-color: var(--theme-icon-border, #3f474d); }',
 			'.costume-icons { padding: var(--theme-cell-pad, 0.42rem) 0.35rem; }',
 			'.main-content { margin-left: var(--sidebar-w, 216px); width: calc(100vw - var(--sidebar-w, 216px)); min-width: calc(var(--theme-content-width, 716px) + (var(--theme-layout-gap, 20px) * 2)); }',
 			'.content-area { width: var(--theme-content-width, 716px); max-width: var(--theme-content-width, 716px); margin-left: auto; margin-right: auto; }',
@@ -2959,14 +3055,14 @@ $cardsHtml
 			'.wiki-card#costume-set-bonuses .costume-set-table { min-width: 0 !important; width: 100% !important; }',
 			'.wiki-card#costume-set-bonuses { overflow: hidden !important; }',
 			'.costume-set-table .bonus-corner, .bonus-tier, .metin-drop-table th:nth-child(1) { width: var(--theme-bonus-col-width, 126px); }',
-			'.sidebar { background: var(--theme-sidebar-bg, #4b3505); }',
-			'.sidebar-header { background: linear-gradient(var(--theme-sidebar-head, #7b0000), #4d0000); }',
-			'.sidebar-section-title { background: linear-gradient(var(--theme-sidebar-section, #8a0000), #570000); }',
-			'.logo-icon, .w-icon, .cat-label { background: var(--theme-ui-badge-bg, #7b0000) !important; color: var(--theme-ui-badge-text, #ffe2a3) !important; border-color: var(--game-border, #76622b) !important; }',
+			'.sidebar { background: var(--theme-sidebar-bg, #111416); }',
+			'.sidebar-header { background: linear-gradient(var(--theme-sidebar-head, #171b1e), #101315); }',
+			'.sidebar-section-title { background: linear-gradient(var(--theme-sidebar-section, #171b1e), #101315); }',
+			'.logo-icon, .w-icon, .cat-label { background: var(--theme-ui-badge-bg, #171b1e) !important; color: var(--theme-ui-badge-text, #f1f5f8) !important; border-color: var(--game-border, #3f474d) !important; }',
 			'.w-cat-btn, .tree-header, .sidebar-footer { color: var(--theme-sidebar-text, #ffffff) !important; }',
 			'.w-cat-btn { background: transparent !important; }',
-			'.w-cat-btn:hover, .w-cat-btn.active { background: var(--theme-sidebar-active-bg, #7b0000) !important; color: var(--theme-sidebar-active-text, #ffe2a3) !important; border-left-color: var(--game-border, #76622b) !important; }',
-			'.sidebar-footer { background: var(--theme-sidebar-bg, #4b3505) !important; }',
+			'.w-cat-btn:hover, .w-cat-btn.active { background: var(--theme-sidebar-active-bg, #232a2f) !important; color: var(--theme-sidebar-active-text, #f1f5f8) !important; border-left-color: var(--game-border, #3f474d) !important; }',
+			'.sidebar-footer { background: var(--theme-sidebar-bg, #111416) !important; }',
 			'.wiki-card { border-radius: var(--radius-md, 0px); }',
 			'.theme-editor-toggle, .search-box input, .search-mode-btn, .cat-filter-btn { border-radius: var(--radius-sm, 0px); }'
 		].join('\n');
