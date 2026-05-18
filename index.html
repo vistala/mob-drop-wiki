@@ -43,17 +43,18 @@
 		}
 
 		* { margin: 0; padding: 0; box-sizing: border-box; }
-		html { scroll-behavior: smooth; }
+		html { scroll-behavior: smooth; overflow-x: hidden; }
 		body {
 			font-family: var(--font-body);
 			background: var(--bg-base);
 			color: var(--text-high);
 			min-height: 100vh;
+			overflow-x: hidden;
 		}
 
-		::-webkit-scrollbar { width: 5px; }
-		::-webkit-scrollbar-track { background: transparent; }
-		::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 10px; }
+		::-webkit-scrollbar { width: 5px; height: 0; }
+		::-webkit-scrollbar-track { background: #000; }
+		::-webkit-scrollbar-thumb { background: #7b0000; border-radius: 0; }
 
 		/* ========== SIDEBAR ========== */
 		.sidebar {
@@ -1216,7 +1217,7 @@
 		.costume-table-wrap {
 			border: 1px solid var(--game-border);
 			background: var(--game-panel-bg);
-			overflow-x: auto;
+			overflow: hidden;
 		}
 		.metin-drop-table,
 		.costume-set-table {
@@ -1416,6 +1417,16 @@
 		.sidebar-footer {
 			background: var(--theme-sidebar-bg, #4b3505) !important;
 			color: var(--theme-sidebar-text, #ffffff) !important;
+		}
+		.wiki-card#costume-set-bonuses .costume-table-wrap {
+			overflow: hidden !important;
+		}
+		.wiki-card#costume-set-bonuses .costume-set-table {
+			min-width: 0 !important;
+			width: 100% !important;
+		}
+		.wiki-card#costume-set-bonuses {
+			overflow: hidden !important;
 		}
 		@media (max-width: 768px) {
 			.main-content {
@@ -101728,6 +101739,9 @@
 			'.content-area { width: var(--theme-content-width, 716px); max-width: var(--theme-content-width, 716px); margin-left: auto; margin-right: auto; }',
 			'.wiki-card, .wiki-card#costume-set-bonuses { width: var(--theme-content-width, 716px); }',
 			'.metin-drop-table, .costume-set-table { min-width: var(--theme-table-width, 670px); }',
+			'.wiki-card#costume-set-bonuses .costume-table-wrap { overflow: hidden !important; }',
+			'.wiki-card#costume-set-bonuses .costume-set-table { min-width: 0 !important; width: 100% !important; }',
+			'.wiki-card#costume-set-bonuses { overflow: hidden !important; }',
 			'.costume-set-table .bonus-corner, .bonus-tier, .metin-drop-table th:nth-child(1) { width: var(--theme-bonus-col-width, 126px); }',
 			'.sidebar { background: var(--theme-sidebar-bg, #4b3505); }',
 			'.sidebar-header { background: linear-gradient(var(--theme-sidebar-head, #7b0000), #4d0000); }',
