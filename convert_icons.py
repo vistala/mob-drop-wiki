@@ -98,9 +98,12 @@ def convert_tga_to_png(vnum, src_dir, out_dir, mapping):
 
     # Try one final raw fallback if the composed path doesn't exist
     if not tga_path.exists():
-        alt_path = src_dir / "icon/item" / f"{str(vnum_int - (vnum_int%10)).zfill(5)}.tga"
-        if alt_path.exists():
-             tga_path = alt_path
+        nested_mapped_path = src_dir / "icon" / icon_subpath
+        raw_base_path = src_dir / "icon/item" / f"{str(vnum_int - (vnum_int%10)).zfill(5)}.tga"
+        if nested_mapped_path.exists():
+             tga_path = nested_mapped_path
+        elif raw_base_path.exists():
+             tga_path = raw_base_path
         else:
              tga_path = find_icon_by_vnum(src_dir, vnum_int)
              if not tga_path:

@@ -1,17 +1,13 @@
-Gerekli icon sayisi: 3591
+Gerekli icon sayisi: 3571
 Baslangicta eksik: 982
-TGA donusumuyle cozuldu: 0
+TGA donusumuyle cozuldu: 4
 item_list ayni icon yolundan kopyalandi: 0
 Duplicate itemden kopyalandi: 0
 Sayisal base VNUM'dan kopyalandi: 0
 item_proto grubundan kopyalandi: 0
-Cozulemeyen: 982
+Cozulemeyen: 978
 
 Cozulemeyenler:
-40192
-40193
-40194
-40195
 50901
 71288
 700000
