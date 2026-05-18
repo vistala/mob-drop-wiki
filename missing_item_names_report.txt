@@ -1,5 +1,5 @@
 ﻿Eklenen isim sayisi: 0
-Cozulemeyen VNUM sayisi: 996
+Cozulemeyen VNUM sayisi: 997
 
 Cozulemeyenler:
 600142
@@ -491,6 +491,7 @@ Cozulemeyenler:
 703060
 703061
 703062
+704040
 705000
 705001
 705002

@@ -1754,431 +1754,422 @@ Group	Cor_Sandıkları
 Group	OrkReisi
 {
 	Vnum	50070 -- Ork Başkanının Sandığı
-	1	3140	1	30	-- [%3.44] Elektromanyetik Pala+0
-	2	3141	1	16	-- [%1.84] Elektromanyetik Pala+1
-	3	1110	1	30	-- [%3.44] Şimşek Bıçağı+0
-	4	1111	1	16	-- [%1.84] Şimşek Bıçağı+1
-	5	2130	1	30	-- [%3.44] Kutsal Sert Yay+0
-	6	2131	1	16	-- [%1.84] Kutsal Sert Yay+1
-	7	7140	1	30	-- [%3.44] Kurtuluş Yelpazesi+0
-	8	7141	1	16	-- [%1.84] Kurtuluş Yelpazesi+1
-	9	5100	1	30	-- [%3.44] Cennet ve Dünya Çanı+0
-	10	5101	1	16	-- [%1.84] Cennet ve Dünya Çanı+1
-	11	160	1	30	-- [%3.44] Su Perisi Kılıcı+0
-	12	161	1	16	-- [%1.84] Su Perisi Kılıcı+1
-	13	240	1	30	-- [%3.44] Şeytan Çıkarma Kılıcı+0
-	14	241	1	16	-- [%1.84] Şeytan Çıkarma Kılıcı+1
-	15	11671	1	30	-- [%3.44] Hayalet Surat Zırh+1
-	16	11672	1	5	-- [%0.574] Hayalet Surat Zırh+2
-	17	11271	1	30	-- [%3.44] Altın Taş Zırh+1
-	18	11272	1	5	-- [%0.574] Altın Taş Zırh+2
-	19	11471	1	30	-- [%3.44] Öldürücü Rüzgar Takımı+1
-	20	11472	1	5	-- [%0.574] Öldürücü Rüzgar Takımı+2
-	21	11871	1	30	-- [%3.44] Turuncu Kedi Elbisesi+1
-	22	11872	1	5	-- [%0.574] Turuncu Kedi Elbisesi+2
-	23	16161	1	30	-- [%3.44] Kristal Kolye+1
-	24	16162	1	16	-- [%1.84] Kristal Kolye+2
-	25	16163	1	7	-- [%0.804] Kristal Kolye+3
-	26	17161	1	30	-- [%3.44] Kristal Küpe+1
-	27	17162	1	16	-- [%1.84] Kristal Küpe+2
-	28	17163	1	7	-- [%0.804] Kristal Küpe+3
-	29	14161	1	30	-- [%3.44] Kristal Bilezik+1
-	30	14162	1	16	-- [%1.84] Kristal Bilezik+2
-	31	14163	1	7	-- [%0.804] Kristal Bilezik+3
-	32	70012	1	25	-- [%2.87] Tanrıçanın Gözyaşı
-	33	70038	1	5	-- [%0.574] Cesaret Pelerini
-	34	25040	1	30	-- [%3.44] Kutsama Kağıdı
-	35	70048	1	25	-- [%2.87] Görünmezlik pelerini
-	36	70037	1	30	-- [%3.44] Unutkanlık kitabı
-	37	70014	1	30	-- [%3.44] Kan Hapı
-	38	72006	1	25	-- [%2.87] Hırsızın eldivenleri
-	39	70005	1	25	-- [%2.87] Tecrübe yüzüğü (1 sa.)
-	40	70006	1	25	-- [%2.87] Lisan Yüzüğü
-	41	27112	10	30	-- [%3.44] Yeşil İksir(B)
+	1	3140	1	30	-- [%3.55] Elektromanyetik Pala+0
+	2	3141	1	16	-- [%1.89] Elektromanyetik Pala+1
+	3	1110	1	30	-- [%3.55] Şimşek Bıçağı+0
+	4	1111	1	16	-- [%1.89] Şimşek Bıçağı+1
+	5	2130	1	30	-- [%3.55] Kutsal Sert Yay+0
+	6	2131	1	16	-- [%1.89] Kutsal Sert Yay+1
+	7	7140	1	30	-- [%3.55] Kurtuluş Yelpazesi+0
+	8	7141	1	16	-- [%1.89] Kurtuluş Yelpazesi+1
+	9	5100	1	30	-- [%3.55] Cennet ve Dünya Çanı+0
+	10	5101	1	16	-- [%1.89] Cennet ve Dünya Çanı+1
+	11	160	1	30	-- [%3.55] Su Perisi Kılıcı+0
+	12	161	1	16	-- [%1.89] Su Perisi Kılıcı+1
+	13	240	1	30	-- [%3.55] Şeytan Çıkarma Kılıcı+0
+	14	241	1	16	-- [%1.89] Şeytan Çıkarma Kılıcı+1
+	15	11671	1	30	-- [%3.55] Hayalet Surat Zırh+1
+	16	11672	1	5	-- [%0.591] Hayalet Surat Zırh+2
+	17	11271	1	30	-- [%3.55] Altın Taş Zırh+1
+	18	11272	1	5	-- [%0.591] Altın Taş Zırh+2
+	19	11471	1	30	-- [%3.55] Öldürücü Rüzgar Takımı+1
+	20	11472	1	5	-- [%0.591] Öldürücü Rüzgar Takımı+2
+	21	11871	1	30	-- [%3.55] Turuncu Kedi Elbisesi+1
+	22	11872	1	5	-- [%0.591] Turuncu Kedi Elbisesi+2
+	23	16161	1	30	-- [%3.55] Kristal Kolye+1
+	24	16162	1	16	-- [%1.89] Kristal Kolye+2
+	25	16163	1	7	-- [%0.827] Kristal Kolye+3
+	26	17161	1	30	-- [%3.55] Kristal Küpe+1
+	27	17162	1	16	-- [%1.89] Kristal Küpe+2
+	28	17163	1	7	-- [%0.827] Kristal Küpe+3
+	29	14161	1	30	-- [%3.55] Kristal Bilezik+1
+	30	14162	1	16	-- [%1.89] Kristal Bilezik+2
+	31	14163	1	7	-- [%0.827] Kristal Bilezik+3
+	32	70012	1	25	-- [%2.96] Tanrıçanın Gözyaşı
+	33	70038	1	5	-- [%0.591] Cesaret Pelerini
+	34	25040	1	30	-- [%3.55] Kutsama Kağıdı
+	35	70037	1	30	-- [%3.55] Unutkanlık kitabı
+	36	70014	1	30	-- [%3.55] Kan Hapı
+	37	72006	1	25	-- [%2.96] Hırsızın eldivenleri
+	38	70005	1	25	-- [%2.96] Tecrübe yüzüğü (1 sa.)
+	39	70006	1	25	-- [%2.96] Lisan Yüzüğü
+	40	27112	10	30	-- [%3.55] Yeşil İksir(B)
 }
 
 Group	HayaletLider
 {
 	Vnum	50071 -- Öğreti Lideri Sandığı
-	1	3141	1	33	-- [%3.65] Elektromanyetik Pala+1
-	2	3142	1	15	-- [%1.66] Elektromanyetik Pala+2
-	3	1111	1	33	-- [%3.65] Şimşek Bıçağı+1
-	4	1112	1	15	-- [%1.66] Şimşek Bıçağı+2
-	5	2131	1	33	-- [%3.65] Kutsal Sert Yay+1
-	6	2132	1	15	-- [%1.66] Kutsal Sert Yay+2
-	7	7141	1	33	-- [%3.65] Kurtuluş Yelpazesi+1
-	8	7142	1	15	-- [%1.66] Kurtuluş Yelpazesi+2
-	9	5101	1	33	-- [%3.65] Cennet ve Dünya Çanı+1
-	10	5102	1	15	-- [%1.66] Cennet ve Dünya Çanı+2
-	11	161	1	33	-- [%3.65] Su Perisi Kılıcı+1
-	12	162	1	15	-- [%1.66] Su Perisi Kılıcı+2
-	13	241	1	33	-- [%3.65] Şeytan Çıkarma Kılıcı+1
-	14	242	1	15	-- [%1.66] Şeytan Çıkarma Kılıcı+2
-	15	11672	1	27	-- [%2.98] Hayalet Surat Zırh+2
-	16	11673	1	14	-- [%1.55] Hayalet Surat Zırh+3
-	17	11674	1	5	-- [%0.552] Hayalet Surat Zırh+4
-	18	11272	1	27	-- [%2.98] Altın Taş Zırh+2
-	19	11273	1	14	-- [%1.55] Altın Taş Zırh+3
-	20	11274	1	5	-- [%0.552] Altın Taş Zırh+4
-	21	11472	1	27	-- [%2.98] Öldürücü Rüzgar Takımı+2
-	22	11473	1	14	-- [%1.55] Öldürücü Rüzgar Takımı+3
-	23	11474	1	5	-- [%0.552] Öldürücü Rüzgar Takımı+4
-	24	11872	1	27	-- [%2.98] Turuncu Kedi Elbisesi+2
-	25	11873	1	14	-- [%1.55] Turuncu Kedi Elbisesi+3
-	26	11874	1	5	-- [%0.552] Turuncu Kedi Elbisesi+4
-	27	16181	1	30	-- [%3.31] Ametist Kolye+1
-	28	16182	1	20	-- [%2.21] Ametist Kolye+2
-	29	16183	1	5	-- [%0.552] Ametist Kolye+3
-	30	17181	1	30	-- [%3.31] Ametist Küpe+1
-	31	17182	1	20	-- [%2.21] Ametist Küpe+2
-	32	17183	1	5	-- [%0.552] Ametist Küpe+3
-	33	14181	1	30	-- [%3.31] Ametist Bilezik+1
-	34	14182	1	20	-- [%2.21] Ametist Bilezik+2
-	35	14183	1	5	-- [%0.552] Ametist Bilezik+3
-	36	70012	1	25	-- [%2.76] Tanrıçanın Gözyaşı
-	37	70038	1	5	-- [%0.552] Cesaret Pelerini
-	38	25040	1	30	-- [%3.31] Kutsama Kağıdı
-	39	70048	1	25	-- [%2.76] Görünmezlik pelerini
-	40	70037	1	30	-- [%3.31] Unutkanlık kitabı
-	41	70014	1	30	-- [%3.31] Kan Hapı
-	42	72006	1	25	-- [%2.76] Hırsızın eldivenleri
-	43	70005	1	25	-- [%2.76] Tecrübe yüzüğü (1 sa.)
-	44	27112	15	25	-- [%2.76] Yeşil İksir(B)
+	1	3141	1	33	-- [%3.75] Elektromanyetik Pala+1
+	2	3142	1	15	-- [%1.70] Elektromanyetik Pala+2
+	3	1111	1	33	-- [%3.75] Şimşek Bıçağı+1
+	4	1112	1	15	-- [%1.70] Şimşek Bıçağı+2
+	5	2131	1	33	-- [%3.75] Kutsal Sert Yay+1
+	6	2132	1	15	-- [%1.70] Kutsal Sert Yay+2
+	7	7141	1	33	-- [%3.75] Kurtuluş Yelpazesi+1
+	8	7142	1	15	-- [%1.70] Kurtuluş Yelpazesi+2
+	9	5101	1	33	-- [%3.75] Cennet ve Dünya Çanı+1
+	10	5102	1	15	-- [%1.70] Cennet ve Dünya Çanı+2
+	11	161	1	33	-- [%3.75] Su Perisi Kılıcı+1
+	12	162	1	15	-- [%1.70] Su Perisi Kılıcı+2
+	13	241	1	33	-- [%3.75] Şeytan Çıkarma Kılıcı+1
+	14	242	1	15	-- [%1.70] Şeytan Çıkarma Kılıcı+2
+	15	11672	1	27	-- [%3.07] Hayalet Surat Zırh+2
+	16	11673	1	14	-- [%1.59] Hayalet Surat Zırh+3
+	17	11674	1	5	-- [%0.568] Hayalet Surat Zırh+4
+	18	11272	1	27	-- [%3.07] Altın Taş Zırh+2
+	19	11273	1	14	-- [%1.59] Altın Taş Zırh+3
+	20	11274	1	5	-- [%0.568] Altın Taş Zırh+4
+	21	11472	1	27	-- [%3.07] Öldürücü Rüzgar Takımı+2
+	22	11473	1	14	-- [%1.59] Öldürücü Rüzgar Takımı+3
+	23	11474	1	5	-- [%0.568] Öldürücü Rüzgar Takımı+4
+	24	11872	1	27	-- [%3.07] Turuncu Kedi Elbisesi+2
+	25	11873	1	14	-- [%1.59] Turuncu Kedi Elbisesi+3
+	26	11874	1	5	-- [%0.568] Turuncu Kedi Elbisesi+4
+	27	16181	1	30	-- [%3.41] Ametist Kolye+1
+	28	16182	1	20	-- [%2.27] Ametist Kolye+2
+	29	16183	1	5	-- [%0.568] Ametist Kolye+3
+	30	17181	1	30	-- [%3.41] Ametist Küpe+1
+	31	17182	1	20	-- [%2.27] Ametist Küpe+2
+	32	17183	1	5	-- [%0.568] Ametist Küpe+3
+	33	14181	1	30	-- [%3.41] Ametist Bilezik+1
+	34	14182	1	20	-- [%2.27] Ametist Bilezik+2
+	35	14183	1	5	-- [%0.568] Ametist Bilezik+3
+	36	70012	1	25	-- [%2.84] Tanrıçanın Gözyaşı
+	37	70038	1	5	-- [%0.568] Cesaret Pelerini
+	38	25040	1	30	-- [%3.41] Kutsama Kağıdı
+	39	70037	1	30	-- [%3.41] Unutkanlık kitabı
+	40	70014	1	30	-- [%3.41] Kan Hapı
+	41	72006	1	25	-- [%2.84] Hırsızın eldivenleri
+	42	70005	1	25	-- [%2.84] Tecrübe yüzüğü (1 sa.)
+	43	27112	15	25	-- [%2.84] Yeşil İksir(B)
 }
 
 Group	KraliçeÖrümcek
 {
 	Vnum	50073 -- Kraliçe Örümcek Sandığı
-	1	3142	1	30	-- [%3.57] Elektromanyetik Pala+2
-	2	3143	1	16	-- [%1.90] Elektromanyetik Pala+3
-	3	1112	1	30	-- [%3.57] Şimşek Bıçağı+2
-	4	1113	1	16	-- [%1.90] Şimşek Bıçağı+3
-	5	2132	1	30	-- [%3.57] Kutsal Sert Yay+2
-	6	2133	1	16	-- [%1.90] Kutsal Sert Yay+3
-	7	7142	1	30	-- [%3.57] Kurtuluş Yelpazesi+2
-	8	7143	1	16	-- [%1.90] Kurtuluş Yelpazesi+3
-	9	5102	1	30	-- [%3.57] Cennet ve Dünya Çanı+2
-	10	5103	1	16	-- [%1.90] Cennet ve Dünya Çanı+3
-	11	162	1	30	-- [%3.57] Su Perisi Kılıcı+2
-	12	163	1	16	-- [%1.90] Su Perisi Kılıcı+3
-	13	242	1	30	-- [%3.57] Şeytan Çıkarma Kılıcı+2
-	14	243	1	16	-- [%1.90] Şeytan Çıkarma Kılıcı+3
-	15	11680	1	30	-- [%3.57] Ruh Plaka Zırh+0
-	16	11681	1	6	-- [%0.714] Ruh Plaka Zırh+1
-	17	11880	1	30	-- [%3.57] Soylu Kadın Elbisesi+0
-	18	11881	1	6	-- [%0.714] Soylu Kadın Elbisesi+1
-	19	11480	1	30	-- [%3.57] Küpeçiçeği Takım+0
-	20	11481	1	6	-- [%0.714] Küpeçiçeği Takım+1
-	21	11280	1	30	-- [%3.57] Ejderha Tanrısı Zırhı+0
-	22	11281	1	6	-- [%0.714] Ejderha Tanrısı Zırhı+1
-	23	16201	1	30	-- [%3.57] Cennetin Gözyaşı Kolye+1
-	24	16202	1	16	-- [%1.90] Cennetin Gözyaşı Kolye+2
-	25	16203	1	7	-- [%0.833] Cennetin Gözyaşı Kolye+3
-	26	17201	1	30	-- [%3.57] Cennetin Gözyaşı Küpe+1
-	27	17202	1	16	-- [%1.90] Cennetin Gözyaşı Küpe+2
-	28	17203	1	7	-- [%0.833] Cennetin Gözyaşı Küpe+3
-	29	14201	1	30	-- [%3.57] Cennetin Gözy. Bilezik+1
-	30	14202	1	16	-- [%1.90] Cennetin Gözy. Bilezik+2
-	31	14203	1	7	-- [%0.833] Cennetin Gözy. Bilezik+3
-	32	70012	1	25	-- [%2.98] Tanrıçanın Gözyaşı
-	33	70038	1	5	-- [%0.595] Cesaret Pelerini
-	34	25040	1	30	-- [%3.57] Kutsama Kağıdı
-	35	70048	1	25	-- [%2.98] Görünmezlik pelerini
-	36	70037	1	30	-- [%3.57] Unutkanlık kitabı
-	37	70014	1	30	-- [%3.57] Kan Hapı
-	38	72006	1	25	-- [%2.98] Hırsızın eldivenleri
-	39	70005	1	25	-- [%2.98] Tecrübe yüzüğü (1 sa.)
-	40	27112	15	20	-- [%2.38] Yeşil İksir(B)
+	1	3142	1	30	-- [%3.68] Elektromanyetik Pala+2
+	2	3143	1	16	-- [%1.96] Elektromanyetik Pala+3
+	3	1112	1	30	-- [%3.68] Şimşek Bıçağı+2
+	4	1113	1	16	-- [%1.96] Şimşek Bıçağı+3
+	5	2132	1	30	-- [%3.68] Kutsal Sert Yay+2
+	6	2133	1	16	-- [%1.96] Kutsal Sert Yay+3
+	7	7142	1	30	-- [%3.68] Kurtuluş Yelpazesi+2
+	8	7143	1	16	-- [%1.96] Kurtuluş Yelpazesi+3
+	9	5102	1	30	-- [%3.68] Cennet ve Dünya Çanı+2
+	10	5103	1	16	-- [%1.96] Cennet ve Dünya Çanı+3
+	11	162	1	30	-- [%3.68] Su Perisi Kılıcı+2
+	12	163	1	16	-- [%1.96] Su Perisi Kılıcı+3
+	13	242	1	30	-- [%3.68] Şeytan Çıkarma Kılıcı+2
+	14	243	1	16	-- [%1.96] Şeytan Çıkarma Kılıcı+3
+	15	11680	1	30	-- [%3.68] Ruh Plaka Zırh+0
+	16	11681	1	6	-- [%0.736] Ruh Plaka Zırh+1
+	17	11880	1	30	-- [%3.68] Soylu Kadın Elbisesi+0
+	18	11881	1	6	-- [%0.736] Soylu Kadın Elbisesi+1
+	19	11480	1	30	-- [%3.68] Küpeçiçeği Takım+0
+	20	11481	1	6	-- [%0.736] Küpeçiçeği Takım+1
+	21	11280	1	30	-- [%3.68] Ejderha Tanrısı Zırhı+0
+	22	11281	1	6	-- [%0.736] Ejderha Tanrısı Zırhı+1
+	23	16201	1	30	-- [%3.68] Cennetin Gözyaşı Kolye+1
+	24	16202	1	16	-- [%1.96] Cennetin Gözyaşı Kolye+2
+	25	16203	1	7	-- [%0.859] Cennetin Gözyaşı Kolye+3
+	26	17201	1	30	-- [%3.68] Cennetin Gözyaşı Küpe+1
+	27	17202	1	16	-- [%1.96] Cennetin Gözyaşı Küpe+2
+	28	17203	1	7	-- [%0.859] Cennetin Gözyaşı Küpe+3
+	29	14201	1	30	-- [%3.68] Cennetin Gözy. Bilezik+1
+	30	14202	1	16	-- [%1.96] Cennetin Gözy. Bilezik+2
+	31	14203	1	7	-- [%0.859] Cennetin Gözy. Bilezik+3
+	32	70012	1	25	-- [%3.07] Tanrıçanın Gözyaşı
+	33	70038	1	5	-- [%0.613] Cesaret Pelerini
+	34	25040	1	30	-- [%3.68] Kutsama Kağıdı
+	35	70037	1	30	-- [%3.68] Unutkanlık kitabı
+	36	70014	1	30	-- [%3.68] Kan Hapı
+	37	72006	1	25	-- [%3.07] Hırsızın eldivenleri
+	38	70005	1	25	-- [%3.07] Tecrübe yüzüğü (1 sa.)
+	39	27112	15	20	-- [%2.45] Yeşil İksir(B)
 }
 
 Group	DevÖrümcek
 {
 	Vnum	50074 -- Dev Örümceğin Sandığı
-	1	150	1	25	-- [%3.12] Hortlak Dişi Kılıcı+0
-	2	151	1	13	-- [%1.62] Hortlak Dişi Kılıcı+1
-	3	5090	1	25	-- [%3.12] Yıldırım Kuşu Çanı+0
-	4	5091	1	13	-- [%1.62] Yıldırım Kuşu Çanı+1
-	5	140	1	25	-- [%3.12] Muharebe Kılıcı+0
-	6	141	1	13	-- [%1.62] Muharebe Kılıcı+1
-	7	3130	1	25	-- [%3.12] Partizan+0
-	8	3131	1	13	-- [%1.62] Partizan+1
-	9	1100	1	25	-- [%3.12] Ejderha Bıçağı+0
-	10	1101	1	13	-- [%1.62] Ejderha Bıçağı+1
-	11	7130	1	25	-- [%3.12] Cennet Kuşu Yelpaze+0
-	12	7131	1	13	-- [%1.62] Cennet Kuşu Yelpaze+1
-	13	2140	1	25	-- [%3.12] Sarı EjderhaYayı+0
-	14	2141	1	13	-- [%1.62] Sarı EjderhaYayı+1
-	15	11681	1	17	-- [%2.12] Ruh Plaka Zırh+1
-	16	11682	1	27	-- [%3.38] Ruh Plaka Zırh+2
-	17	11683	1	11	-- [%1.38] Ruh Plaka Zırh+3
-	18	11881	1	17	-- [%2.12] Soylu Kadın Elbisesi+1
-	19	11882	1	27	-- [%3.38] Soylu Kadın Elbisesi+2
-	20	11883	1	11	-- [%1.38] Soylu Kadın Elbisesi+3
-	21	11481	1	17	-- [%2.12] Küpeçiçeği Takım+1
-	22	11482	1	27	-- [%3.38] Küpeçiçeği Takım+2
-	23	11483	1	11	-- [%1.38] Küpeçiçeği Takım+3
-	24	11281	1	17	-- [%2.12] Ejderha Tanrısı Zırhı+1
-	25	11282	1	27	-- [%3.38] Ejderha Tanrısı Zırhı+2
-	26	11283	1	11	-- [%1.38] Ejderha Tanrısı Zırhı+3
-	27	14163	1	23	-- [%2.88] Kristal Bilezik+3
-	28	14164	1	10	-- [%1.25] Kristal Bilezik+4
-	29	17163	1	23	-- [%2.88] Kristal Küpe+3
-	30	17164	1	10	-- [%1.25] Kristal Küpe+4
-	31	16163	1	23	-- [%2.88] Kristal Kolye+3
-	32	16164	1	10	-- [%1.25] Kristal Kolye+4
-	33	70012	1	25	-- [%3.12] Tanrıçanın Gözyaşı
-	34	70038	1	5	-- [%0.625] Cesaret Pelerini
-	35	25040	1	30	-- [%3.75] Kutsama Kağıdı
-	36	70048	1	25	-- [%3.12] Görünmezlik pelerini
-	37	70037	1	30	-- [%3.75] Unutkanlık kitabı
-	38	70014	1	30	-- [%3.75] Kan Hapı
-	39	72006	1	25	-- [%3.12] Hırsızın eldivenleri
-	40	70005	1	25	-- [%3.12] Tecrübe yüzüğü (1 sa.)
-	41	27112	20	20	-- [%2.50] Yeşil İksir(B)
+	1	150	1	25	-- [%3.23] Hortlak Dişi Kılıcı+0
+	2	151	1	13	-- [%1.68] Hortlak Dişi Kılıcı+1
+	3	5090	1	25	-- [%3.23] Yıldırım Kuşu Çanı+0
+	4	5091	1	13	-- [%1.68] Yıldırım Kuşu Çanı+1
+	5	140	1	25	-- [%3.23] Muharebe Kılıcı+0
+	6	141	1	13	-- [%1.68] Muharebe Kılıcı+1
+	7	3130	1	25	-- [%3.23] Partizan+0
+	8	3131	1	13	-- [%1.68] Partizan+1
+	9	1100	1	25	-- [%3.23] Ejderha Bıçağı+0
+	10	1101	1	13	-- [%1.68] Ejderha Bıçağı+1
+	11	7130	1	25	-- [%3.23] Cennet Kuşu Yelpaze+0
+	12	7131	1	13	-- [%1.68] Cennet Kuşu Yelpaze+1
+	13	2140	1	25	-- [%3.23] Sarı EjderhaYayı+0
+	14	2141	1	13	-- [%1.68] Sarı EjderhaYayı+1
+	15	11681	1	17	-- [%2.19] Ruh Plaka Zırh+1
+	16	11682	1	27	-- [%3.48] Ruh Plaka Zırh+2
+	17	11683	1	11	-- [%1.42] Ruh Plaka Zırh+3
+	18	11881	1	17	-- [%2.19] Soylu Kadın Elbisesi+1
+	19	11882	1	27	-- [%3.48] Soylu Kadın Elbisesi+2
+	20	11883	1	11	-- [%1.42] Soylu Kadın Elbisesi+3
+	21	11481	1	17	-- [%2.19] Küpeçiçeği Takım+1
+	22	11482	1	27	-- [%3.48] Küpeçiçeği Takım+2
+	23	11483	1	11	-- [%1.42] Küpeçiçeği Takım+3
+	24	11281	1	17	-- [%2.19] Ejderha Tanrısı Zırhı+1
+	25	11282	1	27	-- [%3.48] Ejderha Tanrısı Zırhı+2
+	26	11283	1	11	-- [%1.42] Ejderha Tanrısı Zırhı+3
+	27	14163	1	23	-- [%2.97] Kristal Bilezik+3
+	28	14164	1	10	-- [%1.29] Kristal Bilezik+4
+	29	17163	1	23	-- [%2.97] Kristal Küpe+3
+	30	17164	1	10	-- [%1.29] Kristal Küpe+4
+	31	16163	1	23	-- [%2.97] Kristal Kolye+3
+	32	16164	1	10	-- [%1.29] Kristal Kolye+4
+	33	70012	1	25	-- [%3.23] Tanrıçanın Gözyaşı
+	34	70038	1	5	-- [%0.645] Cesaret Pelerini
+	35	25040	1	30	-- [%3.87] Kutsama Kağıdı
+	36	70037	1	30	-- [%3.87] Unutkanlık kitabı
+	37	70014	1	30	-- [%3.87] Kan Hapı
+	38	72006	1	25	-- [%3.23] Hırsızın eldivenleri
+	39	70005	1	25	-- [%3.23] Tecrübe yüzüğü (1 sa.)
+	40	27112	20	20	-- [%2.58] Yeşil İksir(B)
 }
 
 Group	DevÇölkaplumbağa
 {
 	Vnum	50076 -- DevÇölkaplumbağa Sandığı
-	1	3142	1	24	-- [%2.94] Elektromanyetik Pala+2
-	2	3143	1	16	-- [%1.96] Elektromanyetik Pala+3
-	3	1112	1	24	-- [%2.94] Şimşek Bıçağı+2
-	4	1113	1	16	-- [%1.96] Şimşek Bıçağı+3
-	5	2132	1	24	-- [%2.94] Kutsal Sert Yay+2
-	6	2133	1	16	-- [%1.96] Kutsal Sert Yay+3
-	7	7142	1	24	-- [%2.94] Kurtuluş Yelpazesi+2
-	8	7143	1	16	-- [%1.96] Kurtuluş Yelpazesi+3
-	9	5102	1	24	-- [%2.94] Cennet ve Dünya Çanı+2
-	10	5103	1	16	-- [%1.96] Cennet ve Dünya Çanı+3
-	11	162	1	24	-- [%2.94] Su Perisi Kılıcı+2
-	12	163	1	16	-- [%1.96] Su Perisi Kılıcı+3
-	13	242	1	24	-- [%2.94] Şeytan Çıkarma Kılıcı+2
-	14	243	1	16	-- [%1.96] Şeytan Çıkarma Kılıcı+3
-	15	11681	1	24	-- [%2.94] Ruh Plaka Zırh+1
-	16	11682	1	16	-- [%1.96] Ruh Plaka Zırh+2
-	17	11881	1	24	-- [%2.94] Soylu Kadın Elbisesi+1
-	18	11882	1	16	-- [%1.96] Soylu Kadın Elbisesi+2
-	19	11481	1	24	-- [%2.94] Küpeçiçeği Takım+1
-	20	11482	1	16	-- [%1.96] Küpeçiçeği Takım+2
-	21	11281	1	24	-- [%2.94] Ejderha Tanrısı Zırhı+1
-	22	11282	1	16	-- [%1.96] Ejderha Tanrısı Zırhı+2
-	23	17184	1	30	-- [%3.68] Ametist Küpe+4
-	24	17185	1	18	-- [%2.21] Ametist Küpe+5
-	25	17186	1	12	-- [%1.47] Ametist Küpe+6
-	26	16184	1	30	-- [%3.68] Ametist Kolye+4
-	27	16185	1	18	-- [%2.21] Ametist Kolye+5
-	28	16186	1	12	-- [%1.47] Ametist Kolye+6
-	29	14184	1	30	-- [%3.68] Ametist Bilezik+4
-	30	14185	1	18	-- [%2.21] Ametist Bilezik+5
-	31	14186	1	12	-- [%1.47] Ametist Bilezik+6
-	32	70012	1	20	-- [%2.45] Tanrıçanın Gözyaşı
-	33	70038	1	5	-- [%0.613] Cesaret Pelerini
-	34	25040	1	30	-- [%3.68] Kutsama Kağıdı
-	35	70048	1	20	-- [%2.45] Görünmezlik pelerini
-	36	70037	1	30	-- [%3.68] Unutkanlık kitabı
-	37	70014	1	30	-- [%3.68] Kan Hapı
-	38	72006	1	20	-- [%2.45] Hırsızın eldivenleri
-	39	70005	1	20	-- [%2.45] Tecrübe yüzüğü (1 sa.)
-	40	27112	20	20	-- [%2.45] Yeşil İksir(B)
+	1	3142	1	24	-- [%3.02] Elektromanyetik Pala+2
+	2	3143	1	16	-- [%2.01] Elektromanyetik Pala+3
+	3	1112	1	24	-- [%3.02] Şimşek Bıçağı+2
+	4	1113	1	16	-- [%2.01] Şimşek Bıçağı+3
+	5	2132	1	24	-- [%3.02] Kutsal Sert Yay+2
+	6	2133	1	16	-- [%2.01] Kutsal Sert Yay+3
+	7	7142	1	24	-- [%3.02] Kurtuluş Yelpazesi+2
+	8	7143	1	16	-- [%2.01] Kurtuluş Yelpazesi+3
+	9	5102	1	24	-- [%3.02] Cennet ve Dünya Çanı+2
+	10	5103	1	16	-- [%2.01] Cennet ve Dünya Çanı+3
+	11	162	1	24	-- [%3.02] Su Perisi Kılıcı+2
+	12	163	1	16	-- [%2.01] Su Perisi Kılıcı+3
+	13	242	1	24	-- [%3.02] Şeytan Çıkarma Kılıcı+2
+	14	243	1	16	-- [%2.01] Şeytan Çıkarma Kılıcı+3
+	15	11681	1	24	-- [%3.02] Ruh Plaka Zırh+1
+	16	11682	1	16	-- [%2.01] Ruh Plaka Zırh+2
+	17	11881	1	24	-- [%3.02] Soylu Kadın Elbisesi+1
+	18	11882	1	16	-- [%2.01] Soylu Kadın Elbisesi+2
+	19	11481	1	24	-- [%3.02] Küpeçiçeği Takım+1
+	20	11482	1	16	-- [%2.01] Küpeçiçeği Takım+2
+	21	11281	1	24	-- [%3.02] Ejderha Tanrısı Zırhı+1
+	22	11282	1	16	-- [%2.01] Ejderha Tanrısı Zırhı+2
+	23	17184	1	30	-- [%3.77] Ametist Küpe+4
+	24	17185	1	18	-- [%2.26] Ametist Küpe+5
+	25	17186	1	12	-- [%1.51] Ametist Küpe+6
+	26	16184	1	30	-- [%3.77] Ametist Kolye+4
+	27	16185	1	18	-- [%2.26] Ametist Kolye+5
+	28	16186	1	12	-- [%1.51] Ametist Kolye+6
+	29	14184	1	30	-- [%3.77] Ametist Bilezik+4
+	30	14185	1	18	-- [%2.26] Ametist Bilezik+5
+	31	14186	1	12	-- [%1.51] Ametist Bilezik+6
+	32	70012	1	20	-- [%2.52] Tanrıçanın Gözyaşı
+	33	70038	1	5	-- [%0.629] Cesaret Pelerini
+	34	25040	1	30	-- [%3.77] Kutsama Kağıdı
+	35	70037	1	30	-- [%3.77] Unutkanlık kitabı
+	36	70014	1	30	-- [%3.77] Kan Hapı
+	37	72006	1	20	-- [%2.52] Hırsızın eldivenleri
+	38	70005	1	20	-- [%2.52] Tecrübe yüzüğü (1 sa.)
+	39	27112	20	20	-- [%2.52] Yeşil İksir(B)
 }
 
 Group	DokuzKuyruk
 {
 	Vnum	50077 -- Dokuz Kuyruk Sandığı
-	1	151	1	24	-- [%2.86] Hortlak Dişi Kılıcı+1
-	2	152	1	16	-- [%1.90] Hortlak Dişi Kılıcı+2
-	3	5091	1	24	-- [%2.86] Yıldırım Kuşu Çanı+1
-	4	5092	1	16	-- [%1.90] Yıldırım Kuşu Çanı+2
-	5	141	1	24	-- [%2.86] Muharebe Kılıcı+1
-	6	142	1	16	-- [%1.90] Muharebe Kılıcı+2
-	7	3131	1	24	-- [%2.86] Partizan+1
-	8	3132	1	16	-- [%1.90] Partizan+2
-	9	1101	1	24	-- [%2.86] Ejderha Bıçağı+1
-	10	1102	1	16	-- [%1.90] Ejderha Bıçağı+2
-	11	7131	1	24	-- [%2.86] Cennet Kuşu Yelpaze+1
-	12	7132	1	16	-- [%1.90] Cennet Kuşu Yelpaze+2
-	13	2141	1	24	-- [%2.86] Sarı EjderhaYayı+1
-	14	2142	1	16	-- [%1.90] Sarı EjderhaYayı+2
-	15	11682	1	24	-- [%2.86] Ruh Plaka Zırh+2
-	16	11683	1	16	-- [%1.90] Ruh Plaka Zırh+3
-	17	11882	1	24	-- [%2.86] Soylu Kadın Elbisesi+2
-	18	11883	1	16	-- [%1.90] Soylu Kadın Elbisesi+3
-	19	11482	1	24	-- [%2.86] Küpeçiçeği Takım+2
-	20	11483	1	16	-- [%1.90] Küpeçiçeği Takım+3
-	21	11282	1	24	-- [%2.86] Ejderha Tanrısı Zırhı+2
-	22	11283	1	16	-- [%1.90] Ejderha Tanrısı Zırhı+3
-	23	17204	1	30	-- [%3.57] Cennetin Gözyaşı Küpe+4
-	24	17205	1	18	-- [%2.14] Cennetin Gözyaşı Küpe+5
-	25	17206	1	12	-- [%1.43] Cennetin Gözyaşı Küpe+6
-	26	16204	1	30	-- [%3.57] Cennetin Gözyaşı Kolye+4
-	27	16205	1	18	-- [%2.14] Cennetin Gözyaşı Kolye+5
-	28	16206	1	12	-- [%1.43] Cennetin Gözyaşı Kolye+6
-	29	14204	1	30	-- [%3.57] Cennetin Gözy. Bilezik+4
-	30	14205	1	18	-- [%2.14] Cennetin Gözy. Bilezik+5
-	31	14206	1	12	-- [%1.43] Cennetin Gözy. Bilezik+6
-	32	70012	1	25	-- [%2.98] Tanrıçanın Gözyaşı
-	33	70038	1	5	-- [%0.595] Cesaret Pelerini
-	34	25040	1	30	-- [%3.57] Kutsama Kağıdı
-	35	70048	1	25	-- [%2.98] Görünmezlik pelerini
-	36	70037	1	30	-- [%3.57] Unutkanlık kitabı
-	37	70014	1	30	-- [%3.57] Kan Hapı
-	38	72006	1	25	-- [%2.98] Hırsızın eldivenleri
-	39	70005	1	25	-- [%2.98] Tecrübe yüzüğü (1 sa.)
-	40	27112	20	25	-- [%2.98] Yeşil İksir(B)
+	1	151	1	24	-- [%2.94] Hortlak Dişi Kılıcı+1
+	2	152	1	16	-- [%1.96] Hortlak Dişi Kılıcı+2
+	3	5091	1	24	-- [%2.94] Yıldırım Kuşu Çanı+1
+	4	5092	1	16	-- [%1.96] Yıldırım Kuşu Çanı+2
+	5	141	1	24	-- [%2.94] Muharebe Kılıcı+1
+	6	142	1	16	-- [%1.96] Muharebe Kılıcı+2
+	7	3131	1	24	-- [%2.94] Partizan+1
+	8	3132	1	16	-- [%1.96] Partizan+2
+	9	1101	1	24	-- [%2.94] Ejderha Bıçağı+1
+	10	1102	1	16	-- [%1.96] Ejderha Bıçağı+2
+	11	7131	1	24	-- [%2.94] Cennet Kuşu Yelpaze+1
+	12	7132	1	16	-- [%1.96] Cennet Kuşu Yelpaze+2
+	13	2141	1	24	-- [%2.94] Sarı EjderhaYayı+1
+	14	2142	1	16	-- [%1.96] Sarı EjderhaYayı+2
+	15	11682	1	24	-- [%2.94] Ruh Plaka Zırh+2
+	16	11683	1	16	-- [%1.96] Ruh Plaka Zırh+3
+	17	11882	1	24	-- [%2.94] Soylu Kadın Elbisesi+2
+	18	11883	1	16	-- [%1.96] Soylu Kadın Elbisesi+3
+	19	11482	1	24	-- [%2.94] Küpeçiçeği Takım+2
+	20	11483	1	16	-- [%1.96] Küpeçiçeği Takım+3
+	21	11282	1	24	-- [%2.94] Ejderha Tanrısı Zırhı+2
+	22	11283	1	16	-- [%1.96] Ejderha Tanrısı Zırhı+3
+	23	17204	1	30	-- [%3.68] Cennetin Gözyaşı Küpe+4
+	24	17205	1	18	-- [%2.21] Cennetin Gözyaşı Küpe+5
+	25	17206	1	12	-- [%1.47] Cennetin Gözyaşı Küpe+6
+	26	16204	1	30	-- [%3.68] Cennetin Gözyaşı Kolye+4
+	27	16205	1	18	-- [%2.21] Cennetin Gözyaşı Kolye+5
+	28	16206	1	12	-- [%1.47] Cennetin Gözyaşı Kolye+6
+	29	14204	1	30	-- [%3.68] Cennetin Gözy. Bilezik+4
+	30	14205	1	18	-- [%2.21] Cennetin Gözy. Bilezik+5
+	31	14206	1	12	-- [%1.47] Cennetin Gözy. Bilezik+6
+	32	70012	1	25	-- [%3.07] Tanrıçanın Gözyaşı
+	33	70038	1	5	-- [%0.613] Cesaret Pelerini
+	34	25040	1	30	-- [%3.68] Kutsama Kağıdı
+	35	70037	1	30	-- [%3.68] Unutkanlık kitabı
+	36	70014	1	30	-- [%3.68] Kan Hapı
+	37	72006	1	25	-- [%3.07] Hırsızın eldivenleri
+	38	70005	1	25	-- [%3.07] Tecrübe yüzüğü (1 sa.)
+	39	27112	20	25	-- [%3.07] Yeşil İksir(B)
 }
 
 Group	SarıKaplan
 {
 	Vnum	50078 -- Sarı Kaplan H. Sandığı
-	1	152	1	22	-- [%2.60] Hortlak Dişi Kılıcı+2
-	2	153	1	16	-- [%1.89] Hortlak Dişi Kılıcı+3
-	3	5092	1	22	-- [%2.60] Yıldırım Kuşu Çanı+2
-	4	5093	1	16	-- [%1.89] Yıldırım Kuşu Çanı+3
-	5	142	1	22	-- [%2.60] Muharebe Kılıcı+2
-	6	143	1	16	-- [%1.89] Muharebe Kılıcı+3
-	7	3132	1	22	-- [%2.60] Partizan+2
-	8	3133	1	16	-- [%1.89] Partizan+3
-	9	1102	1	22	-- [%2.60] Ejderha Bıçağı+2
-	10	1103	1	16	-- [%1.89] Ejderha Bıçağı+3
-	11	7132	1	22	-- [%2.60] Cennet Kuşu Yelpaze+2
-	12	7133	1	16	-- [%1.89] Cennet Kuşu Yelpaze+3
-	13	2142	1	22	-- [%2.60] Sarı EjderhaYayı+2
-	14	2143	1	16	-- [%1.89] Sarı EjderhaYayı+3
-	15	11682	1	19	-- [%2.25] Ruh Plaka Zırh+2
-	16	11683	1	28	-- [%3.31] Ruh Plaka Zırh+3
-	17	11684	1	10	-- [%1.18] Ruh Plaka Zırh+4
-	18	11882	1	19	-- [%2.25] Soylu Kadın Elbisesi+2
-	19	11883	1	28	-- [%3.31] Soylu Kadın Elbisesi+3
-	20	11884	1	10	-- [%1.18] Soylu Kadın Elbisesi+4
-	21	11482	1	19	-- [%2.25] Küpeçiçeği Takım+2
-	22	11483	1	28	-- [%3.31] Küpeçiçeği Takım+3
-	23	11484	1	10	-- [%1.18] Küpeçiçeği Takım+4
-	24	11282	1	19	-- [%2.25] Ejderha Tanrısı Zırhı+2
-	25	11283	1	28	-- [%3.31] Ejderha Tanrısı Zırhı+3
-	26	11284	1	10	-- [%1.18] Ejderha Tanrısı Zırhı+4
-	27	17184	1	19	-- [%2.25] Ametist Küpe+4
-	28	17185	1	28	-- [%3.31] Ametist Küpe+5
-	29	17186	1	10	-- [%1.18] Ametist Küpe+6
-	30	16184	1	19	-- [%2.25] Ametist Kolye+4
-	31	16185	1	28	-- [%3.31] Ametist Kolye+5
-	32	16186	1	10	-- [%1.18] Ametist Kolye+6
-	33	14184	1	19	-- [%2.25] Ametist Bilezik+4
-	34	14185	1	28	-- [%3.31] Ametist Bilezik+5
-	35	14186	1	10	-- [%1.18] Ametist Bilezik+6
-	36	70012	1	20	-- [%2.37] Tanrıçanın Gözyaşı
-	37	70038	1	5	-- [%0.592] Cesaret Pelerini
-	38	25040	1	25	-- [%2.96] Kutsama Kağıdı
-	39	70048	1	20	-- [%2.37] Görünmezlik pelerini
-	40	70037	1	25	-- [%2.96] Unutkanlık kitabı
-	41	70014	1	25	-- [%2.96] Kan Hapı
-	42	72006	1	20	-- [%2.37] Hırsızın eldivenleri
-	43	70005	1	20	-- [%2.37] Tecrübe yüzüğü (1 sa.)
-	44	27112	30	20	-- [%2.37] Yeşil İksir(B)
+	1	152	1	22	-- [%2.67] Hortlak Dişi Kılıcı+2
+	2	153	1	16	-- [%1.94] Hortlak Dişi Kılıcı+3
+	3	5092	1	22	-- [%2.67] Yıldırım Kuşu Çanı+2
+	4	5093	1	16	-- [%1.94] Yıldırım Kuşu Çanı+3
+	5	142	1	22	-- [%2.67] Muharebe Kılıcı+2
+	6	143	1	16	-- [%1.94] Muharebe Kılıcı+3
+	7	3132	1	22	-- [%2.67] Partizan+2
+	8	3133	1	16	-- [%1.94] Partizan+3
+	9	1102	1	22	-- [%2.67] Ejderha Bıçağı+2
+	10	1103	1	16	-- [%1.94] Ejderha Bıçağı+3
+	11	7132	1	22	-- [%2.67] Cennet Kuşu Yelpaze+2
+	12	7133	1	16	-- [%1.94] Cennet Kuşu Yelpaze+3
+	13	2142	1	22	-- [%2.67] Sarı EjderhaYayı+2
+	14	2143	1	16	-- [%1.94] Sarı EjderhaYayı+3
+	15	11682	1	19	-- [%2.30] Ruh Plaka Zırh+2
+	16	11683	1	28	-- [%3.39] Ruh Plaka Zırh+3
+	17	11684	1	10	-- [%1.21] Ruh Plaka Zırh+4
+	18	11882	1	19	-- [%2.30] Soylu Kadın Elbisesi+2
+	19	11883	1	28	-- [%3.39] Soylu Kadın Elbisesi+3
+	20	11884	1	10	-- [%1.21] Soylu Kadın Elbisesi+4
+	21	11482	1	19	-- [%2.30] Küpeçiçeği Takım+2
+	22	11483	1	28	-- [%3.39] Küpeçiçeği Takım+3
+	23	11484	1	10	-- [%1.21] Küpeçiçeği Takım+4
+	24	11282	1	19	-- [%2.30] Ejderha Tanrısı Zırhı+2
+	25	11283	1	28	-- [%3.39] Ejderha Tanrısı Zırhı+3
+	26	11284	1	10	-- [%1.21] Ejderha Tanrısı Zırhı+4
+	27	17184	1	19	-- [%2.30] Ametist Küpe+4
+	28	17185	1	28	-- [%3.39] Ametist Küpe+5
+	29	17186	1	10	-- [%1.21] Ametist Küpe+6
+	30	16184	1	19	-- [%2.30] Ametist Kolye+4
+	31	16185	1	28	-- [%3.39] Ametist Kolye+5
+	32	16186	1	10	-- [%1.21] Ametist Kolye+6
+	33	14184	1	19	-- [%2.30] Ametist Bilezik+4
+	34	14185	1	28	-- [%3.39] Ametist Bilezik+5
+	35	14186	1	10	-- [%1.21] Ametist Bilezik+6
+	36	70012	1	20	-- [%2.42] Tanrıçanın Gözyaşı
+	37	70038	1	5	-- [%0.606] Cesaret Pelerini
+	38	25040	1	25	-- [%3.03] Kutsama Kağıdı
+	39	70037	1	25	-- [%3.03] Unutkanlık kitabı
+	40	70014	1	25	-- [%3.03] Kan Hapı
+	41	72006	1	20	-- [%2.42] Hırsızın eldivenleri
+	42	70005	1	20	-- [%2.42] Tecrübe yüzüğü (1 sa.)
+	43	27112	30	20	-- [%2.42] Yeşil İksir(B)
 }
 
 Group	AlevKral
 {
 	Vnum	50079 -- Ateş Kral Sandığı
-	1	151	1	10	-- [%1.18] Hortlak Dişi Kılıcı+1
-	2	152	1	25	-- [%2.94] Hortlak Dişi Kılıcı+2
-	3	153	1	15	-- [%1.76] Hortlak Dişi Kılıcı+3
-	4	5091	1	10	-- [%1.18] Yıldırım Kuşu Çanı+1
-	5	5092	1	25	-- [%2.94] Yıldırım Kuşu Çanı+2
-	6	5093	1	15	-- [%1.76] Yıldırım Kuşu Çanı+3
-	7	141	1	10	-- [%1.18] Muharebe Kılıcı+1
-	8	142	1	25	-- [%2.94] Muharebe Kılıcı+2
-	9	143	1	15	-- [%1.76] Muharebe Kılıcı+3
-	10	3131	1	10	-- [%1.18] Partizan+1
-	11	3132	1	25	-- [%2.94] Partizan+2
-	12	3133	1	15	-- [%1.76] Partizan+3
-	13	1101	1	10	-- [%1.18] Ejderha Bıçağı+1
-	14	1102	1	25	-- [%2.94] Ejderha Bıçağı+2
-	15	1103	1	15	-- [%1.76] Ejderha Bıçağı+3
-	16	7131	1	10	-- [%1.18] Cennet Kuşu Yelpaze+1
-	17	7132	1	25	-- [%2.94] Cennet Kuşu Yelpaze+2
-	18	7133	1	15	-- [%1.76] Cennet Kuşu Yelpaze+3
-	19	2141	1	10	-- [%1.18] Sarı EjderhaYayı+1
-	20	2142	1	25	-- [%2.94] Sarı EjderhaYayı+2
-	21	2143	1	15	-- [%1.76] Sarı EjderhaYayı+3
-	22	11681	1	9	-- [%1.06] Ruh Plaka Zırh+1
-	23	11682	1	24	-- [%2.82] Ruh Plaka Zırh+2
-	24	11683	1	14	-- [%1.65] Ruh Plaka Zırh+3
-	25	11881	1	9	-- [%1.06] Soylu Kadın Elbisesi+1
-	26	11882	1	24	-- [%2.82] Soylu Kadın Elbisesi+2
-	27	11883	1	14	-- [%1.65] Soylu Kadın Elbisesi+3
-	28	11481	1	9	-- [%1.06] Küpeçiçeği Takım+1
-	29	11482	1	24	-- [%2.82] Küpeçiçeği Takım+2
-	30	11483	1	14	-- [%1.65] Küpeçiçeği Takım+3
-	31	11281	1	9	-- [%1.06] Ejderha Tanrısı Zırhı+1
-	32	11282	1	24	-- [%2.82] Ejderha Tanrısı Zırhı+2
-	33	11283	1	14	-- [%1.65] Ejderha Tanrısı Zırhı+3
-	34	17164	1	9	-- [%1.06] Kristal Küpe+4
-	35	17165	1	24	-- [%2.82] Kristal Küpe+5
-	36	17166	1	14	-- [%1.65] Kristal Küpe+6
-	37	16164	1	9	-- [%1.06] Kristal Kolye+4
-	38	16165	1	24	-- [%2.82] Kristal Kolye+5
-	39	16166	1	14	-- [%1.65] Kristal Kolye+6
-	40	14164	1	9	-- [%1.06] Kristal Bilezik+4
-	41	14165	1	24	-- [%2.82] Kristal Bilezik+5
-	42	14166	1	14	-- [%1.65] Kristal Bilezik+6
-	43	70012	1	15	-- [%1.76] Tanrıçanın Gözyaşı
-	44	70038	1	5	-- [%0.588] Cesaret Pelerini
-	45	25040	1	21	-- [%2.47] Kutsama Kağıdı
-	46	70048	1	20	-- [%2.35] Görünmezlik pelerini
-	47	70037	1	25	-- [%2.94] Unutkanlık kitabı
-	48	70014	1	25	-- [%2.94] Kan Hapı
-	49	72006	1	20	-- [%2.35] Hırsızın eldivenleri
-	50	70005	1	20	-- [%2.35] Tecrübe yüzüğü (1 sa.)
-	51	27112	25	20	-- [%2.35] Yeşil İksir(B)
+	1	151	1	10	-- [%1.20] Hortlak Dişi Kılıcı+1
+	2	152	1	25	-- [%3.01] Hortlak Dişi Kılıcı+2
+	3	153	1	15	-- [%1.81] Hortlak Dişi Kılıcı+3
+	4	5091	1	10	-- [%1.20] Yıldırım Kuşu Çanı+1
+	5	5092	1	25	-- [%3.01] Yıldırım Kuşu Çanı+2
+	6	5093	1	15	-- [%1.81] Yıldırım Kuşu Çanı+3
+	7	141	1	10	-- [%1.20] Muharebe Kılıcı+1
+	8	142	1	25	-- [%3.01] Muharebe Kılıcı+2
+	9	143	1	15	-- [%1.81] Muharebe Kılıcı+3
+	10	3131	1	10	-- [%1.20] Partizan+1
+	11	3132	1	25	-- [%3.01] Partizan+2
+	12	3133	1	15	-- [%1.81] Partizan+3
+	13	1101	1	10	-- [%1.20] Ejderha Bıçağı+1
+	14	1102	1	25	-- [%3.01] Ejderha Bıçağı+2
+	15	1103	1	15	-- [%1.81] Ejderha Bıçağı+3
+	16	7131	1	10	-- [%1.20] Cennet Kuşu Yelpaze+1
+	17	7132	1	25	-- [%3.01] Cennet Kuşu Yelpaze+2
+	18	7133	1	15	-- [%1.81] Cennet Kuşu Yelpaze+3
+	19	2141	1	10	-- [%1.20] Sarı EjderhaYayı+1
+	20	2142	1	25	-- [%3.01] Sarı EjderhaYayı+2
+	21	2143	1	15	-- [%1.81] Sarı EjderhaYayı+3
+	22	11681	1	9	-- [%1.08] Ruh Plaka Zırh+1
+	23	11682	1	24	-- [%2.89] Ruh Plaka Zırh+2
+	24	11683	1	14	-- [%1.69] Ruh Plaka Zırh+3
+	25	11881	1	9	-- [%1.08] Soylu Kadın Elbisesi+1
+	26	11882	1	24	-- [%2.89] Soylu Kadın Elbisesi+2
+	27	11883	1	14	-- [%1.69] Soylu Kadın Elbisesi+3
+	28	11481	1	9	-- [%1.08] Küpeçiçeği Takım+1
+	29	11482	1	24	-- [%2.89] Küpeçiçeği Takım+2
+	30	11483	1	14	-- [%1.69] Küpeçiçeği Takım+3
+	31	11281	1	9	-- [%1.08] Ejderha Tanrısı Zırhı+1
+	32	11282	1	24	-- [%2.89] Ejderha Tanrısı Zırhı+2
+	33	11283	1	14	-- [%1.69] Ejderha Tanrısı Zırhı+3
+	34	17164	1	9	-- [%1.08] Kristal Küpe+4
+	35	17165	1	24	-- [%2.89] Kristal Küpe+5
+	36	17166	1	14	-- [%1.69] Kristal Küpe+6
+	37	16164	1	9	-- [%1.08] Kristal Kolye+4
+	38	16165	1	24	-- [%2.89] Kristal Kolye+5
+	39	16166	1	14	-- [%1.69] Kristal Kolye+6
+	40	14164	1	9	-- [%1.08] Kristal Bilezik+4
+	41	14165	1	24	-- [%2.89] Kristal Bilezik+5
+	42	14166	1	14	-- [%1.69] Kristal Bilezik+6
+	43	70012	1	15	-- [%1.81] Tanrıçanın Gözyaşı
+	44	70038	1	5	-- [%0.602] Cesaret Pelerini
+	45	25040	1	21	-- [%2.53] Kutsama Kağıdı
+	46	70037	1	25	-- [%3.01] Unutkanlık kitabı
+	47	70014	1	25	-- [%3.01] Kan Hapı
+	48	72006	1	20	-- [%2.41] Hırsızın eldivenleri
+	49	70005	1	20	-- [%2.41] Tecrübe yüzüğü (1 sa.)
+	50	27112	25	20	-- [%2.41] Yeşil İksir(B)
 }
 
 Group	SeytanKral
 {
 	Vnum	50081 -- Å?eytan Kral Sandığı
-	1	152	1	22	-- [%2.60] Hortlak Dişi Kılıcı+2
-	2	153	1	16	-- [%1.89] Hortlak Dişi Kılıcı+3
-	3	5092	1	22	-- [%2.60] Yıldırım Kuşu Çanı+2
-	4	5093	1	16	-- [%1.89] Yıldırım Kuşu Çanı+3
-	5	142	1	22	-- [%2.60] Muharebe Kılıcı+2
-	6	143	1	16	-- [%1.89] Muharebe Kılıcı+3
-	7	3132	1	22	-- [%2.60] Partizan+2
-	8	3133	1	16	-- [%1.89] Partizan+3
-	9	1102	1	22	-- [%2.60] Ejderha Bıçağı+2
-	10	1103	1	16	-- [%1.89] Ejderha Bıçağı+3
-	11	7132	1	22	-- [%2.60] Cennet Kuşu Yelpaze+2
-	12	7133	1	16	-- [%1.89] Cennet Kuşu Yelpaze+3
-	13	2142	1	22	-- [%2.60] Sarı EjderhaYayı+2
-	14	2143	1	16	-- [%1.89] Sarı EjderhaYayı+3
-	15	11682	1	19	-- [%2.25] Ruh Plaka Zırh+2
-	16	11683	1	28	-- [%3.31] Ruh Plaka Zırh+3
-	17	11684	1	10	-- [%1.18] Ruh Plaka Zırh+4
-	18	11882	1	19	-- [%2.25] Soylu Kadın Elbisesi+2
-	19	11883	1	28	-- [%3.31] Soylu Kadın Elbisesi+3
-	20	11884	1	10	-- [%1.18] Soylu Kadın Elbisesi+4
-	21	11482	1	19	-- [%2.25] Küpeçiçeği Takım+2
-	22	11483	1	28	-- [%3.31] Küpeçiçeği Takım+3
-	23	11484	1	10	-- [%1.18] Küpeçiçeği Takım+4
-	24	11282	1	19	-- [%2.25] Ejderha Tanrısı Zırhı+2
-	25	11283	1	28	-- [%3.31] Ejderha Tanrısı Zırhı+3
-	26	11284	1	10	-- [%1.18] Ejderha Tanrısı Zırhı+4
-	27	17184	1	19	-- [%2.25] Ametist Küpe+4
-	28	17185	1	28	-- [%3.31] Ametist Küpe+5
-	29	17186	1	10	-- [%1.18] Ametist Küpe+6
-	30	16184	1	19	-- [%2.25] Ametist Kolye+4
-	31	16185	1	28	-- [%3.31] Ametist Kolye+5
-	32	16186	1	10	-- [%1.18] Ametist Kolye+6
-	33	14184	1	19	-- [%2.25] Ametist Bilezik+4
-	34	14185	1	28	-- [%3.31] Ametist Bilezik+5
-	35	14186	1	10	-- [%1.18] Ametist Bilezik+6
-	36	70012	1	20	-- [%2.37] Tanrıçanın Gözyaşı
-	37	70038	1	5	-- [%0.592] Cesaret Pelerini
-	38	25040	1	25	-- [%2.96] Kutsama Kağıdı
-	39	70048	1	20	-- [%2.37] Görünmezlik pelerini
-	40	70037	1	25	-- [%2.96] Unutkanlık kitabı
-	41	70014	1	25	-- [%2.96] Kan Hapı
-	42	72006	1	20	-- [%2.37] Hırsızın eldivenleri
-	43	70005	1	20	-- [%2.37] Tecrübe yüzüğü (1 sa.)
-	44	27112	30	20	-- [%2.37] Yeşil İksir(B)
+	1	152	1	22	-- [%2.67] Hortlak Dişi Kılıcı+2
+	2	153	1	16	-- [%1.94] Hortlak Dişi Kılıcı+3
+	3	5092	1	22	-- [%2.67] Yıldırım Kuşu Çanı+2
+	4	5093	1	16	-- [%1.94] Yıldırım Kuşu Çanı+3
+	5	142	1	22	-- [%2.67] Muharebe Kılıcı+2
+	6	143	1	16	-- [%1.94] Muharebe Kılıcı+3
+	7	3132	1	22	-- [%2.67] Partizan+2
+	8	3133	1	16	-- [%1.94] Partizan+3
+	9	1102	1	22	-- [%2.67] Ejderha Bıçağı+2
+	10	1103	1	16	-- [%1.94] Ejderha Bıçağı+3
+	11	7132	1	22	-- [%2.67] Cennet Kuşu Yelpaze+2
+	12	7133	1	16	-- [%1.94] Cennet Kuşu Yelpaze+3
+	13	2142	1	22	-- [%2.67] Sarı EjderhaYayı+2
+	14	2143	1	16	-- [%1.94] Sarı EjderhaYayı+3
+	15	11682	1	19	-- [%2.30] Ruh Plaka Zırh+2
+	16	11683	1	28	-- [%3.39] Ruh Plaka Zırh+3
+	17	11684	1	10	-- [%1.21] Ruh Plaka Zırh+4
+	18	11882	1	19	-- [%2.30] Soylu Kadın Elbisesi+2
+	19	11883	1	28	-- [%3.39] Soylu Kadın Elbisesi+3
+	20	11884	1	10	-- [%1.21] Soylu Kadın Elbisesi+4
+	21	11482	1	19	-- [%2.30] Küpeçiçeği Takım+2
+	22	11483	1	28	-- [%3.39] Küpeçiçeği Takım+3
+	23	11484	1	10	-- [%1.21] Küpeçiçeği Takım+4
+	24	11282	1	19	-- [%2.30] Ejderha Tanrısı Zırhı+2
+	25	11283	1	28	-- [%3.39] Ejderha Tanrısı Zırhı+3
+	26	11284	1	10	-- [%1.21] Ejderha Tanrısı Zırhı+4
+	27	17184	1	19	-- [%2.30] Ametist Küpe+4
+	28	17185	1	28	-- [%3.39] Ametist Küpe+5
+	29	17186	1	10	-- [%1.21] Ametist Küpe+6
+	30	16184	1	19	-- [%2.30] Ametist Kolye+4
+	31	16185	1	28	-- [%3.39] Ametist Kolye+5
+	32	16186	1	10	-- [%1.21] Ametist Kolye+6
+	33	14184	1	19	-- [%2.30] Ametist Bilezik+4
+	34	14185	1	28	-- [%3.39] Ametist Bilezik+5
+	35	14186	1	10	-- [%1.21] Ametist Bilezik+6
+	36	70012	1	20	-- [%2.42] Tanrıçanın Gözyaşı
+	37	70038	1	5	-- [%0.606] Cesaret Pelerini
+	38	25040	1	25	-- [%3.03] Kutsama Kağıdı
+	39	70037	1	25	-- [%3.03] Unutkanlık kitabı
+	40	70014	1	25	-- [%3.03] Kan Hapı
+	41	72006	1	20	-- [%2.42] Hırsızın eldivenleri
+	42	70005	1	20	-- [%2.42] Tecrübe yüzüğü (1 sa.)
+	43	27112	30	20	-- [%2.42] Yeşil İksir(B)
 }
 
 Group	Lusifer
@@ -2304,209 +2295,208 @@ Group	Patron_Sandıkları
 Group	Patron_Sandıkları
 {
 	Vnum	54701 -- Bagjanamu Sandığı
-	1	15373	1	30	-- [%0.409] Coşku Ayakkabısı +3
-	2	15374	1	20	-- [%0.272] Coşku Ayakkabısı +4
-	3	15433	1	20	-- [%0.272] Yalıçapkını Ayyakkabı +3
-	4	15434	1	10	-- [%0.136] Yalıçapkını Ayyakkabı +4
-	5	70102	1	70	-- [%0.954] Zen Fasulye
-	6	72006	1	30	-- [%0.409] Hırsızın eldivenleri
-	7	70014	1	80	-- [%1.09] Kan Hapı
-	8	70005	1	50	-- [%0.681] Tecrübe yüzüğü (1 sa.)
-	9	70048	1	50	-- [%0.681] Görünmezlik pelerini
-	10	70038	1	200	-- [%2.72] Cesaret Pelerini
-	11	30601	1	100	-- [%1.36] Zırh Planı
-	12	30600	1	100	-- [%1.36] Kesim Örneği
-	13	25040	1	120	-- [%1.63] Kutsama Kağıdı
-	14	30605	1	120	-- [%1.63] Altın Plakalar
-	15	30606	1	120	-- [%1.63] Gümüş Plakalar
-	16	30607	1	120	-- [%1.63] Bakır Plakalar
-	17	30608	1	120	-- [%1.63] Çelik Plakalar
-	18	30609	1	120	-- [%1.63] Tunç Plakalar
-	19	50323	1	70	-- [%0.954] Kitap Sandığı Misilleme
-	20	50324	1	50	-- [%0.681] Kitap Sandığ Güçlendirme
-	21	30610	1	100	-- [%1.36] Mitril
-	22	30611	1	70	-- [%0.954] Ağır Kemerler
-	23	30602	1	70	-- [%0.954] mavi boya
-	24	30603	1	70	-- [%0.954] kırmızı boya
-	25	30614	1	70	-- [%0.954] siyah boya
-	26	30615	1	70	-- [%0.954] beyaz boya
-	27	30192	1	50	-- [%0.681] Süt Şerbeti
-	28	145	1	60	-- [%0.817] Muharebe Kılıcı+5
-	29	146	1	50	-- [%0.681] Muharebe Kılıcı+6
-	30	155	1	60	-- [%0.817] Hortlak Dişi Kılıcı+5
-	31	156	1	50	-- [%0.681] Hortlak Dişi Kılıcı+6
-	32	1105	1	60	-- [%0.817] Ejderha Bıçağı+5
-	33	1106	1	50	-- [%0.681] Ejderha Bıçağı+6
-	34	2145	1	60	-- [%0.817] Sarı EjderhaYayı+5
-	35	2146	1	50	-- [%0.681] Sarı EjderhaYayı+6
-	36	3145	1	60	-- [%0.817] Elektromanyetik Pala+5
-	37	3146	1	50	-- [%0.681] Elektromanyetik Pala+6
-	38	5105	1	60	-- [%0.817] Cennet ve Dünya Çanı+5
-	39	5106	1	50	-- [%0.681] Cennet ve Dünya Çanı+6
-	40	7145	1	60	-- [%0.817] Kurtuluş Yelpazesi+5
-	41	7146	1	50	-- [%0.681] Kurtuluş Yelpazesi+6
-	42	70031	1	10	-- [%0.136] Eskrim Broşürü
-	43	30500	1	130	-- [%1.77] Yakut Oyma Bıçağı
-	44	30501	1	130	-- [%1.77] Altın Kenet
-	45	30502	1	130	-- [%1.77] Yakut İşlemeli
-	46	30503	1	130	-- [%1.77] Ametist Oyma Bıçağı
-	47	30504	1	130	-- [%1.77] Gümüş Kenet
-	48	30505	1	130	-- [%1.77] Zümrüt İşlemeli
-	49	30506	1	130	-- [%1.77] Safir Oyma Bıçağı
-	50	30507	1	130	-- [%1.77] Bronz Kenet
-	51	30508	1	130	-- [%1.77] Safir İşlemesi
-	52	30509	1	130	-- [%1.77] Mavi Ejderha Çeliği
-	53	30510	1	130	-- [%1.77] Fiyakalı Apolet
-	54	30511	1	130	-- [%1.77] Kırmızı Kumaş
-	55	30512	1	130	-- [%1.77] Kırmızı Ejderha Çeliği
-	56	30513	1	130	-- [%1.77] Kıymetli Apolet
-	57	30514	1	130	-- [%1.77] Eflatun Kumaş
-	58	30515	1	130	-- [%1.77] Erguvani Ejderha Çeliği
-	59	30516	1	130	-- [%1.77] Antika Apolet
-	60	30517	1	130	-- [%1.77] Altın Kumaş
-	61	30518	1	150	-- [%2.04] Altın İplik
-	62	30519	1	150	-- [%2.04] Altın Kanca
-	63	30520	1	150	-- [%2.04] Altın Kenet
-	64	30521	1	150	-- [%2.04] Halka Öğesi
-	65	30522	1	150	-- [%2.04] Zincir Halkalar
-	66	30523	1	150	-- [%2.04] Mücevher Öğesi
-	67	30617	1	50	-- [%0.681] Akik
-	68	55005	1	80	-- [%1.09] Cesur Pet Kitabı
-	69	55003	1	80	-- [%1.09] Genç Pet Kitabı
-	70	30619	1	50	-- [%0.681] altın metalik boya
-	71	50728	1	250	-- [%3.41] Dut
-	72	50725	1	250	-- [%3.41] Leylak
-	73	30623	1	50	-- [%0.681] Hakikat Kitabı
-	74	30624	1	50	-- [%0.681] Hakikat Ruhu
-	75	30629	1	50	-- [%0.681] Tanrıların Özütü
-	76	30616	1	80	-- [%1.09] Titandiyoksit
-	77	38060	1	150	-- [%2.04] Duygu çantası
-	78	100700	1	80	-- [%1.09] Ejderha alevi (B)
+	1	15373	1	30	-- [%0.412] Coşku Ayakkabısı +3
+	2	15374	1	20	-- [%0.274] Coşku Ayakkabısı +4
+	3	15433	1	20	-- [%0.274] Yalıçapkını Ayyakkabı +3
+	4	15434	1	10	-- [%0.137] Yalıçapkını Ayyakkabı +4
+	5	70102	1	70	-- [%0.960] Zen Fasulye
+	6	72006	1	30	-- [%0.412] Hırsızın eldivenleri
+	7	70014	1	80	-- [%1.10] Kan Hapı
+	8	70005	1	50	-- [%0.686] Tecrübe yüzüğü (1 sa.)
+	9	70038	1	200	-- [%2.74] Cesaret Pelerini
+	10	30601	1	100	-- [%1.37] Zırh Planı
+	11	30600	1	100	-- [%1.37] Kesim Örneği
+	12	25040	1	120	-- [%1.65] Kutsama Kağıdı
+	13	30605	1	120	-- [%1.65] Altın Plakalar
+	14	30606	1	120	-- [%1.65] Gümüş Plakalar
+	15	30607	1	120	-- [%1.65] Bakır Plakalar
+	16	30608	1	120	-- [%1.65] Çelik Plakalar
+	17	30609	1	120	-- [%1.65] Tunç Plakalar
+	18	50323	1	70	-- [%0.960] Kitap Sandığı Misilleme
+	19	50324	1	50	-- [%0.686] Kitap Sandığ Güçlendirme
+	20	30610	1	100	-- [%1.37] Mitril
+	21	30611	1	70	-- [%0.960] Ağır Kemerler
+	22	30602	1	70	-- [%0.960] mavi boya
+	23	30603	1	70	-- [%0.960] kırmızı boya
+	24	30614	1	70	-- [%0.960] siyah boya
+	25	30615	1	70	-- [%0.960] beyaz boya
+	26	30192	1	50	-- [%0.686] Süt Şerbeti
+	27	145	1	60	-- [%0.823] Muharebe Kılıcı+5
+	28	146	1	50	-- [%0.686] Muharebe Kılıcı+6
+	29	155	1	60	-- [%0.823] Hortlak Dişi Kılıcı+5
+	30	156	1	50	-- [%0.686] Hortlak Dişi Kılıcı+6
+	31	1105	1	60	-- [%0.823] Ejderha Bıçağı+5
+	32	1106	1	50	-- [%0.686] Ejderha Bıçağı+6
+	33	2145	1	60	-- [%0.823] Sarı EjderhaYayı+5
+	34	2146	1	50	-- [%0.686] Sarı EjderhaYayı+6
+	35	3145	1	60	-- [%0.823] Elektromanyetik Pala+5
+	36	3146	1	50	-- [%0.686] Elektromanyetik Pala+6
+	37	5105	1	60	-- [%0.823] Cennet ve Dünya Çanı+5
+	38	5106	1	50	-- [%0.686] Cennet ve Dünya Çanı+6
+	39	7145	1	60	-- [%0.823] Kurtuluş Yelpazesi+5
+	40	7146	1	50	-- [%0.686] Kurtuluş Yelpazesi+6
+	41	70031	1	10	-- [%0.137] Eskrim Broşürü
+	42	30500	1	130	-- [%1.78] Yakut Oyma Bıçağı
+	43	30501	1	130	-- [%1.78] Altın Kenet
+	44	30502	1	130	-- [%1.78] Yakut İşlemeli
+	45	30503	1	130	-- [%1.78] Ametist Oyma Bıçağı
+	46	30504	1	130	-- [%1.78] Gümüş Kenet
+	47	30505	1	130	-- [%1.78] Zümrüt İşlemeli
+	48	30506	1	130	-- [%1.78] Safir Oyma Bıçağı
+	49	30507	1	130	-- [%1.78] Bronz Kenet
+	50	30508	1	130	-- [%1.78] Safir İşlemesi
+	51	30509	1	130	-- [%1.78] Mavi Ejderha Çeliği
+	52	30510	1	130	-- [%1.78] Fiyakalı Apolet
+	53	30511	1	130	-- [%1.78] Kırmızı Kumaş
+	54	30512	1	130	-- [%1.78] Kırmızı Ejderha Çeliği
+	55	30513	1	130	-- [%1.78] Kıymetli Apolet
+	56	30514	1	130	-- [%1.78] Eflatun Kumaş
+	57	30515	1	130	-- [%1.78] Erguvani Ejderha Çeliği
+	58	30516	1	130	-- [%1.78] Antika Apolet
+	59	30517	1	130	-- [%1.78] Altın Kumaş
+	60	30518	1	150	-- [%2.06] Altın İplik
+	61	30519	1	150	-- [%2.06] Altın Kanca
+	62	30520	1	150	-- [%2.06] Altın Kenet
+	63	30521	1	150	-- [%2.06] Halka Öğesi
+	64	30522	1	150	-- [%2.06] Zincir Halkalar
+	65	30523	1	150	-- [%2.06] Mücevher Öğesi
+	66	30617	1	50	-- [%0.686] Akik
+	67	55005	1	80	-- [%1.10] Cesur Pet Kitabı
+	68	55003	1	80	-- [%1.10] Genç Pet Kitabı
+	69	30619	1	50	-- [%0.686] altın metalik boya
+	70	50728	1	250	-- [%3.43] Dut
+	71	50725	1	250	-- [%3.43] Leylak
+	72	30623	1	50	-- [%0.686] Hakikat Kitabı
+	73	30624	1	50	-- [%0.686] Hakikat Ruhu
+	74	30629	1	50	-- [%0.686] Tanrıların Özütü
+	75	30616	1	80	-- [%1.10] Titandiyoksit
+	76	38060	1	150	-- [%2.06] Duygu çantası
+	77	100700	1	80	-- [%1.10] Ejderha alevi (B)
 }
 
 Group	Patron_Sandıkları
 {
 	Vnum	54702 -- Razadör'ün Sandığı
-	1	70005	1	90	-- [%1.64] Tecrübe yüzüğü (1 sa.)
-	2	27002	20	90	-- [%1.64] Kırmızı İksir(O)
-	3	27003	20	90	-- [%1.64] Kırmızı İksir(B)
-	4	27005	20	90	-- [%1.64] Mavi İksir(O)
-	# 5	95014	1	90 -- Beceri Kitabı Sandığı
-	5	50254	1	90	-- [%1.64] Karanlığın Sandığı
-	6	30500	1	90	-- [%1.64] Yakut Oyma Bıçağı
-	7	30501	1	90	-- [%1.64] Altın Kenet
-	8	30502	1	90	-- [%1.64] Yakut İşlemeli
-	9	30503	1	90	-- [%1.64] Ametist Oyma Bıçağı
-	10	30504	1	90	-- [%1.64] Gümüş Kenet
-	11	30505	1	90	-- [%1.64] Zümrüt İşlemeli
-	12	30506	1	90	-- [%1.64] Safir Oyma Bıçağı
-	13	30507	1	90	-- [%1.64] Bronz Kenet
-	14	30508	1	90	-- [%1.64] Safir İşlemesi
-	15	30509	1	90	-- [%1.64] Mavi Ejderha Çeliği
-	16	30510	1	90	-- [%1.64] Fiyakalı Apolet
-	17	30511	1	90	-- [%1.64] Kırmızı Kumaş
-	18	30512	1	90	-- [%1.64] Kırmızı Ejderha Çeliği
-	19	30513	1	90	-- [%1.64] Kıymetli Apolet
-	20	30514	1	90	-- [%1.64] Eflatun Kumaş
-	21	30515	1	90	-- [%1.64] Erguvani Ejderha Çeliği
-	22	30516	1	90	-- [%1.64] Antika Apolet
-	23	30517	1	90	-- [%1.64] Altın Kumaş
-	24	30518	1	90	-- [%1.64] Altın İplik
-	25	30519	1	90	-- [%1.64] Altın Kanca
-	26	30520	1	45	-- [%0.820] Altın Kenet
-	27	30521	1	45	-- [%0.820] Halka Öğesi
-	28	30522	1	45	-- [%0.820] Zincir Halkalar
-	29	30523	1	45	-- [%0.820] Mücevher Öğesi
-	30	18000	1	45	-- [%0.820] Keten Kemer +0
-	31	18010	1	75	-- [%1.37] Deri Kemer +0
-	32	18020	1	75	-- [%1.37] Gösterişli Kemer +0
-	33	18030	1	75	-- [%1.37] Bilgeliğin Kemeri +0
-	34	18080	1	75	-- [%1.37] Ruh Kemeri+0
-	35	14163	1	75	-- [%1.37] Kristal Bilezik+3
-	36	14182	1	75	-- [%1.37] Ametist Bilezik+2
-	37	14201	1	75	-- [%1.37] Cennetin Gözy. Bilezik+1
-	38	16163	1	75	-- [%1.37] Kristal Kolye+3
-	39	16182	1	75	-- [%1.37] Ametist Kolye+2
-	40	16201	1	75	-- [%1.37] Cennetin Gözyaşı Kolye+1
-	41	17163	1	75	-- [%1.37] Kristal Küpe+3
-	42	17182	1	75	-- [%1.37] Ametist Küpe+2
-	43	17201	1	75	-- [%1.37] Cennetin Gözyaşı Küpe+1
-	44	13062	1	75	-- [%1.37] Şahin Kalkanı+2
-	45	13082	1	75	-- [%1.37] Kaplan Kalkanı+2
-	46	13102	1	75	-- [%1.37] Aslan Ağzı Kalkan+2
-	47	13122	1	75	-- [%1.37] Ejderha Pulu Kalkan+2
-	48	13140	1	75	-- [%1.37] Titan Kalkanı+0
-	49	70058	1	75	-- [%1.37] Işınlama yüzüğü
-	50	71130	1	75	-- [%1.37] Geçit Bileti
-	51	7153	1	75	-- [%1.37] Mutluluk Yelpazesi+3
-	52	7154	1	75	-- [%1.37] Mutluluk Yelpazesi+4
-	53	30524	1	75	-- [%1.37] Alev Taşı
-	54	13162	1	45	-- [%0.820] Üç İmparator Kalkanı+2
-	55	55403	1	25	-- [%0.455] Razadör Yumurtası
-	56	55003	1	45	-- [%0.820] Genç Pet Kitabı
-	57	55004	1	65	-- [%1.18] Yabani Pet Kitabı
-	58	55005	1	65	-- [%1.18] Cesur Pet Kitabı
-	59	76044	1	65	-- [%1.18] Pet Kitabı Sandığı
-	60	50324	1	45	-- [%0.820] Kitap Sandığ Güçlendirme
-	61	30603	1	45	-- [%0.820] kırmızı boya
-	62	30614	1	45	-- [%0.820] siyah boya
-	63	30600	1	45	-- [%0.820] Kesim Örneği
-	64	30604	1	45	-- [%0.820] gri boya
-	65	30612	1	45	-- [%0.820] Sağlam İpler
-	66	30610	1	45	-- [%0.820] Mitril
-	67	50525	1	45	-- [%0.820] Ruh Taşı+
-	68	30623	1	45	-- [%0.820] Hakikat Kitabı
-	69	30624	1	45	-- [%0.820] Hakikat Ruhu
-	70	30625	1	75	-- [%1.37] Padparadscha
-	71	30628	1	45	-- [%0.820] Tanrı Çiçeği
-	72	30629	1	45	-- [%0.820] Tanrıların Özütü
-	73	30617	1	75	-- [%1.37] Akik
-	74	38060	1	135	-- [%2.46] Duygu çantası
-	75	100700	1	35	-- [%0.638] Ejderha alevi (B)
-	76	180	1	15	-- [%0.273] Zehir Kılıcı+0
-	77	190	1	15	-- [%0.273] Aslan Kılıcı+0
-	78	1130	1	15	-- [%0.273] Şeytan Kanadı Çakram+0
-	79	2170	1	15	-- [%0.273] Havalı Çelik Yay+0
-	80	3160	1	15	-- [%0.273] Kin Kılıcı+0
-	81	5120	1	15	-- [%0.273] Orkide Çan+0
-	82	6070	1	15	-- [%0.273] Diken Pençe +0
-	83	6060	1	15	-- [%0.273] Çakır Kuşu +0
+	1	70005	1	90	-- [%1.48] Tecrübe yüzüğü (1 sa.)
+	2	27002	20	90	-- [%1.48] Kırmızı İksir(O)
+	3	27003	20	90	-- [%1.48] Kırmızı İksir(B)
+	4	27005	20	90	-- [%1.48] Mavi İksir(O)
+	# 5	95014	1	90	 -- Beceri Kitabı Sandığı
+	5	50254	1	90	-- [%1.48] Karanlığın Sandığı
+	6	30500	1	90	-- [%1.48] Yakut Oyma Bıçağı
+	7	30501	1	90	-- [%1.48] Altın Kenet
+	8	30502	1	90	-- [%1.48] Yakut İşlemeli
+	9	30503	1	90	-- [%1.48] Ametist Oyma Bıçağı
+	10	30504	1	90	-- [%1.48] Gümüş Kenet
+	11	30505	1	90	-- [%1.48] Zümrüt İşlemeli
+	12	30506	1	90	-- [%1.48] Safir Oyma Bıçağı
+	13	30507	1	90	-- [%1.48] Bronz Kenet
+	14	30508	1	90	-- [%1.48] Safir İşlemesi
+	15	30509	1	90	-- [%1.48] Mavi Ejderha Çeliği
+	16	30510	1	90	-- [%1.48] Fiyakalı Apolet
+	17	30511	1	90	-- [%1.48] Kırmızı Kumaş
+	18	30512	1	90	-- [%1.48] Kırmızı Ejderha Çeliği
+	19	30513	1	90	-- [%1.48] Kıymetli Apolet
+	20	30514	1	90	-- [%1.48] Eflatun Kumaş
+	21	30515	1	90	-- [%1.48] Erguvani Ejderha Çeliği
+	22	30516	1	90	-- [%1.48] Antika Apolet
+	23	30517	1	90	-- [%1.48] Altın Kumaş
+	24	30518	1	90	-- [%1.48] Altın İplik
+	25	30519	1	90	-- [%1.48] Altın Kanca
+	26	30520	1	45	-- [%0.742] Altın Kenet
+	27	30521	1	45	-- [%0.742] Halka Öğesi
+	28	30522	1	45	-- [%0.742] Zincir Halkalar
+	29	30523	1	45	-- [%0.742] Mücevher Öğesi
+	30	18000	1	45	-- [%0.742] Keten Kemer +0
+	31	18010	1	75	-- [%1.24] Deri Kemer +0
+	32	18020	1	75	-- [%1.24] Gösterişli Kemer +0
+	33	18030	1	75	-- [%1.24] Bilgeliğin Kemeri +0
+	34	18080	1	75	-- [%1.24] Ruh Kemeri+0
+	35	14163	1	75	-- [%1.24] Kristal Bilezik+3
+	36	14182	1	75	-- [%1.24] Ametist Bilezik+2
+	37	14201	1	75	-- [%1.24] Cennetin Gözy. Bilezik+1
+	38	16163	1	75	-- [%1.24] Kristal Kolye+3
+	39	16182	1	75	-- [%1.24] Ametist Kolye+2
+	40	16201	1	75	-- [%1.24] Cennetin Gözyaşı Kolye+1
+	41	17163	1	75	-- [%1.24] Kristal Küpe+3
+	42	17182	1	75	-- [%1.24] Ametist Küpe+2
+	43	17201	1	75	-- [%1.24] Cennetin Gözyaşı Küpe+1
+	44	13062	1	75	-- [%1.24] Şahin Kalkanı+2
+	45	13082	1	75	-- [%1.24] Kaplan Kalkanı+2
+	46	13102	1	75	-- [%1.24] Aslan Ağzı Kalkan+2
+	47	13122	1	75	-- [%1.24] Ejderha Pulu Kalkan+2
+	48	13140	1	75	-- [%1.24] Titan Kalkanı+0
+	49	70058	1	75	-- [%1.24] Işınlama yüzüğü
+	50	71130	1	75	-- [%1.24] Geçit Bileti
+	51	7153	1	75	-- [%1.24] Mutluluk Yelpazesi+3
+	52	7154	1	75	-- [%1.24] Mutluluk Yelpazesi+4
+	53	30524	1	75	-- [%1.24] Alev Taşı
+	54	13162	1	45	-- [%0.742] Üç İmparator Kalkanı+2
+	55	55403	1	25	-- [%0.412] Razadör Yumurtası
+	56	55003	1	250	-- [%4.12] Genç Pet Kitabı
+	57	55004	1	250	-- [%4.12] Yabani Pet Kitabı
+	58	55005	1	250	-- [%4.12] Cesur Pet Kitabı
+	59	76044	1	65	-- [%1.07] Pet Kitabı Sandığı
+	60	50324	1	45	-- [%0.742] Kitap Sandığ Güçlendirme
+	61	30603	1	45	-- [%0.742] kırmızı boya
+	62	30614	1	45	-- [%0.742] siyah boya
+	63	30600	1	45	-- [%0.742] Kesim Örneği
+	64	30604	1	45	-- [%0.742] gri boya
+	65	30612	1	45	-- [%0.742] Sağlam İpler
+	66	30610	1	45	-- [%0.742] Mitril
+	67	50525	1	45	-- [%0.742] Ruh Taşı+
+	68	30623	1	45	-- [%0.742] Hakikat Kitabı
+	69	30624	1	45	-- [%0.742] Hakikat Ruhu
+	70	30625	1	75	-- [%1.24] Padparadscha
+	71	30628	1	45	-- [%0.742] Tanrı Çiçeği
+	72	30629	1	45	-- [%0.742] Tanrıların Özütü
+	73	30617	1	75	-- [%1.24] Akik
+	74	38060	1	135	-- [%2.23] Duygu çantası
+	75	100700	1	35	-- [%0.577] Ejderha alevi (B)
+	76	180	1	15	-- [%0.247] Zehir Kılıcı+0
+	77	190	1	15	-- [%0.247] Aslan Kılıcı+0
+	78	1130	1	15	-- [%0.247] Şeytan Kanadı Çakram+0
+	79	2170	1	15	-- [%0.247] Havalı Çelik Yay+0
+	80	3160	1	15	-- [%0.247] Kin Kılıcı+0
+	81	5120	1	15	-- [%0.247] Orkide Çan+0
+	82	6070	1	15	-- [%0.247] Diken Pençe +0
+	83	6060	1	15	-- [%0.247] Çakır Kuşu +0
 }
 
 Group	Patron_Sandıkları
 {
 	Vnum	54703 -- Nemere Sandığı
 	# 1	95014	1	145 -- Beceri Kitabı %1.67785
-	1	50254	1	145	-- [%2.38] Karanlığın Sandığı
-	2	30500	1	100	-- [%1.64] Yakut Oyma Bıçağı
-	3	30501	1	100	-- [%1.64] Altın Kenet
-	4	30502	1	100	-- [%1.64] Yakut İşlemeli
-	5	30503	1	100	-- [%1.64] Ametist Oyma Bıçağı
-	6	30504	1	100	-- [%1.64] Gümüş Kenet
-	7	30505	1	100	-- [%1.64] Zümrüt İşlemeli
-	8	30506	1	100	-- [%1.64] Safir Oyma Bıçağı
-	9	30507	1	100	-- [%1.64] Bronz Kenet
-	10	30508	1	100	-- [%1.64] Safir İşlemesi
-	11	30509	1	100	-- [%1.64] Mavi Ejderha Çeliği
-	12	30510	1	100	-- [%1.64] Fiyakalı Apolet
-	13	30511	1	100	-- [%1.64] Kırmızı Kumaş
-	14	30512	1	100	-- [%1.64] Kırmızı Ejderha Çeliği
-	15	30513	1	100	-- [%1.64] Kıymetli Apolet
-	16	30514	1	100	-- [%1.64] Eflatun Kumaş
-	17	30515	1	100	-- [%1.64] Erguvani Ejderha Çeliği
-	18	30516	1	100	-- [%1.64] Antika Apolet
-	19	30517	1	100	-- [%1.64] Altın Kumaş
-	20	30518	1	100	-- [%1.64] Altın İplik
-	21	30519	1	100	-- [%1.64] Altın Kanca
-	22	30520	1	100	-- [%1.64] Altın Kenet
-	23	30521	1	100	-- [%1.64] Halka Öğesi
-	24	30522	1	100	-- [%1.64] Zincir Halkalar
-	25	30523	1	100	-- [%1.64] Mücevher Öğesi
-	26	18000	1	50	-- [%0.820] Keten Kemer +0
-	27	18010	1	50	-- [%0.820] Deri Kemer +0
-	28	18020	1	50	-- [%0.820] Gösterişli Kemer +0
-	29	18030	1	50	-- [%0.820] Bilgeliğin Kemeri +0
-	30	18080	1	50	-- [%0.820] Ruh Kemeri+0
+	1	50254	1	145	-- [%2.39] Karanlığın Sandığı
+	2	30500	1	100	-- [%1.65] Yakut Oyma Bıçağı
+	3	30501	1	100	-- [%1.65] Altın Kenet
+	4	30502	1	100	-- [%1.65] Yakut İşlemeli
+	5	30503	1	100	-- [%1.65] Ametist Oyma Bıçağı
+	6	30504	1	100	-- [%1.65] Gümüş Kenet
+	7	30505	1	100	-- [%1.65] Zümrüt İşlemeli
+	8	30506	1	100	-- [%1.65] Safir Oyma Bıçağı
+	9	30507	1	100	-- [%1.65] Bronz Kenet
+	10	30508	1	100	-- [%1.65] Safir İşlemesi
+	11	30509	1	100	-- [%1.65] Mavi Ejderha Çeliği
+	12	30510	1	100	-- [%1.65] Fiyakalı Apolet
+	13	30511	1	100	-- [%1.65] Kırmızı Kumaş
+	14	30512	1	100	-- [%1.65] Kırmızı Ejderha Çeliği
+	15	30513	1	100	-- [%1.65] Kıymetli Apolet
+	16	30514	1	100	-- [%1.65] Eflatun Kumaş
+	17	30515	1	100	-- [%1.65] Erguvani Ejderha Çeliği
+	18	30516	1	100	-- [%1.65] Antika Apolet
+	19	30517	1	100	-- [%1.65] Altın Kumaş
+	20	30518	1	100	-- [%1.65] Altın İplik
+	21	30519	1	100	-- [%1.65] Altın Kanca
+	22	30520	1	100	-- [%1.65] Altın Kenet
+	23	30521	1	100	-- [%1.65] Halka Öğesi
+	24	30522	1	100	-- [%1.65] Zincir Halkalar
+	25	30523	1	100	-- [%1.65] Mücevher Öğesi
+	26	18000	1	50	-- [%0.824] Keten Kemer +0
+	27	18010	1	50	-- [%0.824] Deri Kemer +0
+	28	18020	1	50	-- [%0.824] Gösterişli Kemer +0
+	29	18030	1	50	-- [%0.824] Bilgeliğin Kemeri +0
+	30	18080	1	50	-- [%0.824] Ruh Kemeri+0
 	31	14163	1	70	-- [%1.15] Kristal Bilezik+3
 	32	14182	1	70	-- [%1.15] Ametist Bilezik+2
 	33	14201	1	70	-- [%1.15] Cennetin Gözy. Bilezik+1
@@ -2521,51 +2511,50 @@ Group	Patron_Sandıkları
 	42	13102	1	70	-- [%1.15] Aslan Ağzı Kalkan+2
 	43	13122	1	70	-- [%1.15] Ejderha Pulu Kalkan+2
 	44	13140	1	70	-- [%1.15] Titan Kalkanı+0
-	45	70058	1	100	-- [%1.64] Işınlama yüzüğü
-	46	71130	1	100	-- [%1.64] Geçit Bileti
-	47	7153	1	80	-- [%1.31] Mutluluk Yelpazesi+3
-	48	7154	1	80	-- [%1.31] Mutluluk Yelpazesi+4
-	49	30525	1	80	-- [%1.31] Buz Alevi Taşı
-	50	13162	1	80	-- [%1.31] Üç İmparator Kalkanı+2
-	51	55404	1	30	-- [%0.492] Nemere Yumurtası
-	52	55003	1	50	-- [%0.820] Genç Pet Kitabı
-	53	55004	1	50	-- [%0.820] Yabani Pet Kitabı
-	54	55005	1	30	-- [%0.492] Cesur Pet Kitabı
-	55	76044	1	10	-- [%0.164] Pet Kitabı Sandığı
-	56	50324	1	30	-- [%0.492] Kitap Sandığ Güçlendirme
-	57	30602	1	30	-- [%0.492] mavi boya
-	58	30615	1	30	-- [%0.492] beyaz boya
-	59	30600	1	30	-- [%0.492] Kesim Örneği
-	60	30604	1	30	-- [%0.492] gri boya
-	61	30612	1	30	-- [%0.492] Sağlam İpler
-	62	30610	1	30	-- [%0.492] Mitril
-	63	50525	1	50	-- [%0.820] Ruh Taşı+
-	64	70012	1	50	-- [%0.820] Tanrıçanın Gözyaşı
-	65	70038	20	50	-- [%0.820] Cesaret Pelerini
-	66	25040	1	30	-- [%0.492] Kutsama Kağıdı
-	67	70048	1	30	-- [%0.492] Görünmezlik pelerini
-	68	70037	1	30	-- [%0.492] Unutkanlık kitabı
-	69	70014	1	30	-- [%0.492] Kan Hapı
-	70	72006	1	30	-- [%0.492] Hırsızın eldivenleri
-	71	70005	1	30	-- [%0.492] Tecrübe yüzüğü (1 sa.)
-	72	30616	1	75	-- [%1.23] Titandiyoksit
-	73	30623	1	50	-- [%0.820] Hakikat Kitabı
-	74	30624	1	50	-- [%0.820] Hakikat Ruhu
-	75	30627	1	150	-- [%2.46] Tanrıların Meyvesi
-	76	30626	1	230	-- [%3.77] Kyanit
-	77	30616	1	75	-- [%1.23] Titandiyoksit
-	78	38060	1	145	-- [%2.38] Duygu çantası
-	79	100700	1	40	-- [%0.656] Ejderha alevi (B)
-	80	50339	1	80	-- [%1.31] Ustanın karizması
-	81	50342	1	80	-- [%1.31] Ustanın ilhamı
-	82	180	1	15	-- [%0.246] Zehir Kılıcı+0
-	83	190	1	15	-- [%0.246] Aslan Kılıcı+0
-	84	1130	1	15	-- [%0.246] Şeytan Kanadı Çakram+0
-	85	2170	1	15	-- [%0.246] Havalı Çelik Yay+0
-	86	3160	1	15	-- [%0.246] Kin Kılıcı+0
-	87	5120	1	15	-- [%0.246] Orkide Çan+0
-	88	6070	1	15	-- [%0.246] Diken Pençe +0
-	89	6060	1	15	-- [%0.246] Çakır Kuşu +0
+	45	70058	1	100	-- [%1.65] Işınlama yüzüğü
+	46	71130	1	100	-- [%1.65] Geçit Bileti
+	47	7153	1	80	-- [%1.32] Mutluluk Yelpazesi+3
+	48	7154	1	80	-- [%1.32] Mutluluk Yelpazesi+4
+	49	30525	1	80	-- [%1.32] Buz Alevi Taşı
+	50	13162	1	80	-- [%1.32] Üç İmparator Kalkanı+2
+	51	55404	1	30	-- [%0.494] Nemere Yumurtası
+	52	55003	1	50	-- [%0.824] Genç Pet Kitabı
+	53	55004	1	50	-- [%0.824] Yabani Pet Kitabı
+	54	55005	1	30	-- [%0.494] Cesur Pet Kitabı
+	55	76044	1	10	-- [%0.165] Pet Kitabı Sandığı
+	56	50324	1	30	-- [%0.494] Kitap Sandığ Güçlendirme
+	57	30602	1	30	-- [%0.494] mavi boya
+	58	30615	1	30	-- [%0.494] beyaz boya
+	59	30600	1	30	-- [%0.494] Kesim Örneği
+	60	30604	1	30	-- [%0.494] gri boya
+	61	30612	1	30	-- [%0.494] Sağlam İpler
+	62	30610	1	30	-- [%0.494] Mitril
+	63	50525	1	50	-- [%0.824] Ruh Taşı+
+	64	70012	1	50	-- [%0.824] Tanrıçanın Gözyaşı
+	65	70038	20	50	-- [%0.824] Cesaret Pelerini
+	66	25040	1	30	-- [%0.494] Kutsama Kağıdı
+	67	70037	1	30	-- [%0.494] Unutkanlık kitabı
+	68	70014	1	30	-- [%0.494] Kan Hapı
+	69	72006	1	30	-- [%0.494] Hırsızın eldivenleri
+	70	70005	1	30	-- [%0.494] Tecrübe yüzüğü (1 sa.)
+	71	30616	1	75	-- [%1.24] Titandiyoksit
+	72	30623	1	50	-- [%0.824] Hakikat Kitabı
+	73	30624	1	50	-- [%0.824] Hakikat Ruhu
+	74	30627	1	150	-- [%2.47] Tanrıların Meyvesi
+	75	30626	1	230	-- [%3.79] Kyanit
+	76	30616	1	75	-- [%1.24] Titandiyoksit
+	77	38060	1	145	-- [%2.39] Duygu çantası
+	78	100700	1	40	-- [%0.659] Ejderha alevi (B)
+	79	50339	1	80	-- [%1.32] Ustanın karizması
+	80	50342	1	80	-- [%1.32] Ustanın ilhamı
+	81	180	1	15	-- [%0.247] Zehir Kılıcı+0
+	82	190	1	15	-- [%0.247] Aslan Kılıcı+0
+	83	1130	1	15	-- [%0.247] Şeytan Kanadı Çakram+0
+	84	2170	1	15	-- [%0.247] Havalı Çelik Yay+0
+	85	3160	1	15	-- [%0.247] Kin Kılıcı+0
+	86	5120	1	15	-- [%0.247] Orkide Çan+0
+	87	6070	1	15	-- [%0.247] Diken Pençe +0
+	88	6060	1	15	-- [%0.247] Çakır Kuşu +0
 }
 
 Group	Patron_Sandıkları
@@ -2754,37 +2743,37 @@ Group	Hidrann_sand
 {
 	Vnum	54705
 	Type	drop
-	1	71084	3	100	-- [%3.44] Efsun Nesnesi
-	2	71084	5	100	-- [%3.44] Efsun Nesnesi
-	3	71084	10	100	-- [%3.44] Efsun Nesnesi
-	4	100700	1	50	-- [%1.72] Ejderha alevi (B)
-	5	25041	1	200	-- [%6.87] Büyülü Metal
-	6	55400	1	100	-- [%3.44] Rastgele sandığı
-	7	55001	1	100	-- [%3.44] Protein Lokması
-	8	30168	5	100	-- [%3.44] Liderlerin Notları
-	9	30251	5	100	-- [%3.44] Kem Göz Mücevheri
-	10	30252	5	100	-- [%3.44] Bilgelik Mücevheri
-	11	27992	1	20	-- [%0.687] Beyaz İnci
-	12	27993	1	20	-- [%0.687] Mavi İnci
-	13	27994	1	20	-- [%0.687] Kankırmızı İnci
-	14	76021	1	100	-- [%3.44] Güneş Özütü (K)
-	15	76004	1	100	-- [%3.44] Ay Özütü (K)
-	16	70303	1	100	-- [%3.44] Hidra'nın yüzüğü
-	17	85003	1	100	-- [%3.44] Hakim Kuşağı (asil)
-	18	71142	1	100	-- [%3.44] Kral kaplanı (beyaz)
-	19	72051	1	100	-- [%3.44] Güçlü buz cadısı parşmn.
-	20	72052	1	100	-- [%3.44] General Yonghan parşmn.
-	21	55410	1	100	-- [%3.44] Nessie yumurtası
-	22	71085	1	100	-- [%3.44] Arttırma Kağıdı
-	23	80019	5	100	-- [%3.44] İnce Kumaş
-	24	71083	2	100	-- [%3.44] Taş Sanatı Kitabı
-	25	71130	1	100	-- [%3.44] Geçit Bileti
-	26	25040	1	100	-- [%3.44] Kutsama Kağıdı
-	27	72310	2	100	-- [%3.44] Kötü Ruh Kovma Kağıdı
-	28	50926	200	100	-- [%3.44] Süs Taşı
-	29	72058	3	100	-- [%3.44] Zihin Taşı Destesi
-	30	30167	5	100	-- [%3.44] Kır. Hayalet Ağacı Dalı
-	31	72346	1	100	-- [%3.44] Kutsama
+	1	39001	1	50	-- [%1.70] Büyülü Metal
+	2	71084	5	100	-- [%3.40] Efsun Nesnesi
+	3	71084	10	100	-- [%3.40] Efsun Nesnesi
+	4	100700	1	50	-- [%1.70] Ejderha alevi (B)
+	5	39006	1	200	-- [%6.80] Cesaret Pelerini
+	6	55400	1	100	-- [%3.40] Rastgele sandığı
+	7	55001	1	100	-- [%3.40] Protein Lokması
+	8	30168	5	100	-- [%3.40] Liderlerin Notları
+	9	30251	5	100	-- [%3.40] Kem Göz Mücevheri
+	10	30252	5	100	-- [%3.40] Bilgelik Mücevheri
+	11	27992	1	100	-- [%3.40] Beyaz İnci
+	12	27993	1	20	-- [%0.680] Mavi İnci
+	13	27994	1	20	-- [%0.680] Kankırmızı İnci
+	14	76021	1	100	-- [%3.40] Güneş Özütü (K)
+	15	76004	1	100	-- [%3.40] Ay Özütü (K)
+	16	70303	1	100	-- [%3.40] Hidra'nın yüzüğü
+	17	85003	1	100	-- [%3.40] Hakim Kuşağı (asil)
+	18	71142	1	100	-- [%3.40] Kral kaplanı (beyaz)
+	19	600098	1	100	-- [%3.40] Tecrübe Yüzüğü Parçası
+	20	600099	1	100	-- [%3.40] Hırsız Eldiveni Parçası
+	21	55410	1	100	-- [%3.40] Nessie yumurtası
+	22	71085	1	100	-- [%3.40] Arttırma Kağıdı
+	23	80019	5	100	-- [%3.40] İnce Kumaş
+	24	71083	2	100	-- [%3.40] Taş Sanatı Kitabı
+	25	71130	1	100	-- [%3.40] Geçit Bileti
+	26	25040	1	100	-- [%3.40] Kutsama Kağıdı
+	27	72310	2	100	-- [%3.40] Kötü Ruh Kovma Kağıdı
+	28	50926	200	100	-- [%3.40] Süs Taşı
+	29	72058	3	100	-- [%3.40] Zihin Taşı Destesi
+	30	30167	5	100	-- [%3.40] Kır. Hayalet Ağacı Dalı
+	31	72346	1	100	-- [%3.40] Kutsama
 }
 
 Group	Patron_Sandıkları
@@ -3592,28 +3581,29 @@ Group	ZC_Drop
 Group	Chest_Drop
 {
 	Vnum	55400 -- Rastgele Sandığı
-	1	30058	1	10	-- [%4.72] Örümcek Yumurta Kesesi
-	2	30073	1	10	-- [%4.72] B. Domuzkuyruğu Kurdele+
-	3	30041	1	10	-- [%4.72] Shiriken
-	4	30017	1	10	-- [%4.72] Süslü Saç Tokası
-	5	30074	1	10	-- [%4.72] Siyah Üniforma+
-	6	30088	1	10	-- [%4.72] Buz Parçası+
-	7	30035	1	10	-- [%4.72] Yüz Kremi
-	8	30089	1	10	-- [%4.72] Yeti Postu+
-	9	30031	1	10	-- [%4.72] Süs Eşyası
-	10	30011	1	10	-- [%4.72] Çile
-	11	30080	1	10	-- [%4.72] Lanet Kitabı+
-	12	30083	1	10	-- [%4.72] Bilinmeyen İlaç+
-	13	27992	1	10	-- [%4.72] Beyaz İnci
-	14	27993	1	10	-- [%4.72] Mavi İnci
-	15	30086	1	10	-- [%4.72] Şeytan Hatırası+
-	16	30077	1	10	-- [%4.72] Ork Dişi+
-	17	30059	1	10	-- [%4.72] Örümcek Bacakları
-	18	30085	1	10	-- [%4.72] Sargı Bezi+
-	19	30081	1	10	-- [%4.72] Akrep Kuyruğu+
-	20	30082	1	10	-- [%4.72] Yılan Kuyruğu+
-	21	30075	1	10	-- [%4.72] Shiriken+
-	22	30194	1	2	-- [%0.943] Ork Topuzu
+	1	30058	1	10	-- [%4.50] Örümcek Yumurta Kesesi
+	2	30073	1	10	-- [%4.50] B. Domuzkuyruğu Kurdele+
+	3	30041	1	10	-- [%4.50] Shiriken
+	4	30017	1	10	-- [%4.50] Süslü Saç Tokası
+	5	30074	1	10	-- [%4.50] Siyah Üniforma+
+	6	30088	1	10	-- [%4.50] Buz Parçası+
+	7	30035	1	10	-- [%4.50] Yüz Kremi
+	8	30089	1	10	-- [%4.50] Yeti Postu+
+	9	30031	1	10	-- [%4.50] Süs Eşyası
+	10	30011	1	10	-- [%4.50] Çile
+	11	30080	1	10	-- [%4.50] Lanet Kitabı+
+	12	30083	1	10	-- [%4.50] Bilinmeyen İlaç+
+	13	27992	1	10	-- [%4.50] Beyaz İnci
+	14	27993	1	10	-- [%4.50] Mavi İnci
+	15	27994	1	10	-- [%4.50] Kankırmızı İnci
+	16	30086	1	10	-- [%4.50] Şeytan Hatırası+
+	17	30077	1	10	-- [%4.50] Ork Dişi+
+	18	30059	1	10	-- [%4.50] Örümcek Bacakları
+	19	30085	1	10	-- [%4.50] Sargı Bezi+
+	20	30081	1	10	-- [%4.50] Akrep Kuyruğu+
+	21	30082	1	10	-- [%4.50] Yılan Kuyruğu+
+	22	30075	1	10	-- [%4.50] Shiriken+
+	23	30194	1	2	-- [%0.901] Ork Topuzu
 }
 
 Group	Pet_Drop
@@ -3728,53 +3718,52 @@ Group	Tılsım_Drop
 Group	Altın_Define_Sandığı
 {
 	Vnum	50006 -- Altın Define Sandığı
-	1	50300	1	100	-- [%17.9] Beceri Kitabı
-	2	80008	1	10	-- [%1.79] Altın Parçası
-	3	50002	1	10	-- [%1.79] Altın Yüzük
-	4	70012	1	10	-- [%1.79] Tanrıçanın Gözyaşı
-	5	70008	1	10	-- [%1.79] Beyaz Bayrak
+	1	50300	1	100	-- [%18.2] Beceri Kitabı
+	2	80008	1	10	-- [%1.82] Altın Parçası
+	3	50002	1	10	-- [%1.82] Altın Yüzük
+	4	70012	1	10	-- [%1.82] Tanrıçanın Gözyaşı
+	5	70008	1	10	-- [%1.82] Beyaz Bayrak
 	6	70038	1	0	-- [%0.000] Cesaret Pelerini
-	7	70048	1	10	-- [%1.79] Görünmezlik pelerini
-	8	70049	1	10	-- [%1.79] Lucy`nin Yüzüğü
-	9	70050	1	10	-- [%1.79] Bilge Kralın Sembolü
-	10	70051	1	10	-- [%1.79] Bilge Kralın Eldiveni
-	11	25040	1	30	-- [%5.38] Kutsama Kağıdı
-	12	121	1	8	-- [%1.43] Uçan Büyücü Kılıcı+1
-	13	122	1	5	-- [%0.896] Uçan Büyücü Kılıcı+2
-	14	1081	1	8	-- [%1.43] Kaburga Bıçak+1
-	15	1082	1	5	-- [%0.896] Kaburga Bıçak+2
-	16	3111	1	8	-- [%1.43] Kurtuluş Palası+1
-	17	3112	1	5	-- [%0.896] Kurtuluş Palası+2
-	18	2111	1	8	-- [%1.43] Tek Boynuzlu Yay+1
-	19	2112	1	5	-- [%0.896] Tek Boynuzlu Yay+2
-	20	5071	1	8	-- [%1.43] Altın Böcek Çanı+1
-	21	5072	1	5	-- [%0.896] Altın Böcek Çanı+2
-	22	7111	1	8	-- [%1.43] Kaş Yelpaze+1
-	23	7112	1	5	-- [%0.896] Kaş Yelpaze+2
-	24	30023	1	10	-- [%1.79] Beyaz Kaplan Postu
-	25	30045	1	10	-- [%1.79] Akrep İğnesi
-	26	30038	1	10	-- [%1.79] Kaplan Postu
-	27	30051	1	10	-- [%1.79] Bilinmeyen Tılsım
-	28	30011	1	10	-- [%1.79] Çile
-	29	30070	1	10	-- [%1.79] Kurt Postu+
-	30	30017	1	10	-- [%1.79] Süslü Saç Tokası
-	31	30033	1	10	-- [%1.79] Kırık Porselen
-	32	30055	1	10	-- [%1.79] Akrep Kıskacı
-	33	30053	1	10	-- [%1.79] Ayı Ayak Derisi
-	34	30007	1	10	-- [%1.79] Ork Muskası
-	35	30031	1	10	-- [%1.79] Süs Eşyası
-	36	30028	1	10	-- [%1.79] Kurt Pençesi
-	37	30047	1	10	-- [%1.79] Lanet Kitabı
-	38	30052	1	10	-- [%1.79] Bayrak
-	39	30027	1	10	-- [%1.79] Kurt Postu
-	40	30003	1	10	-- [%1.79] Domuz Burnu
-	41	30081	1	10	-- [%1.79] Akrep Kuyruğu+
-	42	30022	1	10	-- [%1.79] Yılan Kuyruğu
-	43	30010	1	10	-- [%1.79] Ayı Safrası
-	44	30025	1	10	-- [%1.79] Örümceğin Zehir Kesesi
-	45	30004	1	10	-- [%1.79] Yaban Domuzu Dişi
-	46	30050	1	10	-- [%1.79] Buz Topu
-	47	30075	1	40	-- [%7.17] Shiriken+
+	7	70049	1	10	-- [%1.82] Lucy`nin Yüzüğü
+	8	70050	1	10	-- [%1.82] Bilge Kralın Sembolü
+	9	70051	1	10	-- [%1.82] Bilge Kralın Eldiveni
+	10	25040	1	30	-- [%5.47] Kutsama Kağıdı
+	11	121	1	8	-- [%1.46] Uçan Büyücü Kılıcı+1
+	12	122	1	5	-- [%0.912] Uçan Büyücü Kılıcı+2
+	13	1081	1	8	-- [%1.46] Kaburga Bıçak+1
+	14	1082	1	5	-- [%0.912] Kaburga Bıçak+2
+	15	3111	1	8	-- [%1.46] Kurtuluş Palası+1
+	16	3112	1	5	-- [%0.912] Kurtuluş Palası+2
+	17	2111	1	8	-- [%1.46] Tek Boynuzlu Yay+1
+	18	2112	1	5	-- [%0.912] Tek Boynuzlu Yay+2
+	19	5071	1	8	-- [%1.46] Altın Böcek Çanı+1
+	20	5072	1	5	-- [%0.912] Altın Böcek Çanı+2
+	21	7111	1	8	-- [%1.46] Kaş Yelpaze+1
+	22	7112	1	5	-- [%0.912] Kaş Yelpaze+2
+	23	30023	1	10	-- [%1.82] Beyaz Kaplan Postu
+	24	30045	1	10	-- [%1.82] Akrep İğnesi
+	25	30038	1	10	-- [%1.82] Kaplan Postu
+	26	30051	1	10	-- [%1.82] Bilinmeyen Tılsım
+	27	30011	1	10	-- [%1.82] Çile
+	28	30070	1	10	-- [%1.82] Kurt Postu+
+	29	30017	1	10	-- [%1.82] Süslü Saç Tokası
+	30	30033	1	10	-- [%1.82] Kırık Porselen
+	31	30055	1	10	-- [%1.82] Akrep Kıskacı
+	32	30053	1	10	-- [%1.82] Ayı Ayak Derisi
+	33	30007	1	10	-- [%1.82] Ork Muskası
+	34	30031	1	10	-- [%1.82] Süs Eşyası
+	35	30028	1	10	-- [%1.82] Kurt Pençesi
+	36	30047	1	10	-- [%1.82] Lanet Kitabı
+	37	30052	1	10	-- [%1.82] Bayrak
+	38	30027	1	10	-- [%1.82] Kurt Postu
+	39	30003	1	10	-- [%1.82] Domuz Burnu
+	40	30081	1	10	-- [%1.82] Akrep Kuyruğu+
+	41	30022	1	10	-- [%1.82] Yılan Kuyruğu
+	42	30010	1	10	-- [%1.82] Ayı Safrası
+	43	30025	1	10	-- [%1.82] Örümceğin Zehir Kesesi
+	44	30004	1	10	-- [%1.82] Yaban Domuzu Dişi
+	45	30050	1	10	-- [%1.82] Buz Topu
+	46	30075	1	40	-- [%7.30] Shiriken+
 }
 
 Group	Gümüş_Define_Sandığı
@@ -3841,41 +3830,40 @@ Group	Altın_Define_Sandığı+
 Group	Gümüş_Define_Sandığı+
 {
 	Vnum	50013 -- Gümüş Define Sandığı+
-	1	50002	1	200	-- [%11.6] Altın Yüzük
-	2	70012	1	57	-- [%3.31] Tanrıçanın Gözyaşı
-	3	70008	1	57	-- [%3.31] Beyaz Bayrak
+	1	50002	1	200	-- [%12.0] Altın Yüzük
+	2	70012	1	57	-- [%3.42] Tanrıçanın Gözyaşı
+	3	70008	1	57	-- [%3.42] Beyaz Bayrak
 	4	70038	1	0	-- [%0.000] Cesaret Pelerini
-	5	70048	1	57	-- [%3.31] Görünmezlik pelerini
-	6	70049	1	57	-- [%3.31] Lucy`nin Yüzüğü
-	7	70050	1	57	-- [%3.31] Bilge Kralın Sembolü
-	8	70051	1	57	-- [%3.31] Bilge Kralın Eldiveni
-	9	13192	1	150	-- [%8.71] Beşgen Kalkan+2
-	10	13193	1	50	-- [%2.90] Beşgen Kalkan+3
-	11	12222	1	37	-- [%2.15] Demir Kask+2
-	12	12223	1	38	-- [%2.21] Demir Kask+3
-	13	12362	1	37	-- [%2.15] Zincir Kapşon+2
-	14	12363	1	38	-- [%2.21] Zincir Kapşon+3
-	15	12502	1	37	-- [%2.15] Alaycı Kask+2
-	16	12503	1	38	-- [%2.21] Alaycı Kask+3
-	17	12642	1	37	-- [%2.15] Anka Şapkası+2
-	18	12643	1	38	-- [%2.21] Anka Şapkası+3
-	19	30015	1	40	-- [%2.32] Şeytan Hatırası
-	20	30035	1	40	-- [%2.32] Yüz Kremi
-	21	30058	1	40	-- [%2.32] Örümcek Yumurta Kesesi
-	22	30006	1	40	-- [%2.32] Ork Dişi
-	23	30082	1	40	-- [%2.32] Yılan Kuyruğu+
-	24	30076	1	40	-- [%2.32] Ork Muskası+
-	25	30018	1	40	-- [%2.32] K. Domuzkuyruğu Kurdele
-	26	30046	1	40	-- [%2.32] Akrep Kuyruğu
-	27	30021	1	40	-- [%2.32] Değerli Taş Parçası
-	28	30086	1	40	-- [%2.32] Şeytan Hatırası+
-	29	30005	1	40	-- [%2.32] Kırık Zırh Parçası
-	30	30072	1	40	-- [%2.32] Ayı Ayak Derisi+
-	31	30080	1	40	-- [%2.32] Lanet Kitabı+
-	32	30077	1	40	-- [%2.32] Ork Dişi+
-	33	30069	1	40	-- [%2.32] Kurt Pençesi+
-	34	30067	1	40	-- [%2.32] Yılan Derisi
-	35	30075	1	40	-- [%2.32] Shiriken+
+	5	70049	1	57	-- [%3.42] Lucy`nin Yüzüğü
+	6	70050	1	57	-- [%3.42] Bilge Kralın Sembolü
+	7	70051	1	57	-- [%3.42] Bilge Kralın Eldiveni
+	8	13192	1	150	-- [%9.01] Beşgen Kalkan+2
+	9	13193	1	50	-- [%3.00] Beşgen Kalkan+3
+	10	12222	1	37	-- [%2.22] Demir Kask+2
+	11	12223	1	38	-- [%2.28] Demir Kask+3
+	12	12362	1	37	-- [%2.22] Zincir Kapşon+2
+	13	12363	1	38	-- [%2.28] Zincir Kapşon+3
+	14	12502	1	37	-- [%2.22] Alaycı Kask+2
+	15	12503	1	38	-- [%2.28] Alaycı Kask+3
+	16	12642	1	37	-- [%2.22] Anka Şapkası+2
+	17	12643	1	38	-- [%2.28] Anka Şapkası+3
+	18	30015	1	40	-- [%2.40] Şeytan Hatırası
+	19	30035	1	40	-- [%2.40] Yüz Kremi
+	20	30058	1	40	-- [%2.40] Örümcek Yumurta Kesesi
+	21	30006	1	40	-- [%2.40] Ork Dişi
+	22	30082	1	40	-- [%2.40] Yılan Kuyruğu+
+	23	30076	1	40	-- [%2.40] Ork Muskası+
+	24	30018	1	40	-- [%2.40] K. Domuzkuyruğu Kurdele
+	25	30046	1	40	-- [%2.40] Akrep Kuyruğu
+	26	30021	1	40	-- [%2.40] Değerli Taş Parçası
+	27	30086	1	40	-- [%2.40] Şeytan Hatırası+
+	28	30005	1	40	-- [%2.40] Kırık Zırh Parçası
+	29	30072	1	40	-- [%2.40] Ayı Ayak Derisi+
+	30	30080	1	40	-- [%2.40] Lanet Kitabı+
+	31	30077	1	40	-- [%2.40] Ork Dişi+
+	32	30069	1	40	-- [%2.40] Kurt Pençesi+
+	33	30067	1	40	-- [%2.40] Yılan Derisi
+	34	30075	1	40	-- [%2.40] Shiriken+
 }
 
 Group	Chest_Drop
@@ -4686,63 +4674,63 @@ Group	Sandik_50275
 
 #Group	Event_Sandıkları
 #{
-	Vnum	83001 -- Altın Balık Sandığı (K)
-	1	71151	3	40 -- Yeşil Efsun
-	2	71151	15	50 -- Yeşil Güç
-	3	71084	10	30 -- Efsun Nesnesi
-	4	71085	10	30 -- Arttırma Kağıdı
-	5	50183	3	10 -- Tatlılar
-	6	100400	1	10 -- Mavi Ejderha Fasulyesi
-	7	27866	2	50 -- Izgara Sazan
-	8	27870	2	50 -- Izgara Zargana
-	9	50813	3	50 -- Sim suyu
-	10	50814	3	50 -- Dok suyu
-	11	50817	3	50 -- Zin Suyu
-	12	50818	3	50 -- Sambo Suyu
-	13	71035	1	20 -- Araştırmacının Özütü
-	14	25041	1	2 -- Büyülü Metal
-	15	39017	2	50 -- Ejderha Tanrı Yaşamı
-	16	39018	2	50 -- Ejderha Tanrı Saldırısı
-	17	39019	2	50 -- Ejderha Tanrı Zekası
-	18	39020	2	50 -- Ejderha Tanrı Savunması
-	19	50255	2	30 -- Cor Draconis, İşlenmemiş
-	20	72351	1	10 -- Küçük Kutsama
-	21	55401	1	10 -- Maymun Yumurtası
-	22	85015	1	2 -- Kral Kuşağı (basit)
-	23	71015	1	5 -- Tecrübe yüzüğü
-	24	70102	1	10 -- Zen Fasulye
-	25	71158	1	5 -- Kahramanlık Madalyası
-	26	100700	1	2 -- Ejderha alevi (B)
-#}
-#Group	Event_Sandıkları
-#{
-	Vnum	83002 -- Altın Balık Sandığı (O)
-	1	71151	3	40 -- Yeşil Efsun
-	2	71151	15	50 -- Yeşil Güç
-	3	71084	10	30 -- Efsun Nesnesi
-	4	71085	10	30 -- Arttırma Kağıdı
-	5	50183	3	10 -- Tatlılar
-	6	100400	1	10 -- Mavi Ejderha Fasulyesi
-	7	27866	2	50 -- Izgara Sazan
-	8	27870	2	50 -- Izgara Zargana
-	9	50813	3	50 -- Sim suyu
-	10	50814	3	50 -- Dok suyu
-	11	50817	3	50 -- Zin Suyu
-	12	50818	3	50 -- Sambo Suyu
-	13	71035	1	20 -- Araştırmacının Özütü
-	14	25041	1	2 -- Büyülü Metal
-	15	39017	2	50 -- Ejderha Tanrı Yaşamı
-	16	39018	2	50 -- Ejderha Tanrı Saldırısı
-	17	39019	2	50 -- Ejderha Tanrı Zekası
-	18	39020	2	50 -- Ejderha Tanrı Savunması
-	19	50255	2	30 -- Cor Draconis, İşlenmemiş
-	20	72351	1	10 -- Küçük Kutsama
-	21	55401	1	10 -- Maymun Yumurtası
-	22	85015	1	2 -- Kral Kuşağı (basit)
-	23	71015	1	5 -- Tecrübe yüzüğü
-	24	70102	1	10 -- Zen Fasulye
-	25	71158	1	5 -- Kahramanlık Madalyası
-	26	100700	1	2 -- Ejderha alevi (B)
+#	Vnum	83001 -- Altın Balık Sandığı (K)
+#	1	71151	3	40 -- Yeşil Efsun
+#	2	71151	15	50 -- Yeşil Güç
+#	3	71084	10	30 -- Efsun Nesnesi
+#	4	71085	10	30 -- Arttırma Kağıdı
+#	5	50183	3	10 -- Tatlılar
+#	6	100400	1	10 -- Mavi Ejderha Fasulyesi
+#	7	27866	2	50 -- Izgara Sazan
+#	8	27870	2	50 -- Izgara Zargana
+#	9	50813	3	50 -- Sim suyu
+#	10	50814	3	50 -- Dok suyu
+#	11	50817	3	50 -- Zin Suyu
+#	12	50818	3	50 -- Sambo Suyu
+#	13	71035	1	20 -- Araştırmacının Özütü
+#	14	25041	1	2 -- Büyülü Metal
+#	15	39017	2	50 -- Ejderha Tanrı Yaşamı
+#	16	39018	2	50 -- Ejderha Tanrı Saldırısı
+#	17	39019	2	50 -- Ejderha Tanrı Zekası
+#	18	39020	2	50 -- Ejderha Tanrı Savunması
+#	19	50255	2	30 -- Cor Draconis, İşlenmemiş
+#	20	72351	1	10 -- Küçük Kutsama
+#	21	55401	1	10 -- Maymun Yumurtası
+#	22	85015	1	2 -- Kral Kuşağı (basit)
+#	23	71015	1	5 -- Tecrübe yüzüğü
+#	24	70102	1	10 -- Zen Fasulye
+#	25	71158	1	5 -- Kahramanlık Madalyası
+#	26	100700	1	2 -- Ejderha alevi (B)
+##}
+##Group	Event_Sandıkları
+##{
+#	Vnum	83002 -- Altın Balık Sandığı (O)
+#	1	71151	3	40 -- Yeşil Efsun
+#	2	71151	15	50 -- Yeşil Güç
+#	3	71084	10	30 -- Efsun Nesnesi
+#	4	71085	10	30 -- Arttırma Kağıdı
+#	5	50183	3	10 -- Tatlılar
+#	6	100400	1	10 -- Mavi Ejderha Fasulyesi
+#	7	27866	2	50 -- Izgara Sazan
+#	8	27870	2	50 -- Izgara Zargana
+#	9	50813	3	50 -- Sim suyu
+#	10	50814	3	50 -- Dok suyu
+#	11	50817	3	50 -- Zin Suyu
+#	12	50818	3	50 -- Sambo Suyu
+#	13	71035	1	20 -- Araştırmacının Özütü
+#	14	25041	1	2 -- Büyülü Metal
+#	15	39017	2	50 -- Ejderha Tanrı Yaşamı
+#	16	39018	2	50 -- Ejderha Tanrı Saldırısı
+#	17	39019	2	50 -- Ejderha Tanrı Zekası
+#	18	39020	2	50 -- Ejderha Tanrı Savunması
+#	19	50255	2	30 -- Cor Draconis, İşlenmemiş
+#	20	72351	1	10 -- Küçük Kutsama
+#	21	55401	1	10 -- Maymun Yumurtası
+#	22	85015	1	2 -- Kral Kuşağı (basit)
+#	23	71015	1	5 -- Tecrübe yüzüğü
+#	24	70102	1	10 -- Zen Fasulye
+#	25	71158	1	5 -- Kahramanlık Madalyası
+#	26	100700	1	2 -- Ejderha alevi (B)
 #}
 
 Group	Event_Sandıkları
@@ -4779,39 +4767,39 @@ Group	Event_Sandıkları
 Group	Event_Sandıkları
 {
 	Vnum	83023 -- Kasımpatı kutusu
-	1	27209	5	186	-- [%14.3] Yeşil İksir (B)
-	2	27212	5	186	-- [%14.3] Mor İksir (B)
-	3	71018	1	133	-- [%10.2] Yaşam Kutsaması
-	4	25121	1	80	-- [%6.14] Kasımpatı
-	5	25125	1	80	-- [%6.14] Ayçiçeği
-	6	25124	1	80	-- [%6.14] Zambak
-	7	25123	1	66	-- [%5.07] Nergis
-	8	25122	1	66	-- [%5.07] İnci çiçeği
-	9	39006	3	93	-- [%7.14] Cesaret Pelerini
-	10	50255	1	13	-- [%0.998] Cor Draconis, İşlenmemiş
-	11	55402	1	26	-- [%2.00] Örümcek Yumurtası
-	12	55400	1	40	-- [%3.07] Rastgele sandığı
-	13	72059	1	93	-- [%7.14] Liderin kitabı+
-	14	72063	1	160	-- [%12.3] Metin taşı (hafif)
+	1	27209	5	186	-- [%15.6] Yeşil İksir (B)
+	2	27212	5	186	-- [%15.6] Mor İksir (B)
+	3	71018	1	22	-- [%1.85] Yaşam Kutsaması
+	4	25121	1	80	-- [%6.72] Kasımpatı
+	5	25125	1	80	-- [%6.72] Ayçiçeği
+	6	25124	1	80	-- [%6.72] Zambak
+	7	25123	1	66	-- [%5.54] Nergis
+	8	25122	1	66	-- [%5.54] İnci çiçeği
+	9	39006	3	93	-- [%7.81] Cesaret Pelerini
+	10	50255	1	13	-- [%1.09] Cor Draconis, İşlenmemiş
+	11	55402	1	26	-- [%2.18] Örümcek Yumurtası
+	12	55400	1	40	-- [%3.36] Rastgele sandığı
+	13	72059	1	93	-- [%7.81] Liderin kitabı+
+	14	600098	1	160	-- [%13.4] Tecrübe Yüzüğü Parçası
 }
 
 Group	Event_Sandıkları
 {
 	Vnum	83024 -- İnci çiçeği kutusu
-	1	27209	3	188	-- [%14.8] Yeşil İksir (B)
-	2	27212	3	188	-- [%14.8] Mor İksir (B)
-	3	71018	1	134	-- [%10.5] Yaşam Kutsaması
-	4	25122	1	67	-- [%5.27] İnci çiçeği
-	5	25125	1	40	-- [%3.15] Ayçiçeği
-	6	25124	1	53	-- [%4.17] Zambak
-	7	25123	1	53	-- [%4.17] Nergis
-	8	25121	1	40	-- [%3.15] Kasımpatı
-	9	71004	1	94	-- [%7.40] Ejderha Madalyası
-	10	39006	3	121	-- [%9.52] Cesaret Pelerini
-	11	50255	1	12	-- [%0.944] Cor Draconis, İşlenmemiş
-	12	55402	1	26	-- [%2.05] Örümcek Yumurtası
-	13	72059	1	94	-- [%7.40] Liderin kitabı+
-	14	72063	1	161	-- [%12.7] Metin taşı (hafif)
+	1	27209	3	188	-- [%16.2] Yeşil İksir (B)
+	2	27212	3	188	-- [%16.2] Mor İksir (B)
+	3	71018	1	22	-- [%1.90] Yaşam Kutsaması
+	4	25122	1	67	-- [%5.78] İnci çiçeği
+	5	25125	1	40	-- [%3.45] Ayçiçeği
+	6	25124	1	53	-- [%4.57] Zambak
+	7	25123	1	53	-- [%4.57] Nergis
+	8	25121	1	40	-- [%3.45] Kasımpatı
+	9	71004	1	94	-- [%8.11] Ejderha Madalyası
+	10	39006	3	121	-- [%10.4] Cesaret Pelerini
+	11	50255	1	12	-- [%1.04] Cor Draconis, İşlenmemiş
+	12	55402	1	26	-- [%2.24] Örümcek Yumurtası
+	13	72059	1	94	-- [%8.11] Liderin kitabı+
+	14	600098	1	161	-- [%13.9] Tecrübe Yüzüğü Parçası
 }
 
 Group	Event_Sandıkları
@@ -4830,7 +4818,7 @@ Group	Event_Sandıkları
 	11	39006	3	105	-- [%7.62] Cesaret Pelerini
 	12	55402	1	26	-- [%1.89] Örümcek Yumurtası
 	13	72059	1	92	-- [%6.68] Liderin kitabı+
-	14	72063	1	158	-- [%11.5] Metin taşı (hafif)
+	14	600098	1	158	-- [%11.5] Tecrübe Yüzüğü Parçası
 }
 
 Group	Event_Sandıkları
@@ -4849,7 +4837,7 @@ Group	Event_Sandıkları
 	11	39006	3	105	-- [%7.92] Cesaret Pelerini
 	12	55402	1	26	-- [%1.96] Örümcek Yumurtası
 	13	72059	1	92	-- [%6.94] Liderin kitabı+
-	14	72063	1	158	-- [%11.9] Metin taşı (hafif)
+	14	600098	1	158	-- [%11.9] Tecrübe Yüzüğü Parçası
 }
 
 Group	Event_Sandıkları
@@ -4868,7 +4856,7 @@ Group	Event_Sandıkları
 	11	39006	3	106	-- [%7.98] Cesaret Pelerini
 	12	55402	1	13	-- [%0.978] Örümcek Yumurtası
 	13	72059	1	93	-- [%7.00] Liderin kitabı+
-	14	72063	1	160	-- [%12.0] Metin taşı (hafif)
+	14	600098	1	160	-- [%12.0] Tecrübe Yüzüğü Parçası
 }
 
 #-------------------------------------------------------------------------#
@@ -4901,18 +4889,17 @@ Group	ì£¼í™©ìƒ‰í?‘ë‹¨ìƒ?ì??
 Group	ë…¸ë?‘ìƒ‰í?‘ë‹¨ìƒ?ì??
 {
 	Vnum	50111 -- Sarı Abanoz Sandık
-	1	70048	1	5	-- [%5.26] Görünmezlik pelerini
-	2	70049	1	5	-- [%5.26] Lucy`nin Yüzüğü
-	3	70050	1	5	-- [%5.26] Bilge Kralın Sembolü
-	4	70051	1	5	-- [%5.26] Bilge Kralın Eldiveni
-	5	70052	1	5	-- [%5.26] Karma Muskası1
-	6	50513	1	10	-- [%10.5] Ruh Taşı
-	7	50300	1	10	-- [%10.5] Beceri Kitabı
-	8	70102	1	10	-- [%10.5] Zen Fasulye
-	9	25040	1	5	-- [%5.26] Kutsama Kağıdı
-	10	71032	1	5	-- [%5.26] Ejderha Parşömeni
-	11	72003	1	15	-- [%15.8] Tecrübe yüzüğü (3 sa.)
-	12	72006	1	15	-- [%15.8] Hırsızın eldivenleri
+	1	70049	1	5	-- [%5.56] Lucy`nin Yüzüğü
+	2	70050	1	5	-- [%5.56] Bilge Kralın Sembolü
+	3	70051	1	5	-- [%5.56] Bilge Kralın Eldiveni
+	4	70052	1	5	-- [%5.56] Karma Muskası1
+	5	50513	1	10	-- [%11.1] Ruh Taşı
+	6	50300	1	10	-- [%11.1] Beceri Kitabı
+	7	70102	1	10	-- [%11.1] Zen Fasulye
+	8	25040	1	5	-- [%5.56] Kutsama Kağıdı
+	9	71032	1	5	-- [%5.56] Ejderha Parşömeni
+	10	72003	1	15	-- [%16.7] Tecrübe yüzüğü (3 sa.)
+	11	72006	1	15	-- [%16.7] Hırsızın eldivenleri
 }
 
 Group	ì—°ë‘?ìƒ‰í?‘ë‹¨ìƒ?ì??
@@ -4982,34 +4969,33 @@ Group	ë³´ë?¼ìƒ‰í?‘ë‹¨ìƒ?ì??
 Group	ìœ¡ê°?ë³´í•©
 {
 	Vnum	50037 -- Altıgen Hediye Paketi
-	1	27001	100	100	-- [%10.6] Kırmızı İksir(K)
-	2	27002	50	70	-- [%7.43] Kırmızı İksir(O)
-	3	27003	10	50	-- [%5.31] Kırmızı İksir(B)
-	4	27004	100	75	-- [%7.96] Mavi İksir(K)
-	5	27005	50	55	-- [%5.84] Mavi İksir(O)
-	6	27006	10	35	-- [%3.72] Mavi İksir(B)
-	7	70048	1	20	-- [%2.12] Görünmezlik pelerini
-	8	70102	1	9	-- [%0.955] Zen Fasulye
-	9	70051	1	20	-- [%2.12] Bilge Kralın Eldiveni
-	10	70049	1	35	-- [%3.72] Lucy`nin Yüzüğü
-	11	25040	1	1	-- [%0.106] Kutsama Kağıdı
-	12	30045	1	26	-- [%2.76] Akrep İğnesi
-	13	30051	1	26	-- [%2.76] Bilinmeyen Tılsım
-	14	30038	1	26	-- [%2.76] Kaplan Postu
-	15	30070	1	26	-- [%2.76] Kurt Postu+
-	16	30023	1	26	-- [%2.76] Beyaz Kaplan Postu
-	17	30033	1	26	-- [%2.76] Kırık Porselen
-	18	30011	1	26	-- [%2.76] Çile
-	19	30027	1	26	-- [%2.76] Kurt Postu
-	20	30082	1	36	-- [%3.82] Yılan Kuyruğu+
-	21	30035	1	26	-- [%2.76] Yüz Kremi
-	22	30010	1	26	-- [%2.76] Ayı Safrası
-	23	30055	1	26	-- [%2.76] Akrep Kıskacı
-	24	30006	1	26	-- [%2.76] Ork Dişi
-	25	30003	1	26	-- [%2.76] Domuz Burnu
-	26	30017	1	26	-- [%2.76] Süslü Saç Tokası
-	27	30081	1	36	-- [%3.82] Akrep Kuyruğu+
-	28	30075	1	36	-- [%3.82] Shiriken+
+	1	27001	100	100	-- [%10.8] Kırmızı İksir(K)
+	2	27002	50	70	-- [%7.59] Kırmızı İksir(O)
+	3	27003	10	50	-- [%5.42] Kırmızı İksir(B)
+	4	27004	100	75	-- [%8.13] Mavi İksir(K)
+	5	27005	50	55	-- [%5.97] Mavi İksir(O)
+	6	27006	10	35	-- [%3.80] Mavi İksir(B)
+	7	70102	1	9	-- [%0.976] Zen Fasulye
+	8	70051	1	20	-- [%2.17] Bilge Kralın Eldiveni
+	9	70049	1	35	-- [%3.80] Lucy`nin Yüzüğü
+	10	25040	1	1	-- [%0.108] Kutsama Kağıdı
+	11	30045	1	26	-- [%2.82] Akrep İğnesi
+	12	30051	1	26	-- [%2.82] Bilinmeyen Tılsım
+	13	30038	1	26	-- [%2.82] Kaplan Postu
+	14	30070	1	26	-- [%2.82] Kurt Postu+
+	15	30023	1	26	-- [%2.82] Beyaz Kaplan Postu
+	16	30033	1	26	-- [%2.82] Kırık Porselen
+	17	30011	1	26	-- [%2.82] Çile
+	18	30027	1	26	-- [%2.82] Kurt Postu
+	19	30082	1	36	-- [%3.90] Yılan Kuyruğu+
+	20	30035	1	26	-- [%2.82] Yüz Kremi
+	21	30010	1	26	-- [%2.82] Ayı Safrası
+	22	30055	1	26	-- [%2.82] Akrep Kıskacı
+	23	30006	1	26	-- [%2.82] Ork Dişi
+	24	30003	1	26	-- [%2.82] Domuz Burnu
+	25	30017	1	26	-- [%2.82] Süslü Saç Tokası
+	26	30081	1	36	-- [%3.90] Akrep Kuyruğu+
+	27	30075	1	36	-- [%3.90] Shiriken+
 }
 
 #-------------------------------------------------------------------------#
@@ -8424,22 +8410,24 @@ Group	Çiçek_Sandığı
 Group	Marka_Sandığı
 {
 	Vnum	600058 - Marka Sandığı
-	1	705108	1	1	-- [%16.7] ejderha_yasami_7g_b
-	2	705118	1	1	-- [%16.7] ejderha_saldirisi_7g_b
-	3	705128	1	1	-- [%16.7] ejderha_zekasi_7g_b
-	4	705138	1	1	-- [%16.7] ejderha_savunmasi_7g_b
-	5	706188	1	1	-- [%16.7] delici_savas_7g_b
-	6	706178	1	1	-- [%16.7] kritik_savas_7g_b
+	Type	pct
+	1	705108	1	500	-- [%16.7] ejderha_yasami_7g_b
+	2	705118	1	500	-- [%16.7] ejderha_saldirisi_7g_b
+	3	705128	1	500	-- [%16.7] ejderha_zekasi_7g_b
+	4	705138	1	500	-- [%16.7] ejderha_savunmasi_7g_b
+	5	706188	1	500	-- [%16.7] delici_savas_7g_b
+	6	706178	1	500	-- [%16.7] kritik_savas_7g_b
 }
 Group	Å?ebnem_Sandığı
 {
 	Vnum	600059 - Şebnem Sandığı
-	1	705008	1	1	-- [%16.7] kirmizi_iebnem_7g_b
-	2	705018	1	1	-- [%16.7] turuncu_iebnem_7g_b
-	3	705028	1	1	-- [%16.7] sari_iebnem_7g_b
-	4	705038	1	1	-- [%16.7] yeiil_iebnem_7g_b
-	5	705048	1	1	-- [%16.7] mavi_iebnem_7g_b
-	6	705058	1	1	-- [%16.7] beyaz_iebnem_7g_b
+	Type	pct
+	1	705008	1	500	-- [%16.7] kirmizi_iebnem_7g_b
+	2	705018	1	500	-- [%16.7] turuncu_iebnem_7g_b
+	3	705028	1	500	-- [%16.7] sari_iebnem_7g_b
+	4	705038	1	500	-- [%16.7] yeiil_iebnem_7g_b
+	5	705048	1	500	-- [%16.7] mavi_iebnem_7g_b
+	6	705058	1	500	-- [%16.7] beyaz_iebnem_7g_b
 }
 Group	Sungma_Çiçek_Sandığı
 {
@@ -8802,71 +8790,69 @@ Group	Basma_Sandığı
 Group	Yilad_Hazine_Kutusu
 {
 	Vnum	83059
-	1	30010	1	10	-- [%3.39] Ayı Safrası
-	2	27994	1	5	-- [%1.69] Kankırmızı İnci
-	3	30050	1	10	-- [%3.39] Buz Topu
-	4	30083	1	10	-- [%3.39] Bilinmeyen İlaç+
-	5	30008	1	10	-- [%3.39] Başlangıç El Kitabı
-	6	30003	1	10	-- [%3.39] Domuz Burnu
-	7	30030	1	10	-- [%3.39] Paslı Bıçak
-	8	30076	1	10	-- [%3.39] Ork Muskası+
-	9	30006	1	10	-- [%3.39] Ork Dişi
-	10	30014	1	10	-- [%3.39] Yeti Postu
-	11	30031	1	10	-- [%3.39] Süs Eşyası
-	12	30004	1	10	-- [%3.39] Yaban Domuzu Dişi
-	13	30043	1	10	-- [%3.39] Fasulye
-	14	30044	1	10	-- [%3.39] Kil
-	15	30081	1	10	-- [%3.39] Akrep Kuyruğu+
-	16	30056	1	10	-- [%3.39] Örümcek Ağı
-	17	30009	1	10	-- [%3.39] Bilinmeyen İlaç
-	18	30071	1	10	-- [%3.39] Ayı Safrası+
-	19	30028	1	10	-- [%3.39] Kurt Pençesi
-	20	30042	1	10	-- [%3.39] Saldırgan kaplanın dişi
-	21	30089	1	10	-- [%3.39] Yeti Postu+
-	22	30074	1	10	-- [%3.39] Siyah Üniforma+
-	23	30015	1	10	-- [%3.39] Şeytan Hatırası
-	24	30165	1	10	-- [%3.39] Zelkova Dalı
-	25	30166	1	10	-- [%3.39] Tugyis Tabelası
-	26	25040	1	10	-- [%3.39] Kutsama Kağıdı
-	27	70012	1	5	-- [%1.69] Tanrıçanın Gözyaşı
-	28	70014	1	5	-- [%1.69] Kan Hapı
-	29	70003	1	5	-- [%1.69] Liderin Kitabı
-	30	70048	1	5	-- [%1.69] Görünmezlik pelerini
-	31	70038	20	10	-- [%3.39] Cesaret Pelerini
-	32	50529	1	5	-- [%1.69] 9. yolun kitap sandığı
-	33	50042	1	5	-- [%1.69] Kahraman Madalyonu
+	1	30010	1	10	-- [%3.45] Ayı Safrası
+	2	27994	1	5	-- [%1.72] Kankırmızı İnci
+	3	30050	1	10	-- [%3.45] Buz Topu
+	4	30083	1	10	-- [%3.45] Bilinmeyen İlaç+
+	5	30008	1	10	-- [%3.45] Başlangıç El Kitabı
+	6	30003	1	10	-- [%3.45] Domuz Burnu
+	7	30030	1	10	-- [%3.45] Paslı Bıçak
+	8	30076	1	10	-- [%3.45] Ork Muskası+
+	9	30006	1	10	-- [%3.45] Ork Dişi
+	10	30014	1	10	-- [%3.45] Yeti Postu
+	11	30031	1	10	-- [%3.45] Süs Eşyası
+	12	30004	1	10	-- [%3.45] Yaban Domuzu Dişi
+	13	30043	1	10	-- [%3.45] Fasulye
+	14	30044	1	10	-- [%3.45] Kil
+	15	30081	1	10	-- [%3.45] Akrep Kuyruğu+
+	16	30056	1	10	-- [%3.45] Örümcek Ağı
+	17	30009	1	10	-- [%3.45] Bilinmeyen İlaç
+	18	30071	1	10	-- [%3.45] Ayı Safrası+
+	19	30028	1	10	-- [%3.45] Kurt Pençesi
+	20	30042	1	10	-- [%3.45] Saldırgan kaplanın dişi
+	21	30089	1	10	-- [%3.45] Yeti Postu+
+	22	30074	1	10	-- [%3.45] Siyah Üniforma+
+	23	30015	1	10	-- [%3.45] Şeytan Hatırası
+	24	30165	1	10	-- [%3.45] Zelkova Dalı
+	25	30166	1	10	-- [%3.45] Tugyis Tabelası
+	26	25040	1	10	-- [%3.45] Kutsama Kağıdı
+	27	70012	1	5	-- [%1.72] Tanrıçanın Gözyaşı
+	28	70014	1	5	-- [%1.72] Kan Hapı
+	29	70003	1	5	-- [%1.72] Liderin Kitabı
+	30	70038	20	10	-- [%3.45] Cesaret Pelerini
+	31	50529	1	5	-- [%1.72] 9. yolun kitap sandığı
+	32	50042	1	5	-- [%1.72] Kahraman Madalyonu
 }
 
 Group	Namgan_Hazine_Kutusu
 {
 	Vnum	83057
-	1	30010	1	10	-- [%4.17] Ayı Safrası
-	2	27994	1	5	-- [%2.08] Kankırmızı İnci
-	3	30030	1	10	-- [%4.17] Paslı Bıçak
-	4	30031	1	10	-- [%4.17] Süs Eşyası
-	5	30008	1	10	-- [%4.17] Başlangıç El Kitabı
-	6	30043	1	10	-- [%4.17] Fasulye
-	7	30081	1	10	-- [%4.17] Akrep Kuyruğu+
-	8	30044	1	10	-- [%4.17] Kil
-	9	30056	1	10	-- [%4.17] Örümcek Ağı
-	10	30004	1	10	-- [%4.17] Yaban Domuzu Dişi
-	11	30006	1	10	-- [%4.17] Ork Dişi
-	12	30076	1	10	-- [%4.17] Ork Muskası+
-	13	30028	1	10	-- [%4.17] Kurt Pençesi
-	14	30089	1	10	-- [%4.17] Yeti Postu+
-	15	30042	1	10	-- [%4.17] Saldırgan kaplanın dişi
-	16	30074	1	10	-- [%4.17] Siyah Üniforma+
-	17	30083	1	10	-- [%4.17] Bilinmeyen İlaç+
-	18	30015	1	10	-- [%4.17] Şeytan Hatırası
-	19	30165	1	10	-- [%4.17] Zelkova Dalı
-	20	30166	1	10	-- [%4.17] Tugyis Tabelası
-	21	25040	1	10	-- [%4.17] Kutsama Kağıdı
-	22	70051	1	5	-- [%2.08] Bilge Kralın Eldiveni
-	23	70014	1	5	-- [%2.08] Kan Hapı
-	24	70048	1	5	-- [%2.08] Görünmezlik pelerini
-	25	70038	20	10	-- [%4.17] Cesaret Pelerini
-	26	50529	1	5	-- [%2.08] 9. yolun kitap sandığı
-	27	83059	1	5	-- [%2.08] Yilad hazine kutusu
+	1	30010	1	10	-- [%4.26] Ayı Safrası
+	2	27994	1	5	-- [%2.13] Kankırmızı İnci
+	3	30030	1	10	-- [%4.26] Paslı Bıçak
+	4	30031	1	10	-- [%4.26] Süs Eşyası
+	5	30008	1	10	-- [%4.26] Başlangıç El Kitabı
+	6	30043	1	10	-- [%4.26] Fasulye
+	7	30081	1	10	-- [%4.26] Akrep Kuyruğu+
+	8	30044	1	10	-- [%4.26] Kil
+	9	30056	1	10	-- [%4.26] Örümcek Ağı
+	10	30004	1	10	-- [%4.26] Yaban Domuzu Dişi
+	11	30006	1	10	-- [%4.26] Ork Dişi
+	12	30076	1	10	-- [%4.26] Ork Muskası+
+	13	30028	1	10	-- [%4.26] Kurt Pençesi
+	14	30089	1	10	-- [%4.26] Yeti Postu+
+	15	30042	1	10	-- [%4.26] Saldırgan kaplanın dişi
+	16	30074	1	10	-- [%4.26] Siyah Üniforma+
+	17	30083	1	10	-- [%4.26] Bilinmeyen İlaç+
+	18	30015	1	10	-- [%4.26] Şeytan Hatırası
+	19	30165	1	10	-- [%4.26] Zelkova Dalı
+	20	30166	1	10	-- [%4.26] Tugyis Tabelası
+	21	25040	1	10	-- [%4.26] Kutsama Kağıdı
+	22	70051	1	5	-- [%2.13] Bilge Kralın Eldiveni
+	23	70014	1	5	-- [%2.13] Kan Hapı
+	24	70038	20	10	-- [%4.26] Cesaret Pelerini
+	25	50529	1	5	-- [%2.13] 9. yolun kitap sandığı
+	26	83059	1	5	-- [%2.13] Yilad hazine kutusu
 }
 
 Group	Seogan_Hazine_Kutusu
@@ -9182,31 +9168,35 @@ Group	Mission_Book_Chest_Uzman
 Group	Mission_Book_Chest_Prince_1
 {
 	Vnum	600131 -- Görev Kitabı Sandığı(Prens 1)
-	1	72347	2	3	-- [%2.52] Hızlandırıcı (%10)
-	2	72348	1	5	-- [%4.20] Hızlandırıcı (%20)
-	3	72349	1	5	-- [%4.20] Hızlandırıcı (%30)
-	4	50216	2	5	-- [%4.20] Punç
-	5	50183	2	5	-- [%4.20] Tatlılar
-	6	71001	1	5	-- [%4.20] Kötü Ruh Kovma Kağıdı
-	7	71094	2	5	-- [%4.20] Münzevi Tavsiyesi
-	8	76014	1	5	-- [%4.20] Nesneyi efsunla(m)
-	9	76013	1	5	-- [%4.20] Arttırma Kağıdı (m)
-	10	71084	1	5	-- [%4.20] Efsun Nesnesi
-	11	71085	1	5	-- [%4.20] Arttırma Kağıdı
-	12	39004	1	5	-- [%4.20] Kutsama Küresi
-	13	27868	2	5	-- [%4.20] Izgara Ot Sazanı
-	14	27870	2	5	-- [%4.20] Izgara Zargana
-	15	27883	2	5	-- [%4.20] Izgara altın sudak
-	16	71130	1	5	-- [%4.20] Geçit Bileti
-	17	50255	1	5	-- [%4.20] Cor Draconis, İşlenmemiş
-	18	70102	1	5	-- [%4.20] Zen Fasulye
-	19	50926	20	5	-- [%4.20] Süs Taşı
-	20	80014	1	1	-- [%0.840] EP kuponu (100)
-	21	27115	10	5	-- [%4.20] Mor İksir(B)
-	22	27112	5	5	-- [%4.20] Yeşil İksir(B)
-	23	27987	1	5	-- [%4.20] İstiridye
-	24	80019	2	5	-- [%4.20] İnce Kumaş
-	25	80019	3	5	-- [%4.20] İnce Kumaş
+	1	50183	2	5	-- [%3.60] Tatlılar
+	2	50216	2	5	-- [%3.60] Punç
+	3	39011	2	5	-- [%3.60] Yaşam Kutsaması
+	4	39011	5	5	-- [%3.60] Yaşam Kutsaması
+	5	71085	1	5	-- [%3.60] Arttırma Kağıdı
+	6	71084	1	5	-- [%3.60] Efsun Nesnesi
+	7	72724	1	5	-- [%3.60] Güneş Özütü (O) (B)
+	8	72728	1	5	-- [%3.60] Ay Özütü (O) (B)
+	9	70039	1	5	-- [%3.60] Demircinin El Kitabı
+	10	71035	1	5	-- [%3.60] Araştırmacının Özütü
+	11	72319	1	5	-- [%3.60] Envanter genişlemesi (s)
+	12	72347	1	5	-- [%3.60] Hızlandırıcı (%10)
+	13	39014	1	5	-- [%3.60] Savaş Kağıdı
+	14	25040	1	5	-- [%3.60] Kutsama Kağıdı
+	15	31270	1	5	-- [%3.60] Tılsım özü
+	16	31270	2	5	-- [%3.60] Tılsım özü
+	17	85001	1	5	-- [%3.60] Hakim Kuşağı (basit)
+	18	70063	3	5	-- [%3.60] Kostümü dönüştür
+	19	70063	2	5	-- [%3.60] Kostümü dönüştür
+	20	70064	3	5	-- [%3.60] Kostümü efsunla
+	21	70064	2	5	-- [%3.60] Kostümü efsunla
+	22	71083	1	5	-- [%3.60] Taş Sanatı Kitabı
+	23	27881	1	5	-- [%3.60] Izgara kadife balığı
+	24	27883	1	5	-- [%3.60] Izgara altın sudak
+	25	27884	1	5	-- [%3.60] Izgara yılan başı balığı
+	26	27885	1	5	-- [%3.60] Izgara kurbağa balığı
+	27	27886	1	5	-- [%3.60] Izgara kral yengeci.
+	28	51506	1	3	-- [%2.16] Cor Draconis (destansı)
+	29	80014	1	1	-- [%0.719] EP kuponu (100)
 }
 
 Group	Mission_Book_Chest_Prince_2
@@ -10195,6 +10185,12 @@ Group	Zindan_Bilet_Kutusu
 	257	31269	1	1	-- [%0.388] Balathor'un pulu
 	258	31270	1	1	-- [%0.388] Tılsım özü
 }
+
+Group	Çarktest
+{
+	Vnum	70604 -- ÇarkTest
+	1	701020	1	10	-- [%100] sampiyonluk_amblemi_1g
+}
 #Group	Çarktest
 #{
 #	Vnum	95219 -- ÇarkTest
@@ -10247,3 +10243,207 @@ Group	Zindan_Bilet_Kutusu
 #	47	39007	1	25	-- [%2.49] Demircinin El Kitabı
 #	48	39022	1	25	-- [%2.49] Ejderha Parşömeni
 #}
+
+Group	Çırak_Sandığı
+{
+	Vnum	600105 -- Çırak Sandığı 1
+	1	39023	1	1	-- [%1.09] Araştırmacının Özütü
+	2	25040	1	1	-- [%1.09] Kutsama Kağıdı
+	3	51509	1	5	-- [%5.43] Cor Draconis (antika)
+	4	51508	1	5	-- [%5.43] Cor Draconis (ender)
+	5	50255	2	5	-- [%5.43] Cor Draconis, İşlenmemiş
+	6	72348	1	5	-- [%5.43] Hızlandırıcı (%20)
+	7	72066	1	5	-- [%5.43] Büyük ekleme
+	8	72351	1	5	-- [%5.43] Küçük Kutsama
+	9	71130	1	5	-- [%5.43] Geçit Bileti
+	10	39028	5	5	-- [%5.43] Efsun Nesnesi
+	11	39067	2	5	-- [%5.43] Parça sandığı
+	12	70064	5	5	-- [%5.43] Kostümü efsunla
+	13	70063	2	5	-- [%5.43] Kostümü dönüştür
+	14	76025	1	5	-- [%5.43] Rüzgarın Ayakkabıları
+	15	83010	1	5	-- [%5.43] Kuşak kutusu
+	16	49992	1	5	-- [%5.43] Auranın Ateş Run. (50)
+	17	50926	20	5	-- [%5.43] Süs Taşı
+	18	50321	1	5	-- [%5.43] Görev Kitabı(Uzman)
+	19	76029	1	5	-- [%5.43] Yeşil Ejderha Fasulyesi
+	20	70102	2	5	-- [%5.43] Zen Fasulye
+}
+Group	Çırak_Sandığı
+{
+	Vnum	600122 -- Çırak Sandığı 1
+	1	25041	1	1	-- [%1.09] Büyülü Metal
+	2	705050	1	1	-- [%1.09] beyaz_iebnem_1g
+	3	51506	1	5	-- [%5.43] Cor Draconis (destansı)
+	4	51509	1	2	-- [%5.43] Cor Draconis (antika)
+	5	50255	5	5	-- [%5.43] Cor Draconis, İşlenmemiş
+	6	72349	1	5	-- [%5.43] Hızlandırıcı (%30)
+	7	72067	1	5	-- [%5.43] Güçlü ekleme
+	8	72351	1	5	-- [%5.43] Küçük Kutsama
+	9	71130	1	5	-- [%5.43] Geçit Bileti
+	10	39028	10	5	-- [%5.43] Efsun Nesnesi
+	11	39067	5	5	-- [%5.43] Parça sandığı
+	12	70064	10	5	-- [%5.43] Kostümü efsunla
+	13	70063	5	5	-- [%5.43] Kostümü dönüştür
+	14	76025	1	5	-- [%5.43] Rüzgarın Ayakkabıları
+	15	83010	1	5	-- [%5.43] Kuşak kutusu
+	16	49994	1	5	-- [%5.43] Auranın Ateş Run. (250)
+	17	50926	50	5	-- [%5.43] Süs Taşı
+	18	50321	1	5	-- [%5.43] Görev Kitabı(Uzman)
+	19	76029	1	5	-- [%5.43] Yeşil Ejderha Fasulyesi
+	20	100700	1	5	-- [%5.43] Ejderha alevi (B)
+}
+Group	Çırak_Sandığı
+{
+	Vnum	600123 -- Çırak Sandığı 1
+	1	100101	1	1	-- [%1.09] Ejderha kerpeteni+
+	2	71156	1	1	-- [%1.09] Ruh iksiri
+	3	51506	1	5	-- [%5.43] Cor Draconis (destansı)
+	4	51509	1	2	-- [%5.43] Cor Draconis (antika)
+	5	50255	5	5	-- [%5.43] Cor Draconis, İşlenmemiş
+	6	72349	1	5	-- [%5.43] Hızlandırıcı (%30)
+	7	72067	1	5	-- [%5.43] Güçlü ekleme
+	8	72351	1	5	-- [%5.43] Küçük Kutsama
+	9	71130	1	5	-- [%5.43] Geçit Bileti
+	10	39028	10	5	-- [%5.43] Efsun Nesnesi
+	11	39067	5	5	-- [%5.43] Parça sandığı
+	12	70064	10	5	-- [%5.43] Kostümü efsunla
+	13	70063	5	5	-- [%5.43] Kostümü dönüştür
+	14	76025	1	5	-- [%5.43] Rüzgarın Ayakkabıları
+	15	83010	1	5	-- [%5.43] Kuşak kutusu
+	16	49994	1	5	-- [%5.43] Auranın Ateş Run. (250)
+	17	50926	50	5	-- [%5.43] Süs Taşı
+	18	50321	1	5	-- [%5.43] Görev Kitabı(Uzman)
+	19	76029	1	5	-- [%5.43] Yeşil Ejderha Fasulyesi
+	20	100700	1	5	-- [%5.43] Ejderha alevi (B)
+}
+Group	Çırak_Sandığı
+{
+	Vnum	600124 -- Çırak Sandığı 1
+	1	70604	1	1	-- [%1.09] Şampiyonluk Sandığı
+	2	704040	1	1	-- [%1.09] aquarus_cani_1g
+	3	51506	1	5	-- [%5.43] Cor Draconis (destansı)
+	4	51509	1	2	-- [%5.43] Cor Draconis (antika)
+	5	50255	5	5	-- [%5.43] Cor Draconis, İşlenmemiş
+	6	72349	1	5	-- [%5.43] Hızlandırıcı (%30)
+	7	72067	1	5	-- [%5.43] Güçlü ekleme
+	8	72351	1	5	-- [%5.43] Küçük Kutsama
+	9	71130	1	5	-- [%5.43] Geçit Bileti
+	10	39028	10	5	-- [%5.43] Efsun Nesnesi
+	11	39067	5	5	-- [%5.43] Parça sandığı
+	12	70064	10	5	-- [%5.43] Kostümü efsunla
+	13	70063	5	5	-- [%5.43] Kostümü dönüştür
+	14	76025	1	5	-- [%5.43] Rüzgarın Ayakkabıları
+	15	83010	1	5	-- [%5.43] Kuşak kutusu
+	16	49994	1	5	-- [%5.43] Auranın Ateş Run. (250)
+	17	50926	50	5	-- [%5.43] Süs Taşı
+	18	50321	1	5	-- [%5.43] Görev Kitabı(Uzman)
+	19	76029	1	5	-- [%5.43] Yeşil Ejderha Fasulyesi
+	20	100700	1	5	-- [%5.43] Ejderha alevi (B)
+}
+Group	Çırak_Sandığı
+{
+	Vnum	600125 -- Çırak Sandığı 1
+	1	76037	1	1	-- [%1.09] Hırsızın eldivenleri
+	2	70022	1	1	-- [%1.09] Biyolog Süre Sıfırlama
+	3	51506	1	5	-- [%5.43] Cor Draconis (destansı)
+	4	51509	1	2	-- [%5.43] Cor Draconis (antika)
+	5	50255	5	5	-- [%5.43] Cor Draconis, İşlenmemiş
+	6	72349	1	5	-- [%5.43] Hızlandırıcı (%30)
+	7	72067	1	5	-- [%5.43] Güçlü ekleme
+	8	72351	1	5	-- [%5.43] Küçük Kutsama
+	9	71130	1	5	-- [%5.43] Geçit Bileti
+	10	39028	10	5	-- [%5.43] Efsun Nesnesi
+	11	39067	5	5	-- [%5.43] Parça sandığı
+	12	70064	10	5	-- [%5.43] Kostümü efsunla
+	13	70063	5	5	-- [%5.43] Kostümü dönüştür
+	14	76025	1	5	-- [%5.43] Rüzgarın Ayakkabıları
+	15	83010	1	5	-- [%5.43] Kuşak kutusu
+	16	49994	1	5	-- [%5.43] Auranın Ateş Run. (250)
+	17	50926	50	5	-- [%5.43] Süs Taşı
+	18	50321	1	5	-- [%5.43] Görev Kitabı(Uzman)
+	19	76029	1	5	-- [%5.43] Yeşil Ejderha Fasulyesi
+	20	100700	1	5	-- [%5.43] Ejderha alevi (B)
+}
+Group	Çırak_Sandığı
+{
+	Vnum	600121 -- Çırak Sandığı 1
+	1	701003	1	1	-- [%1.09] nazar_tilsimi_7g
+	2	600061	1	1	-- [%1.09] Pet Yaş+
+	3	51506	1	5	-- [%5.43] Cor Draconis (destansı)
+	4	51509	1	2	-- [%5.43] Cor Draconis (antika)
+	5	50255	5	5	-- [%5.43] Cor Draconis, İşlenmemiş
+	6	72349	1	5	-- [%5.43] Hızlandırıcı (%30)
+	7	72067	1	5	-- [%5.43] Güçlü ekleme
+	8	72351	1	5	-- [%5.43] Küçük Kutsama
+	9	71130	1	5	-- [%5.43] Geçit Bileti
+	10	39028	10	5	-- [%5.43] Efsun Nesnesi
+	11	39067	5	5	-- [%5.43] Parça sandığı
+	12	70064	10	5	-- [%5.43] Kostümü efsunla
+	13	70063	5	5	-- [%5.43] Kostümü dönüştür
+	14	76025	1	5	-- [%5.43] Rüzgarın Ayakkabıları
+	15	83010	1	5	-- [%5.43] Kuşak kutusu
+	16	49994	1	5	-- [%5.43] Auranın Ateş Run. (250)
+	17	50926	50	5	-- [%5.43] Süs Taşı
+	18	50321	1	5	-- [%5.43] Görev Kitabı(Uzman)
+	19	76029	1	5	-- [%5.43] Yeşil Ejderha Fasulyesi
+	20	100700	1	5	-- [%5.43] Ejderha alevi (B)
+}
+Group	Çırak_Sandığı
+{
+	Vnum	50036 -- Hediye (mor)
+	1	52202	1	1	-- [%100] Turbo sörf tahtası
+}
+
+
+Group	Çırak_Sandığı
+{
+	Vnum	713002 -- Çırak Sandığı 1
+	1	600074	1	12	-- [%0.599] EP Kuponu (100)
+	2	72062	1	12	-- [%0.599] Tecrübe yüzüğü +200
+	3	705070	1	12	-- [%0.599] mor_iebnem_1g
+	4	705060	1	12	-- [%0.599] siyah_iebnem_1g
+	5	705040	1	12	-- [%0.599] mavi_iebnem_1g
+	6	705050	1	12	-- [%0.599] beyaz_iebnem_1g
+	7	701020	1	40	-- [%2.00] sampiyonluk_amblemi_1g
+	8	76044	1	40	-- [%2.00] Pet Kitabı Sandığı
+	9	600061	1	40	-- [%2.00] Pet Yaş+
+	10	55033	1	40	-- [%2.00] Pet efsunla
+	11	70022	1	40	-- [%2.00] Biyolog Süre Sıfırlama
+	12	701130	1	40	-- [%2.00] nazar_tilsimi_1g
+	13	702010	1	40	-- [%2.00] manu_1g
+	14	700030	1	40	-- [%2.00] Hirsizin_Eldivenleri(B)_12s
+	15	72346	1	40	-- [%2.00] Kutsama
+	16	51001	200	30	-- [%1.50] Enerji Parçası
+	17	51001	100	30	-- [%1.50] Enerji Parçası
+	18	39029	1	50	-- [%2.50] Arttırma Kağıdı
+	19	39028	1	50	-- [%2.50] Efsun Nesnesi
+	20	39028	2	50	-- [%2.50] Efsun Nesnesi
+	21	39004	1	50	-- [%2.50] Kutsama Küresi
+	22	72006	1	50	-- [%2.50] Hırsızın eldivenleri
+	23	70005	1	50	-- [%2.50] Tecrübe yüzüğü (1 sa.)
+	24	71153	1	10	-- [%0.500] Bilgelik İksiri
+	25	27880	2	50	-- [%2.50] Izgara palamut balığı
+	26	27881	2	50	-- [%2.50] Izgara kadife balığı
+	27	27870	2	50	-- [%2.50] Izgara Zargana
+	28	27883	2	50	-- [%2.50] Izgara altın sudak
+	29	27873	2	50	-- [%2.50] Izgara Hamsi
+	30	27887	2	50	-- [%2.50] Izgara Yabbie yengeci
+	31	39067	2	50	-- [%2.50] Parça sandığı
+	32	39067	1	50	-- [%2.50] Parça sandığı
+	33	70063	10	50	-- [%2.50] Kostümü dönüştür
+	34	70064	10	50	-- [%2.50] Kostümü efsunla
+	35	39023	2	50	-- [%2.50] Araştırmacının Özütü
+	36	39023	1	50	-- [%2.50] Araştırmacının Özütü
+	37	39014	1	50	-- [%2.50] Savaş Kağıdı
+	38	39017	2	50	-- [%2.50] Ejderha Tanrı Yaşamı
+	39	39018	2	50	-- [%2.50] Ejderha Tanrı Saldırısı
+	40	39019	2	50	-- [%2.50] Ejderha Tanrı Zekası
+	41	39020	2	50	-- [%2.50] Ejderha Tanrı Savunması
+	42	100300	1	50	-- [%2.50] Yeşil Ejderha Fasulyesi
+	43	39008	2	50	-- [%2.50] Kötü Ruh Kovma Kağıdı
+	44	39030	2	50	-- [%2.50] Münzevi Tavsiyesi
+	45	70102	2	50	-- [%2.50] Zen Fasulye
+	46	25040	2	50	-- [%2.50] Kutsama Kağıdı
+	47	39022	1	50	-- [%2.50] Ejderha Parşömeni
+	48	39007	1	50	-- [%2.50] Demircinin El Kitabı
+}

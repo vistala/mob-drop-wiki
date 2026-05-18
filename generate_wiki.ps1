@@ -2400,6 +2400,126 @@ $html = @"
         .sidebar-section-title {
             background: linear-gradient(#8a0000, #570000);
         }
+
+        /* ========== THEME EDITOR ========== */
+        .theme-editor-toggle {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 400;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--game-border);
+            background: var(--game-header-bg);
+            color: var(--game-header-text);
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.45);
+        }
+        .theme-editor {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 500;
+            width: min(380px, 100vw);
+            background: #ead8b4;
+            color: #2b1a10;
+            border-left: 2px solid #6f5b25;
+            transform: translateX(100%);
+            transition: transform 0.22s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -8px 0 24px rgba(0,0,0,0.35);
+        }
+        .theme-editor.open { transform: translateX(0); }
+        .theme-editor-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 0.9rem;
+            background: linear-gradient(#8a0000, #570000);
+            color: #ffe2a3;
+            border-bottom: 2px solid #c99c30;
+        }
+        .theme-editor-header h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .theme-editor-header button,
+        .theme-actions button {
+            border: 1px solid #6f5b25;
+            background: #f6e4ba;
+            color: #4b0d09;
+            cursor: pointer;
+            padding: 0.35rem 0.5rem;
+            font-weight: 700;
+        }
+        .theme-editor-body {
+            overflow: auto;
+            padding: 0.8rem;
+        }
+        .theme-section {
+            border: 1px solid #b89863;
+            background: #fff5dc;
+            margin-bottom: 0.75rem;
+        }
+        .theme-section-title {
+            padding: 0.4rem 0.55rem;
+            background: #8a0000;
+            color: #ffe2a3;
+            font-weight: 800;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .theme-field {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0.5rem;
+            align-items: center;
+            padding: 0.45rem 0.55rem;
+            border-top: 1px solid rgba(111,91,37,0.25);
+            font-size: 0.78rem;
+        }
+        .theme-field input[type="color"] {
+            width: 44px;
+            height: 28px;
+            padding: 0;
+            border: 1px solid #8b7137;
+            background: transparent;
+        }
+        .theme-field input[type="range"] {
+            width: 128px;
+        }
+        .theme-field select,
+        .theme-field input[type="text"] {
+            width: 160px;
+            border: 1px solid #8b7137;
+            background: #fffaf0;
+            color: #2b1a10;
+            padding: 0.3rem;
+        }
+        .theme-actions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.45rem;
+            padding: 0.65rem;
+            border-top: 1px solid #b89863;
+            background: #d2b889;
+        }
+        .theme-actions button.wide { grid-column: 1 / -1; }
+        .theme-json {
+            width: 100%;
+            min-height: 92px;
+            resize: vertical;
+            border: 1px solid #8b7137;
+            background: #fffaf0;
+            color: #2b1a10;
+            padding: 0.45rem;
+            font-family: Consolas, monospace;
+            font-size: 0.68rem;
+        }
     </style>
 </head>
 <body>
@@ -2459,6 +2579,22 @@ $cardsHtml
             <div class="empty-state" id="empty-state"><i class="fas fa-search"></i><p>Sonuc bulunamadi.</p></div>
         </div>
     </main>
+
+    <button class="theme-editor-toggle" id="theme-editor-toggle" title="Tema paneli"><i class="fas fa-palette"></i></button>
+    <aside class="theme-editor" id="theme-editor" aria-label="Tema paneli">
+        <div class="theme-editor-header">
+            <h3>Tema Paneli</h3>
+            <button id="theme-editor-close" type="button"><i class="fas fa-xmark"></i></button>
+        </div>
+        <div class="theme-editor-body" id="theme-editor-body"></div>
+        <div class="theme-actions">
+            <button id="theme-save" type="button">Kaydet</button>
+            <button id="theme-reset" type="button">Sifirla</button>
+            <button id="theme-export" type="button">Disa aktar</button>
+            <button id="theme-import" type="button">Ice aktar</button>
+            <textarea class="theme-json" id="theme-json" placeholder="Tema JSON"></textarea>
+        </div>
+    </aside>
 
     <script>
     (function() {
@@ -2576,6 +2712,138 @@ $cardsHtml
             document.getElementById('sidebar').classList.remove('open');
             document.getElementById('sidebar-backdrop').classList.remove('show');
         }
+    })();
+
+    (function() {
+        const STORAGE_KEY = 'harbi2-theme-editor-v1';
+        const root = document.documentElement;
+        const editor = document.getElementById('theme-editor');
+        const editorBody = document.getElementById('theme-editor-body');
+        const jsonBox = document.getElementById('theme-json');
+        const fields = [
+            { group: 'Ana Renkler', label: 'Sayfa Arka Plan', type: 'color', target: '--game-page-bg', value: '#000000' },
+            { group: 'Ana Renkler', label: 'Panel Zemini', type: 'color', target: '--game-panel-bg', value: '#4b3505' },
+            { group: 'Ana Renkler', label: 'Baslik Kirmizisi', type: 'color', target: '--game-header-bg', value: '#8a0000' },
+            { group: 'Ana Renkler', label: 'Cizgi Rengi', type: 'color', target: '--game-border', value: '#76622b' },
+            { group: 'Yazilar', label: 'Baslik Yazisi', type: 'color', target: '--game-header-text', value: '#ffe2a3' },
+            { group: 'Yazilar', label: 'Govde Yazisi', type: 'color', target: '--game-body-text', value: '#fff8dc' },
+            { group: 'Yazilar', label: 'Set Basligi', type: 'color', target: '--game-title-text', value: '#f6e4ba' },
+            { group: 'Yazilar', label: 'Set Baslik Fontu', type: 'select', target: '--theme-title-font', value: 'Georgia, "Times New Roman", serif', options: [
+                ['Georgia', 'Georgia, "Times New Roman", serif'],
+                ['Cinzel', 'Cinzel, serif'],
+                ['Arial', 'Arial, sans-serif'],
+                ['Times', '"Times New Roman", serif']
+            ] },
+            { group: 'Yazilar', label: 'Tablo Fontu', type: 'select', target: '--theme-table-font', value: 'Arial, sans-serif', options: [
+                ['Arial', 'Arial, sans-serif'],
+                ['Inter', 'Inter, sans-serif'],
+                ['Georgia', 'Georgia, "Times New Roman", serif'],
+                ['Verdana', 'Verdana, sans-serif']
+            ] },
+            { group: 'Olculer', label: 'Set Baslik Boyutu', type: 'range', target: '--theme-title-size', value: '1.28rem', min: 0.8, max: 2.2, step: 0.05, unit: 'rem' },
+            { group: 'Olculer', label: 'Tablo Yazi Boyutu', type: 'range', target: '--theme-table-size', value: '0.68rem', min: 0.45, max: 1.1, step: 0.01, unit: 'rem' },
+            { group: 'Olculer', label: 'Ikon Genisligi', type: 'range', target: '--theme-icon-size', value: '32px', min: 18, max: 64, step: 1, unit: 'px' },
+            { group: 'Olculer', label: 'Hucre Boslugu', type: 'range', target: '--theme-cell-pad', value: '0.42rem', min: 0.1, max: 1.2, step: 0.02, unit: 'rem' },
+            { group: 'Sol Menu', label: 'Menu Zemini', type: 'color', target: '--theme-sidebar-bg', value: '#ead8b4' },
+            { group: 'Sol Menu', label: 'Menu Basligi', type: 'color', target: '--theme-sidebar-head', value: '#7b0000' },
+            { group: 'Sol Menu', label: 'Menu Yazisi', type: 'color', target: '--theme-sidebar-text', value: '#3d2818' }
+        ];
+
+        const dynamicStyle = document.createElement('style');
+        dynamicStyle.textContent = `
+            .costume-set-block h3 { font-family: var(--theme-title-font, Georgia, "Times New Roman", serif); font-size: var(--theme-title-size, 1.28rem); color: var(--game-title-text); }
+            .bonus-text, .bonus-tier, .costume-piece-title, .metin-drop-table td { font-family: var(--theme-table-font, Arial, sans-serif); font-size: var(--theme-table-size, 0.68rem); }
+            .costume-item img { width: var(--theme-icon-size, 32px); }
+            .costume-icons { padding: var(--theme-cell-pad, 0.42rem) 0.35rem; }
+            .sidebar { background: var(--theme-sidebar-bg, #ead8b4); }
+            .sidebar-header { background: linear-gradient(var(--theme-sidebar-head, #7b0000), #4d0000); }
+            .w-cat-btn { color: var(--theme-sidebar-text, #3d2818); }
+        `;
+        document.head.appendChild(dynamicStyle);
+
+        function buildPanel() {
+            const groups = {};
+            fields.forEach(f => { (groups[f.group] ||= []).push(f); });
+            editorBody.innerHTML = Object.entries(groups).map(([name, list]) =>
+                '<section class="theme-section">' +
+                    '<div class="theme-section-title">' + name + '</div>' +
+                    list.map(renderField).join('') +
+                '</section>'
+            ).join('');
+            editorBody.querySelectorAll('[data-theme-target]').forEach(input => {
+                input.addEventListener('input', () => applyField(input));
+                input.addEventListener('change', () => applyField(input));
+            });
+        }
+
+        function renderField(field) {
+            if (field.type === 'select') {
+                return '<label class="theme-field"><span>' + field.label + '</span><select data-theme-target="' + field.target + '">' +
+                    field.options.map(([label, value]) => '<option value="' + value + '">' + label + '</option>').join('') +
+                    '</select></label>';
+            }
+            if (field.type === 'range') {
+                const numeric = parseFloat(field.value);
+                return '<label class="theme-field"><span>' + field.label + '</span><input type="range" min="' + field.min + '" max="' + field.max + '" step="' + field.step + '" value="' + numeric + '" data-unit="' + field.unit + '" data-theme-target="' + field.target + '"></label>';
+            }
+            return '<label class="theme-field"><span>' + field.label + '</span><input type="' + field.type + '" value="' + field.value + '" data-theme-target="' + field.target + '"></label>';
+        }
+
+        function applyField(input) {
+            const unit = input.dataset.unit || '';
+            const value = input.type === 'range' ? input.value + unit : input.value;
+            root.style.setProperty(input.dataset.themeTarget, value);
+        }
+
+        function collectTheme() {
+            const data = {};
+            editorBody.querySelectorAll('[data-theme-target]').forEach(input => {
+                const unit = input.dataset.unit || '';
+                data[input.dataset.themeTarget] = input.type === 'range' ? input.value + unit : input.value;
+            });
+            return data;
+        }
+
+        function loadTheme(data) {
+            Object.entries(data || {}).forEach(([key, value]) => {
+                root.style.setProperty(key, value);
+                const input = editorBody.querySelector(`[data-theme-target="${key}"]`);
+                if (!input) return;
+                input.value = input.type === 'range' ? parseFloat(value) : value;
+            });
+        }
+
+        function defaultTheme() {
+            return Object.fromEntries(fields.map(f => [f.target, f.value]));
+        }
+
+        buildPanel();
+        loadTheme(defaultTheme());
+        try { loadTheme(JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}')); } catch {}
+
+        document.getElementById('theme-editor-toggle').addEventListener('click', () => editor.classList.add('open'));
+        document.getElementById('theme-editor-close').addEventListener('click', () => editor.classList.remove('open'));
+        document.getElementById('theme-save').addEventListener('click', () => {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(collectTheme()));
+        });
+        document.getElementById('theme-reset').addEventListener('click', () => {
+            localStorage.removeItem(STORAGE_KEY);
+            loadTheme(defaultTheme());
+            jsonBox.value = '';
+        });
+        document.getElementById('theme-export').addEventListener('click', () => {
+            jsonBox.value = JSON.stringify(collectTheme(), null, 2);
+            jsonBox.select();
+        });
+        document.getElementById('theme-import').addEventListener('click', () => {
+            try {
+                const data = JSON.parse(jsonBox.value);
+                loadTheme(data);
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(collectTheme()));
+            } catch {
+                alert('Tema JSON okunamadi.');
+            }
+        });
     })();
     </script>
 </body>

@@ -1,32 +1,18 @@
-Gerekli icon sayisi: 3632
-Baslangicta eksik: 996
+Gerekli icon sayisi: 3591
+Baslangicta eksik: 982
 TGA donusumuyle cozuldu: 0
 item_list ayni icon yolundan kopyalandi: 0
 Duplicate itemden kopyalandi: 0
 Sayisal base VNUM'dan kopyalandi: 0
 item_proto grubundan kopyalandi: 0
-Cozulemeyen: 996
+Cozulemeyen: 982
 
 Cozulemeyenler:
-45408
-45409
-45410
-45411
-45600
-45601
-45602
-45603
-45640
-45641
-45642
-45643
-45648
-45649
-45650
-45651
+40192
+40193
+40194
+40195
 50901
-52202
-70604
 71288
 700000
 700001
