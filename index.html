@@ -13,21 +13,21 @@
 		:root {
 			--bg-base: #06060e;
 			--bg-surface: #0c0c1a;
-			--bg-card: #111128;
-			--bg-sidebar: #090918;
-			--bg-input: rgba(255,255,255,0.03);
+			--bg-card: #4b3505;
+			--bg-sidebar: #4b3505;
+			--bg-input: #1b1b1b;
 
 			--text-high: #eaeaf4;
 			--text-med: #9898b8;
-			--text-low: #555578;
-			--text-muted: #3a3a58;
+			--text-low: #cdb675;
+			--text-muted: #a38a49;
 
-			--accent-blue: #6366f1;
+			--accent-blue: #8b1e16;
 			--accent-blue-dim: rgba(99,102,241,0.15);
 			--accent-gold: #f59e0b;
 			--accent-gold-dim: rgba(245,158,11,0.15);
 
-			--brand-gold: #c99c30;
+			--brand-gold: #ffe2a3;
 
 			--border: rgba(255,255,255,0.06);
 			--border-active: rgba(99,102,241,0.4);
@@ -1367,6 +1367,8 @@
 			margin: 0 0.35rem;
 			vertical-align: middle;
 			image-rendering: pixelated;
+			background: transparent !important;
+			border: 0 !important;
 		}
 		.drop-item-name {
 			color: var(--theme-drop-text, #ffffff);
@@ -101579,7 +101581,7 @@
 	})();
 
 	(function() {
-		const STORAGE_KEY = 'harbi2-theme-editor-v1';
+		const STORAGE_KEY = 'harbi2-theme-editor-v2';
 		const root = document.documentElement;
 		const editor = document.getElementById('theme-editor');
 		const editorBody = document.getElementById('theme-editor-body');
@@ -101590,7 +101592,7 @@
 			{ group: 'Genel Renkler', label: 'Tablo Basligi', type: 'color', target: '--game-header-bg', value: '#8a0000' },
 			{ group: 'Genel Renkler', label: 'Cizgi Rengi', type: 'color', target: '--game-border', value: '#76622b' },
 			{ group: 'Genel Renkler', label: 'Kart Zemini', type: 'color', target: '--bg-card', value: '#4b3505' },
-			{ group: 'Genel Renkler', label: 'Input Zemini', type: 'color', target: '--bg-input', value: '#fffaf0' },
+			{ group: 'Genel Renkler', label: 'Input Zemini', type: 'color', target: '--bg-input', value: '#1b1b1b' },
 			{ group: 'Vurgu Renkleri', label: 'Mavi Vurgu', type: 'color', target: '--accent-blue', value: '#8b1e16' },
 			{ group: 'Vurgu Renkleri', label: 'Altin Vurgu', type: 'color', target: '--accent-gold', value: '#b0781f' },
 			{ group: 'Vurgu Renkleri', label: 'Marka Yazisi', type: 'color', target: '--brand-gold', value: '#ffe2a3' },
@@ -101599,7 +101601,7 @@
 			{ group: 'Yazilar', label: 'Set Basligi', type: 'color', target: '--game-title-text', value: '#f6e4ba' },
 			{ group: 'Yazilar', label: 'Ana Metin', type: 'color', target: '--text-high', value: '#f3e7c0' },
 			{ group: 'Yazilar', label: 'Ikincil Metin', type: 'color', target: '--text-med', value: '#d8c89f' },
-			{ group: 'Yazilar', label: 'Soluk Metin', type: 'color', target: '--text-low', value: '#9d8754' },
+			{ group: 'Yazilar', label: 'Soluk Metin', type: 'color', target: '--text-low', value: '#cdb675' },
 			{ group: 'Yazilar', label: 'Baslik Fontu', type: 'select', target: '--font-display', value: 'Georgia, "Times New Roman", serif', options: [
 				['Varsayilan', ''],
 				['Georgia', 'Georgia, "Times New Roman", serif'],
@@ -101673,10 +101675,10 @@
 			{ group: 'Olculer', label: 'Kart Radius', type: 'range', target: '--radius-md', value: '0px', min: 0, max: 18, step: 1, unit: 'px' },
 			{ group: 'Olculer', label: 'Kucuk Radius', type: 'range', target: '--radius-sm', value: '0px', min: 0, max: 12, step: 1, unit: 'px' },
 			{ group: 'Ikonlar', label: 'Ikon Kenarligi', type: 'color', target: '--theme-icon-border', value: '#d7ae17' },
-			{ group: 'Sol Menu', label: 'Menu Zemini', type: 'color', target: '--theme-sidebar-bg', value: '#ead8b4' },
+			{ group: 'Sol Menu', label: 'Menu Zemini', type: 'color', target: '--theme-sidebar-bg', value: '#4b3505' },
 			{ group: 'Sol Menu', label: 'Menu Basligi', type: 'color', target: '--theme-sidebar-head', value: '#7b0000' },
-			{ group: 'Sol Menu', label: 'Bolum Basligi', type: 'color', target: '--theme-sidebar-section', value: '#8a0000' },
-			{ group: 'Sol Menu', label: 'Menu Yazisi', type: 'color', target: '--theme-sidebar-text', value: '#3d2818' },
+			{ group: 'Sol Menu', label: 'Bolum Basligi', type: 'color', target: '--theme-sidebar-section', value: '#7b0000' },
+			{ group: 'Sol Menu', label: 'Menu Yazisi', type: 'color', target: '--theme-sidebar-text', value: '#ffffff' },
 			{ group: 'Sol Menu', label: 'Menu Genisligi', type: 'range', target: '--sidebar-w', value: '216px', min: 180, max: 380, step: 2, unit: 'px' }
 		];
 
@@ -101693,7 +101695,7 @@
 			'.metin-drop-table tbody tr:hover td { background: var(--theme-drop-row-hover-bg, #252929) !important; }',
 			'.metin-name-cell { color: var(--theme-drop-name-text, #fff) !important; white-space: normal; }',
 			'.drop-item-row { display: list-item; list-style-position: outside; margin-left: 1.05rem; padding: 0.1rem 0; }',
-			'.drop-item-icon { width: var(--theme-drop-icon-size, 22px); height: auto; max-height: 34px; margin: 0 0.35rem; vertical-align: middle; }',
+			'.drop-item-icon { width: var(--theme-drop-icon-size, 22px); height: auto; max-height: 34px; margin: 0 0.35rem; vertical-align: middle; background: transparent !important; border: 0 !important; }',
 			'.drop-item-name { color: var(--theme-drop-text, #fff) !important; font-size: var(--theme-drop-text-size, 0.68rem); white-space: normal; overflow: visible; text-overflow: clip; vertical-align: middle; }',
 			'.costume-item img { width: var(--theme-icon-size, 32px); border-color: var(--theme-icon-border, #d7ae17); }',
 			'.costume-icons { padding: var(--theme-cell-pad, 0.42rem) 0.35rem; }',
@@ -101702,10 +101704,10 @@
 			'.wiki-card, .wiki-card#costume-set-bonuses { width: var(--theme-content-width, 716px); }',
 			'.metin-drop-table, .costume-set-table { min-width: var(--theme-table-width, 670px); }',
 			'.costume-set-table .bonus-corner, .bonus-tier, .metin-drop-table th:nth-child(1) { width: var(--theme-bonus-col-width, 126px); }',
-			'.sidebar { background: var(--theme-sidebar-bg, #ead8b4); }',
+			'.sidebar { background: var(--theme-sidebar-bg, #4b3505); }',
 			'.sidebar-header { background: linear-gradient(var(--theme-sidebar-head, #7b0000), #4d0000); }',
 			'.sidebar-section-title { background: linear-gradient(var(--theme-sidebar-section, #8a0000), #570000); }',
-			'.w-cat-btn, .tree-header, .sidebar-footer { color: var(--theme-sidebar-text, #3d2818); }',
+			'.w-cat-btn, .tree-header, .sidebar-footer { color: var(--theme-sidebar-text, #ffffff); }',
 			'.wiki-card { border-radius: var(--radius-md, 0px); }',
 			'.theme-editor-toggle, .search-box input, .search-mode-btn, .cat-filter-btn { border-radius: var(--radius-sm, 0px); }'
 		].join('\n');
